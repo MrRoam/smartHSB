@@ -1,0 +1,85 @@
+/* 2026-11-04: retain Column's rhythm while restoring the HSB trust signals. */
+.hero-eyebrow.rating-badge{display:inline-flex;align-items:center;gap:18px;padding:13px 17px;border:1px solid #dfe4ec;margin-bottom:34px;max-width:100%;color:#111a4a;background:#ffffffdb;line-height:1.4;transition:border-color .2s}
+.rating-badge .rating-grade{font-size:43px;font-weight:600;letter-spacing:-.04em;line-height:1;color:#111a4a;white-space:nowrap}
+.rating-grade>span{font-size:29px;vertical-align:3px;letter-spacing:-.07em;margin-left:1px}
+.rating-copy{display:flex;flex-direction:column;gap:5px;border-left:1px solid #dce1e9;padding-left:18px}
+.rating-copy b{font-size:13px;font-weight:500;color:#111a4a}.rating-copy small{font-size:10px;color:#575e72}
+.rating-badge .shine{opacity:.5;pointer-events:none}
+.hero h1{letter-spacing:-.04em}.hero-scene{height:430px}.floating-caption{bottom:-2px}
+.widget-all-markets{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #e9ebf0;padding:11px 0;font-size:10px;color:#4c5678}
+.widget-all-markets:hover{color:#111a4a}.widget-all-markets>span{font-size:15px;line-height:1}
+.regulator-band{display:block;margin-top:60px;padding:23px 0 30px}
+.trust-band-heading{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:24px}
+.trust-band-heading>p{font-size:13px;color:#29335a;line-height:1.5}
+.trust-band-heading>p>span{font-size:11px;color:#606b83;margin-left:18px}
+.trust-band-heading>a{font-size:11px;color:#52617f;white-space:nowrap}
+.trust-organizations{display:block}
+.organization-group h3{font-size:10px;font-weight:400;color:#66718b;margin-bottom:17px}
+.regulator-logos{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:18px;align-items:start}
+.regulator-logos .organization{display:flex;flex-direction:column;align-items:center;min-width:0;padding:0 5px;line-height:1.5}
+.regulator-logos .organization img{width:100%;max-width:110px;height:34px;object-fit:contain;filter:grayscale(1);opacity:.85;mix-blend-mode:multiply;transition:filter .2s,opacity .2s}
+.organization:hover img{filter:none;opacity:1}
+.organization>span{font-size:10px;color:#465171;margin-top:11px;white-space:nowrap}
+.organization>small{font-size:9px;color:#68738a;margin-top:3px;text-align:center}
+.rewards-section{background:#111a4a;color:#fff}
+.rewards-inner p{color:#e2e7f4;opacity:1}.rewards-inner .reward-label{color:#c7cee2;opacity:1}
+.rewards-inner .button-white{color:#111a4a;background:#fff}.rewards-inner .button-white:hover{box-shadow:0 3px 8px #0003}
+.rewards-inner .reward-link{color:#d3dbed}.rewards-inner .reward-link:hover{color:#fff}.reward-art{color:#94a8d1;opacity:.12}
+.market-tab strong{display:flex;align-items:center;gap:10px}.market-tab strong em{font:10px SuisseMono,monospace;letter-spacing:0;font-style:normal;color:#68778c;background:#edf0f4;border-radius:4px;padding:2px 5px;min-width:20px;text-align:center}
+.market-catalog-summary{font-size:12px;color:#606b80;margin-top:16px;line-height:1.8}.market-catalog-summary>span{white-space:nowrap;margin-left:12px;color:#414d6c}
+.market-panel>.representative-label{font-size:10px;color:#65718b;margin-top:22px}.market-chart{height:180px;margin-top:16px}
+.instrument-groups{margin-top:26px}.instrument-group[hidden]{display:none}
+.instruments-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid #e3e4e8;padding-bottom:10px}
+.instruments-heading h4{font-size:13px;font-weight:500;line-height:1.5}.instruments-heading h4>span{color:#63708b;font-size:11px;margin-left:9px;font-weight:400}
+.instruments-heading>span{font-size:9px;color:#68738a;white-space:nowrap}
+.instrument-list{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;column-gap:25px;align-content:start}
+.instrument-list:focus-visible{outline:2px solid #167e6c;outline-offset:3px;border-radius:3px}
+.instrument-row{display:flex;justify-content:space-between;align-items:center;gap:12px;min-width:0;border-bottom:1px solid #edf0f4;padding:13px 0;line-height:1.5}
+.instrument-row>div{min-width:0}.instrument-row>div:last-child{text-align:right;flex-shrink:0}
+.instrument-row b{font:13px SuisseMono,monospace;color:#29365b;font-weight:400}.instrument-row small{display:block;font-size:9px;color:#68738a;margin-top:4px}
+.instrument-row strong{font:13px SuisseMono,monospace;color:#29365b;font-weight:400}.instrument-row span{display:block;font:9px SuisseMono,monospace;margin-top:4px}.instrument-row .positive{color:#167e6c}.instrument-row .negative{color:#ab4553}
+.panel-bottom{margin-top:18px}.award-grid>div:first-child img{filter:saturate(.85)}
+@media(max-width:1100px){.rating-badge .rating-grade{font-size:37px}.rating-grade>span{font-size:25px}.hero-eyebrow.rating-badge{gap:13px;padding:12px 14px}.rating-copy{padding-left:13px}.rating-copy b{font-size:12px}.rating-copy small{font-size:9px}.trust-organizations{gap:30px}}
+@media(max-width:800px){.hero-eyebrow.rating-badge{gap:10px;padding:11px 12px;margin-bottom:30px}.rating-badge .rating-grade{font-size:34px}.rating-grade>span{font-size:22px;vertical-align:2px}.rating-copy{padding-left:10px;gap:5px}.rating-copy b{font-size:11px}.rating-copy small{font-size:8px}.regulator-band{margin-top:48px}.organization-group h3{margin-bottom:14px}.regulator-logos{gap:12px}.regulator-logos .organization img{height:29px}.organization>span{font-size:9px}.organization>small{font-size:8px}.trust-organizations{gap:25px}.instrument-list{grid-template-columns:1fr}.market-tab strong{gap:7px}}
+@media(max-width:600px){.hero-eyebrow.rating-badge{padding:12px 14px;gap:14px;margin-bottom:28px}.rating-badge .rating-grade{font-size:38px}.rating-grade>span{font-size:25px}.rating-copy{padding-left:14px}.rating-copy b{font-size:12px}.rating-copy small{font-size:9px}.hero-scene{height:350px}.floating-caption{bottom:-20px}.regulator-band{display:block;margin-top:12px;padding:22px 0 28px}.trust-band-heading{margin-bottom:24px;gap:10px;align-items:start}.trust-band-heading>p{font-size:12px;white-space:normal}.trust-band-heading>p>span{display:block;margin:4px 0 0;font-size:10px}.trust-band-heading>a{font-size:10px;padding-top:2px}.trust-organizations{grid-template-columns:1fr;gap:25px}.organization-group h3{font-size:11px;margin-bottom:16px}.regulator-logos{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.regulator-logos .organization img{height:31px;max-width:105px;width:100%}.organization>span{font-size:10px;margin-top:10px}.organization>small{font-size:9px}.market-tab strong{display:flex;justify-content:center;gap:6px;font-size:12px}.market-tab strong em{font-size:9px;padding:1px 4px;min-width:17px}.market-catalog-summary{font-size:11px;margin-top:13px}.market-catalog-summary>span{margin-left:0;display:block}.market-panel>.representative-label{margin-top:20px}.market-chart{height:130px;margin-top:12px}.instrument-list{grid-template-columns:1fr 1fr;column-gap:18px;max-height:280px}.instrument-row{display:block;padding:12px 0}.instrument-row>div:last-child{display:flex;gap:8px;text-align:left;align-items:center;margin-top:7px}.instrument-row b,.instrument-row strong{font-size:11px}.instrument-row small{font-size:10px}.instrument-row span{margin:0;font-size:8px}.instruments-heading h4{font-size:12px}.instruments-heading h4>span{font-size:10px}.instruments-heading>span{font-size:8px}}
+@media(max-width:360px){.hero-eyebrow.rating-badge{gap:10px;padding:11px}.rating-badge .rating-grade{font-size:33px}.rating-grade>span{font-size:22px}.rating-copy{padding-left:10px}.rating-copy b{font-size:11px}.rating-copy small{font-size:8px}.regulator-logos{gap:8px}.organization>span{font-size:9px}.organization>small{font-size:8px}.market-tab strong{font-size:11px;gap:4px}.instrument-list{gap:12px}}
+.instrument-list{max-height:none;overflow:visible}
+
+/* ===== 语言切换入口（与内页 .language-placeholder 同一形态）===== */
+.language-placeholder{padding:4px 0;white-space:nowrap;font-size:11px;color:#5a6580;transition:color .2s}
+.language-placeholder:hover{color:#11131a}
+@media(max-width:1100px){.language-placeholder{font-size:10.5px}}
+@media(max-width:600px){.language-placeholder{font-size:10px}}
+@media(max-width:360px){.language-placeholder{display:none}}
+
+/* ===== 轻提示（首页不加载 style.css / main.js，独立提供）===== */
+.toast{position:fixed;left:50%;bottom:36px;transform:translateX(-50%) translateY(20px);background:#11131a;color:#fff;font-size:13px;line-height:1.5;padding:12px 22px;border-radius:10px;box-shadow:0 8px 28px #11131a33;opacity:0;visibility:hidden;transition:.25s ease;z-index:120;max-width:88vw;text-align:center;pointer-events:none}
+.toast.show{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+@media(max-width:600px){.toast{font-size:12px;padding:11px 18px;bottom:26px}}
+
+/* ===== A+++ 评级徽章入场动效（2026-11-05）=====
+   节奏：卡片弹入 → A 落位 → +++ 跟进 → 竖线生长 → 两行文案依次上浮 → 周期扫光
+   全部只作用于 .hero-eyebrow.rating-badge（首页唯一实例），不影响内页 */
+.hero-eyebrow.rating-badge{animation:badgeIn .85s cubic-bezier(.2,1.06,.32,1) both .1s}
+.rating-badge .rating-grade{animation:gradeDrop .6s cubic-bezier(.2,1.2,.35,1) both .16s}
+.rating-badge .rating-grade>span{display:inline-block;animation:plusIn .5s cubic-bezier(.2,1.1,.4,1) both .3s}
+.rating-badge .rating-copy{border-left-color:transparent}
+.rating-badge .rating-grade,.rating-badge .rating-copy{position:relative;z-index:2}
+.rating-badge .rating-copy::before{content:"";position:absolute;left:-1px;top:1px;bottom:1px;width:1px;background:#dce1e9;transform-origin:top center;animation:dividerGrow .5s cubic-bezier(.3,.85,.3,1) both .34s}
+.rating-badge .rating-copy b{animation:copyRise .5s cubic-bezier(.2,.9,.3,1) both .4s}
+.rating-badge .rating-copy small{animation:copyRise .5s cubic-bezier(.2,.9,.3,1) both .5s}
+.rating-badge .shine{z-index:1;opacity:.95;background:linear-gradient(100deg,transparent 36%,#b9cbf066 45%,#fff 50%,#b9cbf066 55%,transparent 64%);animation:badgeSheen 5s cubic-bezier(.35,0,.35,1) 1s infinite}
+
+@keyframes badgeIn{0%{opacity:0;transform:translateY(14px) scale(.93);border-color:#dfe4ec}55%{opacity:1}72%{border-color:#aeb9cf}100%{opacity:1;transform:none;border-color:#dfe4ec}}
+@keyframes gradeDrop{0%{opacity:0;transform:translateY(9px) scale(.7)}100%{opacity:1;transform:none}}
+@keyframes plusIn{0%{opacity:0;transform:translateX(-9px)}100%{opacity:1;transform:none}}
+@keyframes dividerGrow{0%{transform:scaleY(0);opacity:0}45%{opacity:1}100%{transform:scaleY(1);opacity:1}}
+@keyframes copyRise{0%{opacity:0;transform:translateY(6px)}100%{opacity:1;transform:none}}
+@keyframes badgeSheen{0%{transform:translateX(-115%)}26%{transform:translateX(115%)}100%{transform:translateX(115%)}}
+
+/* 动效关闭（页脚开关）与系统减少动效：全部落到终态，扫光隐藏 */
+body.motion-off .rating-badge .shine{display:none}
+@media(prefers-reduced-motion:reduce){
+  .hero-eyebrow.rating-badge,.rating-badge .rating-grade,.rating-badge .rating-grade>span,.rating-badge .rating-copy::before,.rating-badge .rating-copy b,.rating-badge .rating-copy small{animation:none!important;opacity:1;transform:none}
+  .rating-badge .shine{display:none}
+}

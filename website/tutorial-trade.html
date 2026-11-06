@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>交易操作 · MT5 下单与风控 | SmartHSB</title>
+<meta content="MT5 下单 6 步流程、止损止盈的 5 个设定依据、交易信号三要素与使用步骤，附下单前纪律清单。" name="description"/>
+<link href="assets/img/favicon-64.png" rel="icon" sizes="64x64" type="image/png"/>
+<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://www.hsbkita.cn/tutorial-trade.html" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="SmartHSB" property="og:site_name"/>
+<meta content="交易操作 · MT5 下单与风控 | SmartHSB" property="og:title"/>
+<meta content="MT5 下单 6 步流程、止损止盈的 5 个设定依据、交易信号三要素与使用步骤，附下单前纪律清单。" property="og:description"/>
+<meta content="https://www.hsbkita.cn/tutorial-trade.html" property="og:url"/>
+<meta content="https://www.hsbkita.cn/assets/img/og-cover.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<link href="assets/css/style.css" rel="stylesheet"/>
+<link href="assets/css/page.css" rel="stylesheet"/>
+<link href="assets/css/column-home.css" rel="stylesheet"/><link href="assets/css/navigation-v2.css" rel="stylesheet"/><link href="assets/css/subpages.css?v=20261104-full" rel="stylesheet"/><link href="assets/css/platform-pages.css?v=20261104-full" rel="stylesheet"/></head>
+<body class="internal-site page-tutorial-trade platform-family" data-page="tutorial-trade" data-platform-redesign="2026-11-04"><a class="skip-link" href="#main">跳转到主要内容</a>
+<div class="announcement"><a href="demo.html">从模拟交易开始，探索全球市场 <span>体验 $10,000 虚拟资金</span><i>↗</i></a></div><header class="site-header" id="header"><div class="container nav-inner">
+<a aria-label="SmartHSB 首页" class="brand" href="index.html"><img alt="" height="34" src="assets/img/logo_hsb_kita.png" width="34"/><span>SmartHSB<span class="brand-tag">Teman Trading Kamu</span></span></a>
+<nav aria-label="主导航" class="desktop-nav navigation-complete">
+<a class="nav-home" href="index.html">首页</a>
+<div class="nav-group nav-group--trade"><button aria-controls="nav-menu-trade" aria-expanded="false" class="nav-trigger" id="nav-trigger-trade">交易<b aria-hidden="true">⌄</b></button><div aria-labelledby="nav-trigger-trade" class="dropdown" id="nav-menu-trade"><a href="account-types.html">账户类型<span aria-hidden="true">↗</span></a><a href="demo.html">模拟账户<span aria-hidden="true">↗</span></a><a href="account-real.html">真实账户<span aria-hidden="true">↗</span></a><a href="deposit-withdraw.html">入金出金<span aria-hidden="true">↗</span></a><a href="promotions.html">促销活动<span aria-hidden="true">↗</span></a><a href="rewards.html">积分奖励<span aria-hidden="true">↗</span></a></div></div>
+<div class="nav-group nav-group--markets"><button aria-controls="nav-menu-markets" aria-expanded="false" class="nav-trigger" id="nav-trigger-markets">市场<b aria-hidden="true">⌄</b></button><div aria-labelledby="nav-trigger-markets" class="dropdown" id="nav-menu-markets"><a href="products.html">交易品种<span aria-hidden="true">↗</span></a><a href="live-quotes.html">实时报价<span aria-hidden="true">↗</span></a><a href="economic-calendar.html">财经日历<span aria-hidden="true">↗</span></a><a href="news.html">资讯中心<span aria-hidden="true">↗</span></a></div></div>
+<div class="nav-group nav-group--platform"><button aria-controls="nav-menu-platform" aria-expanded="false" class="nav-trigger" id="nav-trigger-platform">平台<b aria-hidden="true">⌄</b></button><div aria-labelledby="nav-trigger-platform" class="dropdown" id="nav-menu-platform"><a href="platform-tutorial.html">平台教程<span aria-hidden="true">↗</span></a><a href="trading-tools.html">交易工具<span aria-hidden="true">↗</span></a><a href="download.html">下载中心<span aria-hidden="true">↗</span></a></div></div>
+<div class="nav-group nav-group--education"><button aria-controls="nav-menu-education" aria-expanded="false" class="nav-trigger" id="nav-trigger-education">教育<b aria-hidden="true">⌄</b></button><div aria-labelledby="nav-trigger-education" class="dropdown" id="nav-menu-education"><a href="learn.html">知识中心<span aria-hidden="true">↗</span></a></div></div>
+<div class="nav-group nav-group--company"><button aria-controls="nav-menu-company" aria-expanded="false" class="nav-trigger" id="nav-trigger-company">关于<b aria-hidden="true">⌄</b></button><div aria-labelledby="nav-trigger-company" class="dropdown" id="nav-menu-company"><a href="about.html">关于我们<span aria-hidden="true">↗</span></a><a href="licenses.html">许可证与认证<span aria-hidden="true">↗</span></a><a href="contact.html">联系我们<span aria-hidden="true">↗</span></a><a href="user-agreement.html">条款与条件<span aria-hidden="true">↗</span></a></div></div>
+<div class="nav-group nav-group--support"><button aria-controls="nav-menu-support" aria-expanded="false" class="nav-trigger" id="nav-trigger-support">支持<b aria-hidden="true">⌄</b></button><div aria-labelledby="nav-trigger-support" class="dropdown" id="nav-menu-support"><a href="help.html">帮助中心<span aria-hidden="true">↗</span></a><a href="fraud-warning.html">防欺诈警示<span aria-hidden="true">↗</span></a><a href="customer-complaint.html">客户投诉<span aria-hidden="true">↗</span></a><a href="privacy-policy.html">隐私政策<span aria-hidden="true">↗</span></a></div></div>
+</nav>
+<div class="nav-actions"><button class="language-placeholder" onclick="toast('多语言即将开放')">中文 ▾</button><a class="support-link" href="help.html">帮助中心</a><a class="button button-outline button-small" href="download.html">下载 APP <span>↗</span></a><button aria-controls="mobile-nav" aria-expanded="false" aria-label="打开菜单" class="menu-toggle"><span></span><span></span></button></div>
+</div><nav aria-label="移动端导航" class="mobile-nav navigation-complete-mobile" hidden="" id="mobile-nav">
+<a class="mobile-home" href="index.html">首页 <span aria-hidden="true">↗</span></a>
+<details class="mobile-nav-group" data-nav-group="trade" name="hsb-mobile-navigation"><summary>交易<span aria-hidden="true">＋</span></summary><div class="mobile-nav-links"><a href="account-types.html">账户类型<span aria-hidden="true">↗</span></a><a href="demo.html">模拟账户<span aria-hidden="true">↗</span></a><a href="account-real.html">真实账户<span aria-hidden="true">↗</span></a><a href="deposit-withdraw.html">入金出金<span aria-hidden="true">↗</span></a><a href="promotions.html">促销活动<span aria-hidden="true">↗</span></a><a href="rewards.html">积分奖励<span aria-hidden="true">↗</span></a></div></details>
+<details class="mobile-nav-group" data-nav-group="markets" name="hsb-mobile-navigation"><summary>市场<span aria-hidden="true">＋</span></summary><div class="mobile-nav-links"><a href="products.html">交易品种<span aria-hidden="true">↗</span></a><a href="live-quotes.html">实时报价<span aria-hidden="true">↗</span></a><a href="economic-calendar.html">财经日历<span aria-hidden="true">↗</span></a><a href="news.html">资讯中心<span aria-hidden="true">↗</span></a></div></details>
+<details class="mobile-nav-group" data-nav-group="platform" name="hsb-mobile-navigation"><summary>平台<span aria-hidden="true">＋</span></summary><div class="mobile-nav-links"><a href="platform-tutorial.html">平台教程<span aria-hidden="true">↗</span></a><a href="trading-tools.html">交易工具<span aria-hidden="true">↗</span></a><a href="download.html">下载中心<span aria-hidden="true">↗</span></a></div></details>
+<details class="mobile-nav-group" data-nav-group="education" name="hsb-mobile-navigation"><summary>教育<span aria-hidden="true">＋</span></summary><div class="mobile-nav-links"><a href="learn.html">知识中心<span aria-hidden="true">↗</span></a></div></details>
+<details class="mobile-nav-group" data-nav-group="company" name="hsb-mobile-navigation"><summary>关于<span aria-hidden="true">＋</span></summary><div class="mobile-nav-links"><a href="about.html">关于我们<span aria-hidden="true">↗</span></a><a href="licenses.html">许可证与认证<span aria-hidden="true">↗</span></a><a href="contact.html">联系我们<span aria-hidden="true">↗</span></a><a href="user-agreement.html">条款与条件<span aria-hidden="true">↗</span></a></div></details>
+<details class="mobile-nav-group" data-nav-group="support" name="hsb-mobile-navigation"><summary>支持<span aria-hidden="true">＋</span></summary><div class="mobile-nav-links"><a href="help.html">帮助中心<span aria-hidden="true">↗</span></a><a href="fraud-warning.html">防欺诈警示<span aria-hidden="true">↗</span></a><a href="customer-complaint.html">客户投诉<span aria-hidden="true">↗</span></a><a href="privacy-policy.html">隐私政策<span aria-hidden="true">↗</span></a></div></details>
+</nav></header>
+<main id="main">
+<!-- ===== 内页 Hero ===== -->
+<section class="page-hero">
+<div class="wrap">
+<nav aria-label="面包屑" class="crumb"><a href="index.html">首页</a><svg fill="none" height="12" viewbox="0 0 24 24" width="12"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg><a href="platform-tutorial.html">平台</a><svg fill="none" height="12" viewbox="0 0 24 24" width="12"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg><span>交易操作</span></nav>
+<h1>交易操作，<em>MT5 下单与风控工具</em></h1>
+<p class="lead">登录 MT5 后如何下一笔订单、止损止盈怎么设、交易信号怎么用——本页把交易环节的操作要点一次讲清，所有示例基于 4 大类 25 个品种。</p>
+<div class="ph-cta">
+<a class="btn btn-primary" href="demo.html">模拟账户练手</a>
+<a class="btn btn-outline" href="learn-risk.html">先补风险管理</a>
+</div>
+<div class="ph-meta">
+<span>时间框架 <b>21 种</b></span>
+<span>内置指标 <b>38 个</b></span>
+<span>订单类型 <b>市价 / 挂单 / 止损单</b></span>
+</div>
+<nav aria-label="平台学习路径" class="tutorial-path"><a href="tutorial-install.html"><span>01</span>安装<i aria-hidden="true">↗</i></a><a href="tutorial-open.html"><span>02</span>开户<i aria-hidden="true">↗</i></a><a href="tutorial-manage.html"><span>03</span>账户<i aria-hidden="true">↗</i></a><a href="deposit-withdraw.html"><span>04</span>资金<i aria-hidden="true">↗</i></a><a aria-current="page" href="tutorial-trade.html"><span>05</span>交易<i aria-hidden="true">↗</i></a></nav></div>
+</section>
+<!-- ===== 正文 ===== -->
+<section class="sec">
+<div class="wrap"><div class="tutorial-reading"><aside class="tutorial-index"><div class="tutorial-index-heading">本页内容</div><nav aria-label="章节导航" class="chp-nav">
+<div class="chp-in">
+<a href="#s1"><i>01</i>为什么用 MT5 交易</a>
+<a href="#s2"><i>02</i>下一笔订单（6 步）</a>
+<a href="#s3"><i>03</i>止损与止盈怎么设</a>
+<a href="#s4"><i>04</i>交易信号的使用</a>
+<a href="#s5"><i>05</i>下单纪律清单</a>
+<a href="#s6"><i>06</i>交易操作常见问题</a>
+</div>
+<div class="chp-prog"><span></span></div>
+</nav><p class="chp-tip">品种合约规格见「交易品种」，成本计算见「交易基础」。</p><div class="tutorial-meter"><span>阅读进度</span><b>0%</b><i><em></em></i></div></aside><div class="doc-single">
+<article class="prose">
+<p class="note note-info">本页为操作方法说明，不构成投资建议。杠杆交易存在较高风险，请先完成 <a class="link" href="learn-risk.html">风险管理</a> 阅读再进行实盘操作。</p>
+<section class="doc-sec platform-chapter">
+<h2 id="s1">为什么用 MT5 交易</h2>
+<p>MetaTrader 5 是全球使用最广泛的零售交易平台之一，在 SmartHSB 体系中承担专业交易终端的角色。核心优势：</p>
+<ul>
+<li><strong>执行稳定</strong>——多服务器架构保障交易连续性，订单执行速度快，有助于减少滑点；</li>
+<li><strong>分析工具全</strong>——38 个内置技术指标、44 种分析对象、21 种时间框架（分钟级到月线），图表支持自定义；</li>
+<li><strong>订单类型丰富</strong>——市价单、六种挂单、止损单与移动止损（Trailing Stop），方便把策略写成规则；</li>
+<li><strong>市场深度（DOM）</strong>——实时查看买卖盘流动性，辅助判断入场时机；</li>
+<li><strong>多端同步</strong>——Windows / macOS / Android / iOS 全覆盖，手机与电脑登录同一账户，持仓实时同步；</li>
+<li><strong>内置财经日历</strong>——重要经济数据发布直接在终端内可见，不必切换窗口。</li>
+</ul>
+</section>
+<section class="doc-sec platform-chapter">
+<h2 id="s2">下一笔订单（6 步）</h2>
+<p>以手机端 MT5 为例（桌面端菜单名称略有不同，流程一致）：</p>
+<ol class="instruction-steps">
+<li><strong>完成注册</strong>——先在本站或 SmartHSB APP 注册开户（首次使用可先开模拟账户练手）；</li>
+<li><strong>安装并登录</strong>——安装 MT5 后选择「登录已有账户」，服务器选 HSB 的交易服务器；</li>
+<li><strong>选择品种</strong>——在报价列表中选择要交易的品种，如 EUR/USD 或 XAU/USD；</li>
+<li><strong>新建订单</strong>——点击「新订单」，设定手数（最小 0.01 手）；</li>
+<li><strong>确定方向</strong>——看涨点击「买入（Buy）」，看跌点击「卖出（Sell）」，同时可在此设置止损与止盈价位；</li>
+<li><strong>监控持仓</strong>——在「持仓」页跟踪浮动盈亏，平仓或修改挂单随时可操作。</li>
+</ol>
+<p>挂单（Limit / Stop）适合把「到价才入场」写成规则，避免盯盘时情绪化追单。</p>
+</section>
+<section class="doc-sec platform-chapter">
+<h2 id="s3">止损与止盈怎么设</h2>
+<p>止损（Stop Loss）是价格触及预设水平时自动平仓的指令，作用是把<strong>单笔最大亏损提前锁定</strong>；止盈（Take Profit）则是到价自动落袋。两者都是下单时即可设置、无需盯盘的防线。</p>
+<h3>设定止损的 5 个依据</h3>
+<ol class="instruction-steps">
+<li><strong>技术位</strong>——参考支撑位、阻力位放置止损；结合均线、趋势线或斐波那契回撤位更可靠；</li>
+<li><strong>单笔风险上限</strong>——通行的做法是单笔风险不超过账户资金的 1%–2%，由止损距离反推手数；</li>
+<li><strong>波动率</strong>——行情剧烈时止损放宽一些，避免被正常波动扫掉；行情平稳时可收紧；</li>
+<li><strong>时间框架</strong>——短线交易止损更贴近入场价，长线交易留更大空间；</li>
+<li><strong>盈亏比</strong>——目标利润与风险的比例至少 1:1，常见标准为 1:2 以上；盈亏比不合适的机会直接放弃。</li>
+</ol>
+<p class="note">止损距离与手数互相牵制：止损越远，手数就要越小，才能维持单笔风险不变。具体算法见 <a class="link" href="learn-terms.html">交易基础 →</a>。</p>
+</section>
+<section class="doc-sec platform-chapter">
+<h2 id="s4">交易信号的使用</h2>
+<p>交易信号是含明确参数的交易参考，由专业分析团队结合 AI 产出，每条信号包含三个要素：</p>
+<ul>
+<li><strong>入场价（Entry）</strong>——建议的进场价位；</li>
+<li><strong>止损（SL）</strong>——与信号配套的风险边界；</li>
+<li><strong>止盈（TP）</strong>——信号给出的目标价位。</li>
+</ul>
+<p>在 APP 中使用信号的步骤：</p>
+<ol class="instruction-steps">
+<li>打开 SmartHSB APP 并登录；</li>
+<li>在首页找到「交易信号」入口；</li>
+<li>选择关注的品种（如 XAU/USD、EUR/USD）；</li>
+<li>点开活跃信号，把入场价、止损、止盈抄入 MT5 的下单窗口执行。</li>
+</ol>
+<p class="note note-warn">信号是参考而非保证：任何信号都不承诺盈利，照抄前请确认其风险水平在自己的承受范围内。建议开启 APP 推送通知，避免在行情剧烈时错过或追高。</p>
+</section>
+<section class="doc-sec platform-chapter">
+<h2 id="s5">下单纪律清单</h2>
+<div class="tbl-wrap">
+<table class="spec">
+<thead><tr><th>下单前自查</th><th>标准</th></tr></thead>
+<tbody>
+<tr><td>入场理由是否明确</td><td>能一句话说清为什么买 / 卖</td></tr>
+<tr><td>止损是否已设置</td><td>无止损不下单</td></tr>
+<tr><td>单笔风险占比</td><td>不超过账户资金 1%–2%</td></tr>
+<tr><td>盈亏比</td><td>不低于 1:1，目标 1:2 以上</td></tr>
+<tr><td>手数</td><td>由止损距离反推，不拍脑袋</td></tr>
+<tr><td>重要数据时段</td><td>非农、CPI 等发布前后注意波动风险</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="doc-sec platform-chapter">
+<h2 id="s6">交易操作常见问题</h2>
+<div class="faq-grid">
+<div class="faq-item">
+<button aria-expanded="false" class="faq-q">最小可以下多少手？<svg fill="none" height="18" viewbox="0 0 24 24" width="18"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button>
+<div class="faq-a">全部品种最小 0.01 手。0.01 手 EUR/USD 的点值约 $0.10/pip，适合小资金试单。</div>
+</div>
+<div class="faq-item">
+<button aria-expanded="false" class="faq-q">止损止盈可以下单后再改吗？<svg fill="none" height="18" viewbox="0 0 24 24" width="18"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button>
+<div class="faq-a">可以。在 MT5「持仓」页对相应仓位修改或补充设置，也可以用移动止损让止损位跟随行情自动上移。</div>
+</div>
+<div class="faq-item">
+<button aria-expanded="false" class="faq-q">为什么成交价和下单价不一样？<svg fill="none" height="18" viewbox="0 0 24 24" width="18"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button>
+<div class="faq-a">行情快速波动时会出现滑点，成交价是最优可得价格。使用限价挂单可控制成交价，但可能不成交。</div>
+</div>
+<div class="faq-item">
+<button aria-expanded="false" class="faq-q">交易信号收费吗？<svg fill="none" height="18" viewbox="0 0 24 24" width="18"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button>
+<div class="faq-a">信号功能在 APP 内向客户开放使用。以 APP 内实际展示为准。</div>
+</div>
+</div>
+</section>
+</article>
+</div></div>
+
+
+
+</div>
+</section>
+<!-- ===== CTA ===== -->
+<section class="sec">
+<div class="wrap">
+<div class="cta-banner">
+<div>
+<h2>零成本先练 30 单</h2>
+<p>免费模拟账户，$10,000 虚拟体验金，把下单与止损练成肌肉记忆。</p>
+</div>
+<a class="btn" href="demo.html">免费开通模拟账户</a>
+</div>
+</div>
+</section>
+<section class="sec">
+<div class="wrap">
+<div class="sec-head">
+<div>
+<div class="kicker">Continue</div>
+<h2 class="sec-title">继续阅读</h2>
+</div>
+<span class="sec-sub">同板块其余章节，建议按顺序阅读</span>
+</div>
+<div class="g3">
+<a class="icard" href="tutorial-install.html">
+<span class="ic-tag">平台教程</span>
+<h3>安装指南</h3>
+<p>MT5 在四端的安装与 HSB 交易服务器登录</p>
+<span class="more">阅读 →</span>
+</a>
+<a class="icard" href="tutorial-open.html">
+<span class="ic-tag">平台教程</span>
+<h3>开户指南</h3>
+<p>模拟与真实账户开通、KYC 验证与审核加速技巧</p>
+<span class="more">阅读 →</span>
+</a>
+<a class="icard" href="tutorial-manage.html">
+<span class="ic-tag">平台教程</span>
+<h3>账户管理</h3>
+<p>密码、邮箱、手机号修改与账户注销的自助操作</p>
+<span class="more">阅读 →</span>
+</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-footer"><div class="container"><div class="footer-top"><a class="brand" href="index.html"><img alt="" height="34" src="assets/img/logo_hsb_kita.png" width="34"/><span>SmartHSB<span class="brand-tag">Teman Trading Kamu</span></span></a><p>连接全球市场，陪伴每一步交易。</p><a class="text-link" href="contact.html">联系我们 ↗</a></div><div class="footer-links"><div><h3>交易</h3><a href="products.html">交易品种</a><a href="account-types.html">账户类型</a><a href="demo.html">模拟账户</a><a href="account-real.html">真实账户</a><a href="deposit-withdraw.html">入金出金</a></div><div><h3>平台与工具</h3><a href="live-quotes.html">实时报价</a><a href="trading-tools.html">交易工具</a><a href="economic-calendar.html">财经日历</a><a href="platform-tutorial.html">平台教程</a></div><div><h3>学习与支持</h3><a href="learn.html">知识中心</a><a href="news.html">资讯中心</a><a href="help.html">帮助中心</a><a href="customer-complaint.html">客户投诉</a></div><div><h3>关于 SmartHSB</h3><a href="about.html">关于我们</a><a href="licenses.html">许可证与认证</a><a href="promotions.html">促销活动</a><a href="rewards.html">积分奖励</a><a href="fraud-warning.html">防欺诈警示</a></div><div class="foot-dl"><h3>下载 APP</h3><div class="dl-box"><div class="dl-btns"><a class="store-btn" href="download.html"><img alt="从 App Store 下载 SmartHSB APP" decoding="async" height="40" loading="lazy" src="assets/img/platform/app_store.png" width="132"/></a><a class="store-btn" href="download.html"><img alt="从 Google Play 下载 SmartHSB APP" decoding="async" height="40" loading="lazy" src="assets/img/platform/google_play.png" width="132"/></a></div><div aria-label="APP 下载二维码（待上线）" class="dl-qr" data-qr="assets/img/qr_app_download.png" role="img"><svg aria-hidden="true" fill="none" height="26" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="26"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4z"></path><path d="M14 14h2.2v2.2H14zM17.8 14H20v2.2h-2.2zM14 17.8h2.2V20H14zM17.8 17.8H20V20h-2.2z"></path></svg><span>待上线</span></div></div></div></div> <div class="legal">
+<div class="legal-title">合法性</div>
+<p class="legal-entity">SmartHSB 由 <b>PT Handal Semesta Berjangka</b> 运营 · 客服邮箱 <a href="mailto:cs@hsb.co.id">cs@hsb.co.id</a> · WhatsApp <a href="https://wa.me/628211019087" rel="noopener" target="_blank">+62 821-1019-087</a> · 电话 <a href="tel:+622150122288">+62 21-501-22288</a> · 客服时间 24/5</p>
+<div class="legal-grid">
+<div class="legal-item"><b>商品期货交易监管局（BAPPEBTI）</b><span>001/BAPPEBTI/SI/05/2018</span><span>001/BAPPEBTI/SP-SPA/05/2018</span><span>03/BAPPEBTI/KEP-PBK/9/2018</span><span>003/BAPPEBTI/SP-PN/07/2020</span></div>
+<div class="legal-item"><b>印尼央行（Bank Indonesia）</b><span>27/546/DPPK/Srt/B</span></div>
+<div class="legal-item"><b>金融服务管理局（OJK）</b><span>S-292/PM.02/2025</span></div>
+<div class="legal-item"><b>印尼商品及衍生品交易所（ICDX）</b><span>197/SPKB/ICDX/DIR/VI/2020</span></div>
+<div class="legal-item"><b>印尼清算所（ICH）</b><span>026/OTC/ICH/DIR/VI/2020</span><span>178/SPKK/ICH/VI/2020</span></div>
+<div class="legal-item"><b>行业协会会员（ASPEBTINDO）</b><span>1291/ASPEBTINDO/ANG-B/6/2018</span></div>
+</div>
+</div>
+<div class="risk-copy"><strong>风险提示</strong><p>差价合约（CFD）及杠杆交易具有较高风险，可能导致部分或全部投资损失。交易前，请充分了解产品、费用与风险，并根据自身财务状况及风险承受能力作出决定。模拟账户使用虚拟资金，模拟表现不代表实际交易结果。</p><p>本页界面、价格及图表为展示示例，不提供实时行情，也不构成投资建议。有关牌照、服务条件与产品信息，请查阅对应页面及正式协议。</p></div><div class="footer-bottom"><span>© 2026 SmartHSB. All rights reserved.</span><div><a href="privacy-policy.html">隐私政策</a><a href="user-agreement.html">条款与条件</a><a href="learn-risk.html">风险披露</a></div><button aria-pressed="false" id="motion-toggle">动效：开启 <span>◉</span></button></div></div></footer>
+<script defer="" src="assets/js/main.js"></script>
+<script src="assets/js/subpages.js?v=20261104-full"></script><script src="assets/js/navigation-v2.js"></script><script defer="" src="assets/js/platform-pages.js?v=20261104-full"></script></body>
+</html>

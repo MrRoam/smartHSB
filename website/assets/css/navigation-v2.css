@@ -1,0 +1,159 @@
+/* Restore the supplied navigation hierarchy; loaded after homepage styles. */
+.navigation-complete {
+  gap: 22px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.navigation-complete > a,
+.navigation-complete .nav-trigger {
+  font-size: 13px;
+  white-space: nowrap;
+}
+.navigation-complete .nav-home { padding: 24px 0; }
+.navigation-complete .nav-trigger { gap: 6px; }
+.navigation-complete .dropdown {
+  min-width: 218px;
+  top: 100%;
+  padding: 7px;
+}
+.navigation-complete .dropdown a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 28px;
+  min-height: 44px;
+  padding: 10px 13px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+.navigation-complete .dropdown a:first-child {
+  margin-bottom: 0;
+  background: transparent;
+}
+.navigation-complete .dropdown a:hover,
+.navigation-complete .dropdown a:focus-visible {
+  background: var(--canvas);
+}
+.navigation-complete .dropdown a span {
+  color: #70778d;
+  font-size: 12px;
+  float: none;
+}
+.navigation-complete .nav-group--support .dropdown,
+.navigation-complete .nav-group--company .dropdown {
+  left: auto;
+  right: -20px;
+}
+.navigation-complete-mobile { display: none; }
+
+@media (min-width: 1051px) {
+  .site-header .nav-inner { gap: 20px; }
+  .site-header .nav-actions { gap: 16px; }
+  .site-header .support-link { display: none; }
+  .site-header .menu-toggle { display: none; }
+  .site-header .mobile-nav { display: none !important; }
+}
+
+@media (max-width: 1050px) {
+  .site-header .desktop-nav { display: none; }
+  .site-header .nav-inner { height: 70px; }
+  .site-header .support-link { display: none; }
+  .site-header .menu-toggle {
+    width: 44px;
+    min-width: 44px;
+    height: 44px;
+    min-height: 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    padding: 10px;
+  }
+  .site-header .menu-toggle span {
+    display: block;
+    width: 20px;
+    height: 1px;
+    background: var(--navy);
+  }
+  .site-header .mobile-nav:not([hidden]) {
+    display: block;
+    max-height: calc(100vh - 106px);
+    max-height: calc(100dvh - 106px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 12px max(24px, calc((100vw - 1112px) / 2)) 24px;
+    background: #fff;
+    box-shadow: 0 15px 25px #111a4a10;
+    scrollbar-gutter: stable;
+  }
+  .site-header.sticky .mobile-nav:not([hidden]) {
+    max-height: calc(100vh - 70px);
+    max-height: calc(100dvh - 70px);
+  }
+  .navigation-complete-mobile .mobile-home,
+  .navigation-complete-mobile .mobile-nav-group summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    min-height: 48px;
+    padding: 12px 0;
+    border: 0;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .navigation-complete-mobile .mobile-home {
+    border-bottom: 1px solid var(--line);
+  }
+  .mobile-nav-group { border-bottom: 1px solid var(--line); }
+  .mobile-nav-group summary {
+    cursor: pointer;
+    list-style: none;
+  }
+  .mobile-nav-group summary::-webkit-details-marker { display: none; }
+  .mobile-nav-group summary span {
+    color: #70778d;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1;
+    transition: transform .2s ease;
+  }
+  .mobile-nav-group[open] summary span { transform: rotate(45deg); }
+  .navigation-complete-mobile .mobile-nav-links { padding: 0 0 12px 16px; }
+  .navigation-complete-mobile .mobile-nav-links a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 44px;
+    padding: 10px 0;
+    border: 0;
+    color: #575f78;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .navigation-complete-mobile .mobile-nav-links a span {
+    color: #70778d;
+    font-size: 12px;
+  }
+  .navigation-complete-mobile .mobile-nav-links a:hover { color: var(--navy); }
+}
+
+@media (max-width: 600px) {
+  .site-header .nav-inner { height: 68px; }
+  .site-header .mobile-nav:not([hidden]) {
+    max-height: calc(100vh - 100px);
+    max-height: calc(100dvh - 100px);
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .site-header.sticky .mobile-nav:not([hidden]) {
+    max-height: calc(100vh - 68px);
+    max-height: calc(100dvh - 68px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mobile-nav-group summary span { transition: none; }
+}
