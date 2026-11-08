@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="420" viewBox="0 0 600 420" fill="none" role="img" aria-labelledby="title">
+  <title id="title">白色立体盾牌与蓝绿透明层次</title>
+  <defs>
+    <radialGradient id="greenHalo"><stop stop-color="#A1F4CE" stop-opacity=".85"/><stop offset="1" stop-color="#A1F4CE" stop-opacity="0"/></radialGradient>
+    <radialGradient id="blueHalo"><stop stop-color="#8DCBFF" stop-opacity=".65"/><stop offset="1" stop-color="#8DCBFF" stop-opacity="0"/></radialGradient>
+    <linearGradient id="base" x1="183" y1="225" x2="395" y2="349" gradientUnits="userSpaceOnUse"><stop stop-color="#F9FFFF"/><stop offset="1" stop-color="#DCEFEF"/></linearGradient>
+    <linearGradient id="edge" x1="326" y1="93" x2="365" y2="313" gradientUnits="userSpaceOnUse"><stop stop-color="#B5DCE7"/><stop offset="1" stop-color="#68BFB5"/></linearGradient>
+    <linearGradient id="face" x1="210" y1="113" x2="352" y2="279" gradientUnits="userSpaceOnUse"><stop stop-color="#FFF"/><stop offset="1" stop-color="#E3F9F3"/></linearGradient>
+    <linearGradient id="inside" x1="237" y1="131" x2="341" y2="274" gradientUnits="userSpaceOnUse"><stop stop-color="#7EE8C5"/><stop offset="1" stop-color="#05A782"/></linearGradient>
+    <linearGradient id="glass" x1="210" y1="150" x2="365" y2="321" gradientUnits="userSpaceOnUse"><stop stop-color="#48ADFF" stop-opacity=".2"/><stop offset="1" stop-color="#20C8A1" stop-opacity=".08"/></linearGradient>
+    <filter id="shadow"><feGaussianBlur stdDeviation="12"/></filter>
+  </defs>
+  <ellipse cx="356" cy="189" rx="211" ry="174" fill="url(#greenHalo)"/>
+  <ellipse cx="220" cy="255" rx="188" ry="145" fill="url(#blueHalo)"/>
+  <ellipse cx="309" cy="330" rx="139" ry="25" fill="#336E89" opacity=".15" filter="url(#shadow)"/>
+  <path d="m151 294 147-84 151 86v18l-148 85-150-86Z" fill="#BEDDDC" opacity=".6"/>
+  <path d="m151 294 147-84 151 86-148 85Z" fill="url(#base)"/>
+  <path d="m186 291 112-64 115 66-112 64Z" stroke="#C0E5DF"/>
+  <path d="m232 116 95-34 87 63v86c0 55-40 104-92 120-51-24-90-79-90-133Z" fill="url(#glass)" stroke="#98D9DD" stroke-opacity=".65"/>
+  <path d="m202 98 91-33 23 13 91 67v79c0 53-38 104-87 122l-23-13-95-171Z" fill="url(#edge)"/>
+  <path d="m202 98 91-33 91 67v79c0 53-38 104-91 122-53-34-91-90-91-143Z" fill="url(#face)"/>
+  <path d="m218 110 75-27 75 56v68c0 44-31 87-75 104-44-30-75-77-75-121Z" stroke="#D2EBE6"/>
+  <path d="m236 124 57-21 57 43v58c0 34-23 68-57 85-34-26-57-63-57-98Z" fill="url(#inside)"/>
+  <path d="m293 103 57 43v58c0 34-23 68-57 85Z" fill="#029F84" opacity=".35"/>
+  <path d="m263 184 22 29 40-38" stroke="#0C8B74" stroke-opacity=".25" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" transform="translate(3 5)"/>
+  <path d="m263 180 22 29 40-38" stroke="#FFF" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="m201 98 91-33 91 67" stroke="#FFF" stroke-width="2"/>
+  <ellipse cx="157" cy="208" rx="15" ry="9" fill="#5B9FE3"/>
+  <path d="M142 199v9c0 11 30 11 30 0v-9Z" fill="#4F8DCE"/>
+  <ellipse cx="157" cy="199" rx="15" ry="9" fill="#9AD5FF"/>
+  <ellipse cx="453" cy="258" rx="18" ry="10" fill="#0EA887"/>
+  <path d="M435 247v11c0 13 36 13 36 0v-11Z" fill="#24AC8C"/>
+  <ellipse cx="453" cy="247" rx="18" ry="10" fill="#8AE7C7"/>
+  <path d="m170 135 7-4 7 4v8l-7 4-7-4Z" fill="#A6D9FC"/>
+  <circle cx="423" cy="116" r="5" fill="#7EDDBF"/>
+  <circle cx="388" cy="355" r="4" fill="#77BDD7"/>
+</svg>

@@ -1,0 +1,390 @@
+/* SmartHSB homepage — white surfaces in a blue / mint landscape. */
+:root {
+  --navy: #102f3c;
+  --ink: #173c48;
+  --muted: #556e77;
+  --canvas: #f3fafb;
+  --line: #dce9eb;
+  --green: #01a66b;
+  --green-dark: #087653;
+  --blue: #235dfe;
+  --mint: #baffdf;
+  --ease: cubic-bezier(.16,1,.3,1);
+}
+html { background: #dcf5f5; }
+body.home-bluegreen {
+  background: linear-gradient(140deg,#d5e8ff 0%,#d6f8f4 34%,#e5ffe7 65%,#d3edff 100%);
+  color: var(--ink);
+  font-size: 15px;
+}
+.home-bluegreen h2 { font-size: clamp(30px,3.2vw,46px); line-height: 1.35; letter-spacing: -.035em; text-wrap: balance; }
+.home-bluegreen h3 { text-wrap: balance; }
+.home-bluegreen p { color: var(--muted); text-wrap: pretty; }
+.home-bluegreen .container { max-width: 1200px; width: calc(100% - 112px); }
+.home-bluegreen .section { padding: 100px 0; }
+.home-bluegreen .section-label { font: 500 11px/1.6 Suisse,sans-serif; letter-spacing: .06em; color: #126b65; margin-bottom: 18px; }
+.home-bluegreen .button { min-height: 48px; padding: 0 22px; border-radius: 999px; font-size: 14px; gap: 22px; }
+.home-bluegreen .button-primary, .home-bluegreen .button-white {
+  color: white; background: #087653; border: 0; box-shadow: none;
+}
+.home-bluegreen .button-primary:hover, .home-bluegreen .button-white:hover { background: #06583f; transform: translateY(-2px); }
+.home-bluegreen .button-primary span, .home-bluegreen .button-white span { color: #baffdf; }
+.home-bluegreen .text-link { font-size: 13px; color: #087653; gap: 24px; }
+.home-bluegreen .text-link:hover { color: #235dfe; }
+.home-bluegreen .text-link span { font-size: 19px; }
+.home-bluegreen :is(a,button,summary):focus-visible { outline-color: #235dfe; outline-offset: 4px; }
+
+/* The floating white navigation is the first bridge from the original hero. */
+.home-bluegreen .site-header, .home-bluegreen .site-header:not(.sticky) {
+  top: 18px !important; left: 24px; right: 24px; padding: 0;
+  background: #fff; border: 0; border-radius: 999px;
+  box-shadow: 0 5px 24px #07394a12; color: var(--ink);
+}
+.home-bluegreen .site-header:not(.sticky) { background: #fff !important; box-shadow: 0 5px 24px #07394a12 !important; }
+.home-bluegreen .site-header.sticky { top: 12px; background: #fffffff5; box-shadow: 0 5px 24px #07394a12; }
+.home-bluegreen .site-header .nav-inner { width: calc(100% - 36px); max-width: none; height: 66px; gap: 20px; }
+.home-bluegreen .site-header .brand { gap: 9px; font-size: 23px; letter-spacing: -.7px; color: #102f3c; }
+.home-bluegreen .site-header .brand-s-logo { width: 27px; height: 27px; border-radius: 0; filter: none; object-fit: contain; }
+.home-bluegreen .site-header:not(.sticky) .brand .brand-name__accent { color: #087653; background: none; filter: none; }
+.home-bluegreen .site-header:not(.sticky) .brand { text-shadow: none; }
+.home-bluegreen .site-header :is(.nav-trigger,.nav-home,.language-placeholder,.support-link) { color: #35535e; }
+.home-bluegreen .site-header .nav-trigger[aria-expanded=true], .home-bluegreen .nav-home[aria-current=page] { color: #087653; }
+.home-bluegreen .site-header .nav-actions .button-outline { min-height: 40px; border: 0; color: white; background: #087653; padding: 0 18px; font-size: 12px; }
+.home-bluegreen .site-header .nav-actions .button-outline:hover { background: #06583f; }
+.home-bluegreen .site-header .menu-toggle span { background: #173c48; }
+.home-bluegreen .dropdown { border: 1px solid #dce9eb; box-shadow: 0 8px 24px #07394a10; border-radius: 12px; }
+.home-bluegreen .site-header:not(.sticky) .dropdown { background: white; border: 1px solid #dce9eb; box-shadow: 0 8px 24px #07394a10; backdrop-filter: none; }
+.home-bluegreen .dropdown a { color: var(--ink); }
+.home-bluegreen .dropdown a:hover { background: #edfaf4; }
+
+/* Hero content, footage and animation retain the supplied composition. */
+.home-bluegreen .intro-portal__frame { padding-top: 100px; }
+.home-bluegreen .intro-portal { border-radius: 0; }
+.home-bluegreen .intro-portal__bottom { padding-bottom: 24px; }
+.home-bluegreen .intro-portal__scroll { color: #e1efff; }
+.home-bluegreen .intro-portal h1 { letter-spacing: -.035em; }
+.home-bluegreen .intro-portal__reg-item img { opacity: 1; }
+.home-content { position: relative; margin: 24px 24px 0; background: white; border-radius: 16px 16px 0 0; overflow: clip; }
+
+/* An open map composition, followed by the original four product facts. */
+.home-bluegreen .overview { padding: 78px 0 70px; background: #fff; }
+.overview-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 42px; }
+.home-bluegreen .overview-heading { display: block; }
+.home-bluegreen .overview-heading h2 { font-size: clamp(28px,2.65vw,39px); line-height: 1.45; letter-spacing: -.035em; }
+.home-bluegreen .overview-heading h2 span { color: #087653; }
+.home-bluegreen .overview-heading > div:last-child { padding: 0; margin-top: 22px; }
+.home-bluegreen .overview-heading p { font-size: 15px; line-height: 1.85; margin-bottom: 20px; }
+.overview-world { position: relative; height: 335px; isolation: isolate; }
+.map-glow { position: absolute; inset: 10% -10%; z-index: -1; background: radial-gradient(ellipse at 70% 40%,#b5f7de 0%,transparent 63%),radial-gradient(ellipse at 28% 65%,#bfddff 0%,transparent 65%); filter: blur(16px); }
+.home-bluegreen .overview-world #world-dots { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .9; }
+.world-map { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+.map-chip { position: absolute; display: flex; align-items: center; gap: 10px; padding: 10px 15px; background: white; color: #214a51; font-size: 12px; box-shadow: 0 12px 24px #2a7e7920; border-radius: 8px; animation: homeDrift 7s ease-in-out infinite; }
+.map-chip i { font: 500 15px SuisseMono,monospace; color: #087653; display: grid; place-items: center; width: 30px; height: 30px; background: #e6faf0; border-radius: 50%; }
+.map-chip--one { left: 4%; top: 16%; transform: rotate(-5deg); }
+.map-chip--two { right: 7%; top: 11%; animation-delay: -2s; }
+.map-chip--three { left: 25%; bottom: 12%; animation-delay: -4s; }
+.map-chip--four { right: 1%; bottom: 20%; animation-delay: -1s; }
+.map-caption { position: absolute; bottom: -5px; width: 100%; text-align: center; font-size: 11px; color: #4e6e75; }
+.home-bluegreen .stats { margin-top: 55px; gap: 0; padding-top: 28px; border-top: 1px solid var(--line); }
+.home-bluegreen .stats > div { border-top: 0; border-right: 1px solid var(--line); padding: 0 30px; }
+.home-bluegreen .stats > div:first-child { padding-left: 0; }
+.home-bluegreen .stats > div:last-child { border-right: 0; }
+.home-bluegreen .stats strong { color: #134a5b; font-size: 39px; letter-spacing: -.035em; }
+.home-bluegreen .stats strong span { color: #087653; font-size: 13px; margin-left: 6px; }
+.home-bluegreen .stats p { font-size: 12px; }
+
+/* Four markets share one white workspace set into a blue-green field. */
+.home-bluegreen .markets { background: radial-gradient(ellipse at 100% 20%,#dcffe4 0%,transparent 50%),linear-gradient(130deg,#e9f2ff,#edfcf8 70%); padding: 88px 0; }
+.home-bluegreen .section-head { margin-bottom: 36px; }
+.home-bluegreen .section-head h2 { font-size: clamp(28px,3vw,42px); }
+.home-bluegreen .market-catalog-summary { color: #42666f; font-size: 13px; margin-top: 15px; }
+.home-bluegreen .market-explorer { display: block; padding: 10px; border: 0; border-radius: 16px; box-shadow: 0 18px 44px #1858660c; background: white; overflow: hidden; }
+.home-bluegreen .market-selector { display: grid; grid-template-columns: repeat(4,1fr); background: #f0f7f8; border: 0; border-radius: 10px; padding: 6px; gap: 6px; }
+.home-bluegreen .market-tab { display: grid; grid-template-columns: 1fr auto; padding: 18px 20px; border-radius: 7px; min-height: 78px; }
+.home-bluegreen .market-tab > span { display: none; }
+.home-bluegreen .market-tab strong { grid-column: 1; font-size: 16px; color: #365d66; display: flex; align-items: center; gap: 8px; }
+.home-bluegreen .market-tab strong em { background: #e0eeed; color: #42696c; font-size: 10px; border-radius: 4px; min-width: 16px; padding: 1px 4px; }
+.home-bluegreen .market-tab strong { white-space: nowrap; }
+.home-bluegreen .market-tab small { grid-column: 1; color: #4f7179; font: 9px SuisseMono,monospace; margin-top: 4px; }
+.home-bluegreen .market-tab i { grid-column: 2; opacity: 1; transform: none; color: #4c7779; }
+.home-bluegreen .market-tab.active { background: #087653; box-shadow: none; }
+.home-bluegreen .market-tab.active :is(strong,small,i) { color: white; }
+.home-bluegreen .market-tab.active strong em { background: #ffffff25; color: white; }
+.home-bluegreen .market-panel { display: grid; grid-template-columns: 1.1fr 1fr; column-gap: 44px; padding: 38px 30px 20px; }
+.market-panel-visual { min-width: 0; }
+.home-bluegreen .market-panel-visual > p { margin-top: 14px; font-size: 12px; }
+.home-bluegreen .panel-title h3 { font-size: 24px; color: #173c48; }
+.home-bluegreen .panel-title .section-label { color: #087653; font-size: 10px; }
+.home-bluegreen .large-symbol { color: #087653; font-size: 35px; background: #e6f9ef; border-radius: 12px; width: 58px; height: 58px; display: grid; place-items: center; flex: 0 0 auto; }
+.home-bluegreen .market-panel-visual > .representative-label { color: #556e77; margin-top: 35px; }
+.home-bluegreen .market-chart { height: 180px; margin: 20px 0 0; }
+.home-bluegreen .large-line { stroke: #01a66b; stroke-width: 2.5; }
+.home-bluegreen .instrument-groups { min-width: 0; margin-top: 0; padding-left: 30px; border-left: 1px solid var(--line); }
+.home-bluegreen .instruments-heading { gap: 8px; margin: 0; padding-bottom: 13px; border-color: var(--line); }
+.home-bluegreen .instruments-heading > span { color: #556e77; font-size: 9px; }
+.home-bluegreen .instruments-heading h4 { font-size: 14px; }
+.home-bluegreen .instrument-list { max-height: 275px; overflow-y: auto; scrollbar-color: #9bcdbb transparent; scrollbar-width: thin; grid-template-columns: 1fr; }
+.home-bluegreen .instrument-row { padding: 13px 2px; border-color: #edf2f2; }
+.home-bluegreen .instrument-row b { color: #214650; font-size: 12px; }
+.home-bluegreen .instrument-row small { color: #556e77; font-size: 11px; }
+.home-bluegreen .instrument-row span { color: #087653; }
+.home-bluegreen .instrument-row .down { color: #a23e53; }
+.home-bluegreen .panel-bottom { grid-column: 1/-1; margin-top: 26px; border-color: var(--line); }
+.home-bluegreen .panel-bottom > span { color: #556e77; font-size: 10px; }
+
+/* A white phone and floating research screen, with colour behind the objects. */
+.home-bluegreen .platform { background: #fff; padding: 105px 0; }
+.home-bluegreen .platform-grid { grid-template-columns: .95fr 1.05fr; gap: 60px; }
+.home-bluegreen .platform-copy h2 { font-size: clamp(32px,3.5vw,48px); }
+.home-bluegreen .body-large { color: #556e77; font-size: 16px; }
+.home-bluegreen .platform-detail { border: 0; margin-top: 26px; padding: 0; gap: 18px; }
+.home-bluegreen .platform-detail > span { color: #087653; background: #e8f9f0; border: 0; border-radius: 8px; width: 35px; height: 35px; display: grid; place-items: center; flex-shrink: 0; }
+.home-bluegreen .platform-detail h3 { font-size: 16px; color: #214650; }
+.home-bluegreen .platform-detail p { font-size: 13px; line-height: 1.85; }
+.home-bluegreen .platform-copy > .text-link { margin-top: 32px; }
+.home-bluegreen .platform-visual { height: 560px; border-radius: 16px; overflow: visible; background: radial-gradient(ellipse at 80% 5%,#ceffcb 0%,transparent 58%),radial-gradient(ellipse at 16% 90%,#a7dcff 0%,transparent 65%),linear-gradient(145deg,#dcf4ff,#c3f8e8); perspective: 1200px; }
+.home-bluegreen .platform-visual::before { display: none; }
+.home-bluegreen .orbit { border-color: #75bca232; width: 380px; height: 380px; left: 50%; top: 50%; transform: translate(-50%,-50%); }
+.home-bluegreen .orbit-two { width: 490px; height: 490px; }
+.home-bluegreen .phone { width: 254px; height: 501px; transform: rotate(8deg) translate(25px,-4px); background: #c8e3dc; padding: 6px; border: 2px solid #a6c8c1; border-radius: 38px; box-shadow: 10px 20px 0 #4b877c20,20px 35px 40px #195f5b24; animation: none; }
+.home-bluegreen .phone-screen { border-radius: 30px; background: #fff; }
+.home-bluegreen .phone-camera { background: #123831; }
+.home-bluegreen .phone-logo { color: #087653; }
+.home-bluegreen .phone-greeting { color: #556e77; }
+.home-bluegreen .phone h4 { color: #153e48; }
+.home-bluegreen .phone-balance { background: linear-gradient(120deg,#dbf8e9,#e4f1ff); color: #174b51; border: 0; }
+.home-bluegreen .phone-balance small, .home-bluegreen .phone-balance span { color: #38676a; }
+.home-bluegreen .phone-row i { background: #e9f9ef; color: #087653; }
+.home-bluegreen .phone-row small, .home-bluegreen .phone-disclaimer { color: #556e77; }
+.home-bluegreen .phone-nav { color: #40656b; }
+.platform-back-screen { position: absolute; width: 187px; height: 384px; object-fit: cover; object-position: top; left: 4%; top: 50px; border-radius: 20px; transform: rotate(-12deg); filter: saturate(.7); box-shadow: -12px 20px 35px #1b7f6624; }
+.home-bluegreen .platform-float { left: -12px; bottom: 42px; padding: 17px 20px; color: #214650; background: white; border: 0; box-shadow: 0 10px 26px #2e776e20; border-radius: 10px; animation: homeDrift 6s ease-in-out infinite; }
+.home-bluegreen .platform-float b { font-size: 12px; }
+.home-bluegreen .platform-float small { color: #556e77; }
+
+/* Trust has one sculptural focal point, with three clear paths below it. */
+.home-bluegreen .trust-section { position: relative; background: linear-gradient(145deg,#f0f7ff,#effbf5); padding: 84px 0 74px; }
+.home-bluegreen .trust-section > .container { position: relative; }
+.home-bluegreen .trust-section .section-head { padding-right: 230px; min-height: 150px; align-items: center; }
+.home-bluegreen .trust-section .section-head > p { display: none; }
+.trust-art { position: absolute; width: 250px; height: 180px; object-fit: contain; right: 0; top: -30px; }
+.home-bluegreen .trust-grid { gap: 0; background: #fff; padding: 32px 0; border-radius: 12px; }
+.home-bluegreen .trust-item { padding: 0 30px; border: 0; border-right: 1px solid var(--line); background: none; border-radius: 0; box-shadow: none; }
+.home-bluegreen .trust-item:last-child { border-right: 0; }
+.home-bluegreen .trust-item:hover { transform: translateY(-4px); }
+.home-bluegreen .trust-diagram { height: 130px; background: none; border: 0; }
+.home-bluegreen .trust-diagram > span { color: #556e77; font-size: 8px; letter-spacing: .04em; }
+.home-bluegreen .trust-diagram svg rect { fill: #e9faf2; stroke: #b4decf; }
+.home-bluegreen .trust-diagram svg text { fill: #087653; }
+.home-bluegreen .trust-item h3 { color: #143e48; font-size: 18px; margin-top: 17px; }
+.home-bluegreen .trust-item h3 span { color: #087653; }
+.home-bluegreen .trust-item p { font-size: 12px; line-height: 1.85; margin-top: 12px; }
+.home-bluegreen .secure-vault { border-color: #a5d9c6; color: #087653; background: linear-gradient(135deg,#e5f9ff,#d5f7df); }
+.home-bluegreen .tool-chart i { background: linear-gradient(0deg,#46b6bf,#45d397); }
+
+/* Familiar local payments, with a connected finance illustration. */
+.home-bluegreen .funding-section { background: #fff; padding: 90px 0 80px; }
+.home-bluegreen .funding-grid { gap: 80px; grid-template-columns: 1fr 1fr; align-items: start; }
+.home-bluegreen .funding-grid h2 { font-size: clamp(30px,3.1vw,43px); }
+.home-bluegreen .funding-grid > div > p { font-size: 14px; line-height: 1.9; }
+.home-bluegreen .payment-logos { gap: 28px; margin: 25px 0; }
+.home-bluegreen .payment-logos img { filter: none; opacity: 1; height: 22px; }
+.funding-art { width: 340px; height: 195px; margin: 24px auto -30px; object-fit: contain; }
+.home-bluegreen .funding-details { background: linear-gradient(150deg,#e9f2ff,#e8fbf0); padding: 34px; border-radius: 14px; }
+.home-bluegreen .funding-details > div { padding: 0 0 26px; margin-bottom: 26px; border-color: #cee4df; }
+.home-bluegreen .funding-details > div > span { color: #087653; font: 10px SuisseMono,monospace; }
+.home-bluegreen .funding-details h3 { color: #153e48; font-size: 31px; line-height: 1.4; margin: 12px 0; }
+.home-bluegreen .funding-details > div:nth-child(2) h3 { font-size: 23px; }
+.home-bluegreen .funding-details p { font-size: 12px; line-height: 1.9; }
+.home-bluegreen .funding-details .insurance-note { margin: 0; border: 0; padding: 18px; background: white; border-radius: 8px; gap: 12px; }
+.home-bluegreen .insurance-note p { color: #305c60; }
+.home-bluegreen .insurance-note small { color: #556e77; font-size: 10px; }
+.home-bluegreen .insurance-note a { color: #087653; }
+
+/* Rewards uses a brighter palette, while retaining both original actions. */
+.home-bluegreen .rewards-section { padding: 0; background: #fff; }
+.home-bluegreen .rewards-inner { position: relative; min-height: 350px; padding: 50px; width: calc(100% - 112px); background: radial-gradient(ellipse at 95% 100%,#8cf4c4,transparent 60%),linear-gradient(115deg,#e7f3ff,#d5f9ed); border-radius: 16px; display: grid; grid-template-columns: 1fr .9fr; gap: 20px 40px; overflow: hidden; color: #103c44; }
+.home-bluegreen .reward-label { grid-column: 1; color: #126b65; font: 11px Suisse,sans-serif; letter-spacing: .05em; }
+.home-bluegreen .reward-label > span { display: none; }
+.home-bluegreen .rewards-inner h2 { grid-column: 1; font-size: clamp(30px,3vw,42px); margin: 0; position: relative; z-index: 1; }
+.home-bluegreen .rewards-inner > div:not(.reward-label):not(.reward-art) { grid-column: 1; position: relative; z-index: 1; }
+.home-bluegreen .rewards-inner p { color: #42666b; font-size: 13px; line-height: 1.9; margin-bottom: 24px; }
+.home-bluegreen .rewards-inner .actions { gap: 22px; }
+.home-bluegreen .reward-link { color: #087653; font-size: 12px; }
+.home-bluegreen .reward-art { position: absolute; width: 50%; height: 100%; right: 0; top: 0; opacity: 1; transform: none; }
+.home-bluegreen .reward-art img { width: 100%; height: 100%; object-fit: contain; animation: homeDrift 8s ease-in-out infinite; }
+.home-bluegreen .awards-section { background: white; padding: 90px 0 65px; }
+.home-bluegreen .awards-section h2 { font-size: clamp(26px,2.6vw,36px); }
+.home-bluegreen .award-grid { gap: 0; padding: 28px 0; border: 1px solid var(--line); border-radius: 12px; }
+.home-bluegreen .award-grid > div { border-right: 1px solid var(--line); }
+.home-bluegreen .award-grid > div:last-child { border-right: 0; }
+.home-bluegreen .award-grid img { filter: none; opacity: 1; height: 98px; max-width: 135px; transition: transform .4s var(--ease); }
+.home-bluegreen .award-grid > div:hover img { transform: translateY(-5px); }
+.home-bluegreen .award-grid span { color: #4e6b73; font-size: 11px; margin-top: 16px; }
+.home-bluegreen .media-line { padding: 35px 0 0; margin-top: 20px; gap: 40px; border: 0; }
+.home-bluegreen .media-line p { color: #556e77; font-size: 11px; }
+.home-bluegreen .media-line img { filter: grayscale(1); opacity: .7; height: 24px; }
+
+/* Native details remain accessible with or without scripts. */
+.home-bluegreen .faq-section { background: #f5fafb; padding: 80px 0; }
+.home-bluegreen .faq-grid { grid-template-columns: .8fr 1.2fr; gap: 70px; }
+.home-bluegreen .faq-grid h2 { font-size: clamp(30px,3vw,42px); }
+.home-bluegreen .faq-list { background: white; padding: 8px 28px; border-radius: 12px; }
+.home-bluegreen .faq-list details { border-color: var(--line); }
+.home-bluegreen .faq-list details:last-child { border-bottom: 0; }
+.home-bluegreen .faq-list summary { color: #214650; font-size: 14px; padding: 24px 0; }
+.home-bluegreen .faq-list summary span { color: #087653; background: #e7f8ef; border-radius: 50%; display: grid; place-items: center; width: 27px; height: 27px; font-size: 16px; }
+.home-bluegreen .faq-list details > div { color: #556e77; font-size: 13px; line-height: 1.9; }
+.home-bluegreen .faq-list a { color: #087653; }
+
+/* A blue-to-mint frame encloses the final white invitation. */
+.home-bluegreen .final-cta { margin: 36px; padding: 14px; min-height: 320px; border-radius: 16px; overflow: hidden; background: linear-gradient(115deg,#75b7ef,#3fcca7 58%,#b3f789); }
+.home-bluegreen #footer-dots { opacity: .22; }
+.home-bluegreen .final-inner { width: 100%; max-width: none; padding: 55px 60px; min-height: 290px; border-radius: 9px; background: #fffffff2; position: relative; display: flex; justify-content: space-between; align-items: center; gap: 30px; }
+.home-bluegreen .final-inner h2 { font-size: clamp(30px,3.3vw,46px); }
+.home-bluegreen .final-inner .section-label { color: #087653; }
+.home-bluegreen .final-inner > div:last-child { text-align: left; flex-shrink: 0; }
+.home-bluegreen .final-inner p { color: #556e77; font-size: 11px; margin-top: 14px; }
+
+/* Keep the full original company, licence and risk information. */
+.home-bluegreen .site-footer { background: #eff8f9; margin: 0 24px 24px; border-radius: 0 0 16px 16px; padding: 55px 0 22px; }
+.home-bluegreen .site-footer .brand { color: #153e48; }
+.home-bluegreen .footer-top { border-color: #d3e5e5; padding-bottom: 30px; }
+.home-bluegreen .footer-top > p { color: #556e77; font-size: 13px; }
+.home-bluegreen .footer-links { padding: 36px 0; gap: 24px; }
+.home-bluegreen .footer-links h3 { color: #214650; font-size: 13px; }
+.home-bluegreen .footer-links a { color: #4c6972; font-size: 12px; }
+.home-bluegreen .footer-links a:hover { color: #087653; }
+.home-bluegreen .legal, .home-bluegreen .risk-copy, .home-bluegreen .footer-bottom { border-color: #d3e5e5; }
+.home-bluegreen .legal, .home-bluegreen .legal p, .home-bluegreen .legal-item span, .home-bluegreen .risk-copy p { color: #506b74; }
+.home-bluegreen .legal-item b, .home-bluegreen .risk-copy strong, .home-bluegreen .legal-title { color: #315761; }
+.home-bluegreen .footer-bottom, .home-bluegreen .footer-bottom a { color: #4d6971; }
+.home-bluegreen #motion-toggle { color: #087653; }
+.home-bluegreen .reveal, .home-bluegreen.js-motion .reveal { opacity: 1; transform: none; filter: none; transition: none; }
+.home-bluegreen .reveal.in-view { animation: homeEnter .7s var(--ease) both; }
+@keyframes homeEnter { from { transform: translateY(20px); } to { transform: translateY(0); } }
+@keyframes homeDrift { 0%,100% { translate: 0 0; } 50% { translate: 0 -9px; } }
+.home-bluegreen.motion-off *, .home-bluegreen.motion-off *::before, .home-bluegreen.motion-off *::after { animation: none !important; transition: none !important; }
+
+@media (min-width: 1600px) {
+  .home-bluegreen .container { max-width: 1280px; }
+}
+@media (max-width: 1150px) {
+  .home-bluegreen .container { width: calc(100% - 72px); }
+  .home-bluegreen .site-header .nav-inner { gap: 12px; }
+  .home-bluegreen .navigation-complete { gap: 17px; }
+  .home-bluegreen .site-header .nav-actions { gap: 12px; }
+  .home-bluegreen .language-placeholder { display: none; }
+  .overview-grid { gap: 15px; }
+  .home-bluegreen .overview-heading h2 { font-size: 29px; }
+  .home-bluegreen .platform-grid { gap: 35px; }
+  .home-bluegreen .funding-grid { gap: 40px; }
+  .home-bluegreen .rewards-inner { width: calc(100% - 72px); padding: 40px; }
+  .home-bluegreen .market-panel { column-gap: 25px; padding-inline: 23px; }
+  .home-bluegreen .instrument-groups { padding-left: 25px; }
+  .home-bluegreen .final-inner { padding: 45px; }
+}
+@media (max-width: 800px) {
+  .home-bluegreen .site-header, .home-bluegreen .site-header:not(.sticky), .home-bluegreen .site-header.sticky { top: 12px !important; left: 12px; right: 12px; padding: 0; border-radius: 24px; }
+  .home-bluegreen .site-header .nav-inner { height: 58px; width: calc(100% - 28px); }
+  .home-bluegreen .site-header .brand { font-size: 20px; }
+  .home-bluegreen .site-header .nav-actions { gap: 16px; }
+  .home-bluegreen .site-header .nav-actions .button-outline { min-height: 36px; font-size: 11px; padding-inline: 14px; }
+  .home-bluegreen .site-header .mobile-nav { background: white; border-radius: 0 0 24px 24px; border-color: var(--line); max-height: calc(100svh - 95px); overflow-y: auto; color: #214650; padding-bottom: 20px; }
+  .home-bluegreen .mobile-nav :is(a,summary) { color: #214650; }
+  .home-bluegreen .container { width: calc(100% - 40px); }
+  .home-content { margin: 16px 12px 0; border-radius: 12px 12px 0 0; }
+  .home-bluegreen .section { padding: 64px 0; }
+  .overview-grid { grid-template-columns: 1fr; gap: 28px; }
+  .home-bluegreen .overview-heading { text-align: center; }
+  .home-bluegreen .overview-heading h2 { font-size: clamp(25px,4.5vw,36px); }
+  .overview-world { height: 300px; width: min(100%,520px); margin: auto; }
+  .home-bluegreen .stats { margin-top: 42px; gap: 24px 0; grid-template-columns: repeat(2,1fr); }
+  .home-bluegreen .stats > div { padding: 0 20px; text-align: center; }
+  .home-bluegreen .stats > div:first-child { padding-left: 20px; }
+  .home-bluegreen .stats > div:nth-child(2) { border-right: 0; }
+  .home-bluegreen .stats strong { font-size: 34px; }
+  .home-bluegreen .section-head { align-items: start; gap: 20px; flex-direction: column; }
+  .home-bluegreen .market-panel { grid-template-columns: 1fr; padding: 26px 16px 16px; }
+  .home-bluegreen .market-tab { padding: 14px 8px; min-height: 72px; display: block; text-align: center; }
+  .home-bluegreen .market-tab strong { justify-content: center; font-size: 14px; gap: 5px; }
+  .home-bluegreen .market-tab small { font-size: 7px; display: block; }
+  .home-bluegreen .market-tab i { display: none; }
+  .home-bluegreen .market-panel-visual > .representative-label { margin-top: 20px; }
+  .home-bluegreen .instrument-groups { border-left: 0; padding: 0; margin-top: 24px; }
+  .home-bluegreen .instrument-list { max-height: 260px; }
+  .home-bluegreen .platform-grid { grid-template-columns: 1fr; gap: 42px; }
+  .home-bluegreen .platform-visual { width: min(100%,500px); margin: auto; height: 540px; }
+  .home-bluegreen .platform-back-screen { left: 8%; }
+  .home-bluegreen .platform-float { left: 6px; }
+  .home-bluegreen .trust-section .section-head { min-height: auto; padding-right: 150px; margin-bottom: 34px; }
+  .trust-art { width: 160px; height: 150px; top: -20px; right: -10px; }
+  .home-bluegreen .trust-section h2 { font-size: 28px; }
+  .home-bluegreen .trust-grid { grid-template-columns: 1fr; padding: 8px 26px; }
+  .home-bluegreen .trust-item { padding: 24px 0; border: 0; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 100px 1fr; column-gap: 22px; }
+  .home-bluegreen .trust-item:last-child { border-bottom: 0; }
+  .home-bluegreen .trust-diagram { grid-row: 1/3; height: 120px; margin: auto; width: 100px; }
+  .home-bluegreen .trust-diagram > span { display: none; }
+  .home-bluegreen .trust-item h3 { font-size: 17px; margin-top: 8px; }
+  .home-bluegreen .funding-grid { grid-template-columns: 1fr; gap: 32px; }
+  .funding-art { height: 180px; margin: 10px auto -10px; }
+  .home-bluegreen .funding-details { padding: 26px; }
+  .home-bluegreen .rewards-inner { width: calc(100% - 40px); padding: 32px; display: block; }
+  .home-bluegreen .rewards-inner h2 { font-size: 32px; margin: 20px 0; }
+  .home-bluegreen .reward-art { position: relative; width: 100%; height: 220px; margin: 15px 0 -25px; }
+  .home-bluegreen .rewards-inner .actions { flex-wrap: wrap; }
+  .home-bluegreen .award-grid { grid-template-columns: repeat(3,1fr); gap: 26px 0; padding: 25px 0; }
+  .home-bluegreen .award-grid > div:nth-child(3) { border-right: 0; }
+  .home-bluegreen .award-grid img { height: 85px; max-width: 110px; }
+  .home-bluegreen .media-line { gap: 22px; flex-wrap: wrap; justify-content: center; }
+  .home-bluegreen .media-line p { width: 100%; text-align: center; }
+  .home-bluegreen .media-line img { height: 20px; max-width: 100px; }
+  .home-bluegreen .faq-grid { grid-template-columns: 1fr; gap: 30px; }
+  .home-bluegreen .faq-list { padding: 5px 20px; }
+  .home-bluegreen .final-cta { margin: 20px; padding: 10px; }
+  .home-bluegreen .final-inner { padding: 35px 25px; display: block; }
+  .home-bluegreen .final-inner > div:last-child { margin-top: 28px; }
+  .home-bluegreen .final-inner h2 { font-size: 32px; }
+  .home-bluegreen .site-footer { margin: 0 12px 12px; padding-top: 40px; }
+  .home-bluegreen .footer-top { flex-wrap: wrap; gap: 18px; }
+  .home-bluegreen .footer-links { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 28px; }
+  .home-bluegreen .foot-dl { grid-column: 1/-1; }
+  .home-bluegreen .legal-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media (max-width: 420px) {
+  .home-bluegreen .container { width: calc(100% - 32px); }
+  .home-bluegreen .site-header .brand { font-size: 18px; gap: 6px; }
+  .home-bluegreen .site-header .brand-s-logo { width: 23px; height: 23px; }
+  .home-bluegreen .site-header .nav-actions { gap: 10px; }
+  .home-bluegreen .overview-heading h2 { font-size: 25px; }
+  .home-bluegreen .overview-heading p { font-size: 13px; }
+  .overview-world { height: 245px; }
+  .map-chip { font-size: 10px; gap: 6px; padding: 7px 10px; }
+  .map-chip i { width: 25px; height: 25px; font-size: 12px; }
+  .map-chip--two { right: 0; }
+  .home-bluegreen .panel-title h3 { font-size: 20px; }
+  .home-bluegreen .large-symbol { width: 43px; height: 43px; font-size: 24px; border-radius: 8px; }
+  .home-bluegreen .market-tab strong { font-size: 11px; gap: 3px; }
+  .home-bluegreen .market-tab strong em { font-size: 8px; min-width: 12px; padding: 1px 3px; }
+  .home-bluegreen .market-tab small { font-size: 6px; }
+  .home-bluegreen .platform-visual { height: 500px; }
+  .home-bluegreen .phone { transform: rotate(6deg) translate(15px,0) scale(.88); }
+  .home-bluegreen .platform-back-screen { width: 155px; height: 335px; top: 65px; left: 2%; }
+  .home-bluegreen .trust-section .section-head { padding-right: 100px; }
+  .home-bluegreen .trust-section h2 { font-size: 25px; }
+  .trust-art { width: 120px; height: 130px; right: -15px; }
+  .home-bluegreen .trust-grid { padding-inline: 18px; }
+  .home-bluegreen .trust-item { grid-template-columns: 70px 1fr; gap: 15px; }
+  .home-bluegreen .trust-diagram { width: 70px; }
+  .home-bluegreen .rewards-inner { width: calc(100% - 32px); padding: 26px; }
+  .home-bluegreen .rewards-inner h2 { font-size: 29px; }
+  .home-bluegreen .award-grid img { height: 74px; max-width: 88px; }
+  .home-bluegreen .final-cta { margin-inline: 16px; }
+  .home-bluegreen .final-inner { padding: 28px 20px; }
+  .home-bluegreen .final-inner h2 { font-size: 28px; }
+  .home-bluegreen .legal-grid { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .home-bluegreen *, .home-bluegreen *::before, .home-bluegreen *::after { animation: none !important; transition: none !important; }
+}

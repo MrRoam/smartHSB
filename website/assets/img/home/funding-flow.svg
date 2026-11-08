@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="420" viewBox="0 0 600 420" fill="none" role="img" aria-labelledby="title">
+  <title id="title">蓝绿节点连接独立资金存管的几何示意</title>
+  <defs>
+    <radialGradient id="a"><stop stop-color="#6DEFC6" stop-opacity=".7"/><stop offset="1" stop-color="#6DEFC6" stop-opacity="0"/></radialGradient>
+    <radialGradient id="b"><stop stop-color="#72B4FF" stop-opacity=".55"/><stop offset="1" stop-color="#72B4FF" stop-opacity="0"/></radialGradient>
+    <linearGradient id="base" x1="149" y1="190" x2="422" y2="333" gradientUnits="userSpaceOnUse"><stop stop-color="#F9FFFF"/><stop offset="1" stop-color="#E2F1F6"/></linearGradient>
+    <linearGradient id="side" x1="193" y1="285" x2="423" y2="310" gradientUnits="userSpaceOnUse"><stop stop-color="#B8D9EA"/><stop offset="1" stop-color="#81DCCA"/></linearGradient>
+    <linearGradient id="roof" x1="230" y1="120" x2="379" y2="225" gradientUnits="userSpaceOnUse"><stop stop-color="#FFF"/><stop offset="1" stop-color="#EDF9FB"/></linearGradient>
+    <linearGradient id="green" x1="350" y1="170" x2="395" y2="300" gradientUnits="userSpaceOnUse"><stop stop-color="#61EFC1"/><stop offset="1" stop-color="#04A878"/></linearGradient>
+    <linearGradient id="blue" x1="155" y1="220" x2="175" y2="295" gradientUnits="userSpaceOnUse"><stop stop-color="#8AC8FF"/><stop offset="1" stop-color="#2F6FEF"/></linearGradient>
+    <filter id="shadow" x="90" y="90" width="430" height="320" filterUnits="userSpaceOnUse"><feGaussianBlur stdDeviation="13"/></filter>
+  </defs>
+  <ellipse cx="372" cy="207" rx="211" ry="175" fill="url(#a)"/>
+  <ellipse cx="191" cy="256" rx="180" ry="137" fill="url(#b)"/>
+  <path d="M72 240 300 112 533 248 303 378Z" stroke="#94C7D2" stroke-opacity=".3"/>
+  <path d="m100 256 203 117 202-116M300 113v265" stroke="#94C7D2" stroke-opacity=".2"/>
+  <path d="m88 258 104-60 109 63 118-67 97 56" stroke="#FFF" stroke-width="8" stroke-linecap="round"/>
+  <path d="m88 258 104-60 109 63 118-67 97 56" stroke="#55B9C3" stroke-width="2" stroke-linecap="round"/>
+  <ellipse cx="310" cy="309" rx="142" ry="34" fill="#176B91" opacity=".15" filter="url(#shadow)"/>
+  <path d="m169 263 130-75 132 76v27l-131 76-131-76Z" fill="url(#side)"/>
+  <path d="m169 263 130-75 132 76-131 76Z" fill="url(#base)"/>
+  <path d="m195 260 105-60 107 61-106 62Z" fill="#FFF"/>
+  <path d="m215 254 84-48 88 50v13l-87 50-85-50Z" fill="#D6E6EB"/>
+  <path d="m215 254 84-48 88 50-87 50Z" fill="#F7FFFF"/>
+  <path d="m237 190 17-10v70l-17 10Z" fill="#B7D7E3"/>
+  <path d="m220 180 17 10v70l-17-10Z" fill="#F9FFFF"/>
+  <path d="m220 180 17-10 17 10-17 10Z" fill="#FFF"/>
+  <path d="m272 210 17-10v70l-17 10Z" fill="#B7D7E3"/>
+  <path d="m255 200 17 10v70l-17-10Z" fill="#F9FFFF"/>
+  <path d="m255 200 17-10 17 10-17 10Z" fill="#FFF"/>
+  <path d="m307 230 17-10v70l-17 10Z" fill="#A7CFDD"/>
+  <path d="m290 220 17 10v70l-17-10Z" fill="#F9FFFF"/>
+  <path d="m290 220 17-10 17 10-17 10Z" fill="#FFF"/>
+  <path d="m342 210 17-10v70l-17 10Z" fill="#A7CFDD"/>
+  <path d="m325 200 17 10v70l-17-10Z" fill="#E9F8FA"/>
+  <path d="m325 200 17-10 17 10-17 10Z" fill="#FFF"/>
+  <path d="m377 190 17-10v70l-17 10Z" fill="#91C7D3"/>
+  <path d="m360 180 17 10v70l-17-10Z" fill="#E9F8FA"/>
+  <path d="m360 180 17-10 17 10-17 10Z" fill="#FFF"/>
+  <path d="m206 170 91-69 105 70v17l-91 53-105-61Z" fill="#BDDFE7"/>
+  <path d="m206 170 91-69 105 70-91 53Z" fill="url(#roof)"/>
+  <path d="m230 170 67-49 79 50-65 38Z" fill="#E1F4F2"/>
+  <path d="m298 142 15 9v25l-15-9Z" fill="#34BC97"/>
+  <path d="m287 151 15 9 15-9-15-8Z" fill="#6DE8BB"/>
+  <ellipse cx="88" cy="259" rx="21" ry="12" fill="#1B6791" opacity=".12"/>
+  <path d="M69 242v14c0 14 38 14 38 0v-14Z" fill="#3778DB"/>
+  <ellipse cx="88" cy="242" rx="19" ry="11" fill="url(#blue)"/>
+  <ellipse cx="88" cy="242" rx="8" ry="4.5" fill="#E8F6FF"/>
+  <ellipse cx="516" cy="250" rx="21" ry="12" fill="#087F71" opacity=".12"/>
+  <path d="M497 234v14c0 14 38 14 38 0v-14Z" fill="#00A574"/>
+  <ellipse cx="516" cy="234" rx="19" ry="11" fill="#6FEBC1"/>
+  <ellipse cx="516" cy="234" rx="8" ry="4.5" fill="#E7FFF7"/>
+  <circle cx="158" cy="218" r="4" fill="#3D9DE9"/>
+  <circle cx="457" cy="216" r="4" fill="#1CB98B"/>
+  <path d="m427 113 7-4 7 4v8l-7 4-7-4Z" fill="#75DEC3"/>
+  <path d="m152 144 5-3 5 3v6l-5 3-5-3Z" fill="#99C9F9"/>
+</svg>
