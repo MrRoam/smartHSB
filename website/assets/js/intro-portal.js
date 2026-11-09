@@ -216,9 +216,9 @@
 
     if (!videoEl || videoEl.readyState < 2 || videoFailed) {
       var fallback = c.createLinearGradient(0, 0, 0, height);
-      fallback.addColorStop(0, '#0d66f8');
-      fallback.addColorStop(0.48, '#0652e8');
-      fallback.addColorStop(1, '#042d8c');
+      fallback.addColorStop(0, '#106ca2');
+      fallback.addColorStop(0.48, '#008f99');
+      fallback.addColorStop(1, '#083b4c');
       c.fillStyle = fallback;
       c.fillRect(0, 0, width, height);
       return;
@@ -334,19 +334,15 @@
       }
     }
 
-    // 8. Seamless Vibrant Brand Royal Blue Atmospheric Color Grading
-    // Calibrated to match the authentic SmartHSB icon primary blue palette:
-    // Luminous sky: #0d66f8 -> Vibrant primary electric blue: #0652e8 -> Deep sapphire ground: #042d8c
-    // Over black (#000000), 'screen' composite renders the exact calibrated blue tone
-    // across the entire width and height with zero lateral discrepancies.
-    // The doorway center remains brilliant white, and ground reflections blend naturally.
+    // 8. Blue-to-teal brand grading. Only the palette changes; portal geometry,
+    // white doorway, reflections and the original animation remain intact.
     auxCtx.globalCompositeOperation = 'source-over';
     auxCtx.clearRect(0, 0, width, height);
 
     var baseBlueGrad = auxCtx.createLinearGradient(0, 0, 0, height);
-    baseBlueGrad.addColorStop(0, '#0d66f8');      // Luminous royal blue (top sky)
-    baseBlueGrad.addColorStop(0.48, '#0652e8');   // Vibrant primary brand blue (center field)
-    baseBlueGrad.addColorStop(1, '#042d8c');      // Deep sapphire foundation (ground)
+    baseBlueGrad.addColorStop(0, '#106ca2');      // Blue sky
+    baseBlueGrad.addColorStop(0.48, '#008f99');   // Teal center field
+    baseBlueGrad.addColorStop(1, '#083b4c');      // Deep blue-green ground
     auxCtx.fillStyle = baseBlueGrad;
     auxCtx.fillRect(0, 0, width, height);
 
@@ -358,9 +354,9 @@
       vy(0.56),
       Math.max(width, height) * 0.65
     );
-    portalBloom.addColorStop(0, 'rgba(147, 215, 255, 0.28)'); // Luminous cyan-white portal glow
-    portalBloom.addColorStop(0.42, 'rgba(56, 189, 248, 0.16)');
-    portalBloom.addColorStop(1, 'rgba(6, 82, 232, 0)');
+    portalBloom.addColorStop(0, 'rgba(147, 244, 223, 0.28)'); // Luminous teal-white portal glow
+    portalBloom.addColorStop(0.42, 'rgba(56, 224, 195, 0.16)');
+    portalBloom.addColorStop(1, 'rgba(0, 143, 153, 0)');
     auxCtx.fillStyle = portalBloom;
     auxCtx.fillRect(0, 0, width, height);
 
@@ -375,9 +371,9 @@
       c.save();
       c.globalCompositeOperation = 'color';
       var groundHueGrad = c.createLinearGradient(0, groundY, 0, height);
-      groundHueGrad.addColorStop(0, 'rgba(6, 82, 232, 0)');
-      groundHueGrad.addColorStop(0.25, 'rgba(6, 82, 232, 0.88)');
-      groundHueGrad.addColorStop(1, 'rgba(4, 45, 140, 1.0)');
+      groundHueGrad.addColorStop(0, 'rgba(0, 143, 153, 0)');
+      groundHueGrad.addColorStop(0.25, 'rgba(0, 143, 153, 0.88)');
+      groundHueGrad.addColorStop(1, 'rgba(8, 59, 76, 1.0)');
       c.fillStyle = groundHueGrad;
       c.fillRect(0, groundY, width, height - groundY);
       c.restore();
