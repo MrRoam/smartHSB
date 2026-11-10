@@ -442,7 +442,9 @@ body.home-minpilot { background: #fff; color: var(--ink); font-size: 15px; }
   .home-minpilot .footer-bottom > div { gap: 22px; flex-wrap: wrap; }
 }
 @media (max-width: 360px) {
-  .home-minpilot .site-header .nav-actions .button-outline { padding: 0 12px; gap: 12px; }
+  .home-minpilot .site-header .brand { font-size: 20px; gap: 6px; flex-shrink: 0; }
+  .home-minpilot .site-header .brand-s-logo { flex-shrink: 0; }
+  .home-minpilot .site-header .nav-actions .button-outline { padding: 0 10px; gap: 8px; }
   .home-minpilot .market-tab strong em { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
