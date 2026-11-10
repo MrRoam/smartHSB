@@ -10,7 +10,7 @@
  * 5. Complete elimination of artificial shadows, rectangular cutouts, and seamlines.
  * 6. Top menu clearance: doorway positioned comfortably below header navigation across all screen resolutions.
  * 7. Bottom template logo row ("logoipsum") fully masked and eliminated.
- * 8. Edge-to-edge seamless cosmic blue gradient with zero lateral color discrepancy.
+ * 8. Seamless charcoal stage, lit only by the original doorway and its atmosphere.
  */
 (function () {
   'use strict';
@@ -204,8 +204,8 @@
 
   /**
    * Draws the intelligence-layer video frame with full atmospheric continuity:
-   * - 100% seamless cosmic sky: base is filled with pure #000000 and feathered to #000000,
-   *   then dyed with screen-blended #081b44 -> #153b86 so lateral bands are physically impossible.
+   * - Black video edges and masks are lifted uniformly to #1B1B1B with screen blending.
+   * - The original doorway supplies the halo, figure lighting and moving mist.
    * - Natural ground reflection with zero rectangular cutouts.
    * - Door top positioned safely below the header menu across all screens.
    * - Bottom logoipsum row cleanly masked out.
@@ -215,11 +215,7 @@
     if (!c || !auxCtx) return;
 
     if (!videoEl || videoEl.readyState < 2 || videoFailed) {
-      var fallback = c.createLinearGradient(0, 0, 0, height);
-      fallback.addColorStop(0, '#106ca2');
-      fallback.addColorStop(0.48, '#008f99');
-      fallback.addColorStop(1, '#083b4c');
-      c.fillStyle = fallback;
+      c.fillStyle = '#1b1b1b';
       c.fillRect(0, 0, width, height);
       return;
     }
@@ -334,50 +330,13 @@
       }
     }
 
-    // 8. Blue-to-teal brand grading. Only the palette changes; portal geometry,
-    // white doorway, reflections and the original animation remain intact.
-    auxCtx.globalCompositeOperation = 'source-over';
-    auxCtx.clearRect(0, 0, width, height);
-
-    var baseBlueGrad = auxCtx.createLinearGradient(0, 0, 0, height);
-    baseBlueGrad.addColorStop(0, '#106ca2');      // Blue sky
-    baseBlueGrad.addColorStop(0.48, '#008f99');   // Teal center field
-    baseBlueGrad.addColorStop(1, '#083b4c');      // Deep blue-green ground
-    auxCtx.fillStyle = baseBlueGrad;
-    auxCtx.fillRect(0, 0, width, height);
-
-    var portalBloom = auxCtx.createRadialGradient(
-      width * 0.5,
-      vy(0.56),
-      20,
-      width * 0.5,
-      vy(0.56),
-      Math.max(width, height) * 0.65
-    );
-    portalBloom.addColorStop(0, 'rgba(147, 244, 223, 0.28)'); // Luminous teal-white portal glow
-    portalBloom.addColorStop(0.42, 'rgba(56, 224, 195, 0.16)');
-    portalBloom.addColorStop(1, 'rgba(0, 143, 153, 0)');
-    auxCtx.fillStyle = portalBloom;
-    auxCtx.fillRect(0, 0, width, height);
-
+    // 8. Lift black to the charcoal base without dimming the doorway or mist.
+    // Bright areas come from the footage; no full-stage colored glow is added.
     c.save();
     c.globalCompositeOperation = 'screen';
-    c.drawImage(auxCanvas, 0, 0, width, height);
+    c.fillStyle = '#1b1b1b';
+    c.fillRect(0, 0, width, height);
     c.restore();
-
-    // 9. Ground plane tone unity
-    var groundY = vy(0.912);
-    if (groundY < height) {
-      c.save();
-      c.globalCompositeOperation = 'color';
-      var groundHueGrad = c.createLinearGradient(0, groundY, 0, height);
-      groundHueGrad.addColorStop(0, 'rgba(0, 143, 153, 0)');
-      groundHueGrad.addColorStop(0.25, 'rgba(0, 143, 153, 0.88)');
-      groundHueGrad.addColorStop(1, 'rgba(8, 59, 76, 1.0)');
-      c.fillStyle = groundHueGrad;
-      c.fillRect(0, groundY, width, height - groundY);
-      c.restore();
-    }
   }
 
   function render(now) {

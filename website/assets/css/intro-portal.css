@@ -12,7 +12,7 @@
   width: 100%;
   min-height: 100vh;
   min-height: 100dvh;
-  background: linear-gradient(160deg, #106ca2 0%, #008f99 50%, #083b4c 100%);
+  background: #1b1b1b;
   color: #f8fafc;
   font-family: Inter, Suisse, -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   display: flex;

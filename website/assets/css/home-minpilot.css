@@ -1,15 +1,17 @@
 /* SmartHSB / Minpilot study. This file owns the homepage below the portal.
    Portal footage, composition, typography and animation live in intro-portal.css. */
 :root {
-  --navy: #142e35;
-  --ink: #142e35;
-  --muted: #52686e;
+  --navy: #173447;
+  --ink: #173447;
+  --muted: #4d6578;
   --canvas: #fff;
-  --line: #dce8e8;
-  --green: #00865f;
-  --green-dark: #006b4e;
-  --blue: #245ee8;
-  --mint: #d4f9e6;
+  --line: #d6e4ee;
+  --green: #147b96;
+  --green-dark: #125f77;
+  --blue: #2462b8;
+  --mint: #e0f4ee;
+  --surface-blue: #edf6ff;
+  --surface-mint: #e6f6f1;
   --ease: cubic-bezier(.16, 1, .3, 1);
 }
 html { background: #fff; scroll-padding-top: 110px; }
@@ -41,10 +43,11 @@ body.home-minpilot { background: #fff; color: var(--ink); font-size: 15px; }
 .home-minpilot .site-header .brand-s-logo { width: 29px; height: 29px; border-radius: 0; object-fit: contain; }
 .home-minpilot .site-header .brand { gap: 10px; }
 .home-minpilot .site-header:not(.sticky) { background: transparent !important; box-shadow: none !important; }
-.home-minpilot .site-header:not(.sticky) .brand-name__accent { background: none; color: #00b881; filter: none; }
+.home-minpilot .site-header:not(.sticky) .brand-name__accent { background: none; color: #65d1c4; filter: none; }
 .home-minpilot .site-header:not(.sticky) :is(.nav-trigger, .nav-home, .language-placeholder) { color: #fff; }
-.home-minpilot .site-header:not(.sticky) .nav-home[aria-current=page] { color: #baffdf; }
-.home-minpilot .site-header .nav-actions .button-outline { min-height: 44px; padding: 0 22px; color: white; background: #00865f; border: 0; }
+.home-minpilot .site-header:not(.sticky) :is(a, button):focus-visible { outline-color: #b9e8ff; }
+.home-minpilot .site-header:not(.sticky) .nav-home[aria-current=page] { color: #c2e9ff; }
+.home-minpilot .site-header .nav-actions .button-outline { min-height: 44px; padding: 0 22px; color: white; background: var(--green); border: 0; }
 .home-minpilot .site-header:not(.sticky) .nav-actions .button-outline { background: var(--green); }
 .home-minpilot .site-header.sticky { top: 0; color: var(--ink); background: #fff; box-shadow: 0 1px 0 var(--line); }
 .home-minpilot .site-header.sticky :is(.nav-trigger, .nav-home, .language-placeholder) { color: var(--ink); }
@@ -52,17 +55,17 @@ body.home-minpilot { background: #fff; color: var(--ink); font-size: 15px; }
 .home-minpilot .site-header .dropdown { background: #fff; color: var(--ink); border-radius: 12px; box-shadow: 0 12px 32px #142e3518; border: 0; }
 .home-minpilot .site-header:not(.sticky) .dropdown { background: #fff; backdrop-filter: none; }
 .home-minpilot .site-header .dropdown a { color: var(--ink); }
-.home-minpilot .site-header .dropdown a:hover { color: var(--green-dark); background: #ecfaf3; }
+.home-minpilot .site-header .dropdown a:hover { color: var(--green-dark); background: var(--surface-blue); }
 
 /* A quiet, wide opening after the immersive portal. */
-.home-minpilot .overview { padding: 106px 0 0; background: #fff; }
+.home-minpilot .overview { padding: 106px 0 0; background: linear-gradient(145deg, #e8f3ff 0%, #f5faff 55%, #edf8f5 100%); }
 .overview-intro { text-align: center; max-width: 760px; margin: 0 auto; }
 .overview-intro > p { margin: 22px 0 12px; font-size: 16px; line-height: 1.9; }
 .home-minpilot .overview-world { position: relative; height: 410px; max-width: 1000px; margin: 30px auto 0; }
-.map-glow { position: absolute; inset: 14% 4% 0; background: radial-gradient(ellipse at 25% 60%, #c7e9ff 0%, transparent 51%), radial-gradient(ellipse at 75% 50%, #a5f5d4 0%, transparent 57%); filter: blur(24px); }
+.map-glow { position: absolute; inset: 14% 4% 0; background: radial-gradient(ellipse at 30% 55%, #badcff 0%, transparent 58%), radial-gradient(ellipse at 78% 50%, #c4efe3 0%, transparent 48%); filter: blur(24px); }
 .world-map { position: absolute; width: 100%; height: 100%; object-fit: contain; opacity: .85; }
 .map-chip { position: absolute; display: inline-flex; gap: 11px; align-items: center; background: #fff; padding: 11px 18px 11px 11px; border-radius: 8px; box-shadow: 0 8px 24px #285a5015; color: #24484c; font-size: 13px; }
-.map-chip i { display: grid; place-items: center; width: 34px; height: 34px; background: #e6f8ef; border-radius: 50%; font: 500 16px/1 Suisse, sans-serif; color: var(--green-dark); }
+.map-chip i { display: grid; place-items: center; width: 34px; height: 34px; background: #e6f2fc; border-radius: 50%; font: 500 16px/1 Suisse, sans-serif; color: var(--green-dark); }
 .map-chip--one { left: 9%; top: 24%; transform: rotate(-5deg); }
 .map-chip--two { right: 12%; top: 12%; transform: rotate(4deg); }
 .map-chip--three { left: 28%; bottom: 14%; transform: rotate(3deg); }
@@ -76,9 +79,9 @@ body.home-minpilot { background: #fff; color: var(--ink); font-size: 15px; }
 .home-minpilot .stats p { font-size: 12px; margin-top: 7px; }
 
 /* Product as the focal point: one stage, one phone, useful context. */
-.home-minpilot .platform { background: #fff; padding: 86px 0 104px; }
+.home-minpilot .platform { background: linear-gradient(180deg, #f1f8fc, #fff 65%); padding: 86px 0 104px; }
 .home-minpilot .platform-grid { position: relative; display: grid; grid-template-columns: 1.08fr 1fr; gap: 66px; align-items: center; padding: 62px 70px 60px 36px; isolation: isolate; }
-.home-minpilot .platform-grid::before { content: ''; position: absolute; inset: 0; z-index: -1; border-radius: 16px; background: radial-gradient(ellipse at 5% 90%, #b6dfff 0%, transparent 55%), radial-gradient(ellipse at 32% 20%, #b3f5d9 0%, transparent 58%), linear-gradient(110deg, #e0f6f5, #f3fbf8 75%); }
+.home-minpilot .platform-grid::before { content: ''; position: absolute; inset: 0; z-index: -1; border-radius: 16px; background: radial-gradient(ellipse at 12% 45%, #bfdfff 0%, transparent 58%), radial-gradient(ellipse at 90% 85%, #d1f0e5 0%, transparent 48%), linear-gradient(115deg, #e2efff 0%, #edf6ff 62%, var(--surface-mint) 100%); }
 .home-minpilot .platform-grid > * { min-width: 0; }
 .home-minpilot .platform-copy { grid-column: 2; grid-row: 1; padding: 0; }
 .home-minpilot .platform-copy h2 { font-size: clamp(32px, 3.2vw, 46px); }
@@ -90,17 +93,17 @@ body.home-minpilot { background: #fff; color: var(--ink); font-size: 15px; }
 .platform-actions { display: flex; gap: 22px; align-items: center; margin-top: 34px; flex-wrap: wrap; }
 .home-minpilot .platform-visual { grid-column: 1; grid-row: 1; height: 510px; min-height: 0; display: grid; place-items: center; padding: 0; background: none; perspective: 1000px; }
 .home-minpilot .platform-visual::before { display: none; }
-.home-minpilot .orbit { position: absolute; width: 370px; height: 370px; top: 50%; left: 50%; margin: 0; border: 1px solid #328e7d28; border-radius: 50%; transform: translate(-50%, -50%); }
+.home-minpilot .orbit { position: absolute; width: 370px; height: 370px; top: 50%; left: 50%; margin: 0; border: 1px solid #3d8ca828; border-radius: 50%; transform: translate(-50%, -50%); }
 .home-minpilot .orbit-two { width: 470px; height: 470px; }
-.home-minpilot .phone { width: 256px; height: 508px; padding: 6px; border: 3px solid #729890; outline: 0; border-radius: 38px; background: #c4d9d3; box-shadow: 8px 10px 0 #60877e, 24px 32px 34px #124e4426; transform: rotate(-8deg) rotateY(9deg); animation: none; }
+.home-minpilot .phone { width: 256px; height: 508px; padding: 6px; border: 3px solid #7497ad; outline: 0; border-radius: 38px; background: #c7dbe8; box-shadow: 8px 10px 0 #5f8197, 24px 32px 34px #194b6b26; transform: rotate(-8deg) rotateY(9deg); animation: none; }
 .home-minpilot .phone-screen { border-radius: 29px; background: #fff; padding: 35px 15px 10px; }
-.home-minpilot .phone-camera { top: 12px; background: #183932; }
+.home-minpilot .phone-camera { top: 12px; background: #1b3548; }
 .home-minpilot .phone-logo { color: var(--green-dark); font-size: 15px; }
 .home-minpilot .phone-greeting { color: var(--muted); }
 .home-minpilot .phone h4 { color: var(--ink); font-size: 20px; line-height: 1.4; }
-.home-minpilot .phone-balance { border: 0; box-shadow: none; background: #e0f6e9; color: var(--ink); padding: 15px 12px; }
-.home-minpilot .phone-balance :is(small, span) { color: #315e50; }
-.home-minpilot .phone-row i { color: var(--green-dark); background: #e9f6f0; }
+.home-minpilot .phone-balance { border: 0; box-shadow: none; background: linear-gradient(120deg, #e3f0ff, #e8f7f2); color: var(--ink); padding: 15px 12px; }
+.home-minpilot .phone-balance :is(small, span) { color: #345c76; }
+.home-minpilot .phone-row i { color: var(--green-dark); background: #eaf3fb; }
 .home-minpilot .phone-row small { color: var(--muted); }
 .home-minpilot .phone-disclaimer { color: #52686e; }
 .home-minpilot .phone-nav { color: #52686e; }
@@ -112,34 +115,34 @@ body.home-minpilot { background: #fff; color: var(--ink); font-size: 15px; }
 .platform-insight { position: absolute; right: -4px; top: 25px; width: 166px; padding: 17px; background: #fff; color: var(--ink); border-radius: 10px; transform: rotate(6deg); box-shadow: 0 8px 22px #285a5015; }
 .platform-insight small { font-size: 10px; color: var(--muted); }
 .insight-bars { display: flex; align-items: end; gap: 9px; height: 65px; padding-top: 15px; }
-.insight-bars i { width: 14px; background: #00a574; height: 46%; border-radius: 2px 2px 0 0; }
-.insight-bars i:nth-child(2n) { background: #a3ebbf; }
+.insight-bars i { width: 14px; background: #4198c7; height: 46%; border-radius: 2px 2px 0 0; }
+.insight-bars i:nth-child(2n) { background: #9ddbc9; }
 .insight-bars i:nth-child(2) { height: 70%; }.insight-bars i:nth-child(3) { height: 54%; }.insight-bars i:nth-child(4) { height: 88%; }.insight-bars i:nth-child(5) { height: 72%; }.insight-bars i:nth-child(6) { height: 100%; }
 
 /* Four market tabs share a real, readable product workspace. */
 .home-minpilot .markets { padding: 40px 0 108px; background: #fff; }
 .home-minpilot .market-catalog-summary { font-size: 14px; color: var(--muted); margin-top: 18px; }
 .home-minpilot .market-catalog-summary span { margin-left: 18px; color: var(--green-dark); }
-.home-minpilot .market-explorer { display: block; padding: 0; border: 1px solid #d7e8e7; border-radius: 14px; box-shadow: none; overflow: clip; background: #fff; }
-.home-minpilot .market-selector { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; padding: 0; border: 0; border-bottom: 1px solid #d7e8e7; background: #f2faf7; }
-.home-minpilot .market-tab { padding: 24px 28px; border-radius: 0; min-height: 88px; border-right: 1px solid #d7e8e7; display: grid; grid-template-columns: 1fr auto; gap: 6px; box-shadow: none; }
+.home-minpilot .market-explorer { display: block; padding: 0; border: 1px solid var(--line); border-radius: 14px; box-shadow: none; overflow: clip; background: #fff; }
+.home-minpilot .market-selector { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; padding: 0; border: 0; border-bottom: 1px solid var(--line); background: linear-gradient(110deg, #edf6ff 0%, #f0f9f7 100%); }
+.home-minpilot .market-tab { padding: 24px 28px; border-radius: 0; min-height: 88px; border-right: 1px solid var(--line); display: grid; grid-template-columns: 1fr auto; gap: 6px; box-shadow: none; }
 .home-minpilot .market-tab:last-child { border-right: 0; }
 .home-minpilot .market-tab > span { display: none; }
-.home-minpilot .market-tab strong { grid-column: 1; grid-row: 1; font-size: 17px; color: #3e615d; display: flex; gap: 10px; align-items: center; }
-.home-minpilot .market-tab strong em { padding: 1px 6px; color: #3e615d; background: #dceee5; border-radius: 4px; font-size: 10px; }
-.home-minpilot .market-tab small { grid-column: 1; grid-row: 2; margin: 0; font: 10px/1.4 Suisse, sans-serif; color: #53736c; letter-spacing: .015em; }
-.home-minpilot .market-tab i { grid-column: 2; grid-row: 1/3; align-self: center; opacity: 1; color: #53736c; transform: none; }
+.home-minpilot .market-tab strong { grid-column: 1; grid-row: 1; font-size: 17px; color: #365d76; display: flex; gap: 10px; align-items: center; }
+.home-minpilot .market-tab strong em { padding: 1px 6px; color: #365d76; background: #dcebf7; border-radius: 4px; font-size: 10px; }
+.home-minpilot .market-tab small { grid-column: 1; grid-row: 2; margin: 0; font: 10px/1.4 Suisse, sans-serif; color: #4d6b7e; letter-spacing: .015em; }
+.home-minpilot .market-tab i { grid-column: 2; grid-row: 1/3; align-self: center; opacity: 1; color: #4d6b7e; transform: none; }
 .home-minpilot .market-tab.active { background: var(--green); }
 .home-minpilot .market-tab.active :is(strong, small, i) { color: #fff; }
-.home-minpilot .market-tab.active em { background: #ffffff26; color: #fff; }
-.home-minpilot .market-tab:not(.active):hover { background: #e1f3e9; }
+.home-minpilot .market-tab.active em { background: #e3f1f7; color: var(--green-dark); }
+.home-minpilot .market-tab:not(.active):hover { background: #dceefb; }
 .home-minpilot .market-tab:focus-visible { outline: 3px solid var(--blue); outline-offset: -5px; }
 .home-minpilot .market-tab.active:focus-visible { outline-color: #fff; }
 .home-minpilot .market-panel { display: grid; grid-template-columns: 1.2fr 1fr; gap: 0 54px; padding: 44px 40px 22px; }
 .market-panel-visual { min-width: 0; }
 .home-minpilot .panel-title h3 { font-size: 25px; color: var(--ink); }
 .home-minpilot .panel-title .section-label { font-size: 12px; color: var(--green-dark); }
-.home-minpilot .large-symbol { color: var(--green-dark); font-size: 27px; flex-shrink: 0; width: 58px; height: 58px; display: grid; place-items: center; background: #e6f7ed; border-radius: 50%; }
+.home-minpilot .large-symbol { color: var(--green-dark); font-size: 27px; flex-shrink: 0; width: 58px; height: 58px; display: grid; place-items: center; background: #e6f2fc; border-radius: 50%; }
 .home-minpilot #market-description { margin-top: 18px; font-size: 13px; }
 .home-minpilot .representative-label { color: var(--muted); font-size: 11px; margin-top: 30px; }
 .home-minpilot .market-chart { height: 190px; margin: 14px 0 0; }
@@ -148,19 +151,19 @@ body.home-minpilot { background: #fff; color: var(--ink); font-size: 15px; }
 .home-minpilot .instruments-heading { padding-bottom: 15px; margin: 0; border-color: var(--line); }
 .home-minpilot .instruments-heading h4 { font-size: 15px; }
 .home-minpilot .instruments-heading > span { color: var(--muted); font-size: 10px; }
-.home-minpilot .instrument-list { grid-template-columns: 1fr; max-height: 280px; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: #8cc9b2 transparent; }
+.home-minpilot .instrument-list { grid-template-columns: 1fr; max-height: 280px; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: #91bad4 transparent; }
 .home-minpilot .instrument-list:focus-visible { outline: 2px solid var(--blue); outline-offset: -2px; }
 .home-minpilot .instrument-row { padding: 14px 2px; border-color: #e8efed; font-variant-numeric: tabular-nums; }
 .home-minpilot .instrument-row b { font: 500 13px/1.5 Suisse, sans-serif; color: var(--ink); }
 .home-minpilot .instrument-row strong { color: var(--ink); }
 .home-minpilot .instrument-row small { color: var(--muted); font-size: 11px; }
-.home-minpilot .instrument-row span { color: var(--green-dark); }
+.home-minpilot .instrument-row span { color: #006b4e; }
 .home-minpilot .instrument-row .negative { color: #a43f51; }
 .home-minpilot .panel-bottom { grid-column: 1/-1; margin-top: 26px; border-color: var(--line); }
 .home-minpilot .panel-bottom > span { color: var(--muted); font-size: 11px; }
 
 /* Trust is one focal object and three clear, linked explanations. */
-.home-minpilot .trust-section { background: #edf7f7; padding: 90px 0; }
+.home-minpilot .trust-section { background: linear-gradient(115deg, #e2f0ff 0%, #edf6ff 60%, #e5f5ee 100%); padding: 90px 0; }
 .trust-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; }
 .trust-lead h2 { max-width: 460px; }
 .trust-proof { position: relative; display: flex; align-items: center; gap: 24px; margin-top: 35px; min-height: 200px; }
@@ -186,7 +189,7 @@ body.home-minpilot { background: #fff; color: var(--ink); font-size: 15px; }
 .home-minpilot .funding-grid > div > p { font-size: 14px; line-height: 1.9; margin-top: 25px; }
 .home-minpilot .payment-logos { display: flex; align-items: center; gap: 32px; margin: 28px 0 14px; }
 .home-minpilot .payment-logos img { height: 24px; max-width: 110px; width: auto; filter: none; opacity: 1; object-fit: contain; }
-.home-minpilot .funding-details { position: relative; background: linear-gradient(140deg, #e7f3ff, #e3f9ec); padding: 36px 38px; border-radius: 14px; }
+.home-minpilot .funding-details { position: relative; background: linear-gradient(130deg, #e3efff 0%, #edf6ff 58%, #e4f5ef 100%); padding: 36px 38px; border-radius: 14px; }
 .home-minpilot .funding-details > div { padding: 0 0 25px; margin-bottom: 25px; border-bottom: 1px solid #c5ded6; }
 .home-minpilot .funding-details > div > span { color: #315e50; font: 13px/1.5 Suisse, sans-serif; }
 .home-minpilot .funding-details h3 { font-size: 32px; color: var(--ink); margin: 12px 0; }
@@ -201,10 +204,10 @@ body.home-minpilot { background: #fff; color: var(--ink); font-size: 15px; }
 
 /* A single colour moment for the rewards, without inventing offers. */
 .home-minpilot .rewards-section { padding: 0; background: #fff; }
-.home-minpilot .rewards-inner { position: relative; width: min(1200px, calc(100% - 112px)); min-height: 385px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 0 40px; background: linear-gradient(115deg, #d4e9ff, #c2f6e5 64%, #dcffd2); border-radius: 16px; padding: 58px 60px; color: var(--ink); overflow: hidden; }
+.home-minpilot .rewards-inner { position: relative; width: min(1200px, calc(100% - 112px)); min-height: 385px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 0 40px; background: linear-gradient(115deg, #d4e7ff 0%, #e0f0ff 60%, #d7f2e7 100%); border-radius: 16px; padding: 58px 60px; color: var(--ink); overflow: hidden; }
 .home-minpilot .rewards-inner h2 { grid-column: 1; margin: 0 0 22px; font-size: clamp(32px, 3.2vw, 46px); position: relative; z-index: 1; }
 .home-minpilot .rewards-inner > div:not(.reward-art) { grid-column: 1; position: relative; z-index: 1; }
-.home-minpilot .rewards-inner p { color: #3d655f; font-size: 14px; line-height: 1.9; }
+.home-minpilot .rewards-inner p { color: #3b5f78; font-size: 14px; line-height: 1.9; }
 .home-minpilot .rewards-inner .actions { margin-top: 28px; gap: 24px; align-items: center; }
 .home-minpilot .reward-link { color: var(--green-dark); font-size: 13px; min-height: 44px; display: inline-flex; align-items: center; }
 .home-minpilot .reward-link:hover { color: var(--blue); }
@@ -234,15 +237,15 @@ body.home-minpilot { background: #fff; color: var(--ink); font-size: 15px; }
 .home-minpilot .faq-list details > div { font-size: 13px; line-height: 1.9; padding: 0 36px 25px 0; color: var(--muted); }
 .home-minpilot .faq-list details a { color: var(--green-dark); text-decoration: underline; text-underline-offset: 3px; }
 
-.home-minpilot .final-cta { position: relative; padding: 78px 0; border: 0; overflow: hidden; background: radial-gradient(ellipse at 80% 50%, #a9f0cb, transparent 55%), linear-gradient(110deg, #d3e9ff, #e5fbf2); }
+.home-minpilot .final-cta { position: relative; padding: 78px 0; border: 0; overflow: hidden; background: radial-gradient(ellipse at 85% 70%, #c5eddf, transparent 48%), linear-gradient(110deg, #cde3ff 0%, #e3f1ff 65%, #e2f5ee 100%); }
 .home-minpilot .final-inner { position: relative; display: grid; grid-template-columns: 1fr auto; gap: 46px; align-items: center; padding: 0; min-height: 170px; z-index: 1; }
 .home-minpilot .final-inner h2 { color: var(--ink); font-size: clamp(34px, 4.1vw, 58px); }
 .home-minpilot .final-inner > div:last-child { align-self: center; }
-.home-minpilot .final-inner p { color: #416961; text-align: center; font-size: 12px; margin-top: 15px; }
+.home-minpilot .final-inner p { color: #3f6078; text-align: center; font-size: 12px; margin-top: 15px; }
 .home-minpilot #footer-dots { opacity: .14; }
 
 /* The wordmark gives the footer the strong typographic finish of the reference. */
-.home-minpilot .site-footer { background: #fff; color: var(--ink); padding: 58px 0 0; }
+.home-minpilot .site-footer { background: linear-gradient(180deg, #f5faff, #fff 75%); color: var(--ink); padding: 58px 0 0; }
 .home-minpilot .footer-top { padding: 0 0 35px; border-bottom: 1px solid var(--line); }
 .home-minpilot .footer-top .brand { color: var(--ink); font-size: 25px; }
 .home-minpilot .footer-top .brand img { border-radius: 0; }
@@ -255,7 +258,7 @@ body.home-minpilot { background: #fff; color: var(--ink); font-size: 15px; }
 .home-minpilot .footer-links .foot-dl { grid-column: auto; }
 .home-minpilot .footer-links .store-btn { min-height: 0; }
 .home-minpilot .footer-links .dl-qr { box-shadow: none; border: 1px solid var(--line); color: var(--muted); border-radius: 8px; }
-.footer-wordmark { display: block; font: 500 clamp(60px, 14.4vw, 194px)/1.05 Suisse, sans-serif; color: #dbeee5; letter-spacing: -.04em; white-space: nowrap; margin: 0 0 30px; user-select: none; }
+.footer-wordmark { display: block; font: 500 clamp(60px, 14.4vw, 194px)/1.05 Suisse, sans-serif; color: #dbe9f6; letter-spacing: -.04em; white-space: nowrap; margin: 0 0 30px; user-select: none; }
 .home-minpilot .legal { border-color: var(--line); padding: 24px 0; }
 .home-minpilot .legal-title { color: #52686e; font-size: 11px; }
 .home-minpilot .legal-entity { color: #52686e; font-size: 11px; }
@@ -271,7 +274,7 @@ body.home-minpilot { background: #fff; color: var(--ink); font-size: 15px; }
 .home-minpilot .footer-bottom { flex-wrap: wrap; gap: 20px; margin-top: 30px; padding-top: 24px; border-color: var(--line); color: var(--muted); font-size: 11px; }
 .home-minpilot .footer-bottom a { color: #52686e; }
 .home-minpilot #motion-toggle { color: var(--green-dark); min-height: 44px; }
-.home-minpilot .toast { background: #143d32; color: white; border-radius: 8px; }
+.home-minpilot .toast { background: #173f57; color: white; border-radius: 8px; }
 
 @media (max-width: 1100px) {
   .home-minpilot .container { width: calc(100% - 72px); }
@@ -439,6 +442,7 @@ body.home-minpilot { background: #fff; color: var(--ink); font-size: 15px; }
   .home-minpilot .footer-bottom > div { gap: 22px; flex-wrap: wrap; }
 }
 @media (max-width: 360px) {
+  .home-minpilot .site-header .nav-actions .button-outline { padding: 0 12px; gap: 12px; }
   .home-minpilot .market-tab strong em { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
