@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="robots" content="noindex">
+  <meta name="description" content="Minpilot 原站色板、柔光渐变、布局与动效提取，以及供 SmartHSB 浅色改版使用的完整提示词。">
+  <title>Minpilot 设计规范与提示词 · SmartHSB</title>
+  <link rel="stylesheet" href="reference.css?v=20261111-1">
+  <script src="reference.js?v=20261111-1" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">跳到内容</a>
+<header class="site-bar wrap">
+  <a class="brand" href="../../" translate="no">SmartHSB · 设计研究</a>
+  <nav aria-label="报告导航"><a href="#colors">配色</a><a href="#gradients">渐变与动效</a><a href="#spec">完整规范</a><a href="#prompts">复制提示词</a></nav>
+</header>
+<main id="main" class="wrap">
+  <section class="intro" aria-labelledby="report-title">
+    <h1 id="report-title">把 Minpilot 的亮色与柔光，<br>变成可执行的设计规则。</h1>
+    <p>从实际页面、Style Guide、CSS 与动效配置提取，再转成 SmartHSB 的浅色设计提示词。原站事实和适配建议分别标明。</p>
+    <div class="actions"><a class="button primary" href="#prompts">使用完整提示词</a><a class="button" href="prompts.md" download>下载提示词 Markdown</a><a href="spec.md" download>下载完整规范</a></div>
+    <span class="date">采集：2026-11-11（北京时间） · 首页 1440px / 390px · 本轮未改 SmartHSB 首页</span>
+  </section>
+  <section class="section" id="colors" aria-labelledby="colors-title">
+    <h2 id="colors-title">浅色打底，亮色各有分工。</h2>
+    <p class="lead">荧光草绿、柠檬黄绿、薄荷青、翡翠绿与科技蓝构成核心色系。原站同时使用黑色区块；SmartHSB 按本次要求，以白、浅灰、浅薄荷和冰蓝建立整体浅色节奏。</p>
+    <div class="palette"><article class="swatch"><div class="swatch-color" style="--swatch:#97F05E" aria-hidden="true"></div><h3>荧光草绿</h3><code translate="no">#97F05E</code><small>原站 Style Guide</small></article><article class="swatch"><div class="swatch-color" style="--swatch:#BFFF37" aria-hidden="true"></div><h3>柠檬黄绿</h3><code translate="no">#BFFF37</code><small>原站 Style Guide</small></article><article class="swatch"><div class="swatch-color" style="--swatch:#5BFFC3" aria-hidden="true"></div><h3>薄荷亮青</h3><code translate="no">#5BFFC3</code><small>原站 Style Guide</small></article><article class="swatch"><div class="swatch-color" style="--swatch:#01A66B" aria-hidden="true"></div><h3>翡翠绿</h3><code translate="no">#01A66B</code><small>原站 Style Guide</small></article><article class="swatch"><div class="swatch-color" style="--swatch:#235DFE" aria-hidden="true"></div><h3>电光科技蓝</h3><code translate="no">#235DFE</code><small>原站共享 CSS</small></article><article class="swatch"><div class="swatch-color" style="--swatch:#00E5E0" aria-hidden="true"></div><h3>电光青</h3><code translate="no">#00E5E0</code><small>原站渐变 / SVG</small></article><article class="swatch"><div class="swatch-color" style="--swatch:#FFFFFF" aria-hidden="true"></div><h3>纯白</h3><code translate="no">#FFFFFF</code><small>原站 Style Guide</small></article><article class="swatch"><div class="swatch-color" style="--swatch:#F6F6F6" aria-hidden="true"></div><h3>柔白</h3><code translate="no">#F6F6F6</code><small>原站共享 CSS</small></article><article class="swatch"><div class="swatch-color" style="--swatch:#F1FFF7" aria-hidden="true"></div><h3>浅薄荷</h3><code translate="no">#F1FFF7</code><small>SmartHSB 建议</small></article><article class="swatch"><div class="swatch-color" style="--swatch:#EEF5FF" aria-hidden="true"></div><h3>冰蓝</h3><code translate="no">#EEF5FF</code><small>SmartHSB 建议</small></article><article class="swatch"><div class="swatch-color" style="--swatch:#1D1D1F" aria-hidden="true"></div><h3>深墨</h3><code translate="no">#1D1D1F</code><small>原站 Style Guide</small></article><article class="swatch"><div class="swatch-color" style="--swatch:#B7A2E3" aria-hidden="true"></div><h3>淡紫</h3><code translate="no">#B7A2E3</code><small>原站 Style Guide</small></article></div>
+  </section>
+  <section class="section" id="gradients" aria-labelledby="gradient-title">
+    <h2 id="gradient-title">先安排光的位置，再选择颜色。</h2>
+    <p class="lead">原站首屏柔光来自背景图片，其他区域还使用 CSS 渐变和多层模糊 SVG。下面是用原创 CSS 制作的效果示意，未使用原站图片。</p>
+    <div class="demo-grid">
+      <article class="demo"><div class="demo-stage product-glow"><div class="sample-card"><small>配色示意</small><strong>产品与数据</strong><div class="bars" aria-hidden="true"><i style="--bar:40%"></i><i style="--bar:64%"></i><i style="--bar:86%"></i><i style="--bar:59%"></i><i style="--bar:100%"></i><i style="--bar:78%"></i></div></div></div><h3>产品背后的多层柔光</h3><p>SmartHSB 建议配方：绿与青形成亮度中心，蓝和淡紫落在边缘，渐变消散进白色。</p></article>
+      <article class="demo"><div class="demo-stage halo-stage"><div class="halo-layer" aria-hidden="true"></div><div class="sample-card"><small>薄荷至柠檬</small><strong>浅色空间</strong><span>清晰内容浮在色光前。</span></div></div><h3>薄荷 → 柠檬光带</h3><p>配色与 .6 透明度来自原站。本缩略示意将模糊改为 45px；原站独立色层为 200px。</p></article>
+      <article class="demo"><div class="demo-stage rim-stage"><span class="rim"><a href="#prompts">查看设计提示词</a></span></div><h3>2px 纤细虹彩轮廓</h3><p>使用原站的五段色标与 2px 外壳，内部保持白色；适合少量重点按钮。</p></article>
+    </div>
+    <div class="motion-panel" id="motion-demo">
+      <div class="demo-stage motion-stage" aria-hidden="true"><div class="orbit"></div><div class="motion-card"><small>SmartHSB 建议动效</small><strong>轻浮动 · 慢旋转</strong><small>浮卡 6s 往返 / 轨道 30s</small></div></div>
+      <div><h3>动效用节奏建立层次。</h3><p>原站浮卡单程为 1.5 秒，轨道为 30 秒一圈。这里将浮卡放慢至 6 秒往返、上下各 6px，便于比较适合 SmartHSB 的克制程度。默认暂停，离屏和后台暂停。</p><button hidden class="button" id="preview-toggle" type="button" aria-pressed="false" aria-controls="motion-demo">播放动效示例</button><p class="status" id="motion-status" role="status">静态示意。启用 JavaScript 后可播放和暂停。</p></div>
+    </div>
+  </section>
+  <section class="section" id="spec" aria-labelledby="spec-title"><h2 id="spec-title">完整提取与适配规范</h2><div class="prose">
+<p>采集日期：2026-11-11（北京时间）。对象：<a href="https://minpilot.webflow.io/">Minpilot 首页</a> 与其公开 <a href="https://minpilot.webflow.io/admin/style-guide">Style Guide</a>。</p>
+<p>本报告检查了首页各区块、桌面 1440px / 手机 390px 页面、共享 CSS、Webflow 动效配置及两份柔光 SVG。<strong>“原站实测”是页面或源码中的事实；“适配建议”是为 SmartHSB 制定的新规则。</strong> 没有将参考站的素材或组件代码搬入 SmartHSB。</p>
+<h3>1. 最值得复用的设计逻辑</h3>
+<p>原站的辨识度来自四层组合：白色空间、蓝绿柔光背景、清晰的产品界面、少量高饱和亮色。大标题和产品演示先建立视觉中心，再用色块、圆角和动画组织信息。</p>
+<p>原站并非全浅色：首页的广告卡、业务构建区和页脚使用黑底。SmartHSB 按本次需求改为<strong>整体浅色</strong>，通过白、浅灰、浅薄荷和浅蓝的区块变化保留节奏；亮绿、青和蓝作为明确的视觉锚点。</p>
+<p>需要一起复用的关系：</p>
+<ul>
+<li>浅底承载信息，亮色引导行动；高饱和颜色不铺满全文。</li>
+<li>渐变集中在产品背后、区块边缘和局部轮廓，正文区域保持平静。</li>
+<li>真实界面、手机、图表和数据卡占据主要图像位置。</li>
+<li>大小不同的模块交替出现，避免整页排列相同卡片。</li>
+<li>动画分为入场、持续装饰、交互反馈，各自有明确用途。</li>
+</ul>
+<h3>2. 原站颜色与建议用途</h3>
+<p>下列色值均有原站依据，但“SmartHSB 用途”是适配建议。Style Guide 未列出的颜色另注明来源，避免把共享 CSS 变量误当作首页所有像素的颜色。</p>
+<div aria-label="规范数据表 1，可横向滚动" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th scope="col">颜色角色</th>
+<th scope="col">原站色值</th>
+<th scope="col">原站依据</th>
+<th scope="col">SmartHSB 用途（建议）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>纯白</td>
+<td><code>#FFFFFF</code></td>
+<td>Style Guide / body</td>
+<td>页面主底、内容卡、表格</td>
+</tr>
+<tr>
+<td>柔白</td>
+<td><code>#F6F6F6</code></td>
+<td>CSS：soft-white</td>
+<td>大区块浅灰底</td>
+</tr>
+<tr>
+<td>奶油米白</td>
+<td><code>#F5F3EB</code></td>
+<td>Style Guide</td>
+<td>少量暖色过渡，不取代蓝绿方向</td>
+</tr>
+<tr>
+<td>荧光草绿</td>
+<td><code>#97F05E</code></td>
+<td>Style Guide</td>
+<td>高亮图表、图形、主行动局部</td>
+</tr>
+<tr>
+<td>柠檬黄绿</td>
+<td><code>#BFFF37</code></td>
+<td>Style Guide：lemon-lime</td>
+<td>关键按钮、选中态、少量亮点</td>
+</tr>
+<tr>
+<td>薄荷亮青</td>
+<td><code>#5BFFC3</code></td>
+<td>Style Guide</td>
+<td>辅助高亮、柔光色源、数据点</td>
+</tr>
+<tr>
+<td>翡翠绿</td>
+<td><code>#01A66B</code></td>
+<td>Style Guide</td>
+<td>品牌图形、强调块；文字需检查对比度</td>
+</tr>
+<tr>
+<td>深翡翠绿</td>
+<td><code>#006C45</code></td>
+<td>共享 CSS：deep-teal-green</td>
+<td>浅色背景上的文字链接和深色标签</td>
+</tr>
+<tr>
+<td>电光科技蓝</td>
+<td><code>#235DFE</code></td>
+<td>共享 CSS：blue</td>
+<td>功能选中态、图表第二序列、焦点</td>
+</tr>
+<tr>
+<td>高亮蓝</td>
+<td><code>#1326FD</code></td>
+<td>共享 CSS：vivid-blue</td>
+<td>极少量图形强调，不与主蓝竞争</td>
+</tr>
+<tr>
+<td>电光青</td>
+<td><code>#00E5E0</code></td>
+<td>卡片渐变 / 柔光 SVG</td>
+<td>局部光晕和渐变终点</td>
+</tr>
+<tr>
+<td>浅薄荷光</td>
+<td><code>#BCFFF4</code></td>
+<td>integrations-color-shape</td>
+<td>大面积柔光的起点</td>
+</tr>
+<tr>
+<td>浅柠檬光</td>
+<td><code>#DDFF90</code></td>
+<td>integrations-color-shape</td>
+<td>大面积柔光的终点</td>
+</tr>
+<tr>
+<td>深墨色</td>
+<td><code>#1D1D1F</code></td>
+<td>Style Guide</td>
+<td>大标题、正文、亮色按钮文字</td>
+</tr>
+<tr>
+<td>正文灰</td>
+<td><code>#606062</code></td>
+<td>Style Guide</td>
+<td>正文、辅助解释</td>
+</tr>
+<tr>
+<td>冷灰</td>
+<td><code>#76767C</code></td>
+<td>Style Guide</td>
+<td>次要信息，渐变底上需加深</td>
+</tr>
+<tr>
+<td>淡紫</td>
+<td><code>#B7A2E3</code></td>
+<td>Style Guide</td>
+<td>柔光中的少量补色</td>
+</tr>
+<tr>
+<td>鲜紫</td>
+<td><code>#A713FD</code></td>
+<td>Style Guide</td>
+<td>可选的小面积补色</td>
+</tr>
+<tr>
+<td>亮橙</td>
+<td><code>#F36600</code></td>
+<td>Style Guide</td>
+<td>少量图表或图形补色，避免泛化为主色</td>
+</tr>
+</tbody>
+</table></div>
+<p>你提到的“柠檬亮青”可拆为两类：<code>#BFFF37</code> 是偏黄的亮绿，<code>#5BFFC3</code> / <code>#00E5E0</code> 是偏青的亮色。分别分配角色，比混成一个名称更容易稳定复现。</p>
+<h4>SmartHSB 的浅色配色规则（建议）</h4>
+<ul>
+<li>以约 <strong>75% 白/柔白 + 15% 浅蓝/浅薄荷 + 8% 绿/青强调 + 2% 蓝及其他补色</strong> 为起点。这是设计面积分配建议，不是原站像素统计。</li>
+<li>每个区块确定一个主强调色，最多加一个辅助色。全站保留完整色系，单个模块控制颜色数量。</li>
+<li>新增浅底令牌：浅薄荷 <code>#F1FFF7</code>、冰蓝 <code>#EEF5FF</code>、柔和边线 <code>#DCE7E1</code>。这三个值属于本项目建议。</li>
+<li>亮绿、柠檬绿、薄荷青按钮使用深墨色文字；蓝色按钮可使用白字。不要默认在翡翠绿上使用小号白字。</li>
+<li>渐变和光晕不承担信息状态；涨跌、选中、错误等状态同时使用文字或图形标识。</li>
+<li>普通文字对比度至少 4.5:1，大文字至少 3:1；在实际渐变最不利的位置测量。这里是交付要求，不是对原站的合规结论。</li>
+</ul>
+<h3>3. 渐变的真实做法</h3>
+<h4>3.1 首屏：背景图中的柔光，而非实时流体动画</h4>
+<p><strong>原站实测：</strong> <code>.home-hero-area</code> 通过 WebP 背景图承载首屏的蓝、绿、青和淡紫柔光。不能把截图中柔和的颜色变化直接解释为 CSS 流体动画。</p>
+<p><strong>视觉规则：</strong> 大色域、低清晰度边界、色光相互叠加，外围向白色消散；亮度中心靠近产品，主文案附近留出相对安静的浅色面。</p>
+<p><strong>适配建议：</strong> 用原创的多层径向渐变重建这种空间关系，默认静态。下面的角度、位置、透明度和色标是建议配方，不是原站首屏 CSS。</p>
+<pre aria-label="CSS 配方 1，可横向滚动" role="region" tabindex="0"><code class="language-css">.product-glow {
+  background:
+    radial-gradient(ellipse at 78% 22%, #BFFF3766 0%, transparent 48%),
+    radial-gradient(ellipse at 52% 45%, #5BFFC366 0%, transparent 48%),
+    radial-gradient(ellipse at 84% 78%, #235DFE26 0%, transparent 52%),
+    radial-gradient(ellipse at 34% 80%, #B7A2E329 0%, transparent 46%),
+    #FFFFFF;
+}
+</code></pre>
+<h4>3.2 薄荷至柠檬的模糊色层</h4>
+<p><strong>原站实测：</strong> <code>.integrations-color-shape</code> 使用横向渐变 <code>#BCFFF4 → #DDFF90</code>，<code>opacity: .6</code>，<code>filter: blur(200px)</code>；桌面高度为 465px。原站还使用柔光 SVG：多个不同色块叠放，<code>feGaussianBlur</code> 的 <code>stdDeviation</code> 为 66.6667 / 100，单位属于 SVG 坐标系，不能直接等同所有屏幕上的 CSS 像素。</p>
+<pre aria-label="CSS 配方 2，可横向滚动" role="region" tabindex="0"><code class="language-css">/* 原站关键参数的简写；不包含原站完整布局 */
+.mint-lime-halo {
+  background: linear-gradient(90deg, #BCFFF4, #DDFF90);
+  opacity: .6;
+  filter: blur(200px);
+}
+</code></pre>
+<p><strong>适配建议：</strong> 装饰色层放在产品后方，用独立层限制范围；手机先缩小光斑面积与模糊半径。避免对整块正文或整页使用 filter，也不要在滚动时持续动画化大面积 blur。</p>
+<h4>3.3 2px 虹彩边框</h4>
+<p><strong>原站实测：</strong> 次按钮外壳使用五段渐变，外层 <code>padding: 2px</code>、胶囊圆角；内部实色面遮住中心，留下纤细彩边。</p>
+<pre aria-label="CSS 配方 3，可横向滚动" role="region" tabindex="0"><code class="language-css">/* 原站配色与色标 */
+.iridescent-rim {
+  padding: 2px;
+  border-radius: 999px;
+  background: linear-gradient(
+    180deg, #FFEAB5 20%, #F2A85D 40%,
+    #8052E4 60%, #2E85EA 80%, #68EFAE 103%
+  );
+}
+
+/* SmartHSB 内层实现建议 */
+.iridescent-rim &gt; a {
+  display: block;
+  padding: 12px 24px;
+  border-radius: inherit;
+  background: #FFFFFF;
+  color: #1D1D1F;
+}
+</code></pre>
+<p>用途：一个次级行动或一个重点模块的轮廓。不要让每张卡片都出现彩边，否则页面会失去主次。</p>
+<h4>3.4 深蓝至亮色的边缘光</h4>
+<p><strong>原站实测：</strong> 广告卡的外壳使用方向不同的渐变，如 <code>135deg: #04003C → #97F05E</code>、<code>270deg: #04003C → #00E5E0</code>。部分卡片只在顶部或底部露出约 6px 色带，内部仍是清晰的实色信息面。</p>
+<p><strong>适配建议：</strong> 浅色站保留“外壳渐变 + 内层白卡”的结构，用于一个重点产品展示；不要把深蓝直接铺满正文面。</p>
+<h4>3.5 材质、阴影与过渡</h4>
+<p>原站同时使用实色白卡和局部玻璃材质。部分深底卡使用白色 10% 的表面、浅色细边与 <code>backdrop-filter: blur(50px)</code>。不要将玻璃效果推广到所有卡片。</p>
+<p>SmartHSB 建议用白色或轻透明白色承载正文，用轻阴影表现产品图层；只在导航、少量悬浮信息卡使用透明材质。静态卡优先依靠底色差、边线和留白区分。</p>
+<h3>4. 布局、字体与组件</h3>
+<div aria-label="规范数据表 2，可横向滚动" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th scope="col">维度</th>
+<th scope="col">原站实测</th>
+<th scope="col">SmartHSB 适配建议</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>容器</td>
+<td>最大 83rem，即桌面 1328px，含左右各 16px 内边距</td>
+<td>最大 1200–1328px，手机左右 16–20px</td>
+</tr>
+<tr>
+<td>首屏构图</td>
+<td>文案左、手机与浮卡右，栅格比例 1.2:1</td>
+<td>借鉴产品展示区；保留现有光门 HERO 构图</td>
+</tr>
+<tr>
+<td>区块留白</td>
+<td>多处使用 7.5rem，即桌面 120px 的上下间隔</td>
+<td>桌面 96–120px，平板 72–88px，手机 56–72px</td>
+</tr>
+<tr>
+<td>卡片组合</td>
+<td>顶部两张较宽卡，底部三张小卡；另有左右分栏</td>
+<td>根据内容安排大图、列表、两栏和卡组，不强行统一</td>
+</tr>
+<tr>
+<td>字体</td>
+<td>CSS 声明 General Sans，Arial / sans-serif 后备</td>
+<td>英文可采用 General Sans；中文配系统黑体或 Noto Sans SC，核对授权和加载</td>
+</tr>
+<tr>
+<td>首屏标题</td>
+<td>桌面约 68.8px / 82.56px，600；390px 宽为 40px / 48px</td>
+<td>中文标题桌面 56–68px、手机 32–40px，按实际字数断行</td>
+</tr>
+<tr>
+<td>区块标题</td>
+<td>桌面 56px / 67.2px，600；手机 32px / 38.4px</td>
+<td>中文桌面 40–56px、手机 28–32px，避免过长行</td>
+</tr>
+<tr>
+<td>正文</td>
+<td>常规 16px / 1.5；首屏描述桌面 20px / 30px</td>
+<td>正文 16–18px / 1.6–1.75，风险说明也保持可读</td>
+</tr>
+<tr>
+<td>按钮</td>
+<td>胶囊圆角 999px，桌面主按钮内边距 12px 24px</td>
+<td>高度约 48–52px，清晰行动名称，键盘焦点可见</td>
+</tr>
+<tr>
+<td>卡片圆角</td>
+<td>特征卡 16px，重点 CTA 桌面 32px、手机 16px</td>
+<td>普通卡 16–20px，重点产品容器 24–32px</td>
+</tr>
+<tr>
+<td>图像层次</td>
+<td>手机倾斜、数据卡叠放、多层阴影、轨道细线</td>
+<td>用 SmartHSB 真实界面或明确标注的示例，控制遮挡</td>
+</tr>
+<tr>
+<td>响应式</td>
+<td>CSS 使用 991 / 767 / 479px 等断点；手机为文案在上、产品在下</td>
+<td>验收 320 / 390 / 768 / 1024 / 1440px，按内容需要折叠</td>
+</tr>
+</tbody>
+</table></div>
+<p>标题以深墨色为主，不必用整段渐变字。原站首屏的视觉重量来自字号、字重和产品比例；不是依靠给每个词加特效。</p>
+<h3>5. 原站动效清单</h3>
+<p>原站当前使用 <strong>Webflow Interactions 3、GSAP 3.15.0、ScrollTrigger 和 SplitText</strong>。共享脚本含多页面配置；下面选择与首页相关的规则。配置中未明确声明的时长，不补写为“实测”。</p>
+<div aria-label="规范数据表 3，可横向滚动" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th scope="col">动效</th>
+<th scope="col">原站配置与作用</th>
+<th scope="col">采纳方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>首屏依次入场</td>
+<td>提示胶囊起点 0s；标题从 0.08s 起、交错 0.1s；产品从 0.12s 起、缩放 0.5→1、显式时长 0.7s；说明从 0.72s 起；按钮 0.99s；机构标识 1.23s</td>
+<td>复用先后秩序；不覆盖 SmartHSB 光门现有时序</td>
+</tr>
+<tr>
+<td>区块标题分字</td>
+<td>透明度 0→1、x 10px→0、scale 1.4→1，整段交错量 0.5s；说明按行接续</td>
+<td>中文优先按行入场，减少逐字缩放造成的阅读负担</td>
+</tr>
+<tr>
+<td>特征卡入场</td>
+<td>顶部进入视口 95% 处触发；opacity 0→1、y 30%→0；0.7s</td>
+<td>保留一次性入场的节奏，缩小位移</td>
+</tr>
+<tr>
+<td>悬浮数据卡</td>
+<td>两张卡方向相反，y 20%→0 / -20%→0；单程 1.5s，repeat -1、yoyo true</td>
+<td>一个往返约 3s；本项目建议更慢、更小幅度</td>
+</tr>
+<tr>
+<td>轨道旋转</td>
+<td>360°→0°，30s，无限循环</td>
+<td>只用于装饰层，提供暂停并在离屏时停止</td>
+</tr>
+<tr>
+<td>Logo 横移</td>
+<td>x 0→-100%，20s，无限循环</td>
+<td>若采用需可暂停；现有六机构徽章不自动改为跑马灯</td>
+</tr>
+<tr>
+<td>评价墙滚动</td>
+<td>不同列向上/向下，30s，无限循环</td>
+<td>SmartHSB 无必要时用静态评价或媒体列表</td>
+</tr>
+<tr>
+<td>超大文字横移</td>
+<td>x 0→-100%，60s，无限循环</td>
+<td>可不采用；金融产品信息优先可读</td>
+</tr>
+<tr>
+<td>主按钮悬停</td>
+<td>文字 y 0→-100%，0.3s、逐字交错 0.02s；白色遮罩 scale 0→1，0.4s；箭头右移 0.4s；移出反向播放</td>
+<td>适合重点 CTA；键盘 focus-visible 同样反馈</td>
+</tr>
+<tr>
+<td>次按钮悬停</td>
+<td>文字翻页式上移，0.2s、交错 0.02s；移出反向播放</td>
+<td>中文可直接做整行双层文字切换</td>
+</tr>
+<tr>
+<td>文本链接箭头</td>
+<td>悬停旋转 0→-45°</td>
+<td>可改成轻微位移，统一全站一种规则</td>
+</tr>
+<tr>
+<td>产品 Tab</td>
+<td>Webflow 标记为进入 300ms、退出 100ms，easing 为 ease；实际点击能切换选中状态</td>
+<td>保留短暂交叉淡入，提供方向键操作</td>
+</tr>
+<tr>
+<td>滚动联动 CTA 图</td>
+<td>scale 0.5→1，scrub 0.8；范围 top bottom→30% 50%</td>
+<td>只在确有空间关系时使用，不扩展成整页滚动劫持</td>
+</tr>
+<tr>
+<td>背景视频</td>
+<td>存在 muted / loop / autoplay 的视频元素，以及减少动效时的后备图片逻辑</td>
+<td>属于原站配置；本次浏览器读取为 paused，未将其记为已播放成功</td>
+</tr>
+</tbody>
+</table></div>
+<p>浏览器间隔 1 秒采样时，轨道、浮卡和 Logo 的 transform 发生变化，确认这些不是仅留在文件中的静态配置。实际检查了按钮 hover 与产品 Tab 切换。没有把未解码成功的视频记为现场播放证据。</p>
+<h4>SmartHSB 动效参数（建议，不是原站数值）</h4>
+<ul>
+<li>标题/产品一次性入场：600–800ms，位移 16–24px，组内交错 60–100ms。</li>
+<li>按钮反馈：180–300ms，箭头位移 4–6px；必要时借用原站文字翻页。</li>
+<li>Tab 内容：退出 100–150ms，进入 250–300ms；切换时避免容器高度突跳。</li>
+<li>悬浮卡：上下 6–10px，一个往返 5–7s；每个产品场景最多一组持续装饰动画。</li>
+<li>原创柔光默认静态。需要呼吸感时只缓慢改变 transform / opacity，周期 16–24s；手机关闭。</li>
+<li>入场可用 <code>cubic-bezier(.22, 1, .36, 1)</code>，持续悬浮可用 ease-in-out。这些曲线是建议值，未将源码中的数字 ease 标识推断为具体贝塞尔曲线。</li>
+<li><code>prefers-reduced-motion: reduce</code> 或 <code>#motion-toggle</code> 关闭时，立即呈现最终状态，停止循环与滚动联动。脚本失败或禁用时，正文仍可见。</li>
+<li>只给按钮、链接等可操作对象添加 hover / focus 反馈。不能让静态卡片看起来可以点击。</li>
+</ul>
+<h3>6. SmartHSB 页面映射建议</h3>
+<div aria-label="规范数据表 4，可横向滚动" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th scope="col">现有内容</th>
+<th scope="col">适用的参考语言</th>
+<th scope="col">浅色适配</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>光门 HERO 与六机构徽章</td>
+<td>首屏层次、柔光色系、清晰主行动</td>
+<td>保留门、人物、文字、动画、视频和徽章；评估浅色背景/光色，保留可见轮廓</td>
+</tr>
+<tr>
+<td>市场和 25 个品种</td>
+<td>左右分栏、Tab、白色产品面板</td>
+<td>白底表格，浅薄荷选中底，深绿文字，科技蓝作辅助图表色</td>
+</tr>
+<tr>
+<td>模拟账户与平台</td>
+<td>手机、大产品图、少量浮卡</td>
+<td>冰蓝/浅薄荷产品舞台，荧光绿与蓝分配到不同数据序列</td>
+</tr>
+<tr>
+<td>监管、资金隔离与服务条件</td>
+<td>大标题、清晰列表、局部图形</td>
+<td>以正文和分隔线承载事实，亮色用在图标背景</td>
+</tr>
+<tr>
+<td>支付、保险、积分和活动</td>
+<td>一大一小模块或两栏</td>
+<td>交替浅色面，条件直接跟随主张出现</td>
+</tr>
+<tr>
+<td>奖项与媒体</td>
+<td>机构标识条、分组展示</td>
+<td>保留六年奖项和五家媒体，保持静态可浏览</td>
+</tr>
+<tr>
+<td>FAQ 与最终行动</td>
+<td>安静的信息区 + 柔光 CTA</td>
+<td>FAQ 白底；CTA 可使用薄荷至柠檬柔光和蓝色行动</td>
+</tr>
+<tr>
+<td>页脚与风险披露</td>
+<td>清晰分栏和完整运营信息</td>
+<td>浅灰或浅薄荷底、深色文字，避免大面积黑底</td>
+</tr>
+</tbody>
+</table></div>
+<h4>光门 HERO 的浅色边界</h4>
+<p>当前项目的 <code>intro-portal.css</code> 和 Canvas 视频合成均围绕深底设计。浅色方案应评估背景与合成后的门、人物、雾的对比，<strong>不能仅修改一个 CSS 背景值就宣称完成</strong>。本轮只提出配色方向；后续保留构图、内容、时序、动画逻辑及原视频，在允许的调色范围内验证。光门周围不能再叠一套参考站手机轨道构图。</p>
+<h3>7. 后续设计验收</h3>
+<ol>
+<li>第一眼是明亮的蓝绿金融科技产品；白色和浅色面占主导。</li>
+<li>荧光草绿、柠檬黄绿、薄荷青、翡翠绿、科技蓝均有明确角色，单个模块控制主辅色。</li>
+<li>至少一处产品背景体现柔光叠色；次按钮可使用一次细虹彩边框。</li>
+<li>标题、正文、图表、产品图有清晰层次；风险和限定条件保持易读。</li>
+<li>产品图、品种和功能均来自 SmartHSB，示例数据标注非实时/展示示例。</li>
+<li>保留四类市场共 25 品种、模拟账户、平台、监管和资金隔离、支付与保险条件、积分活动、六年奖项、五家媒体、FAQ、运营信息、牌照及风险披露。</li>
+<li>保留市场标签/面板、<code>.platform-visual</code>、导航与 <code>#motion-toggle</code> 等调用关系，改结构时检查脚本。</li>
+<li>320、390、768、1024、1440px 无横向溢出、遮挡、重要文字截断；方向键、键盘焦点、FAQ、菜单和下载链接可用。</li>
+<li>关闭动效或脚本时仍能读到完整内容；离屏和后台停止持续动画。</li>
+<li>使用原站的视觉规则与节奏，但交付 SmartHSB 自己的品牌、产品和文案。</li>
+</ol>
+<h3>8. 提示词与证据</h3>
+<ul>
+<li><a href="prompts.md">完整提示词：总提示词、配色渐变、动效、复核</a></li>
+<li><a href="evidence.json">结构化采集摘要</a></li>
+<li><a href="https://minpilot.webflow.io/">原站首页</a></li>
+<li><a href="https://minpilot.webflow.io/admin/style-guide">原站 Style Guide</a></li>
+<li><a href="https://cdn.prod.website-files.com/69da2d84d99e526ecba9a2bb/css/minpilot.webflow.shared.81767bcd4.css">实际共享 CSS</a></li>
+<li><a href="https://cdn.prod.website-files.com/69da2d84d99e526ecba9a2bb/js/webflow.e2cf26c6.547f7fdffe984d7b.js">实际首页动效注册脚本</a></li>
+</ul>
+<p>共享样式和动效文件含其他页面规则；报告仅将已说明来源和范围的项目作为首页参考。色彩比例、原创径向渐变、中文排版及 SmartHSB 动效参数均为本次适配建议。</p>
+</div></section>
+  <section class="section" id="prompts" aria-labelledby="prompts-title"><h2 id="prompts-title">把规范直接交给下一次设计。</h2><p class="lead">总提示词用于先确定方案；专项提示词用于深化配色、渐变或动效。后续任务先审阅设计，再实施。可展开、选中文字，或点击复制。</p><p class="copy-status" id="copy-status" role="status"></p><div class="prompt-list"><details class="prompt-card" open><summary>1. 总提示词（可直接复制）</summary><div class="prompt-toolbar"><button hidden class="button" type="button" aria-label="复制：1. 总提示词（可直接复制）" data-copy="prompt-1" data-label="1. 总提示词（可直接复制）">复制这段提示词</button></div><pre id="prompt-1" tabindex="0">请为 SmartHSB 金融交易产品网站设计一套浅色视觉方案。主要参照 https://minpilot.webflow.io/ 的设计语言：明亮的白色空间、蓝绿柔光、多层产品展示、大字号无衬线标题、圆角白色组件、精细渐变边缘和有节奏的动画。保持接近参考站的视觉气质、层次、组件比例和动效处理，并使用 SmartHSB 的品牌、产品和内容。
+
+这一步先输出可审阅的配色规范、关键区块设计和动效说明，待确定方案后再实施页面。不要把提示词当作修改线上首页的指令。
+
+一、整体方向
+全站以浅色为主。以白 #FFFFFF、柔白 #F6F6F6、浅薄荷 #F1FFF7、冰蓝 #EEF5FF 建立底色。原站有黑色区块；本方案将常规内容区转成浅色，通过白/浅灰/浅薄荷/浅蓝交替、产品比例和留白形成节奏。保留明亮、清透、精密的金融科技观感，兼顾金融信息的可信度和可读性。
+
+二、颜色及分工
+使用从参考站提取的亮色体系：荧光草绿 #97F05E、柠檬黄绿 #BFFF37、薄荷亮青 #5BFFC3、翡翠绿 #01A66B、电光科技蓝 #235DFE；电光青 #00E5E0 用作局部光晕。深绿 #006C45 用作浅底文字链接，深墨 #1D1D1F 用于标题和正文，#606062 用于辅助说明。淡紫 #B7A2E3、橙色 #F36600 只作少量补色。
+以约 75% 白/柔白、15% 浅蓝/浅薄荷、8% 绿青强调、2% 蓝及其他补色为构图起点。这个比例是项目建议。每区块一个主强调色，最多一个辅助色；不同颜色承担不同功能。亮绿和薄荷按钮配深色字，蓝色按钮配白字；检查真实背景上的文字对比度。
+
+三、渐变与材质
+参照原站的柔光叠色：用大面积、边界模糊、非对称的薄荷绿、柠檬绿、青和科技蓝光斑，在产品后方形成空间，边缘融入白色。渐变中心靠近产品，正文区域保持平静。可加入极少量淡紫增加冷暖层次。默认静态；不要让整个背景快速流动。
+保留一个薄荷至柠檬的柔光区域，原站参考参数为 linear-gradient(90deg, #BCFFF4, #DDFF90)、opacity .6、blur 200px；实际落地按区域和手机性能减小模糊范围。
+次按钮可使用 2px 虹彩边框：#FFEAB5 20% → #F2A85D 40% → #8052E4 60% → #2E85EA 80% → #68EFAE 103%，内层白色、胶囊圆角。只用于少量重点轮廓。
+产品容器可用白色/轻透明白色、细边和轻阴影。普通信息卡保持实色清晰；玻璃材质只用于导航和少量悬浮卡。避免给每个区块都加同一种渐变、玻璃和阴影。
+
+四、布局与字体
+桌面内容宽约 1200–1328px，区块上下留白约 96–120px；手机左右留白 16–20px，区块间隔 56–72px。采用大产品展示、左右分栏、两张宽卡配三张小卡、清晰列表等组合，根据内容选择结构。
+英文参考 General Sans 的现代无衬线气质；中文配自然、易读的系统黑体或 Noto Sans SC。中文标题桌面约 56–68px、手机 32–40px；区块标题桌面 40–56px、手机 28–32px。正文 16–18px、行高 1.6–1.75。标题以深墨色为主，控制断行。
+普通卡圆角 16–20px，重点产品容器 24–32px，按钮胶囊圆角 999px、高度约 48–52px。产品图占主要视觉面积，少量数据浮卡提供层次；使用 SmartHSB 的真实产品、图表和内容，示例数据明确标注非实时/展示示例。
+
+五、动画
+借鉴原站的编排方式：标题、说明、按钮、产品按主次接续呈现；产品和卡片轻移、淡入、轻缩放；按钮文字可翻页式上移，箭头轻移，hover 与键盘焦点均有反馈。
+新内容区的建议参数：入场 600–800ms、位移 16–24px、组内交错 60–100ms；按钮 180–300ms；Tab 退出 100–150ms、进入 250–300ms；悬浮卡上下 6–10px，一个往返 5–7s；装饰轨道可参考原站 30s 一圈。不要同时让所有模块循环运动。
+原站用 Webflow IX3/GSAP/ScrollTrigger/SplitText；SmartHSB 是原生 HTML/CSS/JS，可用 CSS 与 IntersectionObserver 实现所需效果，不为外观引入 Webflow 运行时。优先动画化 transform/opacity，不持续改变大面积 blur。手机减少装饰运动。
+支持 prefers-reduced-motion 与现有 #motion-toggle；关闭时显示最终状态。脚本禁用或失败时内容仍可见。持续动画支持暂停、离屏停止和后台暂停。
+
+六、SmartHSB 边界
+保留 #intro-portal 光门 HERO 的门、人物、文案、现有动画时序和逻辑、原视频及底部六机构徽章，不用参考站的手机替换首屏。可按蓝绿浅色方向评估调色，先验证 Canvas 合成、轮廓和文字对比；不能只改背景 CSS 就视为完成浅色适配。不要在光门上再叠一套手机轨道。
+保留四类市场的 25 品种（2 贵金属、5 股指、17 外汇、1 能源）、模拟账户、平台功能、监管和资金隔离、支付与保险条件、积分活动、六年奖项、五家媒体、FAQ、运营信息、牌照和风险披露。不编造或扩大任何金额、承诺和资质。
+沿用当前首页样式归属 home-minpilot.css；首页改动限定作用域，保留 JavaScript 所依赖的市场标签和面板、.platform-visual、导航及动效开关。不要叠加旧主题文件。
+
+七、输出要求
+先交付色板与语义分工、渐变配方、桌面/手机关键画面、区块布局说明和动效表。明确标记原站事实与项目建议，并说明每个关键选择解决什么问题。优先展示光门与浅色内容的衔接、平台产品区和市场区三个场景。按 320/390/768/1024/1440px 检查布局、键盘操作、对比度和减少动效。方案确定后再改页面并按项目发布流程交付。</pre></details>
+<details class="prompt-card"><summary>2. 配色与渐变专项提示词</summary><div class="prompt-toolbar"><button hidden class="button" type="button" aria-label="复制：2. 配色与渐变专项提示词" data-copy="prompt-2" data-label="2. 配色与渐变专项提示词">复制这段提示词</button></div><pre id="prompt-2" tabindex="0">请只深化 SmartHSB 的浅色配色和渐变系统，参照 Minpilot 的柔光与亮色关系，不修改页面结构。
+
+底色：#FFFFFF、#F6F6F6、#F1FFF7、#EEF5FF。主亮色：#97F05E、#BFFF37、#5BFFC3、#01A66B；功能蓝 #235DFE；局部光色 #00E5E0。标题 #1D1D1F、正文 #606062、浅底链接 #006C45。每个颜色给出使用位置、搭配底色、文字颜色及禁止混用的情况。
+
+分别给出三种可复用配方：
+1. 产品舞台：在白底上叠加偏右的柠檬绿、中央薄荷青、底部浅蓝径向光斑，边缘消散；正文区域保持可读。
+2. 柔光带：#BCFFF4 → #DDFF90，约 .6 透明度，独立装饰层；参考原站 blur 200px，给出按容器和手机性能缩减后的值。
+3. 细虹彩边框：2px 外壳 + 白色内层胶囊，五段色为 #FFEAB5 / #F2A85D / #8052E4 / #2E85EA / #68EFAE。
+
+提供 CSS 变量、渐变示例和按钮状态。原站首屏柔光是背景图，不要声称某个新写的 CSS 配方就是原站源码。新增径向渐变、透明度和色标均标记为项目建议。保留光门 HERO 构图、视频和动画，只提出调色及衔接方案。输出三个具有实际文案的场景，验证明暗与文字对比。</pre></details>
+<details class="prompt-card"><summary>3. 动效专项提示词</summary><div class="prompt-toolbar"><button hidden class="button" type="button" aria-label="复制：3. 动效专项提示词" data-copy="prompt-3" data-label="3. 动效专项提示词">复制这段提示词</button></div><pre id="prompt-3" tabindex="0">请为 SmartHSB 浅色内容区定义参照 Minpilot 的动效规范，保留现有光门 HERO 的动画和视频逻辑。
+
+可借鉴的原站事实：卡片淡入+上移 0.7s；数据浮卡单程 1.5s、往返约 3s；轨道旋转 30s；主按钮文字上移 0.3s、白色遮罩展开 0.4s；次按钮文字上移 0.2s；Tab 进入 300ms、退出 100ms。原站的连续浮动和轨道在浏览器中确实运行。
+
+SmartHSB 建议更克制：入场 600–800ms、16–24px、交错 60–100ms；按钮 180–300ms、箭头 4–6px；悬浮卡 6–10px、完整往返 5–7s；一个产品区最多一组持续装饰动画。中文标题以按行接续为主。渐变默认静态，手机关闭非必要循环。
+
+用表格说明触发方式、对象、起止状态、时长、延迟、缓动、是否循环、退出/暂停方式和手机降级。数字 ease 标识未解析时不要编造原站曲线；可将 cubic-bezier(.22,1,.36,1) 标记为建议曲线。
+
+原生 CSS 与 IntersectionObserver 优先。内容默认可见，启用动画只能作为渐进增强；按钮 hover 与 focus-visible 同等反馈；prefers-reduced-motion 或 #motion-toggle 关闭时进入最终静态状态；离屏和后台暂停循环；Tab 和 FAQ 保留键盘语义。只为可操作对象提供点击暗示。</pre></details>
+<details class="prompt-card"><summary>4. 设计复核提示词</summary><div class="prompt-toolbar"><button hidden class="button" type="button" aria-label="复制：4. 设计复核提示词" data-copy="prompt-4" data-label="4. 设计复核提示词">复制这段提示词</button></div><pre id="prompt-4" tabindex="0">请对 SmartHSB 设计稿进行复核，依据 Minpilot 设计参考和项目边界，只报告具体差距与修改办法。
+
+检查：整体是否由白、柔白、浅蓝、浅薄荷主导；荧光草绿/柠檬黄绿/薄荷青/翡翠绿/科技蓝是否各有角色；柔光是否集中在产品与边缘；是否滥用渐变字、玻璃卡和循环动画；产品是否有足够视觉重量；标题、正文、示例报价和风险条件是否可读。
+
+检查光门 HERO 是否保留构图、门、人物、原文案、视频、动画逻辑和六机构徽章；是否验证浅色调与 Canvas 合成的关系；是否完整保留 25 品种、账户、平台、监管、资金隔离、支付保险条件、积分活动、奖项、媒体、FAQ 和披露。检查 320/390/768/1024/1440px、键盘焦点、Tab 方向键、菜单、FAQ、下载链接和减少动效。
+
+每个问题说明位置、影响、根因与最小有效修改。区分原站实测参数、SmartHSB 新建议和设计稿实际实现；未检查的项目明确标记未检查。</pre></details></div></section>
+</main>
+<footer class="footer wrap"><p>本页是设计研究与提示词文档，预览图仅用于说明颜色和运动。</p><p>来源：<a href="https://minpilot.webflow.io/">Minpilot 首页</a> · <a href="https://minpilot.webflow.io/admin/style-guide">原站 Style Guide</a> · <a href="evidence.json">结构化采集摘要</a> · <a href="../../">SmartHSB 首页</a></p></footer>
+</body>
+</html>
