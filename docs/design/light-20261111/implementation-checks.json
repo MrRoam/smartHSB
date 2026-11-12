@@ -1,0 +1,568 @@
+{
+  "static": {
+    "checks": {
+      ".instrument-groups": true,
+      ".trust-section": true,
+      ".funding-section": true,
+      ".award-grid": true,
+      ".media-line": true,
+      ".faq-section": true,
+      ".legal": true,
+      "#intro-portal": true,
+      "portal_only_group_roles_added": true,
+      "25_instruments": true,
+      "hero_assets_unchanged": true,
+      "website/assets/css/intro-portal.css": true,
+      "website/assets/js/intro-portal.js": true,
+      "website/assets/video/intelligencelayer.mp4": true,
+      "local_links_valid": true
+    },
+    "missing": []
+  },
+  "layout": [
+    {
+      "badges": 6,
+      "clipped": [],
+      "columns": "288px",
+      "items": 25,
+      "missing": [],
+      "scrollWidth": 320,
+      "width": 320
+    },
+    {
+      "badges": 6,
+      "clipped": [],
+      "columns": "350px",
+      "items": 25,
+      "missing": [],
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "badges": 6,
+      "clipped": [],
+      "columns": "728px",
+      "items": 25,
+      "missing": [],
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "badges": 6,
+      "clipped": [],
+      "columns": "460px 460px",
+      "items": 25,
+      "missing": [],
+      "scrollWidth": 1024,
+      "width": 1024
+    },
+    {
+      "badges": 6,
+      "clipped": [],
+      "columns": "569.797px 638.203px",
+      "items": 25,
+      "missing": [],
+      "scrollWidth": 1440,
+      "width": 1440
+    }
+  ],
+  "keyboard": [
+    {
+      "key": "ArrowRight",
+      "active": "tab-index",
+      "focus": "solid",
+      "items": 5,
+      "selected": "index"
+    },
+    {
+      "key": "ArrowRight",
+      "active": "tab-fx",
+      "focus": "solid",
+      "items": 17,
+      "selected": "fx"
+    },
+    {
+      "key": "End",
+      "active": "tab-energy",
+      "focus": "solid",
+      "items": 1,
+      "selected": "energy"
+    },
+    {
+      "key": "Home",
+      "active": "tab-gold",
+      "focus": "solid",
+      "items": 2,
+      "selected": "gold"
+    },
+    {
+      "key": "ArrowLeft",
+      "active": "tab-energy",
+      "focus": "solid",
+      "items": 1,
+      "selected": "energy"
+    },
+    {
+      "listEndFaqMenu": "pass"
+    }
+  ],
+  "motion": [
+    {
+      "enabled": {
+        "enabled": true,
+        "loop": "homeFloat"
+      }
+    },
+    {
+      "rapidSwitchAndManualInterrupt": "pass"
+    },
+    {
+      "simulatedBackground": {
+        "background": true,
+        "paused": "paused"
+      }
+    },
+    {
+      "offscreen": "paused"
+    },
+    {
+      "reduced": {
+        "animations": 0,
+        "disabled": true,
+        "off": true
+      },
+      "phone640": "no loop"
+    }
+  ],
+  "contrast": [
+    {
+      "width": 320,
+      "text": "一个账户。 打开全球市场。",
+      "minimum": 16.05
+    },
+    {
+      "width": 320,
+      "text": "从贵金属到外汇，让市场、分析与交易彼此相连。 把更多精力，留给你的判断。",
+      "minimum": 6.0
+    },
+    {
+      "width": 320,
+      "text": "从看见机会， 到把握机会。",
+      "minimum": 16.83
+    },
+    {
+      "width": 320,
+      "text": "一个 APP，让行情、分析与交易相连。",
+      "minimum": 6.27
+    },
+    {
+      "width": 320,
+      "text": "看清市场，再做决定",
+      "minimum": 16.83
+    },
+    {
+      "width": 320,
+      "text": "自选行情、财经日历与 Trading Central 研报，协助你建立自己的交易判断。",
+      "minimum": 6.27
+    },
+    {
+      "width": 320,
+      "text": "熟悉的操作，完整的体验",
+      "minimum": 16.83
+    },
+    {
+      "width": 320,
+      "text": "先用模拟账户练习，再选择适合你的账户。在移动端管理你的交易。 了解平台",
+      "minimum": 6.27
+    },
+    {
+      "width": 320,
+      "text": "下载 APP下载 APP↗",
+      "minimum": 14.08
+    },
+    {
+      "width": 320,
+      "text": "试用模拟账户试用模拟账户",
+      "minimum": 16.83
+    },
+    {
+      "width": 320,
+      "text": "$10,000 虚拟资金",
+      "minimum": 6.5
+    },
+    {
+      "width": 320,
+      "text": "从模拟交易开始，先熟悉平台。",
+      "minimum": 6.27
+    },
+    {
+      "width": 320,
+      "text": "界面、报价与图表为非实时展示示例。模拟账户使用虚拟资金。",
+      "minimum": 5.6
+    },
+    {
+      "width": 320,
+      "text": "全球市场， 从你的第一步开始。",
+      "minimum": 15.1
+    },
+    {
+      "width": 320,
+      "text": "免费开立模拟账户免费开立模拟账户 ↗",
+      "minimum": 5.16
+    },
+    {
+      "width": 320,
+      "text": "$10,000 虚拟资金 · 无需入金",
+      "minimum": 6.48
+    },
+    {
+      "width": 390,
+      "text": "一个账户。 打开全球市场。",
+      "minimum": 16.08
+    },
+    {
+      "width": 390,
+      "text": "从贵金属到外汇，让市场、分析与交易彼此相连。 把更多精力，留给你的判断。",
+      "minimum": 6.0
+    },
+    {
+      "width": 390,
+      "text": "从看见机会， 到把握机会。",
+      "minimum": 16.83
+    },
+    {
+      "width": 390,
+      "text": "一个 APP，让行情、分析与交易相连。",
+      "minimum": 6.27
+    },
+    {
+      "width": 390,
+      "text": "看清市场，再做决定",
+      "minimum": 16.83
+    },
+    {
+      "width": 390,
+      "text": "自选行情、财经日历与 Trading Central 研报，协助你建立自己的交易判断。",
+      "minimum": 6.27
+    },
+    {
+      "width": 390,
+      "text": "熟悉的操作，完整的体验",
+      "minimum": 16.83
+    },
+    {
+      "width": 390,
+      "text": "先用模拟账户练习，再选择适合你的账户。在移动端管理你的交易。 了解平台",
+      "minimum": 6.25
+    },
+    {
+      "width": 390,
+      "text": "下载 APP下载 APP↗",
+      "minimum": 14.08
+    },
+    {
+      "width": 390,
+      "text": "试用模拟账户试用模拟账户",
+      "minimum": 16.83
+    },
+    {
+      "width": 390,
+      "text": "$10,000 虚拟资金",
+      "minimum": 6.5
+    },
+    {
+      "width": 390,
+      "text": "从模拟交易开始，先熟悉平台。",
+      "minimum": 6.27
+    },
+    {
+      "width": 390,
+      "text": "界面、报价与图表为非实时展示示例。模拟账户使用虚拟资金。",
+      "minimum": 5.61
+    },
+    {
+      "width": 390,
+      "text": "全球市场， 从你的第一步开始。",
+      "minimum": 15.15
+    },
+    {
+      "width": 390,
+      "text": "免费开立模拟账户免费开立模拟账户 ↗",
+      "minimum": 5.16
+    },
+    {
+      "width": 390,
+      "text": "$10,000 虚拟资金 · 无需入金",
+      "minimum": 6.43
+    },
+    {
+      "width": 768,
+      "text": "一个账户。 打开全球市场。",
+      "minimum": 16.08
+    },
+    {
+      "width": 768,
+      "text": "从贵金属到外汇，让市场、分析与交易彼此相连。 把更多精力，留给你的判断。",
+      "minimum": 6.03
+    },
+    {
+      "width": 768,
+      "text": "从看见机会， 到把握机会。",
+      "minimum": 16.83
+    },
+    {
+      "width": 768,
+      "text": "一个 APP，让行情、分析与交易相连。",
+      "minimum": 6.27
+    },
+    {
+      "width": 768,
+      "text": "看清市场，再做决定",
+      "minimum": 16.83
+    },
+    {
+      "width": 768,
+      "text": "自选行情、财经日历与 Trading Central 研报，协助你建立自己的交易判断。",
+      "minimum": 6.27
+    },
+    {
+      "width": 768,
+      "text": "熟悉的操作，完整的体验",
+      "minimum": 16.67
+    },
+    {
+      "width": 768,
+      "text": "先用模拟账户练习，再选择适合你的账户。在移动端管理你的交易。 了解平台",
+      "minimum": 6.16
+    },
+    {
+      "width": 768,
+      "text": "下载 APP下载 APP↗",
+      "minimum": 14.08
+    },
+    {
+      "width": 768,
+      "text": "试用模拟账户试用模拟账户",
+      "minimum": 16.83
+    },
+    {
+      "width": 768,
+      "text": "$10,000 虚拟资金",
+      "minimum": 6.5
+    },
+    {
+      "width": 768,
+      "text": "从模拟交易开始，先熟悉平台。",
+      "minimum": 6.27
+    },
+    {
+      "width": 768,
+      "text": "界面、报价与图表为非实时展示示例。模拟账户使用虚拟资金。",
+      "minimum": 5.04
+    },
+    {
+      "width": 768,
+      "text": "全球市场， 从你的第一步开始。",
+      "minimum": 15.03
+    },
+    {
+      "width": 768,
+      "text": "免费开立模拟账户免费开立模拟账户 ↗",
+      "minimum": 5.16
+    },
+    {
+      "width": 768,
+      "text": "$10,000 虚拟资金 · 无需入金",
+      "minimum": 6.08
+    },
+    {
+      "width": 1024,
+      "text": "一个账户。 打开全球市场。",
+      "minimum": 16.1
+    },
+    {
+      "width": 1024,
+      "text": "从贵金属到外汇，让市场、分析与交易彼此相连。 把更多精力，留给你的判断。",
+      "minimum": 6.01
+    },
+    {
+      "width": 1024,
+      "text": "从看见机会， 到把握机会。",
+      "minimum": 15.73
+    },
+    {
+      "width": 1024,
+      "text": "一个 APP，让行情、分析与交易相连。",
+      "minimum": 5.78
+    },
+    {
+      "width": 1024,
+      "text": "看清市场，再做决定",
+      "minimum": 15.65
+    },
+    {
+      "width": 1024,
+      "text": "自选行情、财经日历与 Trading Central 研报，协助你建立自己的交易判断。",
+      "minimum": 5.76
+    },
+    {
+      "width": 1024,
+      "text": "熟悉的操作，完整的体验",
+      "minimum": 15.39
+    },
+    {
+      "width": 1024,
+      "text": "先用模拟账户练习，再选择适合你的账户。在移动端管理你的交易。 了解平台",
+      "minimum": 5.76
+    },
+    {
+      "width": 1024,
+      "text": "下载 APP下载 APP↗",
+      "minimum": 14.08
+    },
+    {
+      "width": 1024,
+      "text": "试用模拟账户试用模拟账户",
+      "minimum": 16.83
+    },
+    {
+      "width": 1024,
+      "text": "$10,000 虚拟资金",
+      "minimum": 6.5
+    },
+    {
+      "width": 1024,
+      "text": "从模拟交易开始，先熟悉平台。",
+      "minimum": 6.27
+    },
+    {
+      "width": 1024,
+      "text": "界面、报价与图表为非实时展示示例。模拟账户使用虚拟资金。",
+      "minimum": 5.31
+    },
+    {
+      "width": 1024,
+      "text": "全球市场， 从你的第一步开始。",
+      "minimum": 14.95
+    },
+    {
+      "width": 1024,
+      "text": "免费开立模拟账户免费开立模拟账户 ↗",
+      "minimum": 5.16
+    },
+    {
+      "width": 1024,
+      "text": "$10,000 虚拟资金 · 无需入金",
+      "minimum": 5.94
+    },
+    {
+      "width": 1440,
+      "text": "一个账户。 打开全球市场。",
+      "minimum": 16.1
+    },
+    {
+      "width": 1440,
+      "text": "从贵金属到外汇，让市场、分析与交易彼此相连。 把更多精力，留给你的判断。",
+      "minimum": 6.07
+    },
+    {
+      "width": 1440,
+      "text": "从看见机会， 到把握机会。",
+      "minimum": 15.79
+    },
+    {
+      "width": 1440,
+      "text": "一个 APP，让行情、分析与交易相连。",
+      "minimum": 5.85
+    },
+    {
+      "width": 1440,
+      "text": "看清市场，再做决定",
+      "minimum": 15.83
+    },
+    {
+      "width": 1440,
+      "text": "自选行情、财经日历与 Trading Central 研报，协助你建立自己的交易判断。",
+      "minimum": 5.99
+    },
+    {
+      "width": 1440,
+      "text": "熟悉的操作，完整的体验",
+      "minimum": 15.56
+    },
+    {
+      "width": 1440,
+      "text": "先用模拟账户练习，再选择适合你的账户。在移动端管理你的交易。 了解平台",
+      "minimum": 5.93
+    },
+    {
+      "width": 1440,
+      "text": "下载 APP下载 APP↗",
+      "minimum": 14.08
+    },
+    {
+      "width": 1440,
+      "text": "试用模拟账户试用模拟账户",
+      "minimum": 16.83
+    },
+    {
+      "width": 1440,
+      "text": "$10,000 虚拟资金",
+      "minimum": 6.5
+    },
+    {
+      "width": 1440,
+      "text": "从模拟交易开始，先熟悉平台。",
+      "minimum": 6.27
+    },
+    {
+      "width": 1440,
+      "text": "界面、报价与图表为非实时展示示例。模拟账户使用虚拟资金。",
+      "minimum": 5.31
+    },
+    {
+      "width": 1440,
+      "text": "全球市场， 从你的第一步开始。",
+      "minimum": 15.11
+    },
+    {
+      "width": 1440,
+      "text": "免费开立模拟账户免费开立模拟账户 ↗",
+      "minimum": 5.16
+    },
+    {
+      "width": 1440,
+      "text": "$10,000 虚拟资金 · 无需入金",
+      "minimum": 5.99
+    }
+  ],
+  "final_axe": {
+    "counts": {
+      "inapplicable": 42,
+      "incomplete": 1,
+      "passes": 47,
+      "violations": 0
+    },
+    "incomplete": [
+      "color-contrast"
+    ]
+  },
+  "manual_off": {
+    "animations": 0,
+    "video_paused": true
+  },
+  "no_script": {
+    "viewport": 320,
+    "scroll_width": 320,
+    "groups_visible": 4,
+    "instruments": 25,
+    "native_faq": true,
+    "method": "Same homepage HTML with script elements removed, temporary fixture deleted after check."
+  },
+  "hero": {
+    "decoded_readyState": 4,
+    "playing_with_motion_on": true,
+    "assets_unchanged": true,
+    "markup_change": "Only role=group added to two labelled containers."
+  }
+}

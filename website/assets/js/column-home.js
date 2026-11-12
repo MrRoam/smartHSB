@@ -20,15 +20,33 @@
   const prefersReduced = matchMedia('(prefers-reduced-motion: reduce)');
   let savedMotion;
   try { savedMotion = localStorage.getItem('hsb-motion'); } catch {}
-  let motion = savedMotion !== 'off' && !prefersReduced.matches;
+  let userMotion = savedMotion !== 'off';
+  let motion = userMotion && !prefersReduced.matches;
   const body = document.body;
   const toggle = document.querySelector('#motion-toggle');
   const canvasRenderers = [];
+  const activeAnimations = new Set();
+  let pendingMarketPaint = null;
+  function animateElement(el, frames, options) {
+    if (!motion || document.hidden || !el.animate) return null;
+    const animation = el.animate(frames, options);
+    activeAnimations.add(animation);
+    animation.finished.then(() => activeAnimations.delete(animation), () => activeAnimations.delete(animation));
+    return animation;
+  }
+  function finishEnhancements() {
+    pendingMarketPaint?.();
+    activeAnimations.forEach(animation => animation.cancel());
+    activeAnimations.clear();
+  }
   function applyMotion() {
+    motion = userMotion && !prefersReduced.matches;
     body.classList.toggle('motion-off', !motion);
     body.classList.toggle('js-motion', motion);
+    toggle.disabled = prefersReduced.matches;
     toggle.setAttribute('aria-pressed', String(!motion));
-    toggle.innerHTML = `动效：${motion ? '开启' : '关闭'} <span>${motion ? '◉' : '○'}</span>`;
+    toggle.innerHTML = prefersReduced.matches ? '动效：系统已关闭' : `动效：${motion ? '开启' : '关闭'} <span aria-hidden="true">${motion ? '◉' : '○'}</span>`;
+    if (!motion) finishEnhancements();
     document.querySelectorAll('svg').forEach(svg => {
       if (motion) svg.unpauseAnimations?.(); else svg.pauseAnimations?.();
     });
@@ -36,21 +54,49 @@
   }
   applyMotion();
   toggle.addEventListener('click', () => {
-    motion = !motion;
-    try { localStorage.setItem('hsb-motion', motion ? 'on' : 'off'); } catch {}
+    userMotion = !userMotion;
+    try { localStorage.setItem('hsb-motion', userMotion ? 'on' : 'off'); } catch {}
     applyMotion();
   });
-  prefersReduced.addEventListener('change', () => { motion = !prefersReduced.matches; applyMotion(); });
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) { entry.target.classList.add('in-view'); observer.unobserve(entry.target); }
-    });
-  }, {threshold:.12, rootMargin:'0px 0px -20px 0px'});
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  prefersReduced.addEventListener('change', applyMotion);
+  function syncVisibility() {
+    body.classList.toggle('is-background', document.hidden);
+    if (document.hidden) finishEnhancements();
+  }
+  document.addEventListener('visibilitychange', syncVisibility);
+  syncVisibility();
+  // All copy is readable before enhancement, and after cancellation or script failure.
+  if ('IntersectionObserver' in window) {
+    const revealTargets = document.querySelectorAll('.overview-intro h2, .platform-copy, .platform-visual, .markets .section-head');
+    const entrance = new IntersectionObserver(entries => entries.forEach(entry => {
+      if (!entry.isIntersecting || !motion || document.hidden) return;
+      entrance.unobserve(entry.target);
+      if (entry.target.matches('.platform-copy')) {
+        [entry.target.querySelector('h2'), entry.target.querySelector('.body-large'), entry.target.querySelector('.platform-actions')].filter(Boolean).forEach((el, i) => {
+          animateElement(el, [{opacity:0, transform:'translateY(20px)'},{opacity:1,transform:'translateY(0)'}], {duration:700,delay:i*80,easing:'cubic-bezier(.22,1,.36,1)'});
+        });
+      } else if (entry.target.matches('.overview-intro h2')) {
+        [...entry.target.childNodes].forEach(node => {
+          if (node.nodeName === 'BR') node.replaceWith(document.createElement('br'));
+        });
+        // Lines retain their existing break points and accessible text order.
+        const lines = entry.target.innerHTML.split(/<br\s*\/?\s*>/i);
+        entry.target.replaceChildren();
+        lines.forEach((line, i) => {
+          const span = document.createElement('span'); span.className = 'reveal-line'; span.innerHTML = line; entry.target.append(span);
+          animateElement(span,[{opacity:0,transform:'translateY(20px)'},{opacity:1,transform:'translateY(0)'}],{duration:700,delay:i*80,easing:'cubic-bezier(.22,1,.36,1)'});
+        });
+      } else {
+        animateElement(entry.target,[{opacity:0,transform:'translateY(20px)'},{opacity:1,transform:'translateY(0)'}],{duration:entry.target.matches('.platform-visual')?800:700,delay:80,easing:'cubic-bezier(.22,1,.36,1)'});
+      }
+    }), {threshold:.15});
+    revealTargets.forEach(el => entrance.observe(el));
+    const floatObserver = new IntersectionObserver(entries => entries.forEach(entry => entry.target.classList.toggle('is-onscreen',entry.isIntersecting)),{threshold:.12});
+    document.querySelectorAll('.platform-float').forEach(el => floatObserver.observe(el));
+  }
 
   const header = document.querySelector('#header');
-  let previousScroll = 0;
+  header.classList.remove('hidden-header');
   const groups = [...document.querySelectorAll('.nav-group')];
   function closeGroups() { groups.forEach(group => { group.classList.remove('open'); group.querySelector('button').setAttribute('aria-expanded','false'); }); }
   groups.forEach(group => {
@@ -71,7 +117,8 @@
     menuToggle.setAttribute('aria-expanded', String(open)); menuToggle.setAttribute('aria-label', open ? '关闭菜单' : '打开菜单'); menu.hidden = !open;
   });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeGroups(); closeMobile(); } });
-  matchMedia('(min-width:801px)').addEventListener('change', e => { if (e.matches) closeMobile(); });
+  matchMedia('(min-width:1051px)').addEventListener('change', e => { if (e.matches) closeMobile(); });
+  header.addEventListener('focusin', () => header.classList.remove('hidden-header'));
   let scrollQueued = false;
   addEventListener('scroll', () => {
     if (scrollQueued) return;
@@ -79,14 +126,7 @@
     requestAnimationFrame(() => {
       const y = scrollY;
       header.classList.toggle('sticky', y > 120);
-      header.classList.toggle('hidden-header', y > 230 && y > previousScroll + 2 && menu.hidden && !header.contains(document.activeElement));
-      if (y < previousScroll - 2) header.classList.remove('hidden-header');
-      if (motion) {
-        const visual = document.querySelector('.platform-visual');
-        const bounds = visual.getBoundingClientRect();
-        if (bounds.bottom > 0 && bounds.top < innerHeight) visual.style.setProperty('--float-y', Math.max(-10,Math.min(10,(bounds.top-innerHeight/2)*.025))+'px');
-      }
-      previousScroll = y; scrollQueued = false;
+      scrollQueued = false;
     });
   }, {passive:true});
 
@@ -97,13 +137,8 @@
     energy:{symbol:'USOIL',name:'感受全球经济的能量。',description:'探索原油等能源品种，关注供需与市场变化。',icon:'Oil',price:'71.240',change:'−0.35% ↘',short:'WTI 原油',values:[45,55,32,40,64,51,78,67,88,69,104,86,112,96,127,110,141,123,152,135,160,149]}
   };
   const panel = document.querySelector('#market-panel');
-  function selectMarket(key, animate = true) {
+  function paintMarket(key) {
     const data = marketData[key];
-    document.querySelectorAll('.market-tab').forEach(tab => {
-      const active = tab.dataset.market === key;
-      tab.classList.toggle('active',active); tab.setAttribute('aria-selected',String(active)); tab.tabIndex=active?0:-1;
-    });
-    panel.setAttribute('aria-labelledby','tab-'+key);
     document.querySelector('#market-symbol').textContent=data.symbol;
     document.querySelector('#market-name').textContent=data.name;
     document.querySelector('#market-description').textContent=data.description;
@@ -117,14 +152,40 @@
     document.querySelector('.large-line').setAttribute('d',path);
     document.querySelector('.large-area').setAttribute('d',path+'L600 200H0Z');
     const down = data.values[data.values.length-1] > data.values[0];
-    document.querySelector('.large-line').style.stroke = down ? '#b85a60' : '';
+    document.querySelector('.large-line').style.stroke = down ? '#9D333B' : '';
     document.querySelector('.large-area').style.fill = down ? 'url(#largeFillDown)' : '';
+    document.querySelector('#market-price').textContent = data.price;
+    const change = document.querySelector('#market-change');
+    change.textContent = data.change; change.classList.toggle('negative',down);
+    document.querySelector('#market-status').textContent = `${data.symbol}；报价和图表为非实时展示示例。`;
+    panel.setAttribute('aria-busy','false');
     const lastV = data.values[data.values.length-1];
     const yPct = (lastV/200*100).toFixed(1)+'%';
     const baseline = document.querySelector('#chart-baseline'), tag = document.querySelector('#chart-last');
     if (baseline) { baseline.style.top = yPct; baseline.classList.toggle('down', down); }
     if (tag) { tag.style.top = yPct; tag.textContent = data.price; tag.classList.toggle('down', down); }
-    if (animate && motion) { panel.classList.remove('changing'); void panel.offsetWidth; panel.classList.add('changing'); }
+  }
+  let marketAnimation = null, marketGeneration = 0;
+  async function selectMarket(key, animate = true) {
+    if (!marketData[key]) return;
+    const generation = ++marketGeneration;
+    marketAnimation?.cancel();
+    document.querySelectorAll('.market-tab').forEach(tab => {
+      const active = tab.dataset.market === key;
+      tab.classList.toggle('active',active); tab.setAttribute('aria-selected',String(active)); tab.tabIndex=active?0:-1;
+    });
+    panel.setAttribute('aria-labelledby','tab-'+key);
+    panel.setAttribute('aria-busy','true');
+    const commit = () => { paintMarket(key); pendingMarketPaint = null; };
+    pendingMarketPaint = commit;
+    const url = new URL(location.href); url.searchParams.set('market',key);
+    try { history.replaceState(null,'',url); } catch {}
+    if (!animate || !motion || document.hidden || !panel.animate) { commit(); return; }
+    marketAnimation = animateElement(panel,[{opacity:1},{opacity:0}],{duration:120,easing:'ease-out'});
+    try { await marketAnimation.finished; } catch { return; }
+    if (generation !== marketGeneration) return;
+    commit();
+    marketAnimation = animateElement(panel,[{opacity:0,transform:'translateY(6px)'},{opacity:1,transform:'translateY(0)'}],{duration:280,easing:'cubic-bezier(.22,1,.36,1)'});
   }
   const tabs=[...document.querySelectorAll('.market-tab')];
   tabs.forEach((tab,index)=>{
@@ -138,7 +199,9 @@
       if(next!==undefined){e.preventDefault();tabs[next].focus();selectMarket(tabs[next].dataset.market);}
     });
   });
-  selectMarket('gold',false);
+  const requestedMarket = new URL(location.href).searchParams.get('market');
+  selectMarket(marketData[requestedMarket] ? requestedMarket : 'gold',false);
+  document.querySelector('.market-selector').hidden = false;
   document.querySelectorAll('[data-hero-market]').forEach(button => button.addEventListener('click',()=>{
     const data=marketData[button.dataset.heroMarket];
     document.querySelectorAll('[data-hero-market]').forEach(b=>{b.classList.toggle('selected',b===button);b.setAttribute('aria-pressed',String(b===button));});
