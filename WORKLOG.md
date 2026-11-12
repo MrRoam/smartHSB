@@ -56,3 +56,4 @@
 - 验证通过：五档宽度均无横向溢出或主要文案裁切；键盘、长列表、FAQ、四档移动菜单、快速切换、中断关闭、离屏及减少动效通过。无脚本副本的四组 25 品种可读、FAQ 可用。80 个实际背景区域最低对比度 5.04:1；两档 axe 无已判定违规，最终剩渐变颜色人工复核项；正文条件已结合实底/背景取样核对。原视频解码和开关播放行为正常。
 - 内容及证据：docs/design/light-20261111/IMPLEMENTATION.md 与 implementation-checks.json；资金/保险条件、监管、奖项、媒体、FAQ、法律披露与原 HTML 文字比对一致；临时无脚本文件已删除。全部新增规则限定首页，镜像与资源哈希版本已同步。未跟踪 assets/ 保留。
 - 下一步：提交本次文件并再次获取远端、推送 main；等待本次 Pages，核验公开首页和新 CSS/JS。发布结果随后记录。
+- 上线验证：内容提交 b581224f997d0982b707b5e91b7d50bebaaa8d4b 对应 Pages https://github.com/MrRoam/smartHSB/actions/runs/43133398560 为 completed / success。公开首页 https://mrroam.github.io/smartHSB/ 已应用新方案；25 项首页/主题/脚本/光门资源/审阅资料与本地版本一致，文本按 UTF-8/LF 归一化。首次一张 PNG 请求出现 SSL EOF，单独重试 HTTP 200、字节哈希一致。公开 390px 切到外汇后显示 17 项，页面无横向溢出，未出现 JS 错误。仅记录结果的后续提交仍按本次 SHA 等待 Pages 并复核公开版本。
