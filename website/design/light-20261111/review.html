@@ -1,0 +1,180 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#FFFFFF"><title>SmartHSB · 设计复核</title><link rel="stylesheet" href="proposal.css"><style>main.article{max-width:1080px;width:calc(100% - 40px);margin:48px auto 80px}article h1{font-size:40px;margin:40px 0 24px}article h2{font-size:30px;margin:56px 0 20px}article h3{font-size:22px;margin:32px 0 16px}article p,article ul,article ol{margin:18px 0}article pre{padding:24px;background:#f6f6f6;overflow:auto;border-radius:16px}article code{overflow-wrap:anywhere}article pre code{overflow-wrap:normal}article .table-scroll{margin-top:20px}nav{display:flex;flex-wrap:wrap;gap:24px}@media(max-width:540px){article h1{font-size:30px}article h2{font-size:26px}}</style></head><body><main class="article"><nav aria-label="设计资料"><a href="index.html">交互审阅稿</a><a href="boards.html">桌面／手机画板</a><a href="spec.html">完整规范</a><a href="review.html">复核结果</a></nav><article><h1>SmartHSB 浅色视觉方案复核</h1>
+<p>复核日期：2026-11-12，北京时间。对象：本目录的独立审阅稿，不是尚未制作的完整新首页。</p>
+<p>结论：<strong>可进入视觉审阅。</strong> 三个关键场景、语义色、渐变配方、响应式和动效规范已交付。正式首页及其资源未修改。设计审阅稿以独立链接公开，首页未改版。</p>
+<h2>具体差距与最小处理</h2>
+<div aria-label="可横向滚动的规范表格" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>位置</th>
+<th>影响</th>
+<th>根因</th>
+<th>最小有效处理 / 当前状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>index.html:7</code> 光门场景</td>
+<td>首屏仍为炭黑，不满足“首屏本身全浅色”的更强目标</td>
+<td>原视频明暗、黑色遮罩、最终 screen 合成共同依赖深底；仅换 CSS 无效</td>
+<td>本稿推荐保留原光门，下一内容区切到浅色。全浅色版本需先做独立蒙版/合成验证，当前未完成</td>
+</tr>
+<tr>
+<td><code>index.html:12</code> 平台主图</td>
+<td>不能把网页白色示例理解为已经存在的 APP 白色皮肤</td>
+<td>审阅稿沿用当前首页演示内容，未获取新的干净 APP 界面素材</td>
+<td>画面及图注已明确“现有网页演示、非实时、不是新 APP 皮肤”；正式实施如使用真实 APP 图，替换设备屏幕内容，保留当前舞台比例</td>
+</tr>
+<tr>
+<td><code>proposal.css:16</code> 字体</td>
+<td>英文字形与 Minpilot 的 General Sans 不完全一致</td>
+<td>审阅稿使用仓库已具备的 SuisseIntl 与系统中文字体</td>
+<td>若要求精确字形，先核对 General Sans 授权与加载成本；无需为确认配色先换字体</td>
+</tr>
+<tr>
+<td><code>index.html:142</code>、<code>proposal.js</code> 动效</td>
+<td>预览尚不能证明完整中文分行、交错、Tab 退出、按钮翻页效果</td>
+<td>本轮只做设计样本；完整编排须在真实首页 DOM 上整合</td>
+<td>规范已写明建议与实际样本；确认后实现 120ms 退出、280ms 进入、80ms 交错并复核快速中断</td>
+</tr>
+<tr>
+<td><code>proposal.css:39</code> 审阅导航</td>
+<td>窄屏展开或脚本缺失时有挤压风险</td>
+<td>五个导航项的总宽度大于 320px 可用空间</td>
+<td>已改为 flex-wrap；同一 HTML 的无增强脚本版本在 320px 无溢出，导航保持可读</td>
+</tr>
+<tr>
+<td><code>proposal.css:186</code> 循环降级</td>
+<td>只按极窄手机断点关闭，会遗漏较宽手机视口</td>
+<td>装饰循环与导航折叠不应共用断点</td>
+<td>已独立定义 ≤767px 关闭浮卡循环；不是只在 320/390px 关闭</td>
+</tr>
+</tbody>
+</table></div>
+<p>以上前四项是方案边界或实施差距，后两项已修正。没有把未完成项写成已验证的首页行为。</p>
+<h2>视觉与内容</h2>
+<ul>
+<li>常规内容以白、柔白、浅薄荷、冰蓝为主。光门是明确保留的深色例外。75/15/8/2 是浅色内容的构图建议，没有做像素占比认定。</li>
+<li>产品舞台的光集中在右侧，文案区保持浅色；市场区使用实色白面。未使用标题渐变字、整页玻璃卡、背景流动或多组循环。</li>
+<li>场景一保留原光门实拍：门、人物、原文案和六徽章。原视频已在本轮浏览器解码（readyState 4）；没有为预览重写视频或动画。</li>
+<li>平台示意中的模拟资金和报价来自原首页，屏内及屏外均有示例说明。市场区的分类、25 个名称/报价/涨跌和代表图表数据来自原 HTML/JS。正负值同时有符号，不只靠颜色。</li>
+<li><a href="evidence/content-inventory.json">内容盘点</a> 确认贵金属 2、股指 5、外汇 17、能源 1；六徽章、六年奖项、五媒体和五项 FAQ。其余账户、监管、资金隔离、支付/保险条件、积分活动、运营信息和风险披露在 <a href="spec.html">规范第 6 节</a> 逐项安排。</li>
+<li>其余区块尚未画成完整新首页，不能据这三个场景断言整页内容已完成设计回归。当前正式内容完整保留，由文件指纹核对：128 个正式文件无变化。</li>
+</ul>
+<h2>响应式与键盘</h2>
+<div aria-label="可横向滚动的规范表格" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>宽度</th>
+<th>页面横向溢出</th>
+<th>主要文案裁切</th>
+<th>平台布局</th>
+<th>市场布局</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>320px</td>
+<td>0px</td>
+<td>未发现</td>
+<td>单栏，CTA 纵向，设备完整，浮卡在流中</td>
+<td>四 Tab 等宽，图表/列表纵排</td>
+</tr>
+<tr>
+<td>390px</td>
+<td>0px</td>
+<td>未发现</td>
+<td>单栏，CTA 并排，设备下置</td>
+<td>同上，长列表独立滚动</td>
+</tr>
+<tr>
+<td>768px</td>
+<td>0px</td>
+<td>未发现</td>
+<td>单栏，大产品</td>
+<td>图表前、列表后</td>
+</tr>
+<tr>
+<td>1024px</td>
+<td>0px</td>
+<td>未发现</td>
+<td>两栏，设备与浮卡缩小</td>
+<td>图表/列表两栏</td>
+</tr>
+<tr>
+<td>1440px</td>
+<td>0px</td>
+<td>未发现</td>
+<td>1280px 内容宽，两栏大产品</td>
+<td>两栏，白面板和完整品种列表</td>
+</tr>
+</tbody>
+</table></div>
+<p><a href="evidence/layout.json">布局记录</a>；<a href="boards.html">桌面/手机画板</a>。截图是相应宽度的实际浏览器渲染，非一张桌面图等比缩成手机。</p>
+<p>已验证四类 Tab 点击、Left/Right 环绕、Home/End、roving tabindex、面板标签关联；外汇 17 项的可聚焦列表可用 End 键滚到底部。已验证 FAQ 原生 Enter/Space，以及审阅菜单 Escape 关闭并归还焦点。焦点为蓝色 3px 实线，offset 5px。见 <a href="evidence/interactions.json">交互记录</a>。</p>
+<p>所有本地引用及下载、模拟账户、教程、产品、帮助等内页目标均存在；这不等于外部下载商店和真实交易链路已验证。</p>
+<h2>对比度与无障碍</h2>
+<div aria-label="可横向滚动的规范表格" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>组合</th>
+<th>对比度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>深墨 / 白</td>
+<td>16.83:1</td>
+</tr>
+<tr>
+<td>正文灰 / 白</td>
+<td>6.27:1</td>
+</tr>
+<tr>
+<td>正文灰 / 冰蓝</td>
+<td>5.72:1</td>
+</tr>
+<tr>
+<td>深绿链接 / 白</td>
+<td>6.50:1</td>
+</tr>
+<tr>
+<td>深绿链接 / 浅薄荷</td>
+<td>6.31:1</td>
+</tr>
+<tr>
+<td>深墨 / 柠檬绿按钮</td>
+<td>14.08:1</td>
+</tr>
+<tr>
+<td>白字 / 科技蓝按钮</td>
+<td>5.16:1</td>
+</tr>
+<tr>
+<td>控件灰边 / 白</td>
+<td>3.24:1</td>
+</tr>
+<tr>
+<td>小白字 / 翡翠绿</td>
+<td>3.15:1，禁止用于普通小字</td>
+</tr>
+<tr>
+<td>小白字 / 柠檬绿</td>
+<td>1.19:1，禁止</td>
+</tr>
+</tbody>
+</table></div>
+<p><a href="evidence/contrast.json">色值计算</a>。渐变实际背景另做五档渲染采样：将文字临时设为透明，保留背景与组件材质，在真实文字矩形内每 4px 取样；按钮取文字所在的内矩形，排除圆角外部。共 125 个区域，最低 <strong>5.06:1</strong>。记录及背景样本见 <a href="evidence/rendered-contrast.json">rendered-contrast.json</a>。该结果不覆盖光门静帧中的栅格文字或作为图片展示的设备内小字。</p>
+<p>axe-core 4.12.1：390px 为 50 项通过、0 已判定违规；1440px 为 49 项通过、0 已判定违规。两者均有 1 个颜色对比度规则待人工判断，原因为背景含渐变，未把待定项算成自动通过。对应文字区域以上述实际背景采样补充。见 <a href="evidence/axe-390.json">390px</a> / <a href="evidence/axe-1440.json">1440px</a>。</p>
+<p>复核参考了本轮重新读取的 <a href="https://raw.githubusercontent.com/vercel-labs/web-interface-guidelines/main/command.md">Web Interface Guidelines</a>。</p>
+<h2>动效及失败降级</h2>
+<ul>
+<li>默认静态，动画数为 0。用户开启后桌面仅一张浮卡循环，8px / 6s。</li>
+<li>已观测持续循环在离屏后暂停；关闭总开关后动画数回到 0，内容显示最终状态。</li>
+<li>系统减少动效时动画数为 0，开关显示系统状态并禁用。手机浮卡回文档流；≤767px 不运行循环。</li>
+<li>后台暂停的 visibilitychange 处理已通过模拟 hidden 状态测试；真实浏览器后台/操作系统挂起未做跨设备现场验证。没有把“切回前台后正常”当作“后台全程暂停”的独立证据。见 <a href="evidence/motion.json">motion.json</a>。</li>
+<li>失败降级使用<strong>同一 HTML 仅去掉外部增强脚本的副本</strong>检查，没有把网络拦截成功写为证据。320px 时全部 25 品种、四组标题及导航可见，无溢出，原生 FAQ 仍可用，失效的动效按钮隐藏。见 <a href="evidence/script-failure.json">script-failure.json</a> 与 <a href="evidence/script-failure.html">可查看副本</a>。</li>
+</ul>
+<h2>未检查与实施后必查</h2>
+<p>全浅色光门的逐帧合成；完整新首页的导航、25 品种及现有脚本整合；新样式对内页的隔离；实际手机 GPU、低电量模式、Safari/Firefox；真实 APP 皮肤、外部商店下载链路、真实交易链路；金额、保险、资质的外部有效性；完整首页改版的 GitHub Pages 发布。当前仅公开设计审阅稿。</p>
+<p>参考站事实沿用已采集的原始证据，本轮重新核对四份来源哈希一致。新径向渐变、比例、中文字号、慢浮动和新缓动均为项目建议。</p>
+</article></main></body></html>

@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="zh-CN"><head><base href="../"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#FFFFFF"><title>SmartHSB 浅色视觉提案 · 设计审阅</title><link rel="icon" href="../../assets/img/favicon-64.png"><link rel="stylesheet" href="proposal.css"></head>
+<body class="motion-off"><a class="skip" href="#main">跳到设计内容</a>
+<header class="review-header"><div class="wrap"><a class="brand" href="#main"><img src="../../assets/img/logo-s-symbol.png" width="30" height="30" alt=""><span translate="no">SmartHSB</span></a><nav id="review-links" class="review-links" aria-label="设计审阅导航"><a href="#scene-portal">光门衔接</a><a href="#scene-platform">平台产品</a><a href="#scene-markets">市场区</a><a href="#color-system">配色规范</a><a href="#motion-system">动效与验收</a></nav><div class="review-tools"><button class="menu-button" aria-expanded="false" aria-controls="review-links">审阅导航</button><button id="motion-toggle" class="motion-button" aria-pressed="false">动效演示：关闭</button></div></div></header>
+<main id="main"><section class="masthead wrap"><p class="meta">设计审阅 · 2026.11.11 · 尚未实施</p><div class="masthead-grid"><h1>SmartHSB<br>浅色视觉提案</h1><div><p>白色建立秩序，蓝绿柔光托起产品。<br>把复杂的市场信息，放回清晰的阅读层次。</p><p>参考 Minpilot 的空间、产品比例与精细边缘。下方展示三个关键场景，所有新增配方均为项目建议。</p></div></div><div class="allocation" aria-hidden="true"><span></span><span></span><span></span><span></span></div><p class="allocation-label">构图起点：75% 白/柔白 · 15% 浅蓝/浅薄荷 · 8% 绿青 · 2% 蓝与补色。不是原站像素统计。</p></section>
+
+<section id="scene-portal" aria-labelledby="portal-scene-title"><div class="scene-caption"><div class="wrap"><h2 id="portal-scene-title">光门之后，进入明亮的市场。</h2><p>原光门真实静帧 + 浅色内容衔接建议。保留原门、人物、文案、六徽章；原视频及动画源码不变。</p></div></div>
+<picture class="portal-picture"><source media="(max-width:359px)" srcset="images/portal-320.png"><source media="(max-width:540px)" srcset="images/portal-mobile.png"><source media="(max-width:900px)" srcset="images/portal-768.png"><source media="(max-width:1200px)" srcset="images/portal-1024.png"><img src="images/portal-desktop.png" width="1440" height="900" alt="现有 SmartHSB 光门静帧：左侧原文案、中央明亮门与人物、底部六机构徽章。此图不演示新光门配色。" loading="lazy"></picture>
+<div class="bridge"><div class="wrap"><h2 data-entrance>一个账户。<br>打开全球市场。</h2><p>从贵金属到外汇，让市场、分析与交易彼此相连。<br>把更多精力，留给你的判断。</p><a class="text-link" href="../../about.html">了解 SmartHSB <span aria-hidden="true">↗</span></a><div class="market-coverage"><div><strong>贵金属</strong><span>2 个品种</span></div><div><strong>股指</strong><span>5 个品种</span></div><div><strong>外汇</strong><span>17 个品种</span></div><div><strong>能源</strong><span>1 个品种</span></div></div></div></div>
+<div class="design-note"><div class="wrap"><h3>衔接选择 / 项目建议</h3><p>原光门保留炭黑舞台，浅色从下一内容区开始。柔光不盖住门与徽章。当前 Canvas 依赖黑色遮罩与 screen 合成；全浅色光门仍需单独验证，不能通过换背景色完成。</p></div></div></section>
+
+<section id="scene-platform" aria-labelledby="platform-scene-title"><div class="scene-caption"><div class="wrap"><h2 id="platform-scene-title">平台产品 / 以产品建立空间层次</h2><p>参考关系：大产品、少量浮卡、柔光向白消散。布局、配方与按钮分工为项目建议。</p></div></div>
+<div class="platform-stage"><div class="wrap platform-layout"><div class="platform-copy"><h2 data-entrance>从看见机会，<br>到把握机会。</h2><p>一个 APP，让行情、分析与交易相连。</p><h3>看清市场，再做决定</h3><p class="feature-copy">自选行情、财经日历与 Trading Central 研报，协助你建立自己的交易判断。</p><h3>熟悉的操作，完整的体验</h3><p class="feature-copy">先用模拟账户练习，再选择适合你的账户。在移动端管理你的交易。</p><div class="actions"><a class="button button-lime" href="../../download.html">下载 APP <span class="arrow" aria-hidden="true">↗</span></a><span class="iris-shell"><a class="button" href="../../demo.html">试用模拟账户</a></span></div></div><figure class="platform-visual" aria-label="SmartHSB 现有网页示例界面，在新产品舞台中的排版示意。不是新 APP 截图。"><div aria-hidden="true" class="phone">
+<div class="phone-camera">
+</div>
+<div class="phone-screen">
+<div class="phone-logo">
+       SmartHSB
+       <span>
+        ●
+       </span>
+</div>
+<p class="phone-greeting">
+       你好，欢迎回来
+      </p>
+<p class="phone-headline">
+       你的下一步，
+       <br/>
+       从这里开始。
+      </p>
+<div class="phone-balance">
+<small>
+        模拟账户 · USD
+       </small>
+<strong>
+        10,000.00
+       </strong>
+<span>
+        虚拟资金
+       </span>
+</div>
+<div class="phone-section">
+       市场自选
+       <span>
+        ＋
+       </span>
+</div>
+<div class="phone-row">
+<i>
+        Au
+       </i>
+<div>
+<b>
+         XAU/USD
+        </b>
+<small>
+         黄金
+        </small>
+</div>
+<strong>
+        2,384.70
+        <small>
+         +0.45%
+        </small>
+</strong>
+</div>
+<div class="phone-row">
+<i>
+        ↗
+       </i>
+<div>
+<b>
+         HK50
+        </b>
+<small>
+         恒生指数
+        </small>
+</div>
+<strong>
+        18,420.5
+        <small>
+         +0.28%
+        </small>
+</strong>
+</div>
+<div class="phone-row">
+<i>
+        €
+       </i>
+<div>
+<b>
+         EUR/USD
+        </b>
+<small>
+         欧元 / 美元
+        </small>
+</div>
+<strong>
+        1.08640
+        <small>
+         +0.12%
+        </small>
+</strong>
+</div>
+<div class="phone-disclaimer">
+       界面及行情为展示示例
+      </div>
+<div class="phone-nav">
+<span>
+        ⌂
+        <small>
+         首页
+        </small>
+</span>
+<span>
+        ↗
+        <small>
+         交易
+        </small>
+</span>
+<span>
+        ▤
+        <small>
+         仓位
+        </small>
+</span>
+<span>
+        ◎
+        <small>
+         我的
+        </small>
+</span>
+</div>
+</div>
+</div><div class="mini-analysis" aria-hidden="true"><p>市场分析</p><div class="bars"><i></i><i></i><i></i><i></i><i></i></div></div><div class="float-card"><strong>$10,000 虚拟资金</strong><p>从模拟交易开始，先熟悉平台。</p></div></figure></div><p class="wrap stage-caption">界面、报价和图表均为非实时展示示例。设备内沿用现有网页演示内容，不代表新 APP 皮肤。</p></div><div class="design-note"><div class="wrap"><h3>视觉分工 / 项目建议</h3><p>文案区保持平静，柠檬绿、薄荷青与少量蓝光集中在产品后方。亮绿按钮用深墨字；模拟账户保留一处 2px 虹彩轮廓。手机取消分析小卡与循环浮动，让产品和说明完整落在文档流。</p></div></div></section>
+
+<section id="scene-markets" aria-labelledby="market-scene-title"><div class="scene-caption"><div class="wrap"><h2 id="market-scene-title">市场区 / 把信息放回稳定的白面</h2><p>原四类市场、25 品种、名称与示例数据。可试用 Tab 方向键、Home / End 和外汇列表滚动。</p></div></div>
+<div class="markets"><div class="wrap"><div class="market-heading"><div><h2 data-entrance>看见市场，<br>选择你的关注。</h2><p>贵金属 2 · 股指 5 · 外汇 17 · 能源 1 · 共 25 个品种</p></div><a class="text-link" href="../../products.html">探索全部品种 <span aria-hidden="true">↗</span></a></div><div class="market-explorer"><div class="market-tabs" role="tablist" aria-label="市场分类" hidden><button class="market-tab" id="tab-gold" role="tab" aria-controls="market-panel" aria-selected="true" tabindex="0" data-market="gold">贵金属<span>2 个品种</span></button><button class="market-tab" id="tab-index" role="tab" aria-controls="market-panel" aria-selected="false" tabindex="-1" data-market="index">股指<span>5 个品种</span></button><button class="market-tab" id="tab-fx" role="tab" aria-controls="market-panel" aria-selected="false" tabindex="-1" data-market="fx">外汇<span>17 个品种</span></button><button class="market-tab" id="tab-energy" role="tab" aria-controls="market-panel" aria-selected="false" tabindex="-1" data-market="energy">能源<span>1 个品种</span></button></div><p data-js-note>当前以列表展示全部 25 品种。启用脚本后可按四类市场切换。</p><div id="market-panel" class="market-panel" role="tabpanel" aria-labelledby="tab-gold"><div class="chart-copy"><span class="symbol" id="market-symbol">XAU / USD</span><h3 id="market-name">黄金，全球共同的语言。</h3><p id="market-description">关注黄金与白银，把握贵金属市场的变化。</p><p class="quote"><span id="market-price" style="font:inherit;color:inherit;margin:0">2,384.70</span><span id="market-change">+0.45% ↗</span></p><p class="chart-label">代表品种 · 图表为展示示例</p><svg class="chart" viewBox="0 0 500 190" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="chart-fill" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#01A66B" stop-opacity=".12"></stop><stop offset="1" stop-color="#01A66B" stop-opacity="0"></stop></linearGradient></defs><path id="chart-area" d="M0.0 143.2 L23.8 136.0 L47.6 140.0 L71.4 123.2 L95.2 127.2 L119.0 112.8 L142.9 121.6 L166.7 96.0 L190.5 101.6 L214.3 112.8 L238.1 84.0 L261.9 92.8 L285.7 77.6 L309.5 87.2 L333.3 61.6 L357.1 69.6 L381.0 51.2 L404.8 60.0 L428.6 37.6 L452.4 44.0 L476.2 28.0 L500.0 35.2 L500 190 H0Z" fill="url(#chart-fill)"></path><path id="chart-line" d="M0.0 143.2 L23.8 136.0 L47.6 140.0 L71.4 123.2 L95.2 127.2 L119.0 112.8 L142.9 121.6 L166.7 96.0 L190.5 101.6 L214.3 112.8 L238.1 84.0 L261.9 92.8 L285.7 77.6 L309.5 87.2 L333.3 61.6 L357.1 69.6 L381.0 51.2 L404.8 60.0 L428.6 37.6 L452.4 44.0 L476.2 28.0 L500.0 35.2" fill="none" stroke="#006C45" stroke-width="2.5"></path></svg></div><div class="instrument-groups"><section class="instrument-group" data-instrument-group="gold"><div class="instruments-heading"><h4>贵金属 · 2 个品种</h4><span>示例报价 · 非实时</span></div><ul class="instrument-list" tabindex="0" aria-label="贵金属全部 2 个品种，可滚动列表"><li class="instrument-row" data-symbol="XAU/USD"><div><b>XAU/USD</b><small>黄金</small></div><div><strong>2384.70</strong><span class="positive">+0.45%</span></div></li><li class="instrument-row" data-symbol="XAG/USD"><div><b>XAG/USD</b><small>白银</small></div><div><strong>27.845</strong><span class="positive">+0.62%</span></div></li></ul></section><section class="instrument-group" data-instrument-group="index"><div class="instruments-heading"><h4>股指 · 5 个品种</h4><span>示例报价 · 非实时</span></div><ul class="instrument-list" tabindex="0" aria-label="股指全部 5 个品种，可滚动列表"><li class="instrument-row" data-symbol="HK50"><div><b>HK50</b><small>香港恒生</small></div><div><strong>18420.5</strong><span class="positive">+0.28%</span></div></li><li class="instrument-row" data-symbol="JPN225"><div><b>JPN225</b><small>日经225</small></div><div><strong>38120.0</strong><span class="positive">+0.16%</span></div></li><li class="instrument-row" data-symbol="SP500"><div><b>SP500</b><small>标普500</small></div><div><strong>5820.50</strong><span class="negative">-0.12%</span></div></li><li class="instrument-row" data-symbol="TECH100"><div><b>TECH100</b><small>纳指100</small></div><div><strong>20340.0</strong><span class="positive">+0.34%</span></div></li><li class="instrument-row" data-symbol="DJ30"><div><b>DJ30</b><small>道琼斯</small></div><div><strong>42650.0</strong><span class="positive">+0.05%</span></div></li></ul></section><section class="instrument-group" data-instrument-group="fx"><div class="instruments-heading"><h4>外汇 · 17 个品种</h4><span>示例报价 · 非实时</span></div><ul class="instrument-list" tabindex="0" aria-label="外汇全部 17 个品种，可滚动列表"><li class="instrument-row" data-symbol="EUR/USD"><div><b>EUR/USD</b><small>欧元/美元</small></div><div><strong>1.08640</strong><span class="positive">+0.12%</span></div></li><li class="instrument-row" data-symbol="GBP/USD"><div><b>GBP/USD</b><small>英镑/美元</small></div><div><strong>1.29340</strong><span class="positive">+0.08%</span></div></li><li class="instrument-row" data-symbol="AUD/USD"><div><b>AUD/USD</b><small>澳元/美元</small></div><div><strong>0.65510</strong><span class="negative">-0.09%</span></div></li><li class="instrument-row" data-symbol="NZD/USD"><div><b>NZD/USD</b><small>纽元/美元</small></div><div><strong>0.60230</strong><span class="positive">+0.10%</span></div></li><li class="instrument-row" data-symbol="USD/JPY"><div><b>USD/JPY</b><small>美元/日元</small></div><div><strong>151.350</strong><span class="negative">-0.21%</span></div></li><li class="instrument-row" data-symbol="USD/CHF"><div><b>USD/CHF</b><small>美元/瑞郎</small></div><div><strong>0.88750</strong><span class="positive">+0.05%</span></div></li><li class="instrument-row" data-symbol="USD/CAD"><div><b>USD/CAD</b><small>美元/加元</small></div><div><strong>1.37420</strong><span class="negative">-0.06%</span></div></li><li class="instrument-row" data-symbol="AUD/JPY"><div><b>AUD/JPY</b><small>澳元/日元</small></div><div><strong>99.160</strong><span class="negative">-0.05%</span></div></li><li class="instrument-row" data-symbol="AUD/NZD"><div><b>AUD/NZD</b><small>澳元/纽元</small></div><div><strong>1.08760</strong><span class="positive">+0.07%</span></div></li><li class="instrument-row" data-symbol="EUR/AUD"><div><b>EUR/AUD</b><small>欧元/澳元</small></div><div><strong>1.65820</strong><span class="positive">+0.15%</span></div></li><li class="instrument-row" data-symbol="EUR/CHF"><div><b>EUR/CHF</b><small>欧元/瑞郎</small></div><div><strong>0.96380</strong><span class="positive">+0.01%</span></div></li><li class="instrument-row" data-symbol="EUR/GBP"><div><b>EUR/GBP</b><small>欧元/英镑</small></div><div><strong>0.83980</strong><span class="positive">+0.04%</span></div></li><li class="instrument-row" data-symbol="EUR/JPY"><div><b>EUR/JPY</b><small>欧元/日元</small></div><div><strong>164.520</strong><span class="negative">-0.12%</span></div></li><li class="instrument-row" data-symbol="GBP/AUD"><div><b>GBP/AUD</b><small>英镑/澳元</small></div><div><strong>1.97420</strong><span class="positive">+0.11%</span></div></li><li class="instrument-row" data-symbol="GBP/CHF"><div><b>GBP/CHF</b><small>英镑/瑞郎</small></div><div><strong>1.14760</strong><span class="positive">+0.09%</span></div></li><li class="instrument-row" data-symbol="NZD/JPY"><div><b>NZD/JPY</b><small>纽元/日元</small></div><div><strong>91.180</strong><span class="negative">-0.03%</span></div></li><li class="instrument-row" data-symbol="GBP/JPY"><div><b>GBP/JPY</b><small>英镑/日元</small></div><div><strong>195.830</strong><span class="positive">+0.02%</span></div></li></ul></section><section class="instrument-group" data-instrument-group="energy"><div class="instruments-heading"><h4>能源 · 1 个品种</h4><span>示例报价 · 非实时</span></div><ul class="instrument-list" tabindex="0" aria-label="能源全部 1 个品种，可滚动列表"><li class="instrument-row" data-symbol="USOIL"><div><b>USOIL</b><small>美国原油</small></div><div><strong>71.240</strong><span class="negative">-0.35%</span></div></li></ul></section></div></div><p class="market-disclaimer">示例报价 · 非实时。图表为展示示例，不构成交易建议。交易规则、费用与风险请查阅交易品种及风险披露。</p><p id="market-status" class="sr-only" aria-live="polite"></p></div></div></div><div class="design-note"><div class="wrap"><h3>数据层级 / 项目建议</h3><p>冰蓝划分区块，白色承载数据，深绿表达选中与正向值。标签同时提供边框与 ARIA 状态；涨跌保留正负号。外汇 17 项使用可聚焦滚动列表，不缩小文字、不省略品种。</p></div></div></section>
+
+<section class="system-section" id="color-system"><div class="wrap"><h2>亮色各有分工。<br>正文始终清晰。</h2><p>下列色值有参考站依据；浅薄荷、冰蓝及具体用途为项目建议。每区块一个主强调色、最多一个辅助色。柔光与虹彩只承担装饰，不代替状态与条件。</p><div class="swatches"><div class="swatch"><div class="swatch-color" style="--swatch:#FFFFFF"></div><div class="swatch-text"><strong>白</strong><code>#FFFFFF</code><p>主阅读面与白色组件</p></div></div><div class="swatch"><div class="swatch-color" style="--swatch:#F6F6F6"></div><div class="swatch-text"><strong>柔白</strong><code>#F6F6F6</code><p>安静的信息背景</p></div></div><div class="swatch"><div class="swatch-color" style="--swatch:#F1FFF7"></div><div class="swatch-text"><strong>浅薄荷</strong><code>#F1FFF7</code><p>选中底与模拟账户</p></div></div><div class="swatch"><div class="swatch-color" style="--swatch:#EEF5FF"></div><div class="swatch-text"><strong>冰蓝</strong><code>#EEF5FF</code><p>市场区与功能分层</p></div></div><div class="swatch"><div class="swatch-color" style="--swatch:#97F05E"></div><div class="swatch-text"><strong>荧光草绿</strong><code>#97F05E</code><p>主按钮反馈与图形</p></div></div><div class="swatch"><div class="swatch-color" style="--swatch:#BFFF37"></div><div class="swatch-text"><strong>柠檬黄绿</strong><code>#BFFF37</code><p>主要行动与产品光源</p></div></div><div class="swatch"><div class="swatch-color" style="--swatch:#5BFFC3"></div><div class="swatch-text"><strong>薄荷亮青</strong><code>#5BFFC3</code><p>柔光与按下反馈</p></div></div><div class="swatch"><div class="swatch-color" style="--swatch:#01A66B"></div><div class="swatch-text"><strong>翡翠绿</strong><code>#01A66B</code><p>品牌图形与辅助数据</p></div></div><div class="swatch"><div class="swatch-color" style="--swatch:#235DFE"></div><div class="swatch-text"><strong>科技蓝</strong><code>#235DFE</code><p>功能行动与键盘焦点</p></div></div><div class="swatch"><div class="swatch-color" style="--swatch:#00E5E0"></div><div class="swatch-text"><strong>电光青</strong><code>#00E5E0</code><p>局部装饰光</p></div></div><div class="swatch"><div class="swatch-color" style="--swatch:#006C45"></div><div class="swatch-text"><strong>深绿</strong><code>#006C45</code><p>链接与选中标签</p></div></div><div class="swatch"><div class="swatch-color" style="--swatch:#1D1D1F"></div><div class="swatch-text"><strong>深墨</strong><code>#1D1D1F</code><p>标题、关键数字</p></div></div><div class="swatch"><div class="swatch-color" style="--swatch:#606062"></div><div class="swatch-text"><strong>正文灰</strong><code>#606062</code><p>说明与适用条件</p></div></div><div class="swatch"><div class="swatch-color" style="--swatch:#B7A2E3"></div><div class="swatch-text"><strong>淡紫</strong><code>#B7A2E3</code><p>少量可选补光</p></div></div><div class="swatch"><div class="swatch-color" style="--swatch:#F36600"></div><div class="swatch-text"><strong>橙色</strong><code>#F36600</code><p>极少量图形补色</p></div></div></div><div class="recipe-grid"><article class="recipe"><div class="recipe-preview stage"><span>产品舞台</span></div><div class="recipe-copy"><h3>光集中在产品后方</h3><p>右上柠檬绿、中央薄荷青、底部少量蓝。径向位置、透明度和色标均为新建议，原站首屏是背景图。</p></div></article><article class="recipe"><div class="recipe-preview band"><a class="button button-blue" href="../../demo.html">开启模拟交易</a></div><div class="recipe-copy"><h3>薄荷至柠檬柔光带</h3><p>#BCFFF4 → #DDFF90，opacity .6 有原站依据。大舞台建议 blur 80px，平板 56px，手机 32px；本小样 36px。</p></div></article><article class="recipe"><div class="recipe-preview"><span class="iris-shell"><a class="button" href="../../platform-tutorial.html">了解平台功能</a></span></div><div class="recipe-copy"><h3>2px 虹彩边框</h3><p>五段色标有原站依据。白色内层保持字清晰，只用于少量重点轮廓；此处为材质小样。</p></div></article></div><p><a class="text-link" href="spec.html">查看语义色表、CSS 配方与按钮全部状态 <span aria-hidden="true">↗</span></a></p></div></section>
+
+<section class="system-section motion-section" id="motion-system"><div class="wrap"><h2>先让人看清，<br>再让界面回应。</h2><p>默认静态。页首“动效演示”可开启样本；系统减少动效优先。原光门仍是静态实拍，未重写视频与时序。下表是项目建议，完整触发、缓动、延迟与降级说明见规范。</p><div class="table-scroll" tabindex="0" role="region" aria-label="可横向滚动的动效建议表"><table><thead><tr><th>对象</th><th>建议参数</th><th>暂停与手机处理</th><th>本稿实现</th></tr></thead><tbody><tr><td>标题与产品入场</td><td>600–800ms / 16–24px / 交错 60–100ms</td><td>最终内容默认可见；减少动效即时显示</td><td>700ms / 20px 单元素样本</td></tr><tr><td>按钮</td><td>180–300ms / 箭头 4–6px</td><td>Hover 与 focus-visible 同等反馈；关闭动效保留颜色和焦点</td><td>220ms / 4px；未实现文字翻页</td></tr><tr><td>市场 Tab</td><td>退出 120ms / 进入 280ms</td><td>快速切换取消旧动画；减少动效即时更新</td><td>进入 280ms 淡入；退出待实施</td></tr><tr><td>模拟账户浮卡</td><td>8px / 完整往返 6s / ease-in-out</td><td>一组循环，离屏及后台暂停；手机关闭</td><td>开启后仅桌面运行</td></tr><tr><td>轨道与渐变</td><td>轨道可选 30s；柔光静态</td><td>若采用轨道，替换浮卡循环；手机关闭</td><td>无轨道；全部渐变静态</td></tr><tr><td>FAQ / 导航</td><td>原生语义；即时或短反馈</td><td>Enter / Space、Escape、焦点清晰</td><td>原生 details；审阅菜单即时开关</td></tr></tbody></table></div><div class="faq-preview"><h3>FAQ 样式与键盘样本</h3><details><summary>SmartHSB 提供哪些交易市场？</summary><p>
+      提供贵金属、股指、外汇及能源四大类交易品种。具体交易规则、合约与可用品种，请查看
+      <a href="../../products.html">
+       交易品种页面
+      </a>
+      。
+     </p></details><details><summary>可以先使用模拟账户吗？</summary><p>
+      可以。模拟账户提供 $10,000 虚拟资金，用于熟悉平台和练习交易，无需入金。
+      <a href="../../demo.html">
+       了解模拟账户
+      </a>
+      。
+     </p></details><details><summary>如何下载 SmartHSB APP？</summary><p>
+      请前往
+      <a href="../../download.html">
+       下载中心
+      </a>
+      ，查看适合你设备的下载与安装说明。
+     </p></details><details><summary>如何了解资金存管与出入金？</summary><p>
+      请查阅
+      <a href="../../deposit-withdraw.html">
+       入金出金说明
+      </a>
+      及
+      <a href="../../licenses.html">
+       许可证与认证
+      </a>
+      ，了解客户资金隔离存管、支付方式与适用条件。
+     </p></details><details><summary>交易前需要了解哪些风险？</summary><p>
+      杠杆和差价合约交易具有较高风险，可能导致资金损失。请在交易前阅读
+      <a href="../../learn-risk.html">
+       风险披露
+      </a>
+      ，并确认你理解相关产品。
+     </p></details></div><p><a class="text-link" href="spec.html">完整设计规范 <span aria-hidden="true">↗</span></a><a class="text-link" href="review.html">查看检查结果 <span aria-hidden="true">↗</span></a></p></div></section>
+</main><footer class="review-footer"><div class="wrap"><p>独立审阅稿。首页、现有资源、视频和线上版本保持原状。</p><p><a href="https://minpilot.webflow.io/">Minpilot 参考</a><a href="../../design/minpilot/">原站提取证据</a><a href="spec.html">规范与实施边界</a></p></div></footer><script id="market-data" type="application/json">{"gold": {"symbol": "XAU / USD", "name": "黄金，全球共同的语言。", "description": "关注黄金与白银，把握贵金属市场的变化。", "icon": "Au", "price": "2,384.70", "change": "+0.45% ↗", "short": "黄金 / 美元", "values": [164, 155, 160, 139, 144, 126, 137, 105, 112, 126, 90, 101, 82, 94, 62, 72, 49, 60, 32, 40, 20, 29], "label": "贵金属", "count": 2}, "index": {"symbol": "HK50", "name": "追踪市场的整体脉搏。", "description": "关注全球主要股指，理解更广泛的市场趋势。", "icon": "↗", "price": "18,420.5", "change": "+0.28% ↗", "short": "恒生指数", "values": [155, 151, 139, 150, 130, 118, 133, 107, 117, 103, 111, 80, 91, 75, 89, 55, 65, 45, 60, 28, 36, 22], "label": "股指", "count": 5}, "fx": {"symbol": "EUR / USD", "name": "让视野，跨越边界。", "description": "连接主要货币对，观察全球经济的每一次变化。", "icon": "€", "price": "1.08640", "change": "+0.12% ↗", "short": "欧元 / 美元", "values": [125, 112, 130, 118, 97, 112, 84, 105, 91, 70, 83, 98, 72, 55, 71, 53, 62, 35, 50, 37, 23, 32], "label": "外汇", "count": 17}, "energy": {"symbol": "USOIL", "name": "感受全球经济的能量。", "description": "探索原油等能源品种，关注供需与市场变化。", "icon": "Oil", "price": "71.240", "change": "−0.35% ↘", "short": "WTI 原油", "values": [45, 55, 32, 40, 64, 51, 78, 67, 88, 69, 104, 86, 112, 96, 127, 110, 141, 123, 152, 135, 160, 149], "label": "能源", "count": 1}}</script></body></html>

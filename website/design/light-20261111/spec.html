@@ -1,0 +1,597 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#FFFFFF"><title>SmartHSB · 设计规范</title><link rel="stylesheet" href="proposal.css"><style>main.article{max-width:1080px;width:calc(100% - 40px);margin:48px auto 80px}article h1{font-size:40px;margin:40px 0 24px}article h2{font-size:30px;margin:56px 0 20px}article h3{font-size:22px;margin:32px 0 16px}article p,article ul,article ol{margin:18px 0}article pre{padding:24px;background:#f6f6f6;overflow:auto;border-radius:16px}article code{overflow-wrap:anywhere}article pre code{overflow-wrap:normal}article .table-scroll{margin-top:20px}nav{display:flex;flex-wrap:wrap;gap:24px}@media(max-width:540px){article h1{font-size:30px}article h2{font-size:26px}}</style></head><body><main class="article"><nav aria-label="设计资料"><a href="index.html">交互审阅稿</a><a href="boards.html">桌面／手机画板</a><a href="spec.html">完整规范</a><a href="review.html">复核结果</a></nav><article><h1>SmartHSB 浅色视觉方案 · 审阅版</h1>
+<p>设计日期：2026-11-11；复核完成：2026-11-12，北京时间。状态：<strong>设计审阅稿已公开，首页未实施</strong>。</p>
+<p>打开 <a href="index.html">视觉审阅稿</a> 或 <a href="boards.html">桌面/手机静态画板</a>。它是独立的设计样张，不是替换首页。正式首页、根目录镜像、现有 CSS/JS、原视频均未修改。</p>
+<h2>1. 方向与关键决定</h2>
+<p>以白色建立阅读秩序，以薄荷和冰蓝划分内容层次，以亮绿引导主要行动。产品展示承担主要视觉重量。金融信息依靠清晰的文字、数字、边界和条件建立可信度。</p>
+<div aria-label="可横向滚动的规范表格" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>决定</th>
+<th>解决的问题</th>
+<th>本稿如何表现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>常规内容区全面浅色</td>
+<td>连续深底使信息显重，弱化产品细节</td>
+<td>白 → 薄荷光白 → 白色产品舞台 → 冰蓝市场区 → 白/柔白信息区</td>
+</tr>
+<tr>
+<td>原光门保留炭黑舞台，浅色从其后开始</td>
+<td>原视频、人物和雾以明暗关系成立；白底直接参与 screen 合成会洗白画面</td>
+<td>场景一展示原光门真实静帧，下一内容区在独立浅底上开始；光色不盖住徽章</td>
+</tr>
+<tr>
+<td>平台区产品占约 55% 的横向空间</td>
+<td>参考站的层次来自产品比例，不能只换背景色</td>
+<td>桌面文案左、产品右；手机文案在前，产品完整置于下方</td>
+</tr>
+<tr>
+<td>市场区回到实色白面和清晰列表</td>
+<td>行情、名称、条件需要稳定阅读</td>
+<td>冰蓝外底、白面板、深绿选中态；四类共 25 品种全部可切换</td>
+</tr>
+<tr>
+<td>只保留一处虹彩次按钮</td>
+<td>彩边过多会与主行动竞争</td>
+<td>平台区的“试用模拟账户”；其他次行动用文字链接</td>
+</tr>
+<tr>
+<td>新内容区只演示一组持续浮动</td>
+<td>同时运动会分散读者对行情与条件的注意</td>
+<td>桌面仅模拟账户浮卡；手机关闭；渐变均静态</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>本稿推荐的是“浅色内容 + 保留原光门”的方案。</strong> 这不等于全浅色光门已经解决。若要求首屏本身也完全浅色，需要先确认下述合成研究方向，再实施。</p>
+<h3>光门为什么不能只改背景</h3>
+<p>实际源码 <code>website/assets/js/intro-portal.js</code> 的 <code>drawVideoScene()</code> 先填纯黑，绘制视频并镜像去除内嵌文字，再用黑色侧缘、顶部和底部遮罩消隐；最后以 <code>globalCompositeOperation = 'screen'</code> 叠加 <code>#1B1B1B</code>。<code>intro-portal.css</code> 也以此炭黑为舞台底色。</p>
+<p>screen 每通道公式为 <code>1 − (1 − 源) × (1 − 底)</code>。当参与合成的颜色为白色时结果恒为白色。仅改容器 CSS 不会改变 Canvas 中已绘制的黑色；把最终 screen 色改成白色则会抹去图像。两种改法均不成立。</p>
+<p>本稿没有对视频反色、覆盖浅色大蒙层或替换人物。原门、人物、文案、视频、时序及六徽章由现有页面真实静帧表达。蓝绿光带放在下一内容区的顶部，保持两个场景各自清晰。</p>
+<p><strong>待研究的全浅色光门方向：</strong> 原视频不变，在独立实验中重建明暗分离及羽化蒙版，限制调色只影响环境和边缘，保留门光与人物剪影。需逐帧核对 0.05 / 1.5 / 3 / 4.5 / 6.0 秒，以及五档宽度；检查内嵌文字移除、雾边、倒影、人物和徽章。当前仅提出研究路线，未制作或验证此版本。若无法同时保留门光层次与原画面关系，继续采用本稿的原光门方案。</p>
+<h2>2. 依据：参考站事实、项目建议、审阅稿实现</h2>
+<p><a href="https://minpilot.webflow.io/">Minpilot 首页</a> 与 <a href="https://minpilot.webflow.io/admin/style-guide">Style Guide</a> 是设计参考。已有 <a href="https://github.com/MrRoam/smartHSB/blob/main/website/design/minpilot/spec.md">原站提取规范</a> 和 <a href="../../design/minpilot/evidence.json">原始证据</a>；本轮重新请求首页、Style Guide、实际共享 CSS 和动效注册脚本，UTF-8/LF 归一化哈希与前次一致。记录见 <a href="evidence/reference-check.json">reference-check.json</a>。本轮另在 1440px 浏览器现场核对首屏。</p>
+<div aria-label="可横向滚动的规范表格" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>可以确认的内容</th>
+<th>使用边界</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>原站事实</td>
+<td>白底、亮绿/青/蓝色系，General Sans 声明，大字号标题、多层产品和圆角卡</td>
+<td>原站同时有黑底内容区，不能描述成全浅色</td>
+</tr>
+<tr>
+<td>原站事实</td>
+<td>首屏柔光来自 WebP 背景图</td>
+<td>下文 CSS 径向渐变是原创适配，不能称为原站源码</td>
+</tr>
+<tr>
+<td>原站事实</td>
+<td>柔光带 <code>#BCFFF4 → #DDFF90</code>、opacity .6、blur 200px；2px 五段虹彩边框</td>
+<td>本项目缩小柔光范围；不照搬整页运行时</td>
+</tr>
+<tr>
+<td>原站事实</td>
+<td>卡片入场 .7s、浮卡单程 1.5s/往返约 3s、轨道 30s；主按钮文字 .3s/遮罩 .4s，次按钮文字 .2s；Tab 进入 .3s/退出 .1s</td>
+<td>未解析的数字 ease 不对应任何臆测曲线；先前浏览器采样确认浮卡/轨道运行</td>
+</tr>
+<tr>
+<td>项目建议</td>
+<td>75/15/8/2 面积分工、浅薄荷/冰蓝、新径向配方、中文排版、克制动效</td>
+<td>是起始设计约束，不是原站像素统计</td>
+</tr>
+<tr>
+<td>本稿实现</td>
+<td>三个场景、配色样片、三种材质样片、25 品种 Tab、原生 FAQ、审阅导航、可开关的动效样本</td>
+<td>默认静态；未做完整新首页或全站新皮肤</td>
+</tr>
+</tbody>
+</table></div>
+<h2>3. 色板与语义</h2>
+<p>面积起点：<strong>75% 白/柔白、15% 浅蓝/浅薄荷、8% 绿青强调、2% 功能蓝及补色</strong>。仅用于浅色内容构图；不将保留的光门面积算入此比例，也不把它声称为实测结果。每区块一个主强调色，最多一个辅助色；柔光混色与虹彩边框作为有限的装饰配方例外，不承担状态语义。</p>
+<div aria-label="可横向滚动的规范表格" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>颜色</th>
+<th>建议位置</th>
+<th>搭配底色 / 文字</th>
+<th>禁止混用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>白 <code>#FFFFFF</code></td>
+<td>主阅读面、市场列表、普通卡</td>
+<td>深墨标题、灰正文、深绿链接</td>
+<td>不靠白面与柔白面的微小差异单独表达可操作状态</td>
+</tr>
+<tr>
+<td>柔白 <code>#F6F6F6</code></td>
+<td>FAQ、运营信息和披露背景</td>
+<td>深墨 / <code>#606062</code></td>
+<td>不让风险说明变成更浅的灰字</td>
+</tr>
+<tr>
+<td>浅薄荷 <code>#F1FFF7</code></td>
+<td>选中底、模拟账户面、局部信息区</td>
+<td>深墨 / 深绿</td>
+<td>不以浅薄荷底单独表示 Tab 已选，需深绿描边和语义</td>
+</tr>
+<tr>
+<td>冰蓝 <code>#EEF5FF</code></td>
+<td>市场外底、功能区分层</td>
+<td>深墨 / 灰正文</td>
+<td>不和浅薄荷交错成每行彩色条纹</td>
+</tr>
+<tr>
+<td>荧光草绿 <code>#97F05E</code></td>
+<td>主按钮 hover、图形高亮</td>
+<td>白/浅薄荷上作图形；填色上用深墨字</td>
+<td>小白字；与柠檬绿、薄荷青同时抢主行动</td>
+</tr>
+<tr>
+<td>柠檬黄绿 <code>#BFFF37</code></td>
+<td>平台主 CTA、产品右侧光源</td>
+<td>深墨字；按钮配深绿 1px 轮廓</td>
+<td>白字；把行情涨幅或监管状态都染成柠檬绿</td>
+</tr>
+<tr>
+<td>薄荷亮青 <code>#5BFFC3</code></td>
+<td>产品中部柔光、按钮按下态</td>
+<td>深墨字；在白底作装饰</td>
+<td>小白字；用作浅底正文链接</td>
+</tr>
+<tr>
+<td>翡翠绿 <code>#01A66B</code></td>
+<td>品牌图形、柱形辅助序列、图标</td>
+<td>实色面配深墨字</td>
+<td>常规小白字；浅底小号绿字</td>
+</tr>
+<tr>
+<td>科技蓝 <code>#235DFE</code></td>
+<td>下载/工具等功能行动、键盘焦点</td>
+<td>白字按钮；浅底可用蓝字</td>
+<td>同一区块再加一个蓝色主 CTA，与亮绿主行动竞争</td>
+</tr>
+<tr>
+<td>电光青 <code>#00E5E0</code></td>
+<td>单个局部小光点，≤15% 装饰透明度</td>
+<td>仅产品边缘，不承载文字</td>
+<td>链接、正文、涨跌、按钮主填色</td>
+</tr>
+<tr>
+<td>深绿 <code>#006C45</code></td>
+<td>浅底文字链接、选中标签、正向值</td>
+<td>白/柔白/浅薄荷/冰蓝</td>
+<td>整页文字都用绿；用亮绿代替它写正文</td>
+</tr>
+<tr>
+<td>深墨 <code>#1D1D1F</code></td>
+<td>标题、关键数字、亮色按钮字</td>
+<td>四种浅底及所有亮绿/青填色</td>
+<td>大段渐变字替代清晰标题</td>
+</tr>
+<tr>
+<td>灰 <code>#606062</code></td>
+<td>正文、非实时说明、适用条件</td>
+<td>四种实色浅底</td>
+<td>直接跨越光斑或半透明层；条件缩成不易读的小字</td>
+</tr>
+<tr>
+<td>淡紫 <code>#B7A2E3</code></td>
+<td>可选冷暖补色，局部柔光≤8%</td>
+<td>图形；实色面用深墨</td>
+<td>与橙色、蓝色一起新增多个强调焦点</td>
+</tr>
+<tr>
+<td>橙色 <code>#F36600</code></td>
+<td>极少量装饰或图表第二标记</td>
+<td>深墨字；不承载小字</td>
+<td>白字按钮；把橙色泛化为盈利、奖励或保证信号</td>
+</tr>
+</tbody>
+</table></div>
+<p>补充建议：装饰边线 <code>#DCE7E1</code>；可操作组件边界 <code>#81938A</code>；负向行情字 <code>#9D333B</code>。正负号和方向符号与颜色同时出现。橙色不充当负向行情色。任何状态都不能仅靠颜色判断。</p>
+<h3>对比度验收</h3>
+<p>使用 WCAG 相对亮度公式计算，普通字 ≥4.5:1，大字 ≥3:1；焦点与必要的控件边界 ≥3:1。具体组合见 <a href="evidence/contrast.json">contrast.json</a>。主要结果在验收报告中列出。</p>
+<p>信息文字位于实色白面或确定的浅底。平台柔光中心在右侧，左侧文案区的叠色量较低；验收同时采样实际合成背景，而非只测设计令牌。亮色按钮使用深墨文字并有深绿细边。虹彩边框是装饰，按钮文字和外部焦点仍单独达标。</p>
+<h2>4. 三种渐变配方</h2>
+<p>以下除已注明的五段色标和柔光带参考参数外，位置、尺寸、透明度和色标均为 <strong>SmartHSB 新建议</strong>。预览 CSS 仅在独立审阅目录使用。批准后在 <code>home-minpilot.css</code> 内加首页作用域，不增加旧主题覆盖。</p>
+<pre><code class="language-css">/* 项目建议：移入首页时使用 .home-minpilot 作用域，不直接改共享 :root。 */
+.home-minpilot {
+  --surface: #FFFFFF; --surface-soft: #F6F6F6;
+  --surface-mint: #F1FFF7; --surface-ice: #EEF5FF;
+  --grass: #97F05E; --lime: #BFFF37; --mint: #5BFFC3;
+  --emerald: #01A66B; --action-blue: #235DFE; --glow-cyan: #00E5E0;
+  --ink: #1D1D1F; --body: #606062; --link: #006C45;
+  --accent-violet: #B7A2E3; --accent-orange: #F36600;
+  --line: #DCE7E1; --control-line: #81938A;
+  --ease-enter: cubic-bezier(.22,1,.36,1); /* 建议曲线 */
+}
+
+/* 1. 产品舞台。独立绝对定位装饰层，不对正文做 filter。 */
+.home-minpilot .product-glow {
+  background:
+    radial-gradient(ellipse at 85% 22%, #BFFF374D 0%, transparent 43%),
+    radial-gradient(ellipse at 68% 48%, #5BFFC366 0%, transparent 45%),
+    radial-gradient(ellipse at 80% 88%, #235DFE1F 0%, transparent 44%),
+    #FFFFFF;
+}
+/* 手机：光源随纵向产品位置移动，降低蓝光密度，不增加 blur。 */
+@media (max-width: 800px) {
+  .home-minpilot .product-glow {
+    background:
+      radial-gradient(ellipse at 85% 55%, #BFFF3733, transparent 34%),
+      radial-gradient(ellipse at 50% 70%, #5BFFC359, transparent 38%),
+      radial-gradient(ellipse at 75% 90%, #235DFE17, transparent 34%), #FFFFFF;
+  }
+}
+
+/* 2. 柔光带。颜色和 .6 来自原站，其余尺寸与 blur 是项目建议。 */
+.home-minpilot .soft-band::before {
+  content: ''; position: absolute; inset: 25% 10%; pointer-events: none;
+  background: linear-gradient(90deg, #BCFFF4, #DDFF90);
+  opacity: .6; filter: blur(80px);
+}
+/* 1200px 以上舞台：80px；768–1199px：56px；手机：28–36px。 */
+@media (max-width: 1199px) { .home-minpilot .soft-band::before { filter: blur(56px); } }
+@media (max-width: 767px) { .home-minpilot .soft-band::before { filter: blur(32px); } }
+/* 审阅稿小样宽约 400px，使用 36px；低性能设备可改为静态渐变、不加滤镜。 */
+
+/* 3. 细虹彩。五段色值、角度及色标有原站依据；内层/状态是项目建议。 */
+.home-minpilot .iris-shell {
+  display: inline-flex; padding: 2px; border-radius: 999px;
+  background: linear-gradient(180deg, #FFEAB5 20%, #F2A85D 40%,
+    #8052E4 60%, #2E85EA 80%, #68EFAE 103%);
+}
+.home-minpilot .iris-shell &gt; a {
+  background: #FFFFFF; color: #1D1D1F; border-radius: inherit;
+  min-height: 48px; padding: 11px 23px;
+}
+</code></pre>
+<p>柔光以容器裁切限制绘制范围，默认静态。普通卡用实色、细边或背景分层。阴影只出现在产品设备及少量悬浮信息；玻璃只留给后续导航或一张浮卡的可选方案。当前审阅稿导航为实色白色，不为了“材质齐全”添加模糊。</p>
+<h3>按钮状态（项目建议）</h3>
+<div aria-label="可横向滚动的规范表格" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>按钮</th>
+<th>默认</th>
+<th>Hover / focus-visible</th>
+<th>Active</th>
+<th>Disabled</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>亮绿主行动</td>
+<td><code>#BFFF37</code> / 深墨字 / 深绿 1px 边</td>
+<td><code>#97F05E</code>，箭头 +4px；键盘加蓝色 3px 外环，offset 5px</td>
+<td><code>#5BFFC3</code>，文字不移位</td>
+<td>柔白 / 灰字 / 灰边；真实 disabled，无浮动</td>
+</tr>
+<tr>
+<td>功能蓝</td>
+<td><code>#235DFE</code> / 白字</td>
+<td><code>#1849D6</code> / 白字；相同焦点</td>
+<td><code>#123CBA</code> / 白字</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>虹彩次行动</td>
+<td>2px 外壳 / 白内层 / 深墨字</td>
+<td>内层冰蓝，外部蓝色焦点；不靠彩边表达焦点</td>
+<td>内层浅薄荷</td>
+<td>外壳改中性灰边，无彩色点击暗示</td>
+</tr>
+<tr>
+<td>文字链接</td>
+<td>深绿，下划线或清晰链接结构</td>
+<td>蓝色、保留下划线和焦点</td>
+<td>蓝色</td>
+<td>无目的地不造假链接，改成状态文字</td>
+</tr>
+</tbody>
+</table></div>
+<p>文字翻页只作为重点 CTA 的可选处理，整行双层文字，克隆层 <code>aria-hidden</code>。当前审阅稿仅实现箭头和颜色反馈，未把文字翻页或遮罩展开写成已实现。减少动效/手动关闭时保留颜色和焦点，停止位移。</p>
+<h2>5. 字体、尺寸与响应式</h2>
+<p>英文正式方向为 General Sans 气质。<strong>审阅稿实际使用仓库已有 SuisseIntl-Medium + 系统中文黑体</strong>，未下载或重新授权 General Sans。后续如确定使用 General Sans，需先核对来源与授权。中文系统回退为 PingFang SC / Microsoft YaHei；需要跨设备字形一致时再评估 Noto Sans SC 的体积。</p>
+<div aria-label="可横向滚动的规范表格" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>项目</th>
+<th>1440px 桌面</th>
+<th>1024px</th>
+<th>768px 平板</th>
+<th>390 / 320px 手机</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>正文容器</td>
+<td>1280px 上限，本稿实际 1280px</td>
+<td>两侧 32px</td>
+<td>两侧 20px</td>
+<td>两侧 20 / 16px</td>
+</tr>
+<tr>
+<td>区块上下间隔</td>
+<td>96–112px</td>
+<td>88–104px</td>
+<td>72px</td>
+<td>56–72px</td>
+</tr>
+<tr>
+<td>开场/衔接标题</td>
+<td>64px</td>
+<td>46–56px</td>
+<td>40–48px</td>
+<td>36 / 32px</td>
+</tr>
+<tr>
+<td>区块标题</td>
+<td>48–56px</td>
+<td>40–44px</td>
+<td>40–44px</td>
+<td>32–36 / 28–32px</td>
+</tr>
+<tr>
+<td>正文</td>
+<td>16–18px / 1.7</td>
+<td>同左</td>
+<td>同左</td>
+<td>16px / 1.7</td>
+</tr>
+<tr>
+<td>普通卡/产品外壳</td>
+<td>16–20 / 28–32px 圆角</td>
+<td>同左</td>
+<td>同左</td>
+<td>16–20 / 20–24px</td>
+</tr>
+<tr>
+<td>按钮</td>
+<td>52px；虹彩外高 52px</td>
+<td>同左</td>
+<td>同左</td>
+<td>48–52px；320px CTA 纵向满宽</td>
+</tr>
+<tr>
+<td>平台布局</td>
+<td>约 45:55，两栏</td>
+<td>两栏，缩小浮卡</td>
+<td>单栏，文案前、产品后</td>
+<td>单栏，手机正面比例更稳定，浮卡回到文档流</td>
+</tr>
+<tr>
+<td>市场布局</td>
+<td>横向 Tab、图表左/列表右</td>
+<td>同左</td>
+<td>Tab 横向，图表前/列表后</td>
+<td>四个 Tab 等宽两行字，列表 320px 高可滚动</td>
+</tr>
+</tbody>
+</table></div>
+<p>标题控制成自然的中文两行，深墨为主，不单独把某个词染成荧光色。数字用 <code>font-variant-numeric: tabular-nums</code>。设计稿小尺寸手机画面中的设备屏幕是被缩放的产品示意，屏外保留可读的非实时说明和功能文案；它不承担交易操作。</p>
+<h3>三个重点场景</h3>
+<ol>
+<li><strong>光门与浅色内容衔接。</strong> 原 HERO 独立保留，后接浅薄荷光白底。沿用“一个账户。打开全球市场。”和现有说明；四类市场计数直接铺在一条分隔线上。解决原光门和浅色内容像两套主题的问题，同时不改已有影像。</li>
+<li><strong>平台产品区。</strong> 采用现有“从看见机会，到把握机会”、两项平台说明和下载入口。使用现有网页手机示例中的文字、虚拟资金与报价，按新材质绘制其外部舞台。该示意不是新 APP 截图，也不承诺 APP 将增加白色皮肤。右上分析卡和左下模拟账户卡形成前后层次。解决平台产品面积偏小、信息与产品分离的问题。</li>
+<li><strong>市场区。</strong> 原四分类、25 品种、中文名、示例报价和代表图表数据来自当前首页/脚本。Tab 用深绿边线、浅薄荷底及 <code>aria-selected</code> 表达选择；列表回到白底。解决亮色冲淡数据层次和手机列表难以浏览的问题。</li>
+</ol>
+<p>三个场景的实际文案均出现在审阅稿中。市场和设备旁明确写“非实时/展示示例”，模拟账户写“虚拟资金”，不把上涨示例或设备画面当作收益承诺。</p>
+<h2>6. 全页区块编排与内容保留</h2>
+<p>本轮只绘制三个关键场景，其余区块给出排版规范，<strong>没有声称完整新首页已实现或通过回归测试</strong>。当前正式首页完整保留。后续实施按下表逐项核对，金额、牌照及条件与原文和正式页面逐条对应。</p>
+<div aria-label="可横向滚动的规范表格" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>区块</th>
+<th>建议底色 / 结构</th>
+<th>保留内容与条件</th>
+<th>选择理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>导航及光门</td>
+<td>原舞台与现有导航；内容区导航白面、有限透明度</td>
+<td>原门/人物/视频/时序/文案；BAPPEBTI、OJK、Bank Indonesia、ICDX、ICH、ASPEBTINDO 六徽章</td>
+<td>保护已确认的品牌识别与实际影像层次</td>
+</tr>
+<tr>
+<td>概览</td>
+<td>光白底，中心标题、原世界地图、四项统计</td>
+<td>原地图与概览内容；四类/25 品种/模拟账户说明</td>
+<td>保留内容，避免堆成同尺寸卡；地图在完整实施时沿用，关键样张仅展示衔接和分类条</td>
+</tr>
+<tr>
+<td>平台</td>
+<td>白底柔光舞台，两栏大产品</td>
+<td>自选行情、财经日历、Trading Central、移动管理、模拟账户、下载及教程</td>
+<td>产品有主视觉面积，说明可连续阅读</td>
+</tr>
+<tr>
+<td>市场</td>
+<td>冰蓝外底 + 白面板</td>
+<td>贵金属 2、股指 5、外汇 17、能源 1；所有报价/图表示例声明</td>
+<td>高频信息区域保持实色稳定</td>
+</tr>
+<tr>
+<td>监管及资金隔离</td>
+<td>白底标题 + 三条清晰说明，图形仅浅绿底</td>
+<td>监管、客户资金隔离、服务/牌照对应原文与链接</td>
+<td>证据和条件优先，不靠大绿盾制造额外保证</td>
+</tr>
+<tr>
+<td>支付与保险</td>
+<td>柔白；两张宽卡（入金/出金），下接保险条件条</td>
+<td>QRIS/电子钱包/虚拟账户、BCA/Mandiri/BNI；Rp400.000 / 约 $25；同名账户及实际处理时间；最高 $1,000,000、Aswata/WTW、适用条件</td>
+<td>让主张与限定条件出现在同一阅读单元；不扩大承诺</td>
+</tr>
+<tr>
+<td>积分与活动</td>
+<td>浅薄荷宽横栏，入口与说明</td>
+<td>现有积分奖励/促销规则及真实链接</td>
+<td>通过面积和底色形成节奏，避免制造新的活动优惠</td>
+</tr>
+<tr>
+<td>平台支持信息（如需卡组）</td>
+<td>仅在现有内容能支持时两宽卡 + 三小卡</td>
+<td>复用原功能说明，不为凑版面发明五项能力</td>
+<td>组件比例来自参考，内容数量由业务决定</td>
+</tr>
+<tr>
+<td>奖项与媒体</td>
+<td>白底静态两行；六年奖项 3×2，五媒体 Logo 一行/手机换行</td>
+<td>2021–2026 六年奖项、原名称、原图；CNBC、detikfinance、Liputan6、Bisnis、Kontan</td>
+<td>无跑马灯，用户可以停留查看</td>
+</tr>
+<tr>
+<td>FAQ</td>
+<td>柔白，两栏说明 + 原生 details 列表</td>
+<td>原五项问答、帮助中心及全部链接</td>
+<td>原生键盘语义和无脚本阅读能力</td>
+</tr>
+<tr>
+<td>最终行动</td>
+<td>单独薄荷→柠檬柔光带，实色文案区</td>
+<td>模拟账户 $10,000 虚拟资金、无需入金、下载入口及状态</td>
+<td>只在尾部再次建立行动焦点</td>
+</tr>
+<tr>
+<td>运营信息及披露</td>
+<td>白/柔白，深墨标题、灰正文</td>
+<td>法律主体、运营地址、牌照原号、协议/隐私/防欺诈、风险披露；二维码待上线状态</td>
+<td>完整可读，保留文字和事实边界</td>
+</tr>
+</tbody>
+</table></div>
+<p>本轮只把上表中的金额和资质作为当前站点的待保留内容盘点，没有重新核验其法律或商业有效性，也没有新增这些主张。正式实施不以视觉改版名义修改其含义。</p>
+<h2>7. 动效表（全部为 SmartHSB 项目建议）</h2>
+<p>原站事实与下表分开；建议曲线 <code>cubic-bezier(.22,1,.36,1)</code> 不代表原站数字 ease。位移只影响装饰/展示层，正文最终状态默认可见。</p>
+<div aria-label="可横向滚动的规范表格" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>触发</th>
+<th>对象 / 起止状态</th>
+<th>时长 / 延迟</th>
+<th>缓动</th>
+<th>循环</th>
+<th>退出 / 暂停</th>
+<th>手机降级</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>首次进入视口约 85%</td>
+<td>新内容标题按行：opacity 0→1、y 20→0</td>
+<td>700ms；行交错 80ms</td>
+<td>建议 enter 曲线</td>
+<td>否，一次</td>
+<td>离屏期间未触发则等待；关闭/失败直接最终状态</td>
+<td>位移 16px、600ms；不逐字跳动</td>
+</tr>
+<tr>
+<td>同组标题之后</td>
+<td>说明 → 按钮 → 产品；opacity 0→1、y 20→0；产品 scale .98→1 可选</td>
+<td>650 / 600 / 800ms；相邻错开 80ms，总延迟不超过 240ms</td>
+<td>同上</td>
+<td>否</td>
+<td>可中断，取消后恢复最终样式；无 JS 不隐藏</td>
+<td>产品取消缩放，减少到标题/产品两层</td>
+</tr>
+<tr>
+<td>Hover / focus-visible</td>
+<td>主按钮箭头 x 0→4px；可选整行文字 y 0→−100%</td>
+<td>箭头 220ms；可选文字 260ms</td>
+<td>同上</td>
+<td>否</td>
+<td>移出/失焦返回，按下可中断</td>
+<td>保留颜色/焦点；触屏不依赖 hover</td>
+</tr>
+<tr>
+<td>Hover / focus-visible</td>
+<td>次按钮整行文字可选翻页；白内层→冰蓝</td>
+<td>200ms</td>
+<td>同上</td>
+<td>否</td>
+<td>失焦/移出恢复；只给可操作对象反馈</td>
+<td>仅颜色/焦点</td>
+</tr>
+<tr>
+<td>Tab 点击 / Left / Right / Home / End</td>
+<td>旧内容 opacity 1→0；新内容 opacity 0→1、y 6→0</td>
+<td>退出 120ms、进入 280ms；不额外延迟</td>
+<td>退出 ease-out；进入建议曲线</td>
+<td>否</td>
+<td>快速切换先取消旧动画；语义/选中状态即时更新；保持容器稳定</td>
+<td>仅 200ms 淡入；减少动效即时切换</td>
+</tr>
+<tr>
+<td>平台区可见且用户启用</td>
+<td>模拟账户浮卡 y 0→−8→0px</td>
+<td>一个往返 6000ms，0 延迟</td>
+<td>ease-in-out</td>
+<td>是，仅一组</td>
+<td>离屏/后台 pause；关闭/减少动效移除动画</td>
+<td>关闭循环，卡回文档流</td>
+</tr>
+<tr>
+<td>可选轨道（本稿不采用）</td>
+<td>装饰圆环 0→360°</td>
+<td>30000ms</td>
+<td>linear</td>
+<td>是</td>
+<td>若使用则替换浮卡循环，不能叠加；同样离屏/后台暂停</td>
+<td>不渲染轨道</td>
+</tr>
+<tr>
+<td>FAQ Enter / Space / 点击</td>
+<td>原生 details 开/合，焦点留在 summary</td>
+<td>默认即时；实施时最多 180ms opacity</td>
+<td>ease-out</td>
+<td>否</td>
+<td>连续操作即时响应；不动画化未知高度</td>
+<td>即时切换</td>
+</tr>
+<tr>
+<td>导航按钮 / Escape</td>
+<td>菜单开关，aria-expanded 同步</td>
+<td>180ms 可选 opacity；本稿即时</td>
+<td>ease-out</td>
+<td>否</td>
+<td>Escape 关闭并回焦点；链接后关闭</td>
+<td>内容过长允许垂直滚动</td>
+</tr>
+<tr>
+<td>初次展示柔光</td>
+<td>背景渐变保持静态</td>
+<td>0</td>
+<td>无</td>
+<td>否</td>
+<td>无持续 blur 动画，无滚动劫持</td>
+<td>缩小范围，不增加模糊计算</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>审阅稿实际演示范围：</strong> 入场采用单元素 700ms/20px 样本；按钮颜色/箭头；Tab 280ms 淡入；一张浮卡 6s；导航与 FAQ 即时。按行编排、组内交错、Tab 120ms 退出、文字翻页和完整新导航转场属于规范，尚未实现。原光门以静帧呈现，原动画源码不变。</p>
+<p>实现路线：原生 CSS + IntersectionObserver；初始 HTML 是最终可读状态，只有浏览器能力及动效权限成立时才调用动画。无 JS 时四组品种全部列出；FAQ 用 details。<code>prefers-reduced-motion</code> 优先于手动开启。现有首页实施时沿用 <code>#motion-toggle</code> 和 <code>body.motion-off</code>，不另起冲突状态。</p>
+<p>持续动画只在可见、前台且用户允许时运行。全局关闭后移除 CSS 循环并取消 WAAPI，所有内容回最终态。原光门的离屏/后台/减少动效行为沿用现有源码，不在这一轮改写。</p>
+<h2>8. 验收、已检查与未检查</h2>
+<p>见 <a href="review.html">REVIEW.md</a> 与 <code>evidence/</code> 中的机器记录。</p>
+<ul>
+<li>本轮验收对象为独立审阅稿；五档宽度检查文档溢出、标题/列表/CTA 和键盘焦点，采集桌面/手机关键场景。</li>
+<li>核对 25 品种与原 HTML 一致，检查四类切换、方向键、Home/End、长外汇列表、原生 FAQ、审阅导航、下载及原有内页目标。</li>
+<li>检查默认静态、手动开关、系统减少动效、无脚本可见，以及持续循环离屏与后台暂停。</li>
+<li>光门为原首页真实画面，源视频已在本轮浏览器解码。审阅稿图片不是其新配色或新动画实现。</li>
+<li>未检查项：全浅色 Canvas 方案；完整新首页的整合/导航/动效回归；实际移动设备 GPU、低电量和不同浏览器；真实交易或下载商店最终链路；金额/资质的外部真实性。实施后按项目流程单独验证。</li>
+</ul>
+<h2>9. 进入实施的范围</h2>
+<p>确定本稿后，再修改 <code>website/index.html</code> 和 <code>website/assets/css/home-minpilot.css</code> 的首页作用域。保留市场 DOM 标识、<code>.platform-visual</code>、导航和 <code>#motion-toggle</code> 调用关系；同步根目录镜像并更新资源版本。完成布局、交互及无障碍回归后，按项目既有授权提交、获取远端并整合、推送 main、跟踪本次 Pages 部署并请求公开资源验证。</p>
+<p>本轮只公开设计审阅稿，尚未执行上述首页实施和发布步骤。下一轮只需明确是否采用“保留原光门 + 浅色内容”方案，以及是否要单独推进全浅色光门研究。</p>
+</article></main></body></html>

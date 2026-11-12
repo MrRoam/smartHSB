@@ -1,0 +1,117 @@
+{
+  "axeVersion": "4.12.1",
+  "counts": {
+    "inapplicable": 40,
+    "incomplete": 1,
+    "passes": 49,
+    "violations": 0
+  },
+  "incomplete": [
+    {
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+      "id": "color-contrast",
+      "impact": "serious",
+      "nodeCount": 55,
+      "nodes": [
+        {
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+          "html": "<h2 data-entrance=\"\">一个账户。<br>打开全球市场。</h2>",
+          "target": [
+            ".wrap > h2[data-entrance=\"\"]"
+          ]
+        },
+        {
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+          "html": "<p>从贵金属到外汇，让市场、分析与交易彼此相连。<br>把更多精力，留给你的判断。</p>",
+          "target": [
+            ".bridge > .wrap > p"
+          ]
+        },
+        {
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+          "html": "<a class=\"text-link\" href=\"../../../website/about.html\">了解 SmartHSB <span aria-hidden=\"true\">↗</span></a>",
+          "target": [
+            "a[href$=\"about.html\"]"
+          ]
+        },
+        {
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+          "html": "<strong>贵金属</strong>",
+          "target": [
+            "div:nth-child(1) > strong"
+          ]
+        },
+        {
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+          "html": "<span>2 个品种</span>",
+          "target": [
+            ".market-coverage > div:nth-child(1) > span"
+          ]
+        },
+        {
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+          "html": "<strong>股指</strong>",
+          "target": [
+            ".market-coverage > div:nth-child(2) > strong"
+          ]
+        },
+        {
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+          "html": "<span>5 个品种</span>",
+          "target": [
+            ".market-coverage > div:nth-child(2) > span"
+          ]
+        },
+        {
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+          "html": "<strong>外汇</strong>",
+          "target": [
+            ".market-coverage > div:nth-child(3) > strong"
+          ]
+        },
+        {
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+          "html": "<span>17 个品种</span>",
+          "target": [
+            ".market-coverage > div:nth-child(3) > span"
+          ]
+        },
+        {
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+          "html": "<strong>能源</strong>",
+          "target": [
+            ".market-coverage > div:nth-child(4) > strong"
+          ]
+        }
+      ],
+      "tags": [
+        "cat.color",
+        "wcag2aa",
+        "wcag143",
+        "TTv5",
+        "TT13.c",
+        "EN-301-549",
+        "EN-9.1.4.3",
+        "ACT",
+        "RGAAv4",
+        "RGAA-3.2.1"
+      ]
+    }
+  ],
+  "lifecycle": {
+    "effectiveLaunch": {
+      "browserLaunched": true,
+      "engine": "chrome",
+      "launchHash": 17445845319572923445
+    },
+    "launched": false,
+    "relaunchedBrowser": false,
+    "restartedBackground": false,
+    "restoreStatus": "not_configured",
+    "reused": true,
+    "saveStatus": "not_configured"
+  },
+  "url": "http://127.0.0.1:8767/docs/design/light-20261111/?market=gold",
+  "violations": []
+}

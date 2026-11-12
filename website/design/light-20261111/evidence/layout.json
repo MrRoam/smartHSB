@@ -1,0 +1,142 @@
+[
+  {
+    "clipped": [],
+    "defaultAnimations": 0,
+    "marketColumns": "266px",
+    "missingImages": [],
+    "platformColumns": "288px",
+    "scrollWidth": 320,
+    "tabBoxes": [
+      {
+        "height": 62.78125,
+        "width": 62.75
+      },
+      {
+        "height": 62.78125,
+        "width": 62.75
+      },
+      {
+        "height": 62.78125,
+        "width": 62.75
+      },
+      {
+        "height": 62.78125,
+        "width": 62.75
+      }
+    ],
+    "titleFont": "32px",
+    "width": 320
+  },
+  {
+    "clipped": [],
+    "defaultAnimations": 0,
+    "marketColumns": "320px",
+    "missingImages": [],
+    "platformColumns": "350px",
+    "scrollWidth": 390,
+    "tabBoxes": [
+      {
+        "height": 66.1875,
+        "width": 76.25
+      },
+      {
+        "height": 66.1875,
+        "width": 76.25
+      },
+      {
+        "height": 66.1875,
+        "width": 76.25
+      },
+      {
+        "height": 66.1875,
+        "width": 76.25
+      }
+    ],
+    "titleFont": "36px",
+    "width": 390
+  },
+  {
+    "clipped": [],
+    "defaultAnimations": 0,
+    "marketColumns": "670px",
+    "missingImages": [],
+    "platformColumns": "728px",
+    "scrollWidth": 768,
+    "tabBoxes": [
+      {
+        "height": 49.1875,
+        "width": 142.46875
+      },
+      {
+        "height": 49.1875,
+        "width": 126.84375
+      },
+      {
+        "height": 49.1875,
+        "width": 130.09375
+      },
+      {
+        "height": 49.1875,
+        "width": 123.625
+      }
+    ],
+    "titleFont": "44px",
+    "width": 768
+  },
+  {
+    "clipped": [],
+    "defaultAnimations": 0,
+    "marketColumns": "461.734px 412.266px",
+    "missingImages": [],
+    "platformColumns": "460px 460px",
+    "scrollWidth": 1024,
+    "tabBoxes": [
+      {
+        "height": 49.1875,
+        "width": 142.46875
+      },
+      {
+        "height": 49.1875,
+        "width": 126.84375
+      },
+      {
+        "height": 49.1875,
+        "width": 130.09375
+      },
+      {
+        "height": 49.1875,
+        "width": 123.625
+      }
+    ],
+    "titleFont": "44px",
+    "width": 1024
+  },
+  {
+    "clipped": [],
+    "defaultAnimations": 0,
+    "marketColumns": "624.438px 557.562px",
+    "missingImages": [],
+    "platformColumns": "569.797px 638.203px",
+    "scrollWidth": 1440,
+    "tabBoxes": [
+      {
+        "height": 49.1875,
+        "width": 150.46875
+      },
+      {
+        "height": 49.1875,
+        "width": 134.84375
+      },
+      {
+        "height": 49.1875,
+        "width": 138.09375
+      },
+      {
+        "height": 49.1875,
+        "width": 131.625
+      }
+    ],
+    "titleFont": "54.72px",
+    "width": 1440
+  }
+]

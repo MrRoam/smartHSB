@@ -1,0 +1,48 @@
+[
+  {
+    "foreground": {
+      "running": [
+        "running"
+      ],
+      "state": "动效演示：开启"
+    }
+  },
+  {
+    "offscreen": [
+      "paused"
+    ]
+  },
+  {
+    "afterRealTabRoundTrip": {
+      "background": false,
+      "hidden": false
+    }
+  },
+  {
+    "visibilityHandlerSimulatedHidden": {
+      "background": true,
+      "states": [
+        "paused"
+      ]
+    }
+  },
+  {
+    "manualOff": {
+      "count": 0,
+      "off": true
+    }
+  },
+  {
+    "systemReduced": {
+      "animations": 0,
+      "disabled": true,
+      "reduced": true
+    }
+  },
+  {
+    "mobileReduced": {
+      "animations": 0,
+      "position": "relative"
+    }
+  }
+]
