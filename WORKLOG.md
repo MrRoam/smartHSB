@@ -45,3 +45,4 @@
 - 改动：新增 website/design/light-20261111/ 分享镜像，修正发布目录中的相对路径；增加规范 spec.html 与复核 review.html 阅读页，并保留交互稿、六张画板和证据。同步本地文档的公开状态。
 - 验证：全部 HTML 的本地引用存在；四个入口在 320px 无页面横向溢出；1440px 市场切换正常；JS 语法和差异检查通过；开始时记录的 128 个正式文件指纹保持一致，首页、镜像、视频及正式主题资源均未变。根目录 assets/ 不加入提交。
 - 发布：已获取远端，main 仅领先上一轮设计资料提交、无落后提交；本次提交后再次获取远端并整合再推送。以本次 SHA 等待 Pages，并核对公开 HTML/CSS/JS/图片及首页；结果在本轮最终答复提供。
+- 上线结果：内容提交 7fb203a173e7a8e0288100f7d69754524e3e1c3f 对应 Pages 运行 https://github.com/MrRoam/smartHSB/actions/runs/43130060877 为 completed / success。公开入口 https://mrroam.github.io/smartHSB/design/light-20261111/ 已可访问；21 项公开 HTML/CSS/JS/图片/字体/首页均 HTTP 200，文本按 UTF-8/LF 归一化后与本地一致。公开页 390px 市场切换通过，无横向溢出。仅记录结果的后续提交也按自身 SHA 跟踪部署；首页内容保持原状。
