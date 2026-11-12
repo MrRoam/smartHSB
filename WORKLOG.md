@@ -70,3 +70,6 @@
 - 内容与资源：全部原业务正文逐项顺序比对一致；光门 CSS/JS/视频指纹一致；3,655 个本地引用有效；JS 语法、CSS 解析、根镜像与变更资源哈希引用通过。证据见 docs/qa/20261112-site-motion/。根目录 assets/ 保留且不提交；本地 .local/ 为本轮浏览器与验证临时产物，不进入发布。
 - 发布前状态：已获取 origin/main，当前无落后提交。GitHub CLI 的历史工作流查询出现连接 EOF，准备对本次提交重试或通过公开 Actions API 核验；不能以历史运行代替本次发布结果。
 - 下一步：提交完整改动，重新获取并整合远端后推送 main，等待本次 Pages 部署并核对公开 HTML、CSS、JS 与关键交互。
+
+- 上线结果：内容提交 `15bb48f1ef1269db7ca4036273f07f345dbdca25` 对应 [Pages 运行 43150557972](https://github.com/MrRoam/smartHSB/actions/runs/43150557972) 为 completed / success。公开首页 https://mrroam.github.io/smartHSB/ 及全部 34 内页、17 项关键资源共 52 项 HTTP 200，文本按 UTF-8/LF 归一化后与提交一致。线上六荣誉完整、流光背景位置持续变化、390px 品种页无横向溢出，无浏览器错误。证据见 docs/qa/20261112-site-motion/release.json。
+- 任务结束：本轮需求与验证已完成。内页原下滑收起导航保留，另验证焦点进入时可唤回。仅记录发布结果的后续提交继续按自身 SHA 等待 Pages 并抽验公开入口；根目录 assets/ 与本地 .local/ 均不提交。

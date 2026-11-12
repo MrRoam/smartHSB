@@ -27,4 +27,4 @@
 
 完整结果见 [checks.json](checks.json)。截图包括 [荣誉单行](home-awards.png)、[手机摆正](home-phone-hover.png)、[流光页脚](home-wordmark.png)、[下载页](download-final.png)、[关于页手机](about-visual.png)、[品种页手机](products-visual.png)。动态行为以采样与交互结果为准，截图只说明采样时的画面。
 
-本地检查已完成；本次提交的发布结果记录在仓库 WORKLOG.md 及任务交付回复中。
+内容提交 `15bb48f1ef1269db7ca4036273f07f345dbdca25` 的 [Pages 运行 43150557972](https://github.com/MrRoam/smartHSB/actions/runs/43150557972) 已成功。35 个公开页面及 17 项关键资源共 52 项均 HTTP 200，文本按 UTF-8/LF 归一化后与本地一致。线上流光持续变化，390px 品种页无横向溢出。另确认内页原下滑收起导航保留，键盘焦点可唤回导航。发布证据见 [release.json](release.json)。记录结果的后续提交也按自身 SHA 跟踪部署。

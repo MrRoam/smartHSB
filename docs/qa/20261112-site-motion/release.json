@@ -1,0 +1,339 @@
+{
+  "contentDeployment": {
+    "id": 43150557972,
+    "head_sha": "15bb48f1ef1269db7ca4036273f07f345dbdca25",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/MrRoam/smartHSB/actions/runs/43150557972"
+  },
+  "publicChecks": [
+    {
+      "file": "404.html",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "5b0c9d7f50a8c96d3f1d3a289aa6a579e85b256732e3df809e1bf04f366b950f"
+    },
+    {
+      "file": "account-types.html",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "5d0dc17d215b7ac717bb6c2aba5149eb5993e80df027c8e75d02b13c64107100"
+    },
+    {
+      "file": "about.html",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "3be7608ec6a11a3311f877452c3965b5d7005df528d16fbb4740467c327c19aa"
+    },
+    {
+      "file": "account-real.html",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "bdcc8859a00c14692c347f48b3354584a9e00b977edbcef465aee6452484033b"
+    },
+    {
+      "file": "demo.html",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "37a00749b669e0504d2c3f27fd2fe827da39e43c1b99b11f96441145b794108b"
+    },
+    {
+      "file": "contact.html",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "29a0691a20c2b21402d6573e5feaf2dace1d94524e835373c5a96f65f770f2c6"
+    },
+    {
+      "file": "customer-complaint.html",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "c33219c683621b65731161fe2caa039812b6497666ba8b6a3fcfc1999819b152"
+    },
+    {
+      "file": "deposit-bank.html",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "03b9aa582e9917ad41baa6852d0c8ca10815abdd852f0acc16c219a484c5e6ca"
+    },
+    {
+      "file": "deposit-va.html",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "1bcf3a04c950526fc6c3a3974ab45d1bbe6e36d6b2b1c585b9ab5621e7cf0239"
+    },
+    {
+      "file": "deposit-withdraw.html",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "a17ef88e25cfece5b756a99287fb3c9c0e4ca2b52d21153a812bf200dad07dc2"
+    },
+    {
+      "file": "deposit-ewallet.html",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "58351f8c974881dd4e29cbb564fdce330f6d22661642eceae2525c5c5e36706a"
+    },
+    {
+      "file": "download.html",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "d9006e9418a5fb8af3454ac7b7bd502cedd83db39d3ed78ebe1a2f30c394c0b5"
+    },
+    {
+      "file": "economic-calendar.html",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "412f90edf805c8a96a47c974a7c0287c4d2f93833f06adb0edbebc835b11c264"
+    },
+    {
+      "file": "fraud-warning.html",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "12d80a198e2790ab8338e62635a67a4e771983474eda378fe458366c13747919"
+    },
+    {
+      "file": "index.html",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "43aa3811df6658e8227831df1252a1daed7a04035c170787b39e17a656681906"
+    },
+    {
+      "file": "help.html",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "a66a7b7cc810929448daf3f74da3e5c9476c5b422ea56bd713ce90d60d17124d"
+    },
+    {
+      "file": "learn-risk.html",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "3f2577e93ad70b8c781925bf683ac1ffc15f871d1972cb35434e0cfcc0299c57"
+    },
+    {
+      "file": "learn-technical.html",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "040333c4308c81ac037efcc73af5bd9ef2fd75d40308fc6734e586cc2c68f4f2"
+    },
+    {
+      "file": "learn-terms.html",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "365e317f9751b76ebd56107f71903ce59688885624004cd88e6dba00dcd8e1e8"
+    },
+    {
+      "file": "learn-basic.html",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "1a8cf307e6465dc37543b257fbf78d59349341850136daca766695819842fb91"
+    },
+    {
+      "file": "learn.html",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "592b32ca05ac9eb161d0b7bab98072d7cb24c717024eb9185805c9f218f3a18f"
+    },
+    {
+      "file": "live-quotes.html",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "f5c19d91ea93e99b7a8c9a95746ce26d80924c3593d320f6ae9b544e45da426a"
+    },
+    {
+      "file": "licenses.html",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "99ed8d89c97beb02b0a8464add1ff1bcdbe03d56f144eb24ed31c7647fcb4f28"
+    },
+    {
+      "file": "news.html",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "8f5c49ea55259f993cd9bad9a81a39b82a9caf1daf9de71d8512b95b568803a2"
+    },
+    {
+      "file": "platform-tutorial.html",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "be6469c87c63c8f559d9f6f6a1bd422eb697976eb3ee6645642c8ea68fce06a8"
+    },
+    {
+      "file": "privacy-policy.html",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "5a245a28ee74e06e176d86d319a4d9d583ad5a955e3004d4fadf95c99c473e6f"
+    },
+    {
+      "file": "products.html",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "286202dea4fb413866f5225af6c9b775503fd3820ffe62288049376ace45b19f"
+    },
+    {
+      "file": "promotions.html",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "ab58f244481ed69d6d65aa33d994a91eed8fbc6218454023d9b2e1cd9e4b4a13"
+    },
+    {
+      "file": "rewards.html",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "2dc1cf96de5ded9c054edb180c662a535d5a4283106418bcddd33490a51890cc"
+    },
+    {
+      "file": "trading-tools.html",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "79e9f8e953c1a813ab106a3a0f5611f70909d46ef468c9b6390959a97757b2d3"
+    },
+    {
+      "file": "tutorial-install.html",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "04566f45a4937b6c98f8755e1b8504f72f642a1d1f15baf3b939f799f1065087"
+    },
+    {
+      "file": "tutorial-manage.html",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "6270fab94f57e4e27879a0b82e599c9d76165062c3ded761b2737cfcc99c707e"
+    },
+    {
+      "file": "tutorial-open.html",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "ebc3ee12fa256dba1cb685c4c4860ab5b3fa8f1964a80c95efe4dc27a5472db4"
+    },
+    {
+      "file": "tutorial-trade.html",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "4e744dc32a32e286474fafb8d974102262d5dd7238645212e66f07a5a2a6ecc8"
+    },
+    {
+      "file": "user-agreement.html",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "619e90e60f052a69506764c06f8edc6ddac919713426e3423146766d5a418f9f"
+    },
+    {
+      "file": "assets/css/column-home.css",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "79a10008b90511a6e4bffbcd31fe36857addc65fdc9ba268b95c9e70d060bc9e"
+    },
+    {
+      "file": "assets/css/site-motion.css",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "85483526867f5c2acb3dcf4cb18985b7372a4600027f9dc57e58e59a2d349700"
+    },
+    {
+      "file": "assets/css/site-light.css",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "30580ddc9f89c61712f3fd339c4aa8b395a8a554184d4c3646598eabbfee051c"
+    },
+    {
+      "file": "assets/css/home-minpilot.css",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "e910758a7011b7a59681d16465c636ff0e5cee8dd3b8537f5495da04ba0dbc51"
+    },
+    {
+      "file": "assets/css/subpages.css",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "69fce3bd323fce9b294b8acf54233b9dc698879f45905462dcd8dfb1d0e7c9f8"
+    },
+    {
+      "file": "assets/css/platform-pages.css",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "29ccd99bcd32758493be3e8f88455e152970b5bc5bcf519ba1a151b439b57597"
+    },
+    {
+      "file": "assets/css/trading-pages.css",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "8c7daccb8e2c3dfdc512fb385a53faa37b460955f4f16b020b5821d4b3778624"
+    },
+    {
+      "file": "assets/css/editorial-pages.css",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "7dbcc3a56effb24624923edd05e493f73a6b3a48598b5bcd3ce8415aff15595e"
+    },
+    {
+      "file": "assets/js/subpages.js",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "a3d1d5dcd34c1171a1fc7c6006e642a25b17f5a9f3f3b57912c10d07bff7ef1f"
+    },
+    {
+      "file": "assets/js/main.js",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "067aeb788e210d7533a9eb198f9c809577966b0276f3e65a332c59852ddd9d1a"
+    },
+    {
+      "file": "assets/js/trading-pages.js",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "919f8ae1d54202090f5bbed63c01a46b1262351b0e4b78991021800f41306175"
+    },
+    {
+      "file": "assets/js/column-home.js",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "f381795f064f433ea387a2f8531f2dbda69a22818338de7a26c40cbe92282b9c"
+    },
+    {
+      "file": "assets/js/site-motion.js",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "28eecff7429e2dae5b56e7e1aba4905d577b89e32173e381d125d69610e4aa87"
+    },
+    {
+      "file": "assets/js/navigation-v2.js",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "58f8897df14a8c2420d7a130b3c3c10184770d25bdbb10b626657dacf3c3f7b1"
+    },
+    {
+      "file": "assets/css/intro-portal.css",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "67f1e20e2626651fde832afe579e7dcf8f4355f46facb32674e62df79af1cea6"
+    },
+    {
+      "file": "assets/img/logo-s-symbol.png",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "29f33c0e0c0b939ff0fed3c36256cb86b4a37948827168ea0e674d88023062aa"
+    },
+    {
+      "file": "assets/js/intro-portal.js",
+      "status": 200,
+      "matches": true,
+      "sha256LF": "9da7add144d815df0e6628de127123d20b2c8e1bb8c27655c96b2446207fcfc3"
+    }
+  ],
+  "liveBrowser": {
+    "homepageAwards": 6,
+    "wordmarkBackgroundPosition": [
+      "100% 50%",
+      "96.868% 50%"
+    ],
+    "wordmarkPlayState": "running",
+    "productsViewport": 390,
+    "productsScrollWidth": 390,
+    "productsBlue": "#235DFE",
+    "browserErrors": []
+  },
+  "headerScrollFocus": {
+    "originalHideOnScroll": true,
+    "restoredWhenKeyboardFocused": true
+  }
+}
