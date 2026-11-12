@@ -5,7 +5,7 @@
   /* ---------- Toast ---------- */
   var toastEl = null, toastTimer = null;
   window.toast = function(msg){
-    if(!toastEl){ toastEl = document.createElement('div'); toastEl.className='toast'; document.body.appendChild(toastEl); }
+    if(!toastEl){ toastEl = document.createElement('div'); toastEl.className='toast'; toastEl.setAttribute('role','status'); document.body.appendChild(toastEl); }
     toastEl.textContent = msg;
     toastEl.classList.add('show');
     clearTimeout(toastTimer);

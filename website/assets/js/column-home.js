@@ -51,6 +51,7 @@
       if (motion) svg.unpauseAnimations?.(); else svg.pauseAnimations?.();
     });
     canvasRenderers.forEach(renderer => renderer());
+    body.dispatchEvent(new CustomEvent('smarthsb-motion-change',{detail:{enabled:motion}}));
   }
   applyMotion();
   toggle.addEventListener('click', () => {

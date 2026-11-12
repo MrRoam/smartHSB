@@ -1,0 +1,44 @@
+/* Shared motion enhancement; all information remains visible without JavaScript. */
+@keyframes siteShimmer {from{background-position:100% 50%}to{background-position:0% 50%}}
+@keyframes siteDrift {0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(-2%,2%,0) scale(1.06)}}
+@keyframes siteFloat {0%,100%{translate:0 0}50%{translate:0 -9px}}
+@keyframes siteBars {0%,100%{transform:scaleY(.78)}50%{transform:scaleY(1)}}
+:is(.home-minpilot,.internal-site) .footer-wordmark {color:#006C45;}
+/* The requested flowing wordmark uses the same text, so its fallback stays readable. */
+@supports (background-clip:text) {
+  :is(.home-minpilot,.internal-site).js-motion .footer-wordmark {
+    background-image:linear-gradient(110deg,#006C45 0%,#235DFE 22%,#01A66B 36%,#5BFFC3 46%,#97F05E 50%,#006C45 60%,#235DFE 78%,#006C45 100%);
+    background-size:250% 100%;background-clip:text;-webkit-background-clip:text;color:transparent;
+    animation:siteShimmer 10s linear infinite;
+  }
+}
+.internal-site.js-motion .page-hero::before {animation:siteDrift 14s ease-in-out infinite;}
+.internal-site.js-motion .scene-core {animation:siteFloat 7s ease-in-out infinite;}
+.internal-site.js-motion .scene-node {animation:siteFloat 6s ease-in-out infinite;animation-delay:-2s;}
+.internal-site.js-motion .scene-node.n2 {animation-delay:-4s;}
+.home-minpilot.js-motion .platform-insight {animation:siteFloat 7s ease-in-out infinite;}
+.home-minpilot.js-motion .insight-bars i {transform-origin:bottom;animation:siteBars 4s ease-in-out infinite;animation-delay:calc(var(--bar-index,0)*-250ms);}
+.internal-site.js-motion .platform-download-scene .dv-phone {animation:siteFloat 7s ease-in-out infinite;}
+.internal-site.js-motion .platform-download-scene .dv-laptop {animation:siteFloat 8s ease-in-out -3s infinite;}
+.internal-site .platform-download-scene .dv-phone {transition:transform 850ms cubic-bezier(.22,1,.36,1);}
+.internal-site .platform-download-scene:is(:hover,:focus-within) .dv-phone {transform:rotate(0deg);}
+.internal-site .btn svg {transition:transform 300ms cubic-bezier(.22,1,.36,1);}
+.internal-site .btn:is(:hover,:focus-visible) svg {transform:translate(3px,-1px);}
+.internal-site :is(.icard .more,.tutorial-path>a,.reading-sidebar a) {transition:color 220ms,transform 300ms cubic-bezier(.22,1,.36,1);}
+.internal-site :is(.icard .more,.tutorial-path>a):is(:hover,:focus-visible) {transform:translateX(4px);}
+.internal-site .faq-q svg {transition:transform 300ms cubic-bezier(.22,1,.36,1);}
+:is(.home-minpilot,.internal-site) .motion-region:not(.motion-visible),
+:is(.home-minpilot,.internal-site) .motion-region:not(.motion-visible) *,
+:is(.home-minpilot,.internal-site) .motion-region:not(.motion-visible)::before,
+:is(.home-minpilot,.internal-site) .motion-region:not(.motion-visible)::after {animation-play-state:paused!important;}
+:is(.home-minpilot,.internal-site).is-background *,
+:is(.home-minpilot,.internal-site).is-background *::before,
+:is(.home-minpilot,.internal-site).is-background *::after {animation-play-state:paused!important;}
+:is(.home-minpilot,.internal-site).motion-off *,
+:is(.home-minpilot,.internal-site).motion-off *::before,
+:is(.home-minpilot,.internal-site).motion-off *::after {animation:none!important;transition:none!important;scroll-behavior:auto!important;}
+.internal-site .inner-animate.in-view {animation:none;}
+@media(prefers-reduced-motion:reduce) {
+  :is(.home-minpilot,.internal-site) *, :is(.home-minpilot,.internal-site) *::before, :is(.home-minpilot,.internal-site) *::after {animation:none!important;transition:none!important;scroll-behavior:auto!important;}
+  :is(.home-minpilot,.internal-site) .footer-wordmark {background:none!important;color:#006C45!important;}
+}

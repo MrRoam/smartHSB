@@ -1,0 +1,3065 @@
+{
+  "environment": "Windows / agent-browser Chromium / 2026-11-12 Asia/Shanghai",
+  "static": {
+    "pages": 35,
+    "localReferences": 3655,
+    "uniqueAssets": 58,
+    "mirror": true,
+    "portalUnchanged": true,
+    "errors": []
+  },
+  "responsive": [
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "404.html",
+      "scrollWidth": 320,
+      "viewport": 320,
+      "width": 320,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "404.html",
+      "scrollWidth": 390,
+      "viewport": 390,
+      "width": 390,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "404.html",
+      "scrollWidth": 768,
+      "viewport": 768,
+      "width": 768,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "404.html",
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "width": 1024,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "404.html",
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "width": 1440,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "about.html",
+      "scrollWidth": 320,
+      "viewport": 320,
+      "width": 320,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "about.html",
+      "scrollWidth": 390,
+      "viewport": 390,
+      "width": 390,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "about.html",
+      "scrollWidth": 768,
+      "viewport": 768,
+      "width": 768,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "about.html",
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "width": 1024,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "about.html",
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "width": 1440,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "account-real.html",
+      "scrollWidth": 320,
+      "viewport": 320,
+      "width": 320,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "account-real.html",
+      "scrollWidth": 390,
+      "viewport": 390,
+      "width": 390,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "account-real.html",
+      "scrollWidth": 768,
+      "viewport": 768,
+      "width": 768,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "account-real.html",
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "width": 1024,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "account-real.html",
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "width": 1440,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "account-types.html",
+      "scrollWidth": 320,
+      "viewport": 320,
+      "width": 320,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "account-types.html",
+      "scrollWidth": 390,
+      "viewport": 390,
+      "width": 390,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "account-types.html",
+      "scrollWidth": 768,
+      "viewport": 768,
+      "width": 768,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "account-types.html",
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "width": 1024,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "account-types.html",
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "width": 1440,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "contact.html",
+      "scrollWidth": 320,
+      "viewport": 320,
+      "width": 320,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "contact.html",
+      "scrollWidth": 390,
+      "viewport": 390,
+      "width": 390,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "contact.html",
+      "scrollWidth": 768,
+      "viewport": 768,
+      "width": 768,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "contact.html",
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "width": 1024,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "contact.html",
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "width": 1440,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "customer-complaint.html",
+      "scrollWidth": 320,
+      "viewport": 320,
+      "width": 320,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "customer-complaint.html",
+      "scrollWidth": 390,
+      "viewport": 390,
+      "width": 390,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "customer-complaint.html",
+      "scrollWidth": 768,
+      "viewport": 768,
+      "width": 768,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "customer-complaint.html",
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "width": 1024,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "customer-complaint.html",
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "width": 1440,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "demo.html",
+      "scrollWidth": 320,
+      "viewport": 320,
+      "width": 320,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "demo.html",
+      "scrollWidth": 390,
+      "viewport": 390,
+      "width": 390,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "demo.html",
+      "scrollWidth": 768,
+      "viewport": 768,
+      "width": 768,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "demo.html",
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "width": 1024,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "demo.html",
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "width": 1440,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "deposit-bank.html",
+      "scrollWidth": 320,
+      "viewport": 320,
+      "width": 320,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "deposit-bank.html",
+      "scrollWidth": 390,
+      "viewport": 390,
+      "width": 390,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "deposit-bank.html",
+      "scrollWidth": 768,
+      "viewport": 768,
+      "width": 768,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "deposit-bank.html",
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "width": 1024,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "deposit-bank.html",
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "width": 1440,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "deposit-ewallet.html",
+      "scrollWidth": 320,
+      "viewport": 320,
+      "width": 320,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "deposit-ewallet.html",
+      "scrollWidth": 390,
+      "viewport": 390,
+      "width": 390,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "deposit-ewallet.html",
+      "scrollWidth": 768,
+      "viewport": 768,
+      "width": 768,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "deposit-ewallet.html",
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "width": 1024,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "deposit-ewallet.html",
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "width": 1440,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "deposit-va.html",
+      "scrollWidth": 320,
+      "viewport": 320,
+      "width": 320,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "deposit-va.html",
+      "scrollWidth": 390,
+      "viewport": 390,
+      "width": 390,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "deposit-va.html",
+      "scrollWidth": 768,
+      "viewport": 768,
+      "width": 768,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "deposit-va.html",
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "width": 1024,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "deposit-va.html",
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "width": 1440,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "deposit-withdraw.html",
+      "scrollWidth": 320,
+      "viewport": 320,
+      "width": 320,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "deposit-withdraw.html",
+      "scrollWidth": 390,
+      "viewport": 390,
+      "width": 390,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "deposit-withdraw.html",
+      "scrollWidth": 768,
+      "viewport": 768,
+      "width": 768,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "deposit-withdraw.html",
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "width": 1024,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "deposit-withdraw.html",
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "width": 1440,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "download.html",
+      "scrollWidth": 320,
+      "viewport": 320,
+      "width": 320,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "download.html",
+      "scrollWidth": 390,
+      "viewport": 390,
+      "width": 390,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "download.html",
+      "scrollWidth": 768,
+      "viewport": 768,
+      "width": 768,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "download.html",
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "width": 1024,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "download.html",
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "width": 1440,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "economic-calendar.html",
+      "scrollWidth": 320,
+      "viewport": 320,
+      "width": 320,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "economic-calendar.html",
+      "scrollWidth": 390,
+      "viewport": 390,
+      "width": 390,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "economic-calendar.html",
+      "scrollWidth": 768,
+      "viewport": 768,
+      "width": 768,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "economic-calendar.html",
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "width": 1024,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "economic-calendar.html",
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "width": 1440,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "fraud-warning.html",
+      "scrollWidth": 320,
+      "viewport": 320,
+      "width": 320,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "fraud-warning.html",
+      "scrollWidth": 390,
+      "viewport": 390,
+      "width": 390,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "fraud-warning.html",
+      "scrollWidth": 768,
+      "viewport": 768,
+      "width": 768,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "fraud-warning.html",
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "width": 1024,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "fraud-warning.html",
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "width": 1440,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "help.html",
+      "scrollWidth": 320,
+      "viewport": 320,
+      "width": 320,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "help.html",
+      "scrollWidth": 390,
+      "viewport": 390,
+      "width": 390,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "help.html",
+      "scrollWidth": 768,
+      "viewport": 768,
+      "width": 768,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "help.html",
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "width": 1024,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "help.html",
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "width": 1440,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(255, 255, 255)",
+      "page": "index.html",
+      "scrollWidth": 320,
+      "viewport": 320,
+      "width": 320,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(255, 255, 255)",
+      "page": "index.html",
+      "scrollWidth": 390,
+      "viewport": 390,
+      "width": 390,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(255, 255, 255)",
+      "page": "index.html",
+      "scrollWidth": 768,
+      "viewport": 768,
+      "width": 768,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(255, 255, 255)",
+      "page": "index.html",
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "width": 1024,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(255, 255, 255)",
+      "page": "index.html",
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "width": 1440,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "learn-basic.html",
+      "scrollWidth": 320,
+      "viewport": 320,
+      "width": 320,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "learn-basic.html",
+      "scrollWidth": 390,
+      "viewport": 390,
+      "width": 390,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "learn-basic.html",
+      "scrollWidth": 768,
+      "viewport": 768,
+      "width": 768,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "learn-basic.html",
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "width": 1024,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "learn-basic.html",
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "width": 1440,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "learn-risk.html",
+      "scrollWidth": 320,
+      "viewport": 320,
+      "width": 320,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "learn-risk.html",
+      "scrollWidth": 390,
+      "viewport": 390,
+      "width": 390,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "learn-risk.html",
+      "scrollWidth": 768,
+      "viewport": 768,
+      "width": 768,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "learn-risk.html",
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "width": 1024,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "learn-risk.html",
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "width": 1440,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "learn-technical.html",
+      "scrollWidth": 320,
+      "viewport": 320,
+      "width": 320,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "learn-technical.html",
+      "scrollWidth": 390,
+      "viewport": 390,
+      "width": 390,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "learn-technical.html",
+      "scrollWidth": 768,
+      "viewport": 768,
+      "width": 768,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "learn-technical.html",
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "width": 1024,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "learn-technical.html",
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "width": 1440,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "learn-terms.html",
+      "scrollWidth": 320,
+      "viewport": 320,
+      "width": 320,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "learn-terms.html",
+      "scrollWidth": 390,
+      "viewport": 390,
+      "width": 390,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "learn-terms.html",
+      "scrollWidth": 768,
+      "viewport": 768,
+      "width": 768,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "learn-terms.html",
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "width": 1024,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "learn-terms.html",
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "width": 1440,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "learn.html",
+      "scrollWidth": 320,
+      "viewport": 320,
+      "width": 320,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "learn.html",
+      "scrollWidth": 390,
+      "viewport": 390,
+      "width": 390,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "learn.html",
+      "scrollWidth": 768,
+      "viewport": 768,
+      "width": 768,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "learn.html",
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "width": 1024,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "learn.html",
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "width": 1440,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "licenses.html",
+      "scrollWidth": 320,
+      "viewport": 320,
+      "width": 320,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "licenses.html",
+      "scrollWidth": 390,
+      "viewport": 390,
+      "width": 390,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "licenses.html",
+      "scrollWidth": 768,
+      "viewport": 768,
+      "width": 768,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "licenses.html",
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "width": 1024,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "licenses.html",
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "width": 1440,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "live-quotes.html",
+      "scrollWidth": 320,
+      "viewport": 320,
+      "width": 320,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "live-quotes.html",
+      "scrollWidth": 390,
+      "viewport": 390,
+      "width": 390,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "live-quotes.html",
+      "scrollWidth": 768,
+      "viewport": 768,
+      "width": 768,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "live-quotes.html",
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "width": 1024,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "live-quotes.html",
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "width": 1440,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "news.html",
+      "scrollWidth": 320,
+      "viewport": 320,
+      "width": 320,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "news.html",
+      "scrollWidth": 390,
+      "viewport": 390,
+      "width": 390,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "news.html",
+      "scrollWidth": 768,
+      "viewport": 768,
+      "width": 768,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "news.html",
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "width": 1024,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "news.html",
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "width": 1440,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "platform-tutorial.html",
+      "scrollWidth": 320,
+      "viewport": 320,
+      "width": 320,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "platform-tutorial.html",
+      "scrollWidth": 390,
+      "viewport": 390,
+      "width": 390,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "platform-tutorial.html",
+      "scrollWidth": 768,
+      "viewport": 768,
+      "width": 768,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "platform-tutorial.html",
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "width": 1024,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "platform-tutorial.html",
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "width": 1440,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "privacy-policy.html",
+      "scrollWidth": 320,
+      "viewport": 320,
+      "width": 320,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "privacy-policy.html",
+      "scrollWidth": 390,
+      "viewport": 390,
+      "width": 390,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "privacy-policy.html",
+      "scrollWidth": 768,
+      "viewport": 768,
+      "width": 768,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "privacy-policy.html",
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "width": 1024,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "privacy-policy.html",
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "width": 1440,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "products.html",
+      "scrollWidth": 320,
+      "viewport": 320,
+      "width": 320,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "products.html",
+      "scrollWidth": 390,
+      "viewport": 390,
+      "width": 390,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "products.html",
+      "scrollWidth": 768,
+      "viewport": 768,
+      "width": 768,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "products.html",
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "width": 1024,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "products.html",
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "width": 1440,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "promotions.html",
+      "scrollWidth": 320,
+      "viewport": 320,
+      "width": 320,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "promotions.html",
+      "scrollWidth": 390,
+      "viewport": 390,
+      "width": 390,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "promotions.html",
+      "scrollWidth": 768,
+      "viewport": 768,
+      "width": 768,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "promotions.html",
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "width": 1024,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "promotions.html",
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "width": 1440,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "rewards.html",
+      "scrollWidth": 320,
+      "viewport": 320,
+      "width": 320,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "rewards.html",
+      "scrollWidth": 390,
+      "viewport": 390,
+      "width": 390,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "rewards.html",
+      "scrollWidth": 768,
+      "viewport": 768,
+      "width": 768,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "rewards.html",
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "width": 1024,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "rewards.html",
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "width": 1440,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "trading-tools.html",
+      "scrollWidth": 320,
+      "viewport": 320,
+      "width": 320,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "trading-tools.html",
+      "scrollWidth": 390,
+      "viewport": 390,
+      "width": 390,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "trading-tools.html",
+      "scrollWidth": 768,
+      "viewport": 768,
+      "width": 768,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "trading-tools.html",
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "width": 1024,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "trading-tools.html",
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "width": 1440,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "tutorial-install.html",
+      "scrollWidth": 320,
+      "viewport": 320,
+      "width": 320,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "tutorial-install.html",
+      "scrollWidth": 390,
+      "viewport": 390,
+      "width": 390,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "tutorial-install.html",
+      "scrollWidth": 768,
+      "viewport": 768,
+      "width": 768,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "tutorial-install.html",
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "width": 1024,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "tutorial-install.html",
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "width": 1440,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "tutorial-manage.html",
+      "scrollWidth": 320,
+      "viewport": 320,
+      "width": 320,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "tutorial-manage.html",
+      "scrollWidth": 390,
+      "viewport": 390,
+      "width": 390,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "tutorial-manage.html",
+      "scrollWidth": 768,
+      "viewport": 768,
+      "width": 768,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "tutorial-manage.html",
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "width": 1024,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "tutorial-manage.html",
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "width": 1440,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "tutorial-open.html",
+      "scrollWidth": 320,
+      "viewport": 320,
+      "width": 320,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "tutorial-open.html",
+      "scrollWidth": 390,
+      "viewport": 390,
+      "width": 390,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "tutorial-open.html",
+      "scrollWidth": 768,
+      "viewport": 768,
+      "width": 768,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "tutorial-open.html",
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "width": 1024,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "tutorial-open.html",
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "width": 1440,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "tutorial-trade.html",
+      "scrollWidth": 320,
+      "viewport": 320,
+      "width": 320,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "tutorial-trade.html",
+      "scrollWidth": 390,
+      "viewport": 390,
+      "width": 390,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "tutorial-trade.html",
+      "scrollWidth": 768,
+      "viewport": 768,
+      "width": 768,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "tutorial-trade.html",
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "width": 1024,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "tutorial-trade.html",
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "width": 1440,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "user-agreement.html",
+      "scrollWidth": 320,
+      "viewport": 320,
+      "width": 320,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "user-agreement.html",
+      "scrollWidth": 390,
+      "viewport": 390,
+      "width": 390,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "user-agreement.html",
+      "scrollWidth": 768,
+      "viewport": 768,
+      "width": 768,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "user-agreement.html",
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "width": 1024,
+      "wordmarks": 1
+    },
+    {
+      "awardSingleRow": true,
+      "clipped": [],
+      "headingColor": "rgb(29, 29, 31)",
+      "page": "user-agreement.html",
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "width": 1440,
+      "wordmarks": 1
+    }
+  ],
+  "accessibility": [
+    {
+      "incomplete": [
+        {
+          "count": 1,
+          "id": "aria-prohibited-attr"
+        },
+        {
+          "count": 2,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "404.html",
+      "passes": 24,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 1,
+          "id": "aria-prohibited-attr"
+        },
+        {
+          "count": 8,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "404.html",
+      "passes": 24,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 24,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "about.html",
+      "passes": 24,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 30,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "about.html",
+      "passes": 24,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 26,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "account-real.html",
+      "passes": 26,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 32,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "account-real.html",
+      "passes": 26,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 31,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "account-types.html",
+      "passes": 24,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 37,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "account-types.html",
+      "passes": 24,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 27,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "contact.html",
+      "passes": 28,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 33,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "contact.html",
+      "passes": 28,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 21,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "customer-complaint.html",
+      "passes": 24,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 27,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "customer-complaint.html",
+      "passes": 24,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 27,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "demo.html",
+      "passes": 30,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 33,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "demo.html",
+      "passes": 30,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 28,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "deposit-bank.html",
+      "passes": 29,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 33,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "deposit-bank.html",
+      "passes": 28,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 28,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "deposit-ewallet.html",
+      "passes": 29,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 33,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "deposit-ewallet.html",
+      "passes": 28,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 28,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "deposit-va.html",
+      "passes": 29,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 33,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "deposit-va.html",
+      "passes": 28,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 29,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "deposit-withdraw.html",
+      "passes": 29,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 36,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "deposit-withdraw.html",
+      "passes": 28,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 30,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "download.html",
+      "passes": 26,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 36,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "download.html",
+      "passes": 26,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 22,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "economic-calendar.html",
+      "passes": 29,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 28,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "economic-calendar.html",
+      "passes": 28,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 22,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "fraud-warning.html",
+      "passes": 27,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 28,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "fraud-warning.html",
+      "passes": 26,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 25,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "help.html",
+      "passes": 28,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 23,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "help.html",
+      "passes": 27,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 75,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "index.html",
+      "passes": 30,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 86,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "index.html",
+      "passes": 29,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 25,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "learn-basic.html",
+      "passes": 29,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 30,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "learn-basic.html",
+      "passes": 28,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 25,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "learn-risk.html",
+      "passes": 29,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 30,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "learn-risk.html",
+      "passes": 28,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 25,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "learn-technical.html",
+      "passes": 29,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 30,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "learn-technical.html",
+      "passes": 28,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 25,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "learn-terms.html",
+      "passes": 29,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 30,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "learn-terms.html",
+      "passes": 28,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 22,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "learn.html",
+      "passes": 24,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 28,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "learn.html",
+      "passes": 24,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 26,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "licenses.html",
+      "passes": 25,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 32,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "licenses.html",
+      "passes": 25,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 20,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "live-quotes.html",
+      "passes": 30,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 24,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "live-quotes.html",
+      "passes": 30,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 20,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "news.html",
+      "passes": 26,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 26,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "news.html",
+      "passes": 26,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 18,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "platform-tutorial.html",
+      "passes": 24,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 28,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "platform-tutorial.html",
+      "passes": 24,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 18,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "privacy-policy.html",
+      "passes": 26,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 22,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "privacy-policy.html",
+      "passes": 26,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 24,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "products.html",
+      "passes": 32,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 30,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "products.html",
+      "passes": 32,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 23,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "promotions.html",
+      "passes": 24,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 29,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "promotions.html",
+      "passes": 24,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 22,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "rewards.html",
+      "passes": 24,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 28,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "rewards.html",
+      "passes": 24,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 17,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "trading-tools.html",
+      "passes": 26,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 23,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "trading-tools.html",
+      "passes": 26,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 40,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "tutorial-install.html",
+      "passes": 29,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 46,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "tutorial-install.html",
+      "passes": 28,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 27,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "tutorial-manage.html",
+      "passes": 29,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 33,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "tutorial-manage.html",
+      "passes": 28,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 41,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "tutorial-open.html",
+      "passes": 29,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 47,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "tutorial-open.html",
+      "passes": 28,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 38,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "tutorial-trade.html",
+      "passes": 29,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 44,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "tutorial-trade.html",
+      "passes": 28,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 17,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "user-agreement.html",
+      "passes": 26,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 22,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "user-agreement.html",
+      "passes": 26,
+      "violations": [],
+      "width": 1440
+    }
+  ],
+  "interactions": [
+    {
+      "name": "homepage phone hover straightens",
+      "passed": true,
+      "details": [
+        "matrix(0.996195, -0.0871557, 0.0871557, 0.996195, 0, 0)",
+        "matrix(1, 0, 0, 1, 0, 0)"
+      ]
+    },
+    {
+      "name": "six awards fit one desktop row",
+      "passed": true,
+      "details": [
+        {
+          "top": 531,
+          "right": 272
+        },
+        {
+          "top": 531,
+          "right": 489
+        },
+        {
+          "top": 531,
+          "right": 706
+        },
+        {
+          "top": 531,
+          "right": 923
+        },
+        {
+          "top": 531,
+          "right": 1140
+        },
+        {
+          "top": 531,
+          "right": 1357
+        }
+      ]
+    },
+    {
+      "name": "market arrow keyboard and instrument list",
+      "passed": true,
+      "details": {
+        "key": "index",
+        "count": 5,
+        "focus": "tab-index"
+      }
+    },
+    {
+      "name": "17 forex instruments are keyboard scrollable",
+      "passed": true,
+      "details": {
+        "count": 17,
+        "tabindex": 0
+      }
+    },
+    {
+      "name": "homepage FAQ keyboard",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "footer gradient flows while visible",
+      "passed": true,
+      "details": {
+        "first": "99.117% 50%",
+        "second": "96.463% 50%",
+        "state": "running"
+      }
+    },
+    {
+      "name": "homepage motion switch cancels all running animations",
+      "passed": true,
+      "details": {
+        "off": true,
+        "running": 0,
+        "videoPaused": true
+      }
+    },
+    {
+      "name": "footer loop pauses offscreen",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "mobile menu opens",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "mobile menu Escape closes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "mobile award row scrolls with keyboard",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "download product hover straightens",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "inner motion switch cancels all running animations",
+      "passed": true,
+      "details": {
+        "off": true,
+        "running": 0
+      }
+    },
+    {
+      "name": "OS reduced motion disables switch",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "manual off preference survives OS setting change",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "inner motion re-enables",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "inner mobile menu returns focus",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "help search works",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "help FAQ expands",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "products search retains matching instrument",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "desktop nav keyboard opens and focuses link",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "desktop nav Escape returns focus",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "no browser errors",
+      "passed": true,
+      "details": ""
+    }
+  ],
+  "motionModes": {
+    "reduced": [
+      {
+        "disabled": true,
+        "off": true,
+        "page": "404.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "about.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "account-real.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "account-types.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "contact.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "customer-complaint.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "demo.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "deposit-bank.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "deposit-ewallet.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "deposit-va.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "deposit-withdraw.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "download.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "economic-calendar.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "fraud-warning.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "help.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "index.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "learn-basic.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "learn-risk.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "learn-technical.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "learn-terms.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "learn.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "licenses.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "live-quotes.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "news.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "platform-tutorial.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "privacy-policy.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "products.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "promotions.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "rewards.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "trading-tools.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "tutorial-install.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "tutorial-manage.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "tutorial-open.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "tutorial-trade.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "user-agreement.html",
+        "reduced": true,
+        "running": 0
+      }
+    ],
+    "simulatedBackground": {
+      "classPaused": true,
+      "finitePortalTransitions": 9,
+      "runningLoops": 0,
+      "videoPaused": true
+    },
+    "noScript": [
+      {
+        "scripts": 0,
+        "hiddenHeadings": 0,
+        "scrollWidth": 320,
+        "viewport": 320,
+        "instruments": 25,
+        "page": "index.html"
+      },
+      {
+        "scripts": 0,
+        "hiddenHeadings": 0,
+        "scrollWidth": 320,
+        "viewport": 320,
+        "instruments": 0,
+        "page": "about.html"
+      },
+      {
+        "scripts": 0,
+        "hiddenHeadings": 0,
+        "scrollWidth": 320,
+        "viewport": 320,
+        "instruments": 0,
+        "page": "download.html"
+      },
+      {
+        "scripts": 0,
+        "hiddenHeadings": 0,
+        "scrollWidth": 320,
+        "viewport": 320,
+        "instruments": 0,
+        "page": "help.html"
+      }
+    ]
+  }
+}

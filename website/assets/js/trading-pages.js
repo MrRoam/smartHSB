@@ -16,7 +16,7 @@
         if(entries[0].isIntersecting) choose(current);
       },{threshold:.15});
       io.observe(document.querySelector('.trade-account-preview'));
-      setInterval(()=>{if(motion()&&document.querySelector('.trade-account-preview').getBoundingClientRect().bottom>0)choose((current+1)%plans.length);},3500);
+      setInterval(()=>{const bounds=document.querySelector('.trade-account-preview').getBoundingClientRect();if(motion()&&bounds.bottom>0&&bounds.top<innerHeight)choose((current+1)%plans.length);},3500);
     }
 
     const market=document.querySelector('.trade-market-workspace');
