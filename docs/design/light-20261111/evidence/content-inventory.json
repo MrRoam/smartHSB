@@ -1,0 +1,194 @@
+{
+  "source": "website/index.html",
+  "groups": {
+    "gold": [
+      {
+        "symbol": "XAU/USD",
+        "name": "黄金",
+        "price": "2384.70",
+        "change": "+0.45%"
+      },
+      {
+        "symbol": "XAG/USD",
+        "name": "白银",
+        "price": "27.845",
+        "change": "+0.62%"
+      }
+    ],
+    "index": [
+      {
+        "symbol": "HK50",
+        "name": "香港恒生",
+        "price": "18420.5",
+        "change": "+0.28%"
+      },
+      {
+        "symbol": "JPN225",
+        "name": "日经225",
+        "price": "38120.0",
+        "change": "+0.16%"
+      },
+      {
+        "symbol": "SP500",
+        "name": "标普500",
+        "price": "5820.50",
+        "change": "-0.12%"
+      },
+      {
+        "symbol": "TECH100",
+        "name": "纳指100",
+        "price": "20340.0",
+        "change": "+0.34%"
+      },
+      {
+        "symbol": "DJ30",
+        "name": "道琼斯",
+        "price": "42650.0",
+        "change": "+0.05%"
+      }
+    ],
+    "fx": [
+      {
+        "symbol": "EUR/USD",
+        "name": "欧元/美元",
+        "price": "1.08640",
+        "change": "+0.12%"
+      },
+      {
+        "symbol": "GBP/USD",
+        "name": "英镑/美元",
+        "price": "1.29340",
+        "change": "+0.08%"
+      },
+      {
+        "symbol": "AUD/USD",
+        "name": "澳元/美元",
+        "price": "0.65510",
+        "change": "-0.09%"
+      },
+      {
+        "symbol": "NZD/USD",
+        "name": "纽元/美元",
+        "price": "0.60230",
+        "change": "+0.10%"
+      },
+      {
+        "symbol": "USD/JPY",
+        "name": "美元/日元",
+        "price": "151.350",
+        "change": "-0.21%"
+      },
+      {
+        "symbol": "USD/CHF",
+        "name": "美元/瑞郎",
+        "price": "0.88750",
+        "change": "+0.05%"
+      },
+      {
+        "symbol": "USD/CAD",
+        "name": "美元/加元",
+        "price": "1.37420",
+        "change": "-0.06%"
+      },
+      {
+        "symbol": "AUD/JPY",
+        "name": "澳元/日元",
+        "price": "99.160",
+        "change": "-0.05%"
+      },
+      {
+        "symbol": "AUD/NZD",
+        "name": "澳元/纽元",
+        "price": "1.08760",
+        "change": "+0.07%"
+      },
+      {
+        "symbol": "EUR/AUD",
+        "name": "欧元/澳元",
+        "price": "1.65820",
+        "change": "+0.15%"
+      },
+      {
+        "symbol": "EUR/CHF",
+        "name": "欧元/瑞郎",
+        "price": "0.96380",
+        "change": "+0.01%"
+      },
+      {
+        "symbol": "EUR/GBP",
+        "name": "欧元/英镑",
+        "price": "0.83980",
+        "change": "+0.04%"
+      },
+      {
+        "symbol": "EUR/JPY",
+        "name": "欧元/日元",
+        "price": "164.520",
+        "change": "-0.12%"
+      },
+      {
+        "symbol": "GBP/AUD",
+        "name": "英镑/澳元",
+        "price": "1.97420",
+        "change": "+0.11%"
+      },
+      {
+        "symbol": "GBP/CHF",
+        "name": "英镑/瑞郎",
+        "price": "1.14760",
+        "change": "+0.09%"
+      },
+      {
+        "symbol": "NZD/JPY",
+        "name": "纽元/日元",
+        "price": "91.180",
+        "change": "-0.03%"
+      },
+      {
+        "symbol": "GBP/JPY",
+        "name": "英镑/日元",
+        "price": "195.830",
+        "change": "+0.02%"
+      }
+    ],
+    "energy": [
+      {
+        "symbol": "USOIL",
+        "name": "美国原油",
+        "price": "71.240",
+        "change": "-0.35%"
+      }
+    ]
+  },
+  "counts": {
+    "gold": 2,
+    "index": 5,
+    "fx": 17,
+    "energy": 1
+  },
+  "total": 25,
+  "hero_badges": [
+    "BAPPEBTI",
+    "OJK",
+    "Bank Indonesia",
+    "ICDX",
+    "ICH",
+    "ASPEBTINDO"
+  ],
+  "awards": [
+    "BAPPEBTI 2026 第一季度评级 A+++",
+    "BEST OTC Broker 2025 by ICDX",
+    "MOST Innovative Broker 2024 by ICDX",
+    "MOST Improved Broker 2023 by ICDX",
+    "MOST Innovative Broker 2022 by ICDX",
+    "MOST Improved Broker 2021 by ICDX"
+  ],
+  "media": [
+    "CNBC Indonesia",
+    "detikfinance",
+    "LIPUTAN6",
+    "Bisnis.com",
+    "Kontan"
+  ],
+  "faq_count": 5
+}

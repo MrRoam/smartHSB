@@ -1,0 +1,22 @@
+[
+  {
+    "role": "homepage",
+    "url": "https://minpilot.webflow.io/",
+    "matches_previous": true
+  },
+  {
+    "role": "style-guide",
+    "url": "https://minpilot.webflow.io/admin/style-guide",
+    "matches_previous": true
+  },
+  {
+    "role": "shared-css",
+    "url": "https://cdn.prod.website-files.com/69da2d84d99e526ecba9a2bb/css/minpilot.webflow.shared.81767bcd4.css",
+    "matches_previous": true
+  },
+  {
+    "role": "interaction-registration",
+    "url": "https://cdn.prod.website-files.com/69da2d84d99e526ecba9a2bb/js/webflow.e2cf26c6.547f7fdffe984d7b.js",
+    "matches_previous": true
+  }
+]

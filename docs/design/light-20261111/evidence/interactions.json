@@ -1,0 +1,55 @@
+[
+  {
+    "key": "ArrowRight",
+    "active": "tab-index",
+    "count": 5,
+    "focus": "solid",
+    "panelLabel": "tab-index",
+    "selected": "index"
+  },
+  {
+    "key": "ArrowRight",
+    "active": "tab-fx",
+    "count": 17,
+    "focus": "solid",
+    "panelLabel": "tab-fx",
+    "selected": "fx"
+  },
+  {
+    "key": "End",
+    "active": "tab-energy",
+    "count": 1,
+    "focus": "solid",
+    "panelLabel": "tab-energy",
+    "selected": "energy"
+  },
+  {
+    "key": "Home",
+    "active": "tab-gold",
+    "count": 2,
+    "focus": "solid",
+    "panelLabel": "tab-gold",
+    "selected": "gold"
+  },
+  {
+    "key": "ArrowLeft",
+    "active": "tab-energy",
+    "count": 1,
+    "focus": "solid",
+    "panelLabel": "tab-energy",
+    "selected": "energy"
+  },
+  {
+    "listKeyboardEnd": {
+      "height": 355,
+      "scrollHeight": 1433,
+      "scrollTop": 396
+    }
+  },
+  {
+    "nativeFaqEnterSpace": "pass"
+  },
+  {
+    "mobileMenuEscapeAndFocus": "pass"
+  }
+]

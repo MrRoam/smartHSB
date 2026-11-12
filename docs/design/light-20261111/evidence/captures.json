@@ -1,0 +1,38 @@
+[
+  {
+    "scene": "portal-transition",
+    "width": 1440,
+    "height": 1794,
+    "path": "images/portal-transition-1440.png"
+  },
+  {
+    "scene": "platform",
+    "width": 1440,
+    "height": 1105,
+    "path": "images/platform-1440.png"
+  },
+  {
+    "scene": "markets",
+    "width": 1440,
+    "height": 1290,
+    "path": "images/markets-1440.png"
+  },
+  {
+    "scene": "portal-transition",
+    "width": 390,
+    "height": 1733,
+    "path": "images/portal-transition-390.png"
+  },
+  {
+    "scene": "platform",
+    "width": 390,
+    "height": 1751,
+    "path": "images/platform-390.png"
+  },
+  {
+    "scene": "markets",
+    "width": 390,
+    "height": 1544,
+    "path": "images/markets-390.png"
+  }
+]

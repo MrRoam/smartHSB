@@ -1,0 +1,1380 @@
+{
+  "method": "4px grid within actual text element rectangles; text made transparent while rendering background. Buttons inset 16px/12px to exclude rounded corners outside the label. Only review copy, not raster hero or aria-hidden device illustration.",
+  "samples": [
+    {
+      "width": 320,
+      "text": "一个账户。打开全球市场。",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 15.97,
+      "worst_background": [
+        230,
+        254,
+        250
+      ]
+    },
+    {
+      "width": 320,
+      "text": "从贵金属到外汇，让市场、分析与交易彼此相连。把更多精力，留给你的判断。",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 6.02,
+      "worst_background": [
+        236,
+        254,
+        251
+      ]
+    },
+    {
+      "width": 320,
+      "text": "了解 SmartHSB ↗",
+      "fg": "rgb(0, 108, 69)",
+      "min_ratio": 6.3,
+      "worst_background": [
+        242,
+        254,
+        252
+      ]
+    },
+    {
+      "width": 320,
+      "text": "贵金属",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 16.64,
+      "worst_background": [
+        249,
+        255,
+        254
+      ]
+    },
+    {
+      "width": 320,
+      "text": "2 个品种",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 6.27,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 320,
+      "text": "股指",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 16.64,
+      "worst_background": [
+        249,
+        255,
+        254
+      ]
+    },
+    {
+      "width": 320,
+      "text": "5 个品种",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 6.18,
+      "worst_background": [
+        250,
+        254,
+        254
+      ]
+    },
+    {
+      "width": 320,
+      "text": "外汇",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 16.77,
+      "worst_background": [
+        253,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 320,
+      "text": "17 个品种",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 6.27,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 320,
+      "text": "能源",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 16.76,
+      "worst_background": [
+        253,
+        255,
+        254
+      ]
+    },
+    {
+      "width": 320,
+      "text": "1 个品种",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 6.27,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 320,
+      "text": "从看见机会，到把握机会。",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 16.83,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 320,
+      "text": "一个 APP，让行情、分析与交易相连。",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 6.27,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 320,
+      "text": "看清市场，再做决定",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 16.83,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 320,
+      "text": "自选行情、财经日历与 Trading Central 研报，协助你建立自己的交易判断。",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 6.27,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 320,
+      "text": "熟悉的操作，完整的体验",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 16.83,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 320,
+      "text": "先用模拟账户练习，再选择适合你的账户。在移动端管理你的交易。",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 6.27,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 320,
+      "text": "下载 APP ↗",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 14.08,
+      "worst_background": [
+        191,
+        255,
+        55
+      ]
+    },
+    {
+      "width": 320,
+      "text": "试用模拟账户",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 16.83,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 320,
+      "text": "$10,000 虚拟资金",
+      "fg": "rgb(0, 108, 69)",
+      "min_ratio": 6.42,
+      "worst_background": [
+        252,
+        254,
+        254
+      ]
+    },
+    {
+      "width": 320,
+      "text": "从模拟交易开始，先熟悉平台。",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 6.21,
+      "worst_background": [
+        253,
+        254,
+        255
+      ]
+    },
+    {
+      "width": 320,
+      "text": "界面、报价和图表均为非实时展示示例。设备内沿用现有网页演示内容，不代表新 APP 皮肤。",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 5.6,
+      "worst_background": [
+        237,
+        242,
+        254
+      ]
+    },
+    {
+      "width": 320,
+      "text": "产品舞台",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 14.18,
+      "worst_background": [
+        191,
+        249,
+        210
+      ]
+    },
+    {
+      "width": 320,
+      "text": "开启模拟交易",
+      "fg": "rgb(255, 255, 255)",
+      "min_ratio": 5.16,
+      "worst_background": [
+        35,
+        93,
+        254
+      ]
+    },
+    {
+      "width": 320,
+      "text": "了解平台功能",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 16.83,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 390,
+      "text": "一个账户。打开全球市场。",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 16.08,
+      "worst_background": [
+        230,
+        255,
+        251
+      ]
+    },
+    {
+      "width": 390,
+      "text": "从贵金属到外汇，让市场、分析与交易彼此相连。把更多精力，留给你的判断。",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 6.07,
+      "worst_background": [
+        237,
+        255,
+        252
+      ]
+    },
+    {
+      "width": 390,
+      "text": "了解 SmartHSB ↗",
+      "fg": "rgb(0, 108, 69)",
+      "min_ratio": 6.36,
+      "worst_background": [
+        243,
+        255,
+        253
+      ]
+    },
+    {
+      "width": 390,
+      "text": "贵金属",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 16.5,
+      "worst_background": [
+        248,
+        254,
+        253
+      ]
+    },
+    {
+      "width": 390,
+      "text": "2 个品种",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 6.27,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 390,
+      "text": "股指",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 16.5,
+      "worst_background": [
+        248,
+        254,
+        253
+      ]
+    },
+    {
+      "width": 390,
+      "text": "5 个品种",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 6.23,
+      "worst_background": [
+        251,
+        255,
+        254
+      ]
+    },
+    {
+      "width": 390,
+      "text": "外汇",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 16.66,
+      "worst_background": [
+        253,
+        254,
+        254
+      ]
+    },
+    {
+      "width": 390,
+      "text": "17 个品种",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 6.27,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 390,
+      "text": "能源",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 16.66,
+      "worst_background": [
+        253,
+        254,
+        254
+      ]
+    },
+    {
+      "width": 390,
+      "text": "1 个品种",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 6.27,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 390,
+      "text": "从看见机会，到把握机会。",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 16.83,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 390,
+      "text": "一个 APP，让行情、分析与交易相连。",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 6.27,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 390,
+      "text": "看清市场，再做决定",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 16.83,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 390,
+      "text": "自选行情、财经日历与 Trading Central 研报，协助你建立自己的交易判断。",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 6.27,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 390,
+      "text": "熟悉的操作，完整的体验",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 16.83,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 390,
+      "text": "先用模拟账户练习，再选择适合你的账户。在移动端管理你的交易。",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 6.26,
+      "worst_background": [
+        254,
+        255,
+        254
+      ]
+    },
+    {
+      "width": 390,
+      "text": "下载 APP ↗",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 14.08,
+      "worst_background": [
+        191,
+        255,
+        55
+      ]
+    },
+    {
+      "width": 390,
+      "text": "试用模拟账户",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 16.83,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 390,
+      "text": "$10,000 虚拟资金",
+      "fg": "rgb(0, 108, 69)",
+      "min_ratio": 6.42,
+      "worst_background": [
+        252,
+        254,
+        254
+      ]
+    },
+    {
+      "width": 390,
+      "text": "从模拟交易开始，先熟悉平台。",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 6.21,
+      "worst_background": [
+        253,
+        254,
+        254
+      ]
+    },
+    {
+      "width": 390,
+      "text": "界面、报价和图表均为非实时展示示例。设备内沿用现有网页演示内容，不代表新 APP 皮肤。",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 5.64,
+      "worst_background": [
+        235,
+        244,
+        253
+      ]
+    },
+    {
+      "width": 390,
+      "text": "产品舞台",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 14.21,
+      "worst_background": [
+        194,
+        249,
+        206
+      ]
+    },
+    {
+      "width": 390,
+      "text": "开启模拟交易",
+      "fg": "rgb(255, 255, 255)",
+      "min_ratio": 5.16,
+      "worst_background": [
+        35,
+        93,
+        254
+      ]
+    },
+    {
+      "width": 390,
+      "text": "了解平台功能",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 16.83,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 768,
+      "text": "一个账户。打开全球市场。",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 16.1,
+      "worst_background": [
+        231,
+        255,
+        251
+      ]
+    },
+    {
+      "width": 768,
+      "text": "从贵金属到外汇，让市场、分析与交易彼此相连。把更多精力，留给你的判断。",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 6.08,
+      "worst_background": [
+        238,
+        255,
+        252
+      ]
+    },
+    {
+      "width": 768,
+      "text": "了解 SmartHSB ↗",
+      "fg": "rgb(0, 108, 69)",
+      "min_ratio": 6.36,
+      "worst_background": [
+        243,
+        255,
+        253
+      ]
+    },
+    {
+      "width": 768,
+      "text": "贵金属",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 16.83,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 768,
+      "text": "2 个品种",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 6.27,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 768,
+      "text": "股指",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 16.6,
+      "worst_background": [
+        251,
+        254,
+        254
+      ]
+    },
+    {
+      "width": 768,
+      "text": "5 个品种",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 6.27,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 768,
+      "text": "外汇",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 16.6,
+      "worst_background": [
+        251,
+        254,
+        254
+      ]
+    },
+    {
+      "width": 768,
+      "text": "17 个品种",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 6.22,
+      "worst_background": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "width": 768,
+      "text": "能源",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 16.83,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 768,
+      "text": "1 个品种",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 6.27,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 768,
+      "text": "从看见机会，到把握机会。",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 16.83,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 768,
+      "text": "一个 APP，让行情、分析与交易相连。",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 6.27,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 768,
+      "text": "看清市场，再做决定",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 16.83,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 768,
+      "text": "自选行情、财经日历与 Trading Central 研报，协助你建立自己的交易判断。",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 6.27,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 768,
+      "text": "熟悉的操作，完整的体验",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 16.67,
+      "worst_background": [
+        254,
+        254,
+        252
+      ]
+    },
+    {
+      "width": 768,
+      "text": "先用模拟账户练习，再选择适合你的账户。在移动端管理你的交易。",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 6.2,
+      "worst_background": [
+        253,
+        254,
+        251
+      ]
+    },
+    {
+      "width": 768,
+      "text": "下载 APP ↗",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 14.08,
+      "worst_background": [
+        191,
+        255,
+        55
+      ]
+    },
+    {
+      "width": 768,
+      "text": "试用模拟账户",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 16.83,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 768,
+      "text": "$10,000 虚拟资金",
+      "fg": "rgb(0, 108, 69)",
+      "min_ratio": 6.5,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 768,
+      "text": "从模拟交易开始，先熟悉平台。",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 6.27,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 768,
+      "text": "界面、报价和图表均为非实时展示示例。设备内沿用现有网页演示内容，不代表新 APP 皮肤。",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 5.06,
+      "worst_background": [
+        214,
+        235,
+        233
+      ]
+    },
+    {
+      "width": 768,
+      "text": "产品舞台",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 14.43,
+      "worst_background": [
+        196,
+        250,
+        215
+      ]
+    },
+    {
+      "width": 768,
+      "text": "开启模拟交易",
+      "fg": "rgb(255, 255, 255)",
+      "min_ratio": 5.16,
+      "worst_background": [
+        35,
+        93,
+        254
+      ]
+    },
+    {
+      "width": 768,
+      "text": "了解平台功能",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 16.83,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 1024,
+      "text": "一个账户。打开全球市场。",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 16.03,
+      "worst_background": [
+        232,
+        254,
+        251
+      ]
+    },
+    {
+      "width": 1024,
+      "text": "从贵金属到外汇，让市场、分析与交易彼此相连。把更多精力，留给你的判断。",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 6.1,
+      "worst_background": [
+        240,
+        255,
+        252
+      ]
+    },
+    {
+      "width": 1024,
+      "text": "了解 SmartHSB ↗",
+      "fg": "rgb(0, 108, 69)",
+      "min_ratio": 6.33,
+      "worst_background": [
+        244,
+        254,
+        253
+      ]
+    },
+    {
+      "width": 1024,
+      "text": "贵金属",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 16.83,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 1024,
+      "text": "2 个品种",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 6.27,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 1024,
+      "text": "股指",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 16.73,
+      "worst_background": [
+        252,
+        255,
+        254
+      ]
+    },
+    {
+      "width": 1024,
+      "text": "5 个品种",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 6.27,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 1024,
+      "text": "外汇",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 16.73,
+      "worst_background": [
+        252,
+        255,
+        254
+      ]
+    },
+    {
+      "width": 1024,
+      "text": "17 个品种",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 6.21,
+      "worst_background": [
+        253,
+        254,
+        254
+      ]
+    },
+    {
+      "width": 1024,
+      "text": "能源",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 16.83,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 1024,
+      "text": "1 个品种",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 6.27,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 1024,
+      "text": "从看见机会，到把握机会。",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 15.84,
+      "worst_background": [
+        228,
+        255,
+        232
+      ]
+    },
+    {
+      "width": 1024,
+      "text": "一个 APP，让行情、分析与交易相连。",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 5.87,
+      "worst_background": [
+        224,
+        255,
+        234
+      ]
+    },
+    {
+      "width": 1024,
+      "text": "看清市场，再做决定",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 15.64,
+      "worst_background": [
+        219,
+        255,
+        235
+      ]
+    },
+    {
+      "width": 1024,
+      "text": "自选行情、财经日历与 Trading Central 研报，协助你建立自己的交易判断。",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 5.7,
+      "worst_background": [
+        217,
+        252,
+        236
+      ]
+    },
+    {
+      "width": 1024,
+      "text": "熟悉的操作，完整的体验",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 15.59,
+      "worst_background": [
+        222,
+        253,
+        243
+      ]
+    },
+    {
+      "width": 1024,
+      "text": "先用模拟账户练习，再选择适合你的账户。在移动端管理你的交易。",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 5.77,
+      "worst_background": [
+        225,
+        251,
+        244
+      ]
+    },
+    {
+      "width": 1024,
+      "text": "下载 APP ↗",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 14.08,
+      "worst_background": [
+        191,
+        255,
+        55
+      ]
+    },
+    {
+      "width": 1024,
+      "text": "试用模拟账户",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 16.83,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 1024,
+      "text": "$10,000 虚拟资金",
+      "fg": "rgb(0, 108, 69)",
+      "min_ratio": 6.5,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 1024,
+      "text": "从模拟交易开始，先熟悉平台。",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 6.27,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 1024,
+      "text": "界面、报价和图表均为非实时展示示例。设备内沿用现有网页演示内容，不代表新 APP 皮肤。",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 5.31,
+      "worst_background": [
+        230,
+        236,
+        253
+      ]
+    },
+    {
+      "width": 1024,
+      "text": "产品舞台",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 14.28,
+      "worst_background": [
+        192,
+        250,
+        207
+      ]
+    },
+    {
+      "width": 1024,
+      "text": "开启模拟交易",
+      "fg": "rgb(255, 255, 255)",
+      "min_ratio": 5.16,
+      "worst_background": [
+        35,
+        93,
+        254
+      ]
+    },
+    {
+      "width": 1024,
+      "text": "了解平台功能",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 16.83,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 1440,
+      "text": "一个账户。打开全球市场。",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 16.03,
+      "worst_background": [
+        232,
+        254,
+        251
+      ]
+    },
+    {
+      "width": 1440,
+      "text": "从贵金属到外汇，让市场、分析与交易彼此相连。把更多精力，留给你的判断。",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 6.07,
+      "worst_background": [
+        241,
+        254,
+        252
+      ]
+    },
+    {
+      "width": 1440,
+      "text": "了解 SmartHSB ↗",
+      "fg": "rgb(0, 108, 69)",
+      "min_ratio": 6.34,
+      "worst_background": [
+        245,
+        254,
+        253
+      ]
+    },
+    {
+      "width": 1440,
+      "text": "贵金属",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 16.83,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 1440,
+      "text": "2 个品种",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 6.27,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 1440,
+      "text": "股指",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 16.73,
+      "worst_background": [
+        252,
+        255,
+        254
+      ]
+    },
+    {
+      "width": 1440,
+      "text": "5 个品种",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 6.27,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 1440,
+      "text": "外汇",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 16.73,
+      "worst_background": [
+        252,
+        255,
+        254
+      ]
+    },
+    {
+      "width": 1440,
+      "text": "17 个品种",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 6.26,
+      "worst_background": [
+        254,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 1440,
+      "text": "能源",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 16.83,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 1440,
+      "text": "1 个品种",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 6.27,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 1440,
+      "text": "从看见机会，到把握机会。",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 15.94,
+      "worst_background": [
+        230,
+        255,
+        237
+      ]
+    },
+    {
+      "width": 1440,
+      "text": "一个 APP，让行情、分析与交易相连。",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 5.82,
+      "worst_background": [
+        225,
+        253,
+        237
+      ]
+    },
+    {
+      "width": 1440,
+      "text": "看清市场，再做决定",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 15.82,
+      "worst_background": [
+        224,
+        255,
+        241
+      ]
+    },
+    {
+      "width": 1440,
+      "text": "自选行情、财经日历与 Trading Central 研报，协助你建立自己的交易判断。",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 5.94,
+      "worst_background": [
+        230,
+        254,
+        246
+      ]
+    },
+    {
+      "width": 1440,
+      "text": "熟悉的操作，完整的体验",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 15.56,
+      "worst_background": [
+        228,
+        251,
+        245
+      ]
+    },
+    {
+      "width": 1440,
+      "text": "先用模拟账户练习，再选择适合你的账户。在移动端管理你的交易。",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 5.99,
+      "worst_background": [
+        238,
+        253,
+        249
+      ]
+    },
+    {
+      "width": 1440,
+      "text": "下载 APP ↗",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 14.08,
+      "worst_background": [
+        191,
+        255,
+        55
+      ]
+    },
+    {
+      "width": 1440,
+      "text": "试用模拟账户",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 16.83,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 1440,
+      "text": "$10,000 虚拟资金",
+      "fg": "rgb(0, 108, 69)",
+      "min_ratio": 6.5,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 1440,
+      "text": "从模拟交易开始，先熟悉平台。",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 6.27,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "width": 1440,
+      "text": "界面、报价和图表均为非实时展示示例。设备内沿用现有网页演示内容，不代表新 APP 皮肤。",
+      "fg": "rgb(96, 96, 98)",
+      "min_ratio": 5.36,
+      "worst_background": [
+        231,
+        237,
+        253
+      ]
+    },
+    {
+      "width": 1440,
+      "text": "产品舞台",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 14.2,
+      "worst_background": [
+        195,
+        248,
+        214
+      ]
+    },
+    {
+      "width": 1440,
+      "text": "开启模拟交易",
+      "fg": "rgb(255, 255, 255)",
+      "min_ratio": 5.16,
+      "worst_background": [
+        35,
+        93,
+        254
+      ]
+    },
+    {
+      "width": 1440,
+      "text": "了解平台功能",
+      "fg": "rgb(29, 29, 31)",
+      "min_ratio": 16.83,
+      "worst_background": [
+        255,
+        255,
+        255
+      ]
+    }
+  ]
+}
