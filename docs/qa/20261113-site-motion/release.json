@@ -1,0 +1,315 @@
+{
+  "deployment": {
+    "id": 43391819288,
+    "head_sha": "8e720d80e8faee5f18d5871deae14c47bfb75ec0",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/MrRoam/smartHSB/actions/runs/43391819288"
+  },
+  "public": {
+    "commit": "8e720d80e8faee5f18d5871deae14c47bfb75ec0",
+    "base": "https://mrroam.github.io/smartHSB/",
+    "count": 47,
+    "allMatched": true,
+    "items": [
+      {
+        "path": "/",
+        "http": 200,
+        "matches": true,
+        "sha256": "3f51ed45b068bec6ab9a1adc5e88b31cb75cce4c93b4ba47a5759ac4221cde28"
+      },
+      {
+        "path": "404.html",
+        "http": 200,
+        "matches": true,
+        "sha256": "7e33b7beab008e41004141bd4403f3d4545336cb75424300238d1b6b7b39ce19"
+      },
+      {
+        "path": "about.html",
+        "http": 200,
+        "matches": true,
+        "sha256": "14d9af3cb9c0be99f08c210ddd4b9c6e38dad43c6f33f672420f1fc0ab3cbd1a"
+      },
+      {
+        "path": "account-real.html",
+        "http": 200,
+        "matches": true,
+        "sha256": "d98de3ecbac3de4e36e66bd085d9005ed4db1ec2b43adec9fac93c183ff63072"
+      },
+      {
+        "path": "account-types.html",
+        "http": 200,
+        "matches": true,
+        "sha256": "8e052e8c866947acbd61da8d8d82b2361cd4134508dd9485b733442094fa9fe4"
+      },
+      {
+        "path": "assets/css/fill-hover.css",
+        "http": 200,
+        "matches": true,
+        "sha256": "00824cb5ed22b783a408ef7a3525a4fed94e45fc56662dbed375296e51d971d0"
+      },
+      {
+        "path": "assets/css/fly-in.css",
+        "http": 200,
+        "matches": true,
+        "sha256": "a050e85389fd1522c4fe31cea048d54956af3f138796eee4612e841ba09a84d5"
+      },
+      {
+        "path": "assets/css/hero-holo.css",
+        "http": 200,
+        "matches": true,
+        "sha256": "f3cf62904c76b662ee3e251199458dd34498b7a8bbe74a65b39a8fa1945d4719"
+      },
+      {
+        "path": "assets/css/home-minpilot.css",
+        "http": 200,
+        "matches": true,
+        "sha256": "b0b9d6e70ea7076ef25de59f4641cbfaac52b017718c29f7a2572db0f0609502"
+      },
+      {
+        "path": "assets/css/pop-in.css",
+        "http": 200,
+        "matches": true,
+        "sha256": "5d81909047e14ea92b51461f7f48f2e4362cba1caee599d67b60bd160e762aac"
+      },
+      {
+        "path": "assets/css/site-light.css",
+        "http": 200,
+        "matches": true,
+        "sha256": "08fd13c0a79245f105cbf118a42a5d99db6758abf118bbd0695bc84f4d61b8ad"
+      },
+      {
+        "path": "assets/css/slide-in.css",
+        "http": 200,
+        "matches": true,
+        "sha256": "a24d6cf1382deb52593c1fed9125d80ba4f5e3b8ade9137ffb4a79c73a57f93f"
+      },
+      {
+        "path": "assets/css/type-in.css",
+        "http": 200,
+        "matches": true,
+        "sha256": "02639cd009f14238bc55064ee56d00bccd70773a3b489ffd5b3dd76d8d62b64f"
+      },
+      {
+        "path": "assets/js/hero-holo.js",
+        "http": 200,
+        "matches": true,
+        "sha256": "c5afd7003d6c8b23d7a265b50a5bb27829b3fd79bbf3a27997073943bdda3062"
+      },
+      {
+        "path": "assets/js/site-motion.js",
+        "http": 200,
+        "matches": true,
+        "sha256": "fc0b77fe05977721436001384661d94713a91598de4956a495a479f1a2c14f1e"
+      },
+      {
+        "path": "assets/js/type-in.js",
+        "http": 200,
+        "matches": true,
+        "sha256": "91adaef37514b87efd5e216056e17c25e787371c9a1293684a094c54ef893a22"
+      },
+      {
+        "path": "contact.html",
+        "http": 200,
+        "matches": true,
+        "sha256": "41f3c69dce9909e868f624563466734ad9971f09f13f1717ebba9fa4021356ee"
+      },
+      {
+        "path": "customer-complaint.html",
+        "http": 200,
+        "matches": true,
+        "sha256": "f250548132a92e7ec62aff4cdca844b06ff02b61d1b2716d64fb8d2a4a91c73f"
+      },
+      {
+        "path": "demo.html",
+        "http": 200,
+        "matches": true,
+        "sha256": "456e7c4e156091c9698642978651be828f7fe4bcc7c11eab4b319a4d3e312044"
+      },
+      {
+        "path": "deposit-bank.html",
+        "http": 200,
+        "matches": true,
+        "sha256": "771af10a5b972f5b609161172d719a3b38e8718077905af69f7d057fffc37fef"
+      },
+      {
+        "path": "deposit-ewallet.html",
+        "http": 200,
+        "matches": true,
+        "sha256": "5b4d7865236d0733dfd40c7d855359ff1032b07ecf1f57c1e521a9d5a2d0e1c0"
+      },
+      {
+        "path": "deposit-va.html",
+        "http": 200,
+        "matches": true,
+        "sha256": "a6ee496531c623dacd7363a383f1d97b19c00daa8be682780fb4248199411490"
+      },
+      {
+        "path": "deposit-withdraw.html",
+        "http": 200,
+        "matches": true,
+        "sha256": "afa342268fc4ccb8fbd72c889af5d13db78d624c36b73d2bba3ea2ec72ec9977"
+      },
+      {
+        "path": "download.html",
+        "http": 200,
+        "matches": true,
+        "sha256": "2caf5e217eba36a006a3694c31f31ca317bf47188d88409170b10d1cc915c865"
+      },
+      {
+        "path": "economic-calendar.html",
+        "http": 200,
+        "matches": true,
+        "sha256": "4e09b8886b6159b823e82d81e1d883e20235909d5d3c1a3dd238c4003fb5c34d"
+      },
+      {
+        "path": "fraud-warning.html",
+        "http": 200,
+        "matches": true,
+        "sha256": "b7dffea96bf940770a12f36e169d8dd13ea453d64c75ad46e9519bed544ca0ca"
+      },
+      {
+        "path": "help.html",
+        "http": 200,
+        "matches": true,
+        "sha256": "e2239ca97340b8f6ace95911cae52f0f1b571ad7f22b749b7ec5c8978fa89282"
+      },
+      {
+        "path": "index.html",
+        "http": 200,
+        "matches": true,
+        "sha256": "3f51ed45b068bec6ab9a1adc5e88b31cb75cce4c93b4ba47a5759ac4221cde28"
+      },
+      {
+        "path": "learn-basic.html",
+        "http": 200,
+        "matches": true,
+        "sha256": "566e725726f29899a5807babe7be894cdd7424bd4871b2e5acfa9a2d87cf66fc"
+      },
+      {
+        "path": "learn-risk.html",
+        "http": 200,
+        "matches": true,
+        "sha256": "886aaf406c65799b7d56ec36f1332930f950062d3c5761b5fd47adb7a8558620"
+      },
+      {
+        "path": "learn-technical.html",
+        "http": 200,
+        "matches": true,
+        "sha256": "a91ad32b464b2217d3e4e3f4866fd6c88b6a7a7af585708f3678d78a355a8c80"
+      },
+      {
+        "path": "learn-terms.html",
+        "http": 200,
+        "matches": true,
+        "sha256": "5294c68c5f28c3625a09f13f96e5c193659d30fc7fd5b6f09874161e10da32b2"
+      },
+      {
+        "path": "learn.html",
+        "http": 200,
+        "matches": true,
+        "sha256": "b3140591fe4b8bd982149c41d7cb53d0ff8e2c7a9c81bff94ec4a40b9c395a23"
+      },
+      {
+        "path": "licenses.html",
+        "http": 200,
+        "matches": true,
+        "sha256": "58f72a6bf7fd3be584cc5430d648f9be1c4c682e76cb0e33aa0305b584c85b46"
+      },
+      {
+        "path": "live-quotes.html",
+        "http": 200,
+        "matches": true,
+        "sha256": "ee1b1453ebf1e52c57126bc225243287a45650bc8de18234dd366e412aebff5e"
+      },
+      {
+        "path": "news.html",
+        "http": 200,
+        "matches": true,
+        "sha256": "d34619bcf73d7d1307cf1acd43c00619c35723fd4e47d471e2f5b4b0383cb528"
+      },
+      {
+        "path": "platform-tutorial.html",
+        "http": 200,
+        "matches": true,
+        "sha256": "864a3b0ad0fe864731628a5ff62a46a11f5c555653eecd05ee05f0e20c890f43"
+      },
+      {
+        "path": "privacy-policy.html",
+        "http": 200,
+        "matches": true,
+        "sha256": "9c74e3caa2cd11e5be8ffb6befba2cae128cae673aef283c390b761cbdfe0b77"
+      },
+      {
+        "path": "products.html",
+        "http": 200,
+        "matches": true,
+        "sha256": "773e7e56ad7e58fb7ca8b8b3c6df3986ebb15fd23654ca6091b3bfef5800013f"
+      },
+      {
+        "path": "promotions.html",
+        "http": 200,
+        "matches": true,
+        "sha256": "3c59c1482ea13e262d740c95e515156dba0808c97cb67e9cc12fec937a91158c"
+      },
+      {
+        "path": "rewards.html",
+        "http": 200,
+        "matches": true,
+        "sha256": "fb43d8dc5e7b67a7464548c75fa8680c1c69338a1fc87d458b7f1cfe4f287444"
+      },
+      {
+        "path": "trading-tools.html",
+        "http": 200,
+        "matches": true,
+        "sha256": "9f80f2dd2b83ebd70836b84b2d50276d5d54d5513c0b8f7e98788635f1eb18a3"
+      },
+      {
+        "path": "tutorial-install.html",
+        "http": 200,
+        "matches": true,
+        "sha256": "a4f59b47df991c332857adb9a8916bd6e01a0913cdd0dd51df383f876e666c75"
+      },
+      {
+        "path": "tutorial-manage.html",
+        "http": 200,
+        "matches": true,
+        "sha256": "fb3abf11bb72cdfb17ef351a2bb19659f17808a407d2a0631a1df96e2aa4fb80"
+      },
+      {
+        "path": "tutorial-open.html",
+        "http": 200,
+        "matches": true,
+        "sha256": "1466e196174274b8924b63ef8dd7f30b7ccd36b17eefc400a8a026244c58ffc0"
+      },
+      {
+        "path": "tutorial-trade.html",
+        "http": 200,
+        "matches": true,
+        "sha256": "3e069c3541c44619551453bd82989d223524c4d1cb900ac6bce3edc1c05f97ee"
+      },
+      {
+        "path": "user-agreement.html",
+        "http": 200,
+        "matches": true,
+        "sha256": "8001d2fc857fea06cb52f10f6c13bfe1198595860a7d5df39116ab7819ba94d2"
+      }
+    ]
+  },
+  "liveBrowser": {
+    "mobileDemo": {
+      "headline": "免费模拟账户，零风险体验全球市场",
+      "overflow": false,
+      "singleColumn": true,
+      "menuOpens": true,
+      "menuCloses": true
+    },
+    "newsHover": {
+      "filled": true,
+      "hover": true,
+      "overflow": false,
+      "textWhite": true
+    },
+    "browserErrors": ""
+  }
+}

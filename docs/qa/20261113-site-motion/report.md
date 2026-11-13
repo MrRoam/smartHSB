@@ -31,4 +31,4 @@
 
 本次使用原生 CSS/SVG 动效补充页面活性，无额外动图库或 GIF 下载开销。
 
-发布流程：检查后提交并推送 main，按该提交跟踪 Pages；最终公开版本与部署证据由交付回复给出。
+内容提交 `8e720d80e8faee5f18d5871deae14c47bfb75ec0` 已发布；对应 [Pages 运行](https://github.com/MrRoam/smartHSB/actions/runs/43391819288) 为 completed / success。公开首页、34 内页及 11 项修改资源共 47 项均为 HTTP 200，按 UTF-8/LF 归一化后与提交一致。线上手机菜单、单列卡片及资讯卡片悬停通过，无浏览器错误。详见 [release.json](release.json)。
