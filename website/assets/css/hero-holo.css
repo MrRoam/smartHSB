@@ -371,3 +371,6 @@ body.motion-off .holo-risk { animation: none; }
   .holo-regstrip .intro-portal__reg-item { padding: 4px 6px; }
   .holo-regstrip .intro-portal__reg-item img { height: 26px; max-height: 26px; }
 }
+
+/* Preserve the subtitle as one accessible phrase while its visual glyphs animate. */
+.holo-accessible {position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important;}

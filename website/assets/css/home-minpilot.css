@@ -19,9 +19,9 @@
 /* 主按钮：蓝 → 青绿渐变（2026-11-12 由亮绿底改为渐变底，尺寸/动效/圆角不变）
    前缀 .button 是为了压过本文件后面 `.home-minpilot .button{color:var(--ink)}` 的同级具体度
    边框保留 1px 但设为 transparent，只为保持盒模型尺寸与原按钮一致 */
-.home-minpilot .button:is(.button-primary,.button-white) {background:linear-gradient(90deg,#2B6CF6 0%,#1FA9E0 50%,#22E0A6 100%);color:#fff;border:1px solid transparent;}
-.home-minpilot .button:is(.button-primary,.button-white):is(:hover,:focus-visible) {background:linear-gradient(90deg,#1F55D6 0%,#1587B8 50%,#14BF8B 100%);transform:none;}
-.home-minpilot .button.button-primary:active {background:linear-gradient(90deg,#1B49B8 0%,#12739E 50%,#0FA377 100%);}
+.home-minpilot .button:is(.button-primary,.button-white) {background:linear-gradient(90deg,#1E5CD2 0%,#176EAC 48%,#00795F 78%,#006C45 100%);color:#fff;border:1px solid transparent;}
+.home-minpilot .button:is(.button-primary,.button-white):is(:hover,:focus-visible) {background:linear-gradient(90deg,#174CB4 0%,#115F98 48%,#006B54 78%,#005637 100%);transform:none;}
+.home-minpilot .button.button-primary:active {background:linear-gradient(90deg,#143F98 0%,#0F527F 48%,#005B48 78%,#00492F 100%);}
 .home-minpilot .button span {color:inherit;}
 .home-minpilot .text-link {color:var(--green-dark);min-height:44px;font-size:16px;gap:18px;}
 .home-minpilot .text-link:is(:hover,:focus-visible) {color:var(--blue);}
@@ -338,8 +338,8 @@
 .home-minpilot .final-cta {position:relative;isolation:isolate;overflow:hidden;background:#fff;padding:96px 0;}
 .home-minpilot .final-cta::before {content:"";position:absolute;inset:25% 10%;z-index:-1;pointer-events:none;background:linear-gradient(90deg,#BCFFF4,#DDFF90);opacity:.6;filter:blur(80px);}
 /* CTA 按钮与主按钮共用同一套蓝→青绿渐变（2026-11-12 由纯蓝 --blue 改） */
-.home-minpilot .final-inner .button {background:linear-gradient(90deg,#2B6CF6 0%,#1FA9E0 50%,#22E0A6 100%);color:#fff;border:1px solid transparent;}
-.home-minpilot .final-inner .button:is(:hover,:focus-visible) {background:linear-gradient(90deg,#1F55D6 0%,#1587B8 50%,#14BF8B 100%);}
+.home-minpilot .final-inner .button {background:linear-gradient(90deg,#1E5CD2 0%,#176EAC 48%,#00795F 78%,#006C45 100%);color:#fff;border:1px solid transparent;}
+.home-minpilot .final-inner .button:is(:hover,:focus-visible) {background:linear-gradient(90deg,#174CB4 0%,#115F98 48%,#006B54 78%,#005637 100%);}
 .home-minpilot .final-inner small {font-size:14px;}
 .home-minpilot .site-footer {background:var(--soft);}
 .home-minpilot .legal :is(p,a,span), .home-minpilot .footer-links a {font-size:14px;line-height:1.8;}
@@ -589,7 +589,7 @@
    长数字（$10,000）尾段走满绿；底层再叠一层纯绿，超过 110px 的部分仍为绿色、不会漏字。
    单位字（大类/个/手）取渐变末端绿；下方说明文字保持原样不变。
    ========================================================================== */
-.home-minpilot .stats { --stat-blue: #0d6fe7; --stat-green: #01a67a; }
+.home-minpilot .stats { --stat-blue: #0d6fe7; --stat-green: #00795F; }
 
 
 @supports ((-webkit-background-clip: text) or (background-clip: text)) {
@@ -761,11 +761,11 @@ html.js .home-minpilot .funding-details > div:not(.insurance-note).pop-play {
 /* ==========================================================================
    卡片标签绿色（2026-11-12）—— 「入金 / 出金」两行小标题
    原来继承 .home-minpilot .funding-details > div > span 的 --muted 灰色
-   （#606062），此处改为品牌 emerald #01A66B，比 --green(#006C45) 明显更亮。
+   （#606062），小字使用品牌深绿 #006C45，保证浅色底上的可读性。
    只改颜色，字号 / 字距 / 字重一律不动。
    ========================================================================== */
 .home-minpilot .funding-details > div:not(.insurance-note) > span {
-  color: var(--emerald);
+  color: var(--green);
 }
 
 /* ==========================================================================

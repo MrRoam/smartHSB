@@ -3,7 +3,7 @@
    滚入视口（顶边到 90% vh）时从 scale(0) 放大到 1，700ms，power1.out
    = cubic-bezier(0.5, 1, 0.89, 1)，原点居中；不淡入、不位移、不旋转，只播一次。
    用法：给目标元素加 class="pop-in"（可多块，各自独立触发）
-   初始隐藏由 JS 加 .pop-ready 触发（不依赖 html.js），脚本失效时元素照常显示。
+   默认内容可见，只有播放时用关键帧临时缩放；观察器或脚本失效不挡住内容。
    ========================================================================== */
 @keyframes popIn01 {
   from { transform: scale(0); }
@@ -11,7 +11,6 @@
 }
 
 .pop-in.pop-ready:not(.pop-done) {
-  transform: scale(0);
   transform-origin: 50% 50%;
 }
 

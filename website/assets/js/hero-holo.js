@@ -29,7 +29,8 @@
 
   /* ---------- 标题 DOM：逐字拆分 ---------- */
   function splitChars(el, txt) {
-    el.setAttribute('aria-label', txt);
+    const paragraph = el.tagName === 'P';
+    if (!paragraph) el.setAttribute('aria-label', txt);
     el.textContent = '';
     const arr = [];
     let idx = 0;
@@ -55,6 +56,10 @@
         if (wi < words.length - 1) { el.appendChild(document.createTextNode(' ')); idx++; }
       });
     } else addChars(el, txt);
+    if (paragraph) {
+      const readable = document.createElement('span');
+      readable.className = 'holo-accessible';readable.textContent = txt;el.prepend(readable);
+    }
     return arr;
   }
 

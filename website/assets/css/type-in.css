@@ -23,25 +23,7 @@
   display: inline-block;
 }
 
-/* 逐行模式下遮罩独占一行 */
-.type-in.ti-line .ti-mask{
-  display: block;
-  padding-bottom: 0;
-  margin-bottom: 0;
-}
-
-/* 初始隐藏 —— 只在前置 js 标记下生效，脚本失效时文字照常全显 */
-html.js .type-in:not(.ti-done) .ti-unit{
-  opacity: 0;
-  transform: translateX(10px) scale(1.4);
-}
-html.js .type-in.ti-line:not(.ti-done) .ti-unit{
-  transform: translateY(100%);
-}
-html.js .type-in-eyebrow:not(.ti-done){
-  opacity: 0;
-  transform: translateY(100%);
-}
+/* Visibility is the default; animation supplies its own temporary start frame. */
 
 /* 播放 */
 .type-in.ti-play .ti-unit{
@@ -56,6 +38,10 @@ html.js .type-in-eyebrow:not(.ti-done){
 .type-in-eyebrow.ti-play{
   animation: tiLine var(--ti-dur) var(--ti-ease-inout) both;
 }
+.type-in.ti-done .ti-unit,
+.type-in-eyebrow.ti-done {animation:none;will-change:auto;}
+/* Tokens stay in normal text flow, so a finished paragraph can rewrap on resize. */
+.type-in.ti-line .ti-mask {display:inline-block;padding-bottom:.12em;margin-bottom:-.12em;}
 
 @keyframes tiChar{
   from{ opacity: 0; transform: translateX(10px) scale(1.4); }

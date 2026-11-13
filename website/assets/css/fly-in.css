@@ -7,7 +7,7 @@
      方向距离  data-fi-dir="right|left|up|down"（默认 right）、data-fi-shift="160px"
      组错峰    容器 .fi-group[data-fi-step="70"]，组内按 DOM 顺序递进；
                data-fi-order="reverse" 逆序（最右先入，波峰向左）
-   初始隐藏由 JS 加 .fi-ready（不依赖 html.js），脚本失效时元素照常显示。
+   默认内容可见，.fi-play 的关键帧负责起始位移；脚本失效时元素照常显示。
    组容器默认 overflow:hidden —— 飞入过程从组边缘外切进来，同时避免
    横向位移撑出滚动条；需要溢出可见时加 data-fi-clip="none"。
    ========================================================================== */
@@ -21,10 +21,7 @@
 .fly-in[data-fi-dir="up"]   { --fi-x: 0px;    --fi-y: -220px; }
 .fly-in[data-fi-dir="down"] { --fi-x: 0px;    --fi-y: 220px; }
 
-.fly-in.fi-ready:not(.fi-done) {
-  opacity: 0;
-  transform: translate(var(--fi-x), var(--fi-y));
-}
+/* Keep the resting state readable if observation or playback cannot run. */
 
 .fly-in.fi-play {
   animation: flyIn04 900ms cubic-bezier(0.16, 1, 0.3, 1) 1 both;

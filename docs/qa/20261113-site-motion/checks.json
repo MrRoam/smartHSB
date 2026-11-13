@@ -1,0 +1,2804 @@
+{
+  "static": {
+    "pages": 35,
+    "references": 3937,
+    "contentAndOrderUnchanged": true,
+    "mirror": true,
+    "changedAssets": [
+      "assets/css/fill-hover.css",
+      "assets/css/fly-in.css",
+      "assets/css/hero-holo.css",
+      "assets/css/home-minpilot.css",
+      "assets/css/pop-in.css",
+      "assets/css/site-light.css",
+      "assets/css/slide-in.css",
+      "assets/css/type-in.css",
+      "assets/js/hero-holo.js",
+      "assets/js/site-motion.js",
+      "assets/js/type-in.js"
+    ],
+    "issues": []
+  },
+  "layout": [
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "404.html",
+      "scrollWidth": 320,
+      "width": 320
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "404.html",
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "404.html",
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "404.html",
+      "scrollWidth": 1024,
+      "width": 1024
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "404.html",
+      "scrollWidth": 1440,
+      "width": 1440
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "about.html",
+      "scrollWidth": 320,
+      "width": 320
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "about.html",
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "about.html",
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "about.html",
+      "scrollWidth": 1024,
+      "width": 1024
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "about.html",
+      "scrollWidth": 1440,
+      "width": 1440
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "account-real.html",
+      "scrollWidth": 320,
+      "width": 320
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "account-real.html",
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "account-real.html",
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "account-real.html",
+      "scrollWidth": 1024,
+      "width": 1024
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "account-real.html",
+      "scrollWidth": 1440,
+      "width": 1440
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "account-types.html",
+      "scrollWidth": 320,
+      "width": 320
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "account-types.html",
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "account-types.html",
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "account-types.html",
+      "scrollWidth": 1024,
+      "width": 1024
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "account-types.html",
+      "scrollWidth": 1440,
+      "width": 1440
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "contact.html",
+      "scrollWidth": 320,
+      "width": 320
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "contact.html",
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "contact.html",
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "contact.html",
+      "scrollWidth": 1024,
+      "width": 1024
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "contact.html",
+      "scrollWidth": 1440,
+      "width": 1440
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "customer-complaint.html",
+      "scrollWidth": 320,
+      "width": 320
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "customer-complaint.html",
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "customer-complaint.html",
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "customer-complaint.html",
+      "scrollWidth": 1024,
+      "width": 1024
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "customer-complaint.html",
+      "scrollWidth": 1440,
+      "width": 1440
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "demo.html",
+      "scrollWidth": 320,
+      "width": 320
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "demo.html",
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "demo.html",
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "demo.html",
+      "scrollWidth": 1024,
+      "width": 1024
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "demo.html",
+      "scrollWidth": 1440,
+      "width": 1440
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "deposit-bank.html",
+      "scrollWidth": 320,
+      "width": 320
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "deposit-bank.html",
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "deposit-bank.html",
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "deposit-bank.html",
+      "scrollWidth": 1024,
+      "width": 1024
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "deposit-bank.html",
+      "scrollWidth": 1440,
+      "width": 1440
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "deposit-ewallet.html",
+      "scrollWidth": 320,
+      "width": 320
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "deposit-ewallet.html",
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "deposit-ewallet.html",
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "deposit-ewallet.html",
+      "scrollWidth": 1024,
+      "width": 1024
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "deposit-ewallet.html",
+      "scrollWidth": 1440,
+      "width": 1440
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "deposit-va.html",
+      "scrollWidth": 320,
+      "width": 320
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "deposit-va.html",
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "deposit-va.html",
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "deposit-va.html",
+      "scrollWidth": 1024,
+      "width": 1024
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "deposit-va.html",
+      "scrollWidth": 1440,
+      "width": 1440
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "deposit-withdraw.html",
+      "scrollWidth": 320,
+      "width": 320
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "deposit-withdraw.html",
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "deposit-withdraw.html",
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "deposit-withdraw.html",
+      "scrollWidth": 1024,
+      "width": 1024
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "deposit-withdraw.html",
+      "scrollWidth": 1440,
+      "width": 1440
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "download.html",
+      "scrollWidth": 320,
+      "width": 320
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "download.html",
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "download.html",
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "download.html",
+      "scrollWidth": 1024,
+      "width": 1024
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "download.html",
+      "scrollWidth": 1440,
+      "width": 1440
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "economic-calendar.html",
+      "scrollWidth": 320,
+      "width": 320
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "economic-calendar.html",
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "economic-calendar.html",
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "economic-calendar.html",
+      "scrollWidth": 1024,
+      "width": 1024
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "economic-calendar.html",
+      "scrollWidth": 1440,
+      "width": 1440
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "fraud-warning.html",
+      "scrollWidth": 320,
+      "width": 320
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "fraud-warning.html",
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "fraud-warning.html",
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "fraud-warning.html",
+      "scrollWidth": 1024,
+      "width": 1024
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "fraud-warning.html",
+      "scrollWidth": 1440,
+      "width": 1440
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "help.html",
+      "scrollWidth": 320,
+      "width": 320
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "help.html",
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "help.html",
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "help.html",
+      "scrollWidth": 1024,
+      "width": 1024
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "help.html",
+      "scrollWidth": 1440,
+      "width": 1440
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "index.html",
+      "scrollWidth": 320,
+      "width": 320
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "index.html",
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "index.html",
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "index.html",
+      "scrollWidth": 1024,
+      "width": 1024
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "index.html",
+      "scrollWidth": 1440,
+      "width": 1440
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "learn-basic.html",
+      "scrollWidth": 320,
+      "width": 320
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "learn-basic.html",
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "learn-basic.html",
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "learn-basic.html",
+      "scrollWidth": 1024,
+      "width": 1024
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "learn-basic.html",
+      "scrollWidth": 1440,
+      "width": 1440
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "learn-risk.html",
+      "scrollWidth": 320,
+      "width": 320
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "learn-risk.html",
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "learn-risk.html",
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "learn-risk.html",
+      "scrollWidth": 1024,
+      "width": 1024
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "learn-risk.html",
+      "scrollWidth": 1440,
+      "width": 1440
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "learn-technical.html",
+      "scrollWidth": 320,
+      "width": 320
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "learn-technical.html",
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "learn-technical.html",
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "learn-technical.html",
+      "scrollWidth": 1024,
+      "width": 1024
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "learn-technical.html",
+      "scrollWidth": 1440,
+      "width": 1440
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "learn-terms.html",
+      "scrollWidth": 320,
+      "width": 320
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "learn-terms.html",
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "learn-terms.html",
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "learn-terms.html",
+      "scrollWidth": 1024,
+      "width": 1024
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "learn-terms.html",
+      "scrollWidth": 1440,
+      "width": 1440
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "learn.html",
+      "scrollWidth": 320,
+      "width": 320
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "learn.html",
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "learn.html",
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "learn.html",
+      "scrollWidth": 1024,
+      "width": 1024
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "learn.html",
+      "scrollWidth": 1440,
+      "width": 1440
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "licenses.html",
+      "scrollWidth": 320,
+      "width": 320
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "licenses.html",
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "licenses.html",
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "licenses.html",
+      "scrollWidth": 1024,
+      "width": 1024
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "licenses.html",
+      "scrollWidth": 1440,
+      "width": 1440
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "live-quotes.html",
+      "scrollWidth": 320,
+      "width": 320
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "live-quotes.html",
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "live-quotes.html",
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "live-quotes.html",
+      "scrollWidth": 1024,
+      "width": 1024
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "live-quotes.html",
+      "scrollWidth": 1440,
+      "width": 1440
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "news.html",
+      "scrollWidth": 320,
+      "width": 320
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "news.html",
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "news.html",
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "news.html",
+      "scrollWidth": 1024,
+      "width": 1024
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "news.html",
+      "scrollWidth": 1440,
+      "width": 1440
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "platform-tutorial.html",
+      "scrollWidth": 320,
+      "width": 320
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "platform-tutorial.html",
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "platform-tutorial.html",
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "platform-tutorial.html",
+      "scrollWidth": 1024,
+      "width": 1024
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "platform-tutorial.html",
+      "scrollWidth": 1440,
+      "width": 1440
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "privacy-policy.html",
+      "scrollWidth": 320,
+      "width": 320
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "privacy-policy.html",
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "privacy-policy.html",
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "privacy-policy.html",
+      "scrollWidth": 1024,
+      "width": 1024
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "privacy-policy.html",
+      "scrollWidth": 1440,
+      "width": 1440
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "products.html",
+      "scrollWidth": 320,
+      "width": 320
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "products.html",
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "products.html",
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "products.html",
+      "scrollWidth": 1024,
+      "width": 1024
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "products.html",
+      "scrollWidth": 1440,
+      "width": 1440
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "promotions.html",
+      "scrollWidth": 320,
+      "width": 320
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "promotions.html",
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "promotions.html",
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "promotions.html",
+      "scrollWidth": 1024,
+      "width": 1024
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "promotions.html",
+      "scrollWidth": 1440,
+      "width": 1440
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "rewards.html",
+      "scrollWidth": 320,
+      "width": 320
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "rewards.html",
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "rewards.html",
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "rewards.html",
+      "scrollWidth": 1024,
+      "width": 1024
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "rewards.html",
+      "scrollWidth": 1440,
+      "width": 1440
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "trading-tools.html",
+      "scrollWidth": 320,
+      "width": 320
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "trading-tools.html",
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "trading-tools.html",
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "trading-tools.html",
+      "scrollWidth": 1024,
+      "width": 1024
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "trading-tools.html",
+      "scrollWidth": 1440,
+      "width": 1440
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "tutorial-install.html",
+      "scrollWidth": 320,
+      "width": 320
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "tutorial-install.html",
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "tutorial-install.html",
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "tutorial-install.html",
+      "scrollWidth": 1024,
+      "width": 1024
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "tutorial-install.html",
+      "scrollWidth": 1440,
+      "width": 1440
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "tutorial-manage.html",
+      "scrollWidth": 320,
+      "width": 320
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "tutorial-manage.html",
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "tutorial-manage.html",
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "tutorial-manage.html",
+      "scrollWidth": 1024,
+      "width": 1024
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "tutorial-manage.html",
+      "scrollWidth": 1440,
+      "width": 1440
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "tutorial-open.html",
+      "scrollWidth": 320,
+      "width": 320
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "tutorial-open.html",
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "tutorial-open.html",
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "tutorial-open.html",
+      "scrollWidth": 1024,
+      "width": 1024
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "tutorial-open.html",
+      "scrollWidth": 1440,
+      "width": 1440
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "tutorial-trade.html",
+      "scrollWidth": 320,
+      "width": 320
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "tutorial-trade.html",
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "tutorial-trade.html",
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "tutorial-trade.html",
+      "scrollWidth": 1024,
+      "width": 1024
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "tutorial-trade.html",
+      "scrollWidth": 1440,
+      "width": 1440
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "user-agreement.html",
+      "scrollWidth": 320,
+      "width": 320
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "user-agreement.html",
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "user-agreement.html",
+      "scrollWidth": 768,
+      "width": 768
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "user-agreement.html",
+      "scrollWidth": 1024,
+      "width": 1024
+    },
+    {
+      "clipped": [],
+      "hidden": 0,
+      "page": "user-agreement.html",
+      "scrollWidth": 1440,
+      "width": 1440
+    }
+  ],
+  "a11y": [
+    {
+      "incomplete": [
+        {
+          "count": 1,
+          "id": "aria-prohibited-attr"
+        },
+        {
+          "count": 7,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "404.html",
+      "passes": 24,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 1,
+          "id": "aria-prohibited-attr"
+        },
+        {
+          "count": 7,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "404.html",
+      "passes": 24,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 46,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "about.html",
+      "passes": 24,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 46,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "about.html",
+      "passes": 24,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 40,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "account-real.html",
+      "passes": 26,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 40,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "account-real.html",
+      "passes": 26,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 54,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "account-types.html",
+      "passes": 24,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 54,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "account-types.html",
+      "passes": 24,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 53,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "contact.html",
+      "passes": 28,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 53,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "contact.html",
+      "passes": 28,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 41,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "customer-complaint.html",
+      "passes": 24,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 41,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "customer-complaint.html",
+      "passes": 24,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 30,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "demo.html",
+      "passes": 30,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 30,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "demo.html",
+      "passes": 30,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 30,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "deposit-bank.html",
+      "passes": 29,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 29,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "deposit-bank.html",
+      "passes": 28,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 31,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "deposit-ewallet.html",
+      "passes": 29,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 30,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "deposit-ewallet.html",
+      "passes": 28,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 31,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "deposit-va.html",
+      "passes": 29,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 30,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "deposit-va.html",
+      "passes": 28,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 52,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "deposit-withdraw.html",
+      "passes": 29,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 53,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "deposit-withdraw.html",
+      "passes": 28,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 68,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "download.html",
+      "passes": 26,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 68,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "download.html",
+      "passes": 26,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 24,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "economic-calendar.html",
+      "passes": 29,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 24,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "economic-calendar.html",
+      "passes": 28,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 33,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "fraud-warning.html",
+      "passes": 27,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 33,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "fraud-warning.html",
+      "passes": 26,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 36,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "help.html",
+      "passes": 28,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 28,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "help.html",
+      "passes": 27,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 40,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "learn-basic.html",
+      "passes": 29,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 39,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "learn-basic.html",
+      "passes": 28,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 57,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "learn-risk.html",
+      "passes": 29,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 56,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "learn-risk.html",
+      "passes": 28,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 40,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "learn-technical.html",
+      "passes": 29,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 39,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "learn-technical.html",
+      "passes": 28,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 40,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "learn-terms.html",
+      "passes": 29,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 39,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "learn-terms.html",
+      "passes": 28,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 40,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "learn.html",
+      "passes": 24,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 40,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "learn.html",
+      "passes": 24,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 60,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "licenses.html",
+      "passes": 25,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 60,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "licenses.html",
+      "passes": 25,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 22,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "live-quotes.html",
+      "passes": 30,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 20,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "live-quotes.html",
+      "passes": 30,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 66,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "news.html",
+      "passes": 26,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 66,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "news.html",
+      "passes": 26,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 20,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "platform-tutorial.html",
+      "passes": 24,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 24,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "platform-tutorial.html",
+      "passes": 24,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 22,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "privacy-policy.html",
+      "passes": 26,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 20,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "privacy-policy.html",
+      "passes": 26,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 26,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "products.html",
+      "passes": 32,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 26,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "products.html",
+      "passes": 32,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 37,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "promotions.html",
+      "passes": 24,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 37,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "promotions.html",
+      "passes": 24,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 54,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "rewards.html",
+      "passes": 24,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 54,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "rewards.html",
+      "passes": 24,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 40,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "trading-tools.html",
+      "passes": 26,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 40,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "trading-tools.html",
+      "passes": 26,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 55,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "tutorial-install.html",
+      "passes": 29,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 55,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "tutorial-install.html",
+      "passes": 28,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 42,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "tutorial-manage.html",
+      "passes": 29,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 42,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "tutorial-manage.html",
+      "passes": 28,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 56,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "tutorial-open.html",
+      "passes": 29,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 56,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "tutorial-open.html",
+      "passes": 28,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 54,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "tutorial-trade.html",
+      "passes": 29,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 54,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "tutorial-trade.html",
+      "passes": 28,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 19,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "user-agreement.html",
+      "passes": 26,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 18,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "user-agreement.html",
+      "passes": 26,
+      "violations": [],
+      "width": 1440
+    },
+    {
+      "incomplete": [
+        {
+          "count": 90,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "index.html",
+      "passes": 30,
+      "violations": [],
+      "width": 390
+    },
+    {
+      "incomplete": [
+        {
+          "count": 105,
+          "id": "color-contrast"
+        }
+      ],
+      "page": "index.html",
+      "passes": 30,
+      "violations": [],
+      "width": 1440
+    }
+  ],
+  "interactions": [
+    {
+      "name": "M-05 cards complete entrance",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "Pointer glow tracks card",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "M-02 title finishes",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "Product search",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "Product keyboard category",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "Homepage FX contains 17 instruments",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "Homepage market arrow key",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "Homepage FAQ",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "Homepage phone straightens",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "Homepage motion switch stops animations",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "HERO static state retained",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "Manual preference persists across pages",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "Reference account preview hover",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "Calendar filter flip releases layout",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "News filtering",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "News M-09 gradient hover",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "News keyboard focus",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "Help search",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "Help FAQ",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "Download QR modal",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "Download modal returns focus",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "Desktop navigation keyboard",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "Desktop Escape returns focus",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "Mobile menu opens",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "Mobile menu closes and returns focus",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "Mobile cards use one readable column",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "Finished M-02 paragraphs reflow at 320px",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "Inline authored headings remain intact",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "System reduce disables control",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "Manual off survives system change",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "Motion re-enables",
+      "passed": true,
+      "detail": true
+    }
+  ],
+  "modes": {
+    "reduced": [
+      {
+        "disabled": true,
+        "off": true,
+        "page": "404.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "about.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "account-real.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "account-types.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "contact.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "customer-complaint.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "demo.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "deposit-bank.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "deposit-ewallet.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "deposit-va.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "deposit-withdraw.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "download.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "economic-calendar.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "fraud-warning.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "help.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "index.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "learn-basic.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "learn-risk.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "learn-technical.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "learn-terms.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "learn.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "licenses.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "live-quotes.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "news.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "platform-tutorial.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "privacy-policy.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "products.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "promotions.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "rewards.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "trading-tools.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "tutorial-install.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "tutorial-manage.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "tutorial-open.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "tutorial-trade.html",
+        "reduced": true,
+        "running": 0
+      },
+      {
+        "disabled": true,
+        "off": true,
+        "page": "user-agreement.html",
+        "reduced": true,
+        "running": 0
+      }
+    ],
+    "runtimeText": [
+      {
+        "differences": [],
+        "page": "404.html",
+        "roots": 0,
+        "textEqual": true
+      },
+      {
+        "differences": [],
+        "page": "about.html",
+        "roots": 14,
+        "textEqual": true
+      },
+      {
+        "differences": [],
+        "page": "account-real.html",
+        "roots": 14,
+        "textEqual": true
+      },
+      {
+        "differences": [],
+        "page": "account-types.html",
+        "roots": 12,
+        "textEqual": true
+      },
+      {
+        "differences": [],
+        "page": "contact.html",
+        "roots": 10,
+        "textEqual": true
+      },
+      {
+        "differences": [],
+        "page": "customer-complaint.html",
+        "roots": 7,
+        "textEqual": true
+      },
+      {
+        "differences": [],
+        "page": "demo.html",
+        "roots": 10,
+        "textEqual": true
+      },
+      {
+        "differences": [],
+        "page": "deposit-bank.html",
+        "roots": 3,
+        "textEqual": true
+      },
+      {
+        "differences": [],
+        "page": "deposit-ewallet.html",
+        "roots": 3,
+        "textEqual": true
+      },
+      {
+        "differences": [],
+        "page": "deposit-va.html",
+        "roots": 3,
+        "textEqual": true
+      },
+      {
+        "differences": [],
+        "page": "deposit-withdraw.html",
+        "roots": 14,
+        "textEqual": true
+      },
+      {
+        "differences": [],
+        "page": "download.html",
+        "roots": 8,
+        "textEqual": true
+      },
+      {
+        "differences": [],
+        "page": "economic-calendar.html",
+        "roots": 8,
+        "textEqual": true
+      },
+      {
+        "differences": [],
+        "page": "fraud-warning.html",
+        "roots": 12,
+        "textEqual": true
+      },
+      {
+        "differences": [],
+        "page": "help.html",
+        "roots": 4,
+        "textEqual": true
+      },
+      {
+        "differences": [],
+        "page": "index.html",
+        "roots": 14,
+        "textEqual": true
+      },
+      {
+        "differences": [],
+        "page": "learn-basic.html",
+        "roots": 5,
+        "textEqual": true
+      },
+      {
+        "differences": [],
+        "page": "learn-risk.html",
+        "roots": 5,
+        "textEqual": true
+      },
+      {
+        "differences": [],
+        "page": "learn-technical.html",
+        "roots": 5,
+        "textEqual": true
+      },
+      {
+        "differences": [],
+        "page": "learn-terms.html",
+        "roots": 5,
+        "textEqual": true
+      },
+      {
+        "differences": [],
+        "page": "learn.html",
+        "roots": 10,
+        "textEqual": true
+      },
+      {
+        "differences": [],
+        "page": "licenses.html",
+        "roots": 12,
+        "textEqual": true
+      },
+      {
+        "differences": [],
+        "page": "live-quotes.html",
+        "roots": 6,
+        "textEqual": true
+      },
+      {
+        "differences": [],
+        "page": "news.html",
+        "roots": 6,
+        "textEqual": true
+      },
+      {
+        "differences": [],
+        "page": "platform-tutorial.html",
+        "roots": 6,
+        "textEqual": true
+      },
+      {
+        "differences": [],
+        "page": "privacy-policy.html",
+        "roots": 2,
+        "textEqual": true
+      },
+      {
+        "differences": [],
+        "page": "products.html",
+        "roots": 12,
+        "textEqual": true
+      },
+      {
+        "differences": [],
+        "page": "promotions.html",
+        "roots": 12,
+        "textEqual": true
+      },
+      {
+        "differences": [],
+        "page": "rewards.html",
+        "roots": 12,
+        "textEqual": true
+      },
+      {
+        "differences": [],
+        "page": "trading-tools.html",
+        "roots": 4,
+        "textEqual": true
+      },
+      {
+        "differences": [],
+        "page": "tutorial-install.html",
+        "roots": 5,
+        "textEqual": true
+      },
+      {
+        "differences": [],
+        "page": "tutorial-manage.html",
+        "roots": 5,
+        "textEqual": true
+      },
+      {
+        "differences": [],
+        "page": "tutorial-open.html",
+        "roots": 5,
+        "textEqual": true
+      },
+      {
+        "differences": [],
+        "page": "tutorial-trade.html",
+        "roots": 5,
+        "textEqual": true
+      },
+      {
+        "differences": [],
+        "page": "user-agreement.html",
+        "roots": 2,
+        "textEqual": true
+      }
+    ],
+    "fallbacks": [
+      {
+        "page": "index",
+        "mode": "none",
+        "hidden": 0,
+        "overflow": false
+      },
+      {
+        "page": "account-types",
+        "mode": "none",
+        "hidden": 0,
+        "overflow": false
+      },
+      {
+        "page": "demo",
+        "mode": "none",
+        "hidden": 0,
+        "overflow": false
+      },
+      {
+        "page": "trading-tools",
+        "mode": "none",
+        "hidden": 0,
+        "overflow": false
+      },
+      {
+        "page": "learn-risk",
+        "mode": "none",
+        "hidden": 0,
+        "overflow": false
+      },
+      {
+        "page": "help",
+        "mode": "none",
+        "hidden": 0,
+        "overflow": false
+      },
+      {
+        "page": "index",
+        "mode": "components-missing",
+        "hidden": 0,
+        "overflow": false
+      },
+      {
+        "page": "account-types",
+        "mode": "components-missing",
+        "hidden": 0,
+        "overflow": false
+      },
+      {
+        "page": "demo",
+        "mode": "components-missing",
+        "hidden": 0,
+        "overflow": false
+      },
+      {
+        "page": "trading-tools",
+        "mode": "components-missing",
+        "hidden": 0,
+        "overflow": false
+      },
+      {
+        "page": "learn-risk",
+        "mode": "components-missing",
+        "hidden": 0,
+        "overflow": false
+      },
+      {
+        "page": "help",
+        "mode": "components-missing",
+        "hidden": 0,
+        "overflow": false
+      }
+    ]
+  },
+  "contrast": {
+    "whiteOnBlueGreen": 5.38,
+    "whiteOnMetadataChip": 4.82
+  },
+  "baseline": "8fad486",
+  "date": "2026-11-13",
+  "widths": [
+    320,
+    390,
+    768,
+    1024,
+    1440
+  ]
+}

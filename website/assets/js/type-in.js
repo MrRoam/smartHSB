@@ -89,53 +89,31 @@
   /* ---------- 逐行：正文 ---------- */
   function splitLines(el) {
     var segs = segments(el);
-    el.textContent = '';
-
-    var probeFrag = document.createDocumentFragment();
-    var probes = [];
-
+    var frag = document.createDocumentFragment();
+    var units = [];
     segs.forEach(function (seg) {
-      if (seg.br) {
-        probeFrag.appendChild(document.createElement('br'));
-        probes.push({ br: true });
-        return;
-      }
-      var re = /[A-Za-z0-9$%.,'\u2019+\-]+|\s+|[\s\S]/g;
-      var m;
-      while ((m = re.exec(seg.text))) {
-        var t = m[0];
-        var s = document.createElement('span');
-        s.textContent = t;
-        probeFrag.appendChild(s);
-        probes.push({ node: s, text: t });
-      }
+      if (seg.br) { frag.appendChild(document.createElement('br')); return; }
+      var tokens = seg.text.match(/[A-Za-z0-9$%.,'’+\-]+|\s+|[^\s]/g) || [];
+      tokens.forEach(function (token) {
+        if (/^\s+$/.test(token)) { frag.appendChild(document.createTextNode(token)); return; }
+        if (PUNCT.test(token) && units.length) {
+          units[units.length - 1].textContent += token;
+          return;
+        }
+        var mask = document.createElement('span'); mask.className = 'ti-mask';
+        var unit = document.createElement('span'); unit.className = 'ti-unit'; unit.textContent = token;
+        mask.appendChild(unit); frag.appendChild(mask); units.push(unit);
+      });
     });
-    el.appendChild(probeFrag);
-
-    var rows = [];
-    var cur = null;
-    probes.forEach(function (p) {
-      if (p.br) { cur = null; return; }
-      if (!/\S/.test(p.text)) { if (cur) cur.items.push(p.text); return; }
-      var top = Math.round(p.node.getBoundingClientRect().top);
-      if (cur && Math.abs(cur.top - top) < 2) cur.items.push(p.text);
-      else { cur = { top: top, items: [p.text] }; rows.push(cur); }
+    el.replaceChildren(frag);
+    // Read all row positions before writing delays. Preserve whitespace and natural reflow.
+    var tops = units.map(function (unit) { return Math.round(unit.offsetTop); });
+    var row = 0;
+    units.forEach(function (unit, i) {
+      if (i && Math.abs(tops[i] - tops[i - 1]) > 2) row++;
+      unit.style.setProperty('--i', row);
     });
-
-    el.textContent = '';
-    rows.forEach(function (row, i) {
-      var text = row.items.join('').replace(/\s+$/, '').replace(/^\s+/, '');
-      if (!text) return;
-      var mask = document.createElement('span');
-      mask.className = 'ti-mask';
-      var unit = document.createElement('span');
-      unit.className = 'ti-unit';
-      unit.style.setProperty('--i', i);
-      unit.textContent = text;
-      mask.appendChild(unit);
-      el.appendChild(mask);
-    });
-    return rows.length;
+    return row + 1;
   }
 
   /* ---------- 触发与播放 ---------- */
@@ -178,15 +156,20 @@
         el.style.setProperty('--ti-lead', lead + 'ms');
       }
       el.classList.add('ti-play');
+      var lastLine = mode === 'lines' ? Array.prototype.reduce.call(units, function (last, unit) {
+        return Math.max(last, Number(unit.style.getPropertyValue('--i')) || 0);
+      }, 0) : 0;
       var total = lead + 500 + (mode === 'chars'
         ? step * Math.max(0, units.length - 1)
-        : 50 * Math.max(0, units.length - 1)) + 150;
+        : 50 * lastLine) + 150;
       setTimeout(function () { el.classList.add('ti-done'); }, total);
     });
   }, { rootMargin: '0px 0px -10% 0px' });
 
   function boot() {
     Array.prototype.forEach.call(document.querySelectorAll('.type-in'), function (el) {
+      // Never flatten emphasis, links or other authored inline markup.
+      if (Array.prototype.some.call(el.children, function (child) { return child.tagName !== 'BR'; })) return;
       prep(el);
       io.observe(el);
     });
@@ -210,11 +193,20 @@
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(function () {
       Array.prototype.forEach.call(document.querySelectorAll('.type-in:not(.ti-play)'), function (el) {
+        if (!orig.has(el) || reduce.matches || document.body.classList.contains('motion-off')) return;
         reset(el);
         prep(el);
       });
     }, 150);
   });
+
+  function settle() {
+    if (!reduce.matches && !document.body.classList.contains('motion-off')) return;
+    io.disconnect();
+    document.querySelectorAll('.type-in,.type-in-eyebrow').forEach(function (el) { el.classList.add('ti-done'); });
+  }
+  reduce.addEventListener('change', settle);
+  document.body.addEventListener('smarthsb-motion-change', settle);
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
   else boot();

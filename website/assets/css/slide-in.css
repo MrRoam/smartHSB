@@ -4,7 +4,7 @@
    用法：<div class="si-group"> 包住一组 <div class="slide-in" data-dir="bottom">
    - 起始 opacity 0 + 自身尺寸 60% 的方位偏移，500ms power1.out 归位
    - 组内错峰总量 0.4s（可用 data-si-total 覆盖），组触发一次，不随滚动回退
-   - 初始隐藏只在 html.js 下生效；脚本失效 / 减弱动效 / body.motion-off 直接显示终态
+   - 默认内容可见；仅播放关键帧时使用起始位移，脚本失效仍可阅读
    ========================================================================== */
 
 .slide-in {
@@ -20,10 +20,7 @@
 .slide-in[data-dir="left"]   { --si-x: -60%; }
 .slide-in[data-dir="right"]  { --si-x: 60%; }
 
-html.js .slide-in:not(.si-done) {
-  opacity: 0;
-  transform: translate(var(--si-x), var(--si-y));
-}
+/* Resting content is visible. Only an actively playing entrance has a start frame. */
 
 /* 声明了固定位移的组可能横向超界（整幅宽块 + data-si-shift），
    在组上裁掉横向溢出，避免撑出页面横向滚动条；

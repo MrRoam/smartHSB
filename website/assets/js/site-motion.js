@@ -35,13 +35,34 @@
     entrances.unobserve(entry.target);
     const node = entry.target;
     const image = node.matches('.s-visual,.shot,.reward-art,.platform-download-scene');
-    const shift = node.matches('.tl-row,.step') ? 'translateX(18px)' : 'translateY(22px)';
-    animate(node,[{opacity:.35,transform:image?'scale(.97)':shift},{opacity:1,transform:'none'}],{delay:Number(node.dataset.motionOrder || 0)*65,duration:image?850:650});
+    animate(node,[{opacity:0,transform:image?'scale(.97)':'translateY(60%)'},{opacity:1,transform:'none'}],{duration:image?850:500,easing:'cubic-bezier(.5,1,.89,1)'});
   }), {threshold:.08});
-  const targets = document.querySelectorAll('.home-minpilot .trust-item,.home-minpilot .funding-details>div,.home-minpilot .reward-art,.home-minpilot .award-grid>div,.home-minpilot .media-line,.home-minpilot .final-inner,.internal-site .sec-head,.internal-site .stat,.internal-site .step,.internal-site .icard,.internal-site .tl-row,.internal-site .s-visual,.internal-site .shot,.internal-site .platform-download-scene');
+  // M-01/M-02/M-05 components own their entrances. Never animate their ancestors too.
+  const targets = document.querySelectorAll('.internal-site .motion-heading,.internal-site .s-visual,.internal-site .shot,.internal-site .platform-download-scene');
   targets.forEach(node => {
-    node.dataset.motionOrder = Math.min([...node.parentElement.children].indexOf(node),4);
     entrances.observe(node);
+  });
+
+  // Event-driven pointer glow: one frame for the current card, none while idle.
+  const finePointer = matchMedia('(hover:hover) and (pointer:fine)');
+  let pointerFrame = 0;
+  document.querySelectorAll('.internal-site .motion-card').forEach(card => {
+    card.addEventListener('pointermove', event => {
+      if (!enabled() || !finePointer.matches) return;
+      cancelAnimationFrame(pointerFrame);
+      const x = event.clientX, y = event.clientY;
+      pointerFrame = requestAnimationFrame(() => {
+        pointerFrame = 0;
+        if (!enabled()) return;
+        const bounds = card.getBoundingClientRect();
+        card.style.setProperty('--pointer-x', `${x - bounds.left}px`);
+        card.style.setProperty('--pointer-y', `${y - bounds.top}px`);
+      });
+    }, {passive:true});
+    card.addEventListener('pointerleave', () => {
+      cancelAnimationFrame(pointerFrame);pointerFrame = 0;
+      card.style.removeProperty('--pointer-x');card.style.removeProperty('--pointer-y');
+    });
   });
 
   // Keep the complete content usable while tab/FAQ state changes are in motion.

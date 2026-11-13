@@ -1,5 +1,7 @@
 /* Shared light palette. Family styles consume these tokens; the portal is independent. */
 .internal-site[data-page] {
+  --site-aurora: url(../img/aurora-mesh.svg);
+  --site-fill: linear-gradient(155deg, #1E5CD2 0%, #176EAC 42%, #00795F 76%, #006C45 100%);
   --site-ink:#1D1D1F; --site-muted:#606062; --site-line:#DCE7E1;
   --site-blue:#235DFE; --site-green:#006C45; --site-mint:#5BFFC3;
   --site-lime:#BFFF37; --site-surface-blue:#EEF5FF; --site-surface-mint:#F1FFF7;
@@ -145,18 +147,18 @@
 
 /* ---- 主按钮（.btn-primary）: 渐变底 ---- */
 .internal-site[data-page] .btn-primary {
-  background: linear-gradient(90deg,#2B6CF6 0%,#1FA9E0 50%,#22E0A6 100%);
+  background: linear-gradient(90deg,#1E5CD2 0%,#176EAC 48%,#00795F 78%,#006C45 100%);
   color: #fff;
   border: 1px solid transparent;
 }
 .internal-site[data-page] .btn-primary:is(:hover,:focus-visible) {
-  background: linear-gradient(90deg,#1F55D6 0%,#1587B8 50%,#14BF8B 100%);
+  background: linear-gradient(90deg,#174CB4 0%,#115F98 48%,#006B54 78%,#005637 100%);
   color: #fff;
   transform: none;
   box-shadow: none;
 }
 .internal-site[data-page] .btn-primary:active {
-  background: linear-gradient(90deg,#1B49B8 0%,#12739E 50%,#0FA377 100%);
+  background: linear-gradient(90deg,#143F98 0%,#0F527F 48%,#005B48 78%,#00492F 100%);
 }
 
 /* ---- 次按钮（.btn-outline）: 白底 + 彩虹渐变描边 ----
@@ -183,12 +185,12 @@
 
 /* ---- 深色 CTA 横幅内的按钮：同主按钮渐变（原为白底绿字）---- */
 .internal-site[data-page] .cta-banner .btn {
-  background: linear-gradient(90deg,#2B6CF6 0%,#1FA9E0 50%,#22E0A6 100%);
+  background: linear-gradient(90deg,#1E5CD2 0%,#176EAC 48%,#00795F 78%,#006C45 100%);
   color: #fff;
   border: 1px solid transparent;
 }
 .internal-site[data-page] .cta-banner .btn:is(:hover,:focus-visible) {
-  background: linear-gradient(90deg,#1F55D6 0%,#1587B8 50%,#14BF8B 100%);
+  background: linear-gradient(90deg,#174CB4 0%,#115F98 48%,#006B54 78%,#005637 100%);
   color: #fff;
   transform: none;
   box-shadow: none;
@@ -620,7 +622,7 @@
   transition: box-shadow .30s var(--ease), color .18s var(--ease);
 }
 .internal-site[data-page="account-types"] .trade-account-comparison .acct .btn-outline:focus-visible {
-  background: linear-gradient(90deg, #1E5CD2 0%, #1A73C6 30%, #1599AA 62%, #14BF8B 100%) border-box border-box;
+  background: linear-gradient(90deg,#1E5CD2 0%,#176EAC 48%,#00795F 78%,#006C45 100%) border-box border-box;
   border-color: transparent;
   color: #fff;
   transform: none;
@@ -628,10 +630,129 @@
 }
 @media (hover: hover) {
   .internal-site[data-page="account-types"] .trade-account-comparison .acct .btn-outline:hover {
-    background: linear-gradient(90deg, #1E5CD2 0%, #1A73C6 30%, #1599AA 62%, #14BF8B 100%) border-box border-box;
+    background: linear-gradient(90deg,#1E5CD2 0%,#176EAC 48%,#00795F 78%,#006C45 100%) border-box border-box;
     border-color: transparent;
     color: #fff;
     transform: none;
     box-shadow: 0 12px 26px -14px rgba(16, 74, 160, .62);
   }
+}
+/* 2026-11-13: extend the handover's M-07 surfaces to selected content groups.
+   Existing grids and DOM order remain in charge of layout. */
+.internal-site[data-page] .motion-aurora {
+  padding:18px;gap:18px;border:0;border-radius:16px;
+  background:#EEF5FF var(--site-aurora) 50% 48% / 125% auto;
+  isolation:isolate;
+}
+.internal-site[data-page] .motion-card {
+  position:relative;isolation:isolate;min-width:0;
+  padding:26px;border:0;border-radius:14px;box-shadow:none;
+  background:linear-gradient(145deg,#F0F6FF,#F3FFF9 70%,#fff);
+  transition:translate 300ms var(--ease),background-color 220ms;
+}
+.internal-site[data-page] .motion-card:nth-child(3n+2) {
+  background:linear-gradient(145deg,#E8FFF6,#F3FAFF 72%,#fff);
+}
+.internal-site[data-page] .motion-card:nth-child(3n) {
+  background:linear-gradient(145deg,#EEF3FF,#EBFFF8 72%,#fff);
+}
+.internal-site[data-page] .motion-aurora>.motion-card {background:#fff;}
+/* Pointer coordinates feed only the hovered card; no document-wide paint loop. */
+.internal-site[data-page] .motion-card::after {
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  border-radius:inherit;opacity:0;
+  background:radial-gradient(260px circle at var(--pointer-x,50%) var(--pointer-y,40%),#5BFFC352,transparent 80%);
+  transition:opacity 260ms;
+}
+.internal-site[data-page] .motion-card:focus-within {translate:0 -4px;}
+.internal-site[data-page] .motion-card:focus-within::after {opacity:1;}
+.internal-site[data-page] .motion-card :is(.ic-ic,.f-ic,.cc-ic) {
+  background:#E7F7F0;color:#006C45;
+  transition:rotate 300ms var(--ease),background-color 220ms;
+}
+.internal-site[data-page] .motion-card .ic-tag {display:table;width:fit-content;max-width:100%;}
+.internal-site[data-page] .motion-link {border-radius:14px;padding:26px;}
+.internal-site[data-page] .motion-link::before {background-image:var(--site-fill);will-change:auto;}
+.internal-site[data-page] .motion-link:focus-visible :is(p,.meta,.meta *,.cat,b,.more) {color:#fff;}
+.internal-site[data-page] .motion-link:focus-visible :is(.cat,.hc-cc-ic) {background:#FFFFFF0F;color:#fff;}
+.internal-site[data-page] .motion-link:focus-visible::after {opacity:0;}
+/* News uses a tinted reading surface; the original article order is untouched. */
+.internal-site[data-page="news"] .news-grid {gap:20px;}
+.internal-site[data-page="news"] .art.motion-link {background:linear-gradient(145deg,#EDF4FF,#F1FFF8);border:0;box-shadow:none;}
+.internal-site[data-page="news"] .art.motion-link .meta {margin-bottom:18px;}
+/* Compact help categories are navigation, so they respond to both focus and hover. */
+.internal-site[data-page="help"] .hc-cat-card.motion-link {
+  padding:18px 16px;border:1px solid #DCE7E1;background:#fff;gap:12px;
+}
+.internal-site[data-page="help"] .hc-cat-card.motion-link b {font-weight:500;}
+/* Document reading stays flat. Only its headings, notes and related links gain accents. */
+.internal-site[data-page] :is(.doc-single,.tutorial-reading) :is(.note-info,.callout:not(.warn)) {
+  background:linear-gradient(115deg,#ECF4FF,#ECFFF6);border-color:#C9E2D9;
+}
+.internal-site[data-page] .doc-sec>h2>i {background:#E8F8F0;color:#006C45;}
+.internal-site[data-page] .motion-heading {text-wrap:balance;}
+.internal-site[data-page] .chp-nav a {transition:background-color 220ms,color 220ms;}
+.internal-site[data-page] .chp-nav a:is(:hover,:focus-visible) {background:#E8FFF4;color:#006C45;}
+.internal-site[data-page] .stat-row .stat {border-radius:12px;background:linear-gradient(135deg,#EEF5FF,#F1FFF7);padding:24px;}
+.internal-site[data-page] .stat-row .stat .n {color:#006C45;}
+/* Small illustrations reuse existing SVG paths. They never imply live market data. */
+.internal-site[data-page="trading-tools"] .tool-directory>.icard {
+  padding:30px;gap:12px 30px;margin-bottom:20px;border-radius:14px;
+  border:0;background:linear-gradient(115deg,#EDF5FF,#F0FFF7 58%,#fff);
+}
+.internal-site[data-page="trading-tools"] .tool-directory .tool-scene {
+  border-radius:12px;padding:20px 14px;min-height:170px;
+  background:linear-gradient(145deg,#DDEEFF,#DCFFEC);
+}
+.internal-site[data-page="trading-tools"] .tool-scene path {stroke:#00795F;stroke-dashoffset:0;}
+.internal-site[data-page="trading-tools"] .tool-scene>svg {display:block;}
+.internal-site[data-page="trading-tools"] .tool-directory .ic-tag {width:fit-content;max-width:100%;}
+.internal-site[data-page="trading-tools"] .tool-scene>i {
+  position:absolute;inset:0;pointer-events:none;opacity:.55;
+  background:linear-gradient(90deg,transparent,#fff,transparent);
+  transform:translateX(-120%);
+}
+.internal-site[data-page="trading-tools"].js-motion .tool-scene.motion-visible>i {animation:toolSweep 4.8s var(--ease) infinite;}
+@keyframes toolSweep {0%,20%{transform:translateX(-120%)}75%,100%{transform:translateX(120%)}}
+.internal-site[data-page] .cta-banner {background:linear-gradient(115deg,#EAF1FF,#E7FFF4 78%,#F4FFE5);}
+.internal-site[data-page] .faq-item {transition:background-color 220ms;}
+.internal-site[data-page] .faq-item:focus-within {background:#F0FAF6;}
+@media (hover:hover) and (pointer:fine) {
+  .internal-site[data-page] .motion-card:hover {translate:0 -4px;}
+  .internal-site[data-page] .motion-card:hover::after {opacity:1;}
+  .internal-site[data-page] .motion-card:hover :is(.ic-ic,.f-ic,.cc-ic) {rotate:-5deg;}
+  .internal-site[data-page] .motion-link:hover :is(p,.meta,.meta *,.cat,b,.more) {color:#fff;}
+  .internal-site[data-page] .motion-link:hover :is(.cat,.hc-cc-ic) {background:#FFFFFF0F;color:#fff;}
+  .internal-site[data-page] .motion-link:hover::after {opacity:0;}
+  .internal-site[data-page] .faq-item:hover {background:#F0FAF6;}
+}
+@media(max-width:900px) {
+  .internal-site[data-page] .motion-aurora {padding:14px;gap:14px;background-size:180% auto;}
+  .internal-site[data-page] .motion-card {padding:22px;}
+  .internal-site[data-page="trading-tools"] .tool-directory>.icard {padding:24px;gap:10px 22px;}
+}
+@media(max-width:760px) {
+  .internal-site[data-page="trading-tools"] .tool-directory>.icard {grid-template-columns:75px minmax(0,1fr);}
+  .internal-site[data-page="trading-tools"] .tool-directory .tool-scene {min-height:0;padding:14px 8px;}
+}
+@media(max-width:479px) {
+  .internal-site[data-page] .motion-aurora {padding:10px;gap:12px;background-image:none;background-color:#EAF6F1;}
+  .internal-site[data-page] .motion-card {padding:20px;}
+  .internal-site[data-page="help"] .hc-cat-card.motion-link {padding:14px 10px;gap:8px;}
+  .internal-site[data-page="trading-tools"] .tool-directory>.icard {padding:20px;grid-template-columns:minmax(0,1fr);}
+  .internal-site[data-page="trading-tools"] .tool-directory .tool-scene {grid-column:1;grid-row:auto;min-height:92px;display:grid;grid-template-columns:34px minmax(0,1fr);align-items:center;gap:12px;}
+  .internal-site[data-page="trading-tools"] .tool-scene>span {margin:0;}
+  .internal-site[data-page="trading-tools"] .tool-directory>.icard>:is(h3,p,.ic-tag,.more,ul) {grid-column:1;grid-row:auto;}
+  .internal-site[data-page] .stat-row .stat {padding:20px;}
+}
+@media(max-width:620px) {
+  .internal-site[data-page] .motion-aurora {grid-template-columns:minmax(0,1fr);}
+}
+.internal-site[data-page].motion-off .motion-card,
+.internal-site[data-page].motion-off .motion-card :is(.ic-ic,.f-ic,.cc-ic) {translate:none;rotate:none;}
+.internal-site[data-page].motion-off .tool-scene>i {display:none;}
+@media(prefers-reduced-motion:reduce) {
+  .internal-site[data-page] .motion-card,
+  .internal-site[data-page] .motion-card :is(.ic-ic,.f-ic,.cc-ic) {translate:none;rotate:none;}
+  .internal-site[data-page] .tool-scene>i {display:none;}
 }
