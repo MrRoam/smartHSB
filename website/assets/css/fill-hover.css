@@ -1,0 +1,73 @@
+/* ==========================================================================
+   M-09 · 渐变填充悬停（Gradient Fill Hover）通用件
+   —— 默认保持卡片原底色、文字原色；鼠标移入时彩色渐变自卡片顶部向下逐段揭开、
+      铺满整卡，标题与箭头先转白、正文后转白；移出时自上而下退走。
+      参照 minpilot.webflow.io/resources 的 .blog-card（原站为 .blog-color-shape
+      整层 translateY(-100%) → 0；本站改为 clip-path 揭开，原因见下方注释）。
+   用法：给任意"要变色的卡片"加 class="fill-hover"，卡片自身负责底色/圆角/内距，
+        本文件只管填充与换色。详见 00-项目管理/2026-11-12_动效规范库.md 的 M-09。
+   色标：取站点主按钮渐变（#2B6CF6 → #1FA9E0 → #22E0A6，横向）的同一色相带，
+        改为纵向「上蓝 → 下绿」。绿端刻意压深一档（#17BD79 只留在最底部 8%、
+        那里没有文字），否则白字压在 #22E0A6 上对比度只有 1.7:1、正文读不出来。
+   ========================================================================== */
+
+.fill-hover {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.fill-hover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  /* 色标直接采样自「下载 APP」按钮（clipboard 截图中线，每 10% 取一点）：
+     #1E5CD2 深蓝 → #177FBD → #1599AA 青 → #15A6A0 → #14BF8B 绿。
+     整条比 #2B6CF6→#22E0A6 那版压深一档，白字（标题 20px / 正文 14px）
+     才站得住：标题落在 #1A73C6 上约 4.2:1，正文落在青段约 3.6:1。 */
+  background-image: linear-gradient(180deg,
+    #1E5CD2 0%, #1C67CC 12%, #1A73C6 24%, #177FBD 36%,
+    #158BB5 48%, #1599AA 60%, #15A6A0 72%, #15B395 84%, #14BF8B 100%);
+  /* 用 clip-path 自上而下揭开，而不是整层 translateY 滑入：
+     渐变层若整块下移，中间帧露出的是图层下半段（绿），
+     观感是"一块绿板压下来、再变成蓝在上"，颜色会跳。
+     自顶向下揭开时每个像素固定对应渐变的同一位置，蓝→青→绿逐段出现。 */
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path .55s cubic-bezier(.3, .85, .35, 1);
+  will-change: clip-path;
+}
+
+/* 文字换色按"渐变扫到哪"分块延迟：标题先白、正文后白；
+   移出时反过来（正文先回原色、标题最后），避免白字短暂压在原底色上 */
+.fill-hover :is(h1, h2, h3, h4, p) { transition: color .22s ease; }
+.fill-hover :is(h1, h2, h3, h4) { transition-delay: .17s; }
+.fill-hover p { transition-delay: .04s; }
+.fill-hover :is(h1, h2, h3, h4) span {
+  transition: color .22s ease .17s, transform .3s cubic-bezier(.2, .7, .3, 1);
+}
+
+/* 双类提权：站内常见 `.x .card h3 span{color:…}` 也是 (0,2,2)，
+   不给权重会因加载顺序被判平局，箭头会留在原色 */
+.fill-hover.fill-hover:focus-visible::before { clip-path: inset(0 0 0 0); }
+.fill-hover.fill-hover:focus-visible :is(h1, h2, h3, h4),
+.fill-hover.fill-hover:focus-visible :is(h1, h2, h3, h4) span { color: #fff; }
+.fill-hover.fill-hover:focus-visible p { color: rgba(255, 255, 255, .93); }
+
+/* hover 只在真指针设备生效：触屏点一下后 :hover 会残留，卡片会一直停在彩色态 */
+@media (hover: hover) {
+  .fill-hover.fill-hover:hover::before { clip-path: inset(0 0 0 0); }
+  .fill-hover.fill-hover:hover :is(h1, h2, h3, h4),
+  .fill-hover.fill-hover:hover :is(h1, h2, h3, h4) span { color: #fff; }
+  .fill-hover.fill-hover:hover p { color: rgba(255, 255, 255, .93); }
+  .fill-hover.fill-hover:hover :is(h1, h2, h3, h4) { transition-delay: .06s; }
+  .fill-hover.fill-hover:hover p { transition-delay: .2s; }
+  .fill-hover.fill-hover:hover :is(h1, h2, h3, h4) span { transition-delay: .06s, 0s; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fill-hover::before,
+  .fill-hover :is(h1, h2, h3, h4, p, span) { transition: none; }
+}
+
+body.motion-off .fill-hover::before { transition: none; }

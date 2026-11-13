@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1496 953" width="1496" height="953">
+<defs><filter id="b" x="-40%" y="-40%" width="180%" height="180%" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation="100"/></filter></defs>
+<g filter="url(#b)">
+  <ellipse cx="863" cy="344" rx="215" ry="68" transform="rotate(141.6 863 344)" fill="#0041BE"/>
+  <ellipse cx="632" cy="423" rx="130" ry="43" transform="rotate(-155.2 632 423)" fill="#0041BE"/>
+  <ellipse cx="979" cy="584" rx="390" ry="223" transform="rotate(166.2 979 584)" fill="#00E5E0"/>
+  <ellipse cx="624" cy="516" rx="114" ry="65" transform="rotate(-164.3 624 516)" fill="#00BCC2"/>
+  <ellipse cx="737" cy="565" rx="134" ry="41" transform="rotate(-136.4 737 565)" fill="#00FF66"/>
+  <ellipse cx="683" cy="568" rx="134" ry="41" transform="rotate(-136.4 683 568)" fill="#D6FFEE"/>
+  <ellipse cx="478" cy="444" rx="184" ry="111" transform="rotate(-160.0 478 444)" fill="#FF589C"/>
+  <ellipse cx="453" cy="595" rx="293" ry="102" transform="rotate(180.0 453 595)" fill="#FFB000"/>
+  <ellipse cx="288" cy="504" rx="161" ry="67" transform="rotate(-161.5 288 504)" fill="#FFB000"/>
+  <ellipse cx="361" cy="417" rx="94" ry="31" transform="rotate(-137.6 361 417)" fill="#FF0024"/>
+</g>
+</svg>

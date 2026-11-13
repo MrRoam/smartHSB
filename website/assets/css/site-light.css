@@ -21,7 +21,8 @@
 .internal-site[data-page] :is(a,button,summary,input,select,textarea,[tabindex="0"]):focus-visible {outline:3px solid var(--site-blue);outline-offset:4px;}
 .internal-site[data-page] :is(a,button,summary) {touch-action:manipulation;}
 .internal-site[data-page] :is(h2,h3,[id]) {scroll-margin-top:110px;}
-.internal-site[data-page] .announcement {background:var(--site-lime);color:var(--ink);border-bottom:1px solid var(--line);}
+/* 页头提示条：柠檬绿太刺眼，改为淡蓝→淡青渐变（2026-11-12），文字仍为深色 */
+.internal-site[data-page] .announcement {background:linear-gradient(90deg,#EDF2FF 0%,#EAF0FE 50%,#EEF9FC 100%);color:var(--ink);border-bottom:1px solid var(--line);}
 .internal-site[data-page] .announcement :is(a,span,b,i) {color:inherit;opacity:1;}
 .internal-site[data-page] .site-header {background:#fff;border-color:var(--line);}
 .internal-site[data-page] .site-header.sticky {background:#fffffff5;}
@@ -133,4 +134,504 @@
   .internal-site[data-page] .btn {font-size:13px;padding:12px 18px;}
   .internal-site[data-page] :is(.legal,.legal-title,.legal-entity,.legal-item,.risk-copy,.footer-bottom,.footer-bottom a) {font-size:12px;}
   .internal-site[data-page] .footer-wordmark {font-size:clamp(42px,13.6vw,72px);}
+}
+
+/* ==========================================================================
+   内页按钮统一（2026-11-12）—— 对齐首页两种按钮
+   主按钮：蓝 → 青绿渐变 + 白字 + 文字上翻 + 箭头右移 4px
+   次按钮：白底 + 2px 彩虹渐变描边 + 文字上翻
+   参数来源：assets/css/home-minpilot.css 第 18–41 行（渐变 / 动效）、第 103–105 行（彩虹外壳）
+   ========================================================================== */
+
+/* ---- 主按钮（.btn-primary）: 渐变底 ---- */
+.internal-site[data-page] .btn-primary {
+  background: linear-gradient(90deg,#2B6CF6 0%,#1FA9E0 50%,#22E0A6 100%);
+  color: #fff;
+  border: 1px solid transparent;
+}
+.internal-site[data-page] .btn-primary:is(:hover,:focus-visible) {
+  background: linear-gradient(90deg,#1F55D6 0%,#1587B8 50%,#14BF8B 100%);
+  color: #fff;
+  transform: none;
+  box-shadow: none;
+}
+.internal-site[data-page] .btn-primary:active {
+  background: linear-gradient(90deg,#1B49B8 0%,#12739E 50%,#0FA377 100%);
+}
+
+/* ---- 次按钮（.btn-outline）: 白底 + 彩虹渐变描边 ----
+   用双层 background-clip 代替首页的 .iris-shell 外层壳：
+   第一层铺在 padding-box（白底），第二层铺在 border-box（彩虹边），边框设为透明。
+   这样不需要给每个按钮包 wrapper，盒子尺寸只多 1px（1px → 2px 描边）。 */
+.internal-site[data-page] .btn-outline {
+  border: 2px solid transparent;
+  background:
+    linear-gradient(#fff,#fff) padding-box,
+    linear-gradient(180deg,#FFEAB5 20%,#F2A85D 40%,#8052E4 60%,#2E85EA 80%,#68EFAE 100%) border-box;
+  color: var(--site-ink);
+  box-shadow: none;
+}
+.internal-site[data-page] .btn-outline:is(:hover,:focus-visible) {
+  background:
+    linear-gradient(var(--site-surface-blue),var(--site-surface-blue)) padding-box,
+    linear-gradient(180deg,#FFEAB5 20%,#F2A85D 40%,#8052E4 60%,#2E85EA 80%,#68EFAE 100%) border-box;
+  /* 旧规则 hover 会把 border-color 改成蓝色，不透明边框会盖住渐变层，必须显式压回透明 */
+  border-color: transparent;
+  color: var(--site-ink);
+  transform: none;
+}
+
+/* ---- 深色 CTA 横幅内的按钮：同主按钮渐变（原为白底绿字）---- */
+.internal-site[data-page] .cta-banner .btn {
+  background: linear-gradient(90deg,#2B6CF6 0%,#1FA9E0 50%,#22E0A6 100%);
+  color: #fff;
+  border: 1px solid transparent;
+}
+.internal-site[data-page] .cta-banner .btn:is(:hover,:focus-visible) {
+  background: linear-gradient(90deg,#1F55D6 0%,#1587B8 50%,#14BF8B 100%);
+  color: #fff;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ---- 按钮动效：文字上翻 + 箭头右移（与首页一致）---- */
+.internal-site[data-page] .btn .button-label {display:block;position:relative;overflow:hidden;height:1.5em;}
+.internal-site[data-page] .btn .button-label>span {display:block;transition:transform 260ms var(--ease);}
+.internal-site[data-page] .btn .button-label__back {position:absolute;inset:0;transform:translateY(100%);}
+.internal-site[data-page] .btn .button-label__back::before {content:attr(data-label);display:block;}
+.internal-site[data-page] .btn:is(:hover,:focus-visible) .button-label__front {transform:translateY(-100%);}
+.internal-site[data-page] .btn:is(:hover,:focus-visible) .button-label__back {transform:translateY(0);}
+.internal-site[data-page] .btn>.button-arrow {display:inline-block;line-height:1;transition:transform 220ms var(--ease);}
+.internal-site[data-page] .btn:is(:hover,:focus-visible)>.button-arrow {transform:translateX(4px);}
+
+/* ---- 兜底：系统减弱动效 / 页脚动效开关关闭 ---- */
+@media (prefers-reduced-motion: reduce) {
+  .internal-site[data-page] .btn .button-label>span,
+  .internal-site[data-page] .btn>.button-arrow {transition:none!important;transform:none!important;}
+  .internal-site[data-page] .btn .button-label__back {display:none!important;}
+}
+/* .internal-site 与 .motion-off 都挂在 body 上，所以写成同一元素上的复合选择器 */
+.internal-site.motion-off .btn .button-label>span,
+.internal-site.motion-off .btn>.button-arrow {transition:none!important;transform:none!important;}
+.internal-site.motion-off .btn .button-label__back {display:none!important;}
+
+/* 品牌字标：与首页一致用「Smart + HSB」分段写法，HSB 取站点绿 */
+.internal-site .brand .brand-name__accent { color: var(--site-green); }
+
+/* 内页导航品牌图标对齐首页尺寸（首页 .brand-s-logo 为 29px / 移动 25px） */
+.internal-site .site-header .brand img { width: 29px; height: 29px; border-radius: 0; }
+@media (max-width: 767px) {
+  .internal-site .site-header .brand img { width: 25px; height: 25px; }
+}
+
+/* 内页 Hero 底部模拟账户提示条（原顶部 announcement），文字在条内左右往返 */
+.internal-site .hero-ticker {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  display: block;
+  width: min(1112px, calc(100% - 32px));
+  height: 34px;
+  overflow: hidden;
+  background: linear-gradient(90deg,
+    rgba(237, 242, 255, 0) 0%,
+    rgba(237, 242, 255, .92) 11%,
+    rgba(234, 240, 254, .92) 50%,
+    rgba(238, 249, 252, .92) 89%,
+    rgba(238, 249, 252, 0) 100%);
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  text-decoration: none;
+  z-index: 2;
+  -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0, #000 22%);
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0, #000 22%);
+}
+.internal-site .hero-ticker__track {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  font-size: 13px;
+  color: var(--ink);
+  will-change: transform;
+  animation: tickerSlide var(--ticker-dur, 9s) ease-in-out infinite alternate;
+}
+.internal-site .hero-ticker__track b { font-weight: 600; color: var(--site-green); }
+.internal-site .hero-ticker__track i { font-style: normal; color: var(--site-green); }
+.internal-site .hero-ticker:hover { filter: brightness(.99); }
+
+@keyframes tickerSlide {
+  from { transform: translateX(var(--ticker-from, 18px)); }
+  to   { transform: translateX(var(--ticker-to, 18px)); }
+}
+
+@media (max-width: 767px) {
+  .internal-site .hero-ticker { width: calc(100% - 32px); height: 32px; }
+  .internal-site .hero-ticker__track { font-size: 11px; gap: 5px; }
+  /* 贴底后给内容留出呼吸 */
+  .internal-site :is(.page-hero, .empty-hero):has(> .hero-ticker) { padding-bottom: 62px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .internal-site .hero-ticker__track { animation: none; width: 100%; justify-content: center; }
+}
+
+/* 文字比条宽时改为居中静止，避免小幅抖动 */
+.internal-site .hero-ticker.is-static .hero-ticker__track {
+  left: 50%;
+  transform: translateX(-50%);
+  animation: none;
+}
+
+/* 内页导航与首页完全对齐（2026-11-13）：断点/侧边距/字号/间距/按钮逐档复刻首页；用 [data-page] 提高具体度压过内页旧规则 */
+.internal-site[data-page] .site-header { padding: 16px 0; }
+.internal-site[data-page] .site-header .nav-inner {
+  width: min(1280px, calc(100% - 112px));
+  max-width: 1280px;
+  height: 66px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+}
+.internal-site[data-page] .site-header .brand {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -.4px;
+  gap: 10px;
+}
+.internal-site[data-page] .site-header .brand img { width: 29px; height: 29px; }
+.internal-site[data-page] .site-header .desktop-nav { gap: 22px; }
+.internal-site[data-page] .site-header .desktop-nav > a,
+.internal-site[data-page] .site-header .desktop-nav .nav-trigger {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: normal;
+}
+.internal-site[data-page] .site-header .language-placeholder { font-size: 11px; }
+.internal-site[data-page] .site-header .nav-actions .button-outline {
+  min-height: 44px;
+  min-width: 148px;
+  padding: 0 21px;
+  font-size: 16px;
+  gap: 22px;
+}
+
+@media (max-width: 1100px) {
+  .internal-site[data-page] .site-header .nav-inner { width: calc(100% - 64px); }
+  .internal-site[data-page] .site-header .language-placeholder { font-size: 10.5px; }
+  .internal-site[data-page] .site-header .nav-actions { gap: 15px; }
+}
+
+@media (max-width: 800px) {
+  .internal-site[data-page] .site-header { padding: 10px 0; }
+  .internal-site[data-page] .site-header .nav-inner { width: calc(100% - 40px); }
+  .internal-site[data-page] .site-header .brand img { width: 25px; height: 25px; }
+  .internal-site[data-page] .site-header .language-placeholder { font-size: 10.5px; }
+  .internal-site[data-page] .site-header .nav-actions { gap: 15px; }
+  .internal-site[data-page] .site-header .nav-actions .button-outline {
+    min-height: 44px;
+    min-width: 148px;
+    padding: 0 21px;
+    font-size: 16px;
+    gap: 22px;
+  }
+}
+
+@media (max-width: 540px) {
+  .internal-site[data-page] .site-header .nav-inner { width: calc(100% - 32px); }
+  .internal-site[data-page] .site-header .brand { font-size: 23px; gap: 10px; }
+  .internal-site[data-page] .site-header .nav-actions { gap: 10px; }
+  .internal-site[data-page] .site-header .nav-actions .button-outline {
+    min-height: 40px;
+    min-width: 117px;
+    padding: 0 15px;
+    font-size: 12px;
+    gap: 18px;
+  }
+  .internal-site[data-page] .site-header .language-placeholder { display: none; }
+}
+
+@media (max-width: 360px) {
+  .internal-site[data-page] .site-header .brand { font-size: 20px; gap: 6px; }
+  .internal-site[data-page] .site-header .nav-actions .button-outline { padding: 0 9px; min-width: 0; gap: 8px; }
+}
+
+/* ==========================================================================
+   账户类型页 · 三种账户卡（极光底 + 白卡）
+   动效：M-05「方位移入」自下而上（slide-in.css / slide-in.js）
+   背景：minpilot feature 区同一张极光网格（10 个模糊椭圆），卡片不透明白
+         铺满，彩色只从 20px 缝与 24px 外沿透出 → 形成层次
+   ========================================================================== */
+.internal-site[data-page] .trade-account-comparison {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 20px;
+  padding: 24px;
+  border: 0;
+  border-radius: 20px;
+  background-color: #F3F4F6;
+  background-image: url(../img/aurora-mesh.svg);
+  background-size: 170% auto;
+  background-position: 50% 45%;
+  box-shadow: 0 40px 70px -50px rgba(16, 24, 40, .45);
+}
+.internal-site[data-page] .trade-account-comparison .acct {
+  background: #fff;
+  border: 0;
+  border-radius: 14px;
+  padding: 28px 26px 26px;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, .06), 0 18px 36px -24px rgba(16, 24, 40, .5);
+  transition: box-shadow .25s ease, translate .25s ease;
+}
+.internal-site[data-page] .trade-account-comparison .acct:hover,
+.internal-site[data-page] .trade-account-comparison .acct:focus-within {
+  border: 0;
+  translate: 0 -4px;
+  box-shadow: 0 2px 4px rgba(16, 24, 40, .07), 0 28px 48px -24px rgba(16, 24, 40, .55);
+}
+/* 中间档（Standard）给一点绿意，读起来仍是白卡 */
+.internal-site[data-page] .trade-account-comparison .acct[data-plan-index="2"] {
+  background: linear-gradient(180deg, #fff 0%, #F7FFFB 100%);
+  box-shadow: 0 1px 2px rgba(16, 24, 40, .06), 0 24px 44px -22px rgba(0, 90, 60, .35);
+}
+.internal-site[data-page] .trade-account-comparison .acct-rows {
+  align-content: space-between;
+}
+.internal-site[data-page] .trade-account-comparison .acct .btn {
+  margin-top: 24px;
+}
+@media (max-width: 800px) {
+  /* 卡片内部两栏时：价格在左栏垂直居中，按钮整行贴底 */
+  .internal-site[data-page] .trade-account-comparison .acct {
+    grid-template-rows: auto 1fr auto;
+  }
+  .internal-site[data-page] .trade-account-comparison .acct-price {
+    align-self: center;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  .internal-site[data-page] .trade-account-comparison .acct .btn {
+    grid-column: 1 / -1;
+    grid-row: 4;
+    margin-top: 18px;
+  }
+}
+@media (max-width: 900px) {
+  .internal-site[data-page] .trade-account-comparison {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 16px;
+    border-radius: 16px;
+  }
+  .internal-site[data-page] .trade-account-comparison {
+    background-size: 200% auto;
+    background-position: 50% 30%;
+  }
+  .internal-site[data-page] .trade-account-comparison .acct {
+    padding: 24px 22px;
+    border-radius: 12px;
+  }
+}
+
+/* ==========================================================================
+   权威奖项与媒体：奖章墙 + 媒体行（2026-11-13，对齐首页同区的处理与动效）
+   —— 六枚奖章等宽六列（不再大小混排），年份标签在下；
+      下方 1px 分隔线 + 「媒体关注」+ 5 枚媒体 logo 两端分布。
+   动效：奖章 M-01+D（.pop-group[data-pop-step="70"]，见 pop-in.css/js）
+        logo  M-04+D（.fi-group[data-fi-step="70"][data-fi-order="reverse"]，
+        见 fly-in.css/js）。内页沿用 v2 色板，不引入首页 minpilot 变量。
+   ========================================================================== */
+.internal-site[data-page] .award-wall {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 36px;
+  margin-top: 50px;
+  align-items: start;
+}
+.internal-site[data-page] .award-wall > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+}
+.internal-site[data-page] .award-wall img {
+  width: 100%;
+  height: 95px;
+  object-fit: contain;
+  filter: none;
+  mix-blend-mode: normal;
+}
+.internal-site[data-page] .award-wall span {
+  margin-top: 18px;
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: .02em;
+  color: var(--ink-3);
+}
+.internal-site[data-page] .press-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 48px;
+  padding-top: 30px;
+  border-top: 1px solid var(--line);
+}
+.internal-site[data-page] .press-line p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink-3);
+  white-space: nowrap;
+}
+.internal-site[data-page] .press-line img {
+  width: 13%;
+  max-width: 130px;
+  height: 30px;
+  object-fit: contain;
+  /* 与首页一致：彩色原样，不做灰度/降透明（首页最终覆盖为 opacity:1;filter:none） */
+  filter: none;
+  opacity: 1;
+}
+@media (max-width: 900px) {
+  .internal-site[data-page] .award-wall {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 32px 20px;
+    margin-top: 36px;
+  }
+  .internal-site[data-page] .award-wall img { height: 82px; }
+  .internal-site[data-page] .press-line {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 22px;
+    margin-top: 36px;
+    padding-top: 24px;
+  }
+  .internal-site[data-page] .press-line p { width: 100%; }
+  .internal-site[data-page] .press-line img { width: 24%; height: 26px; }
+}
+@media (max-width: 560px) {
+  .internal-site[data-page] .award-wall { gap: 26px 14px; }
+  .internal-site[data-page] .award-wall img { height: 68px; }
+  .internal-site[data-page] .award-wall span { margin-top: 12px; font-size: 11px; }
+}
+
+/* ==========================================================================
+   账户类型页 · 6 大权益（2026-11-13，仅 data-page="account-types"）
+   —— learn-risk.html 也有 .ben-grid，故必须限定页面，不能用通用 [data-page]
+   —— 复用上方「三种账户卡」的极光底 + 白卡语言：容器铺 aurora-mesh.svg，
+      6 张不透明白卡以 18px 缝 + 22px 外沿露出彩色，形成层次。
+   动效：M-01+D（.pop-group[data-pop-step="70"] 内 6 个 .pop-in，见 pop-in.js）
+   ========================================================================== */
+.internal-site[data-page="account-types"] .ben-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 34px;
+  padding: 18px;
+  border: 0;
+  border-radius: 20px;
+  background-color: #F3F4F6;
+  background-image: url(../img/aurora-mesh.svg);
+  /* 与账户卡区同一张极光图，但本块更扁（约 3.6:1），170% 会只剩单色块，
+     故按 108% 铺，让多个色块同时出现、缝里看到的是柔和过渡而非纯色 */
+  background-size: 108% auto;
+  background-position: 50% 52%;
+  box-shadow: 0 40px 70px -50px rgba(16, 24, 40, .45);
+}
+.internal-site[data-page="account-types"] .ben-grid .ben-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  min-height: 132px;
+  padding: 24px 22px;
+  border: 0;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, .06), 0 18px 36px -24px rgba(16, 24, 40, .5);
+  transition: box-shadow .25s ease, translate .25s ease;
+}
+.internal-site[data-page="account-types"] .ben-grid .ben-item:hover,
+.internal-site[data-page="account-types"] .ben-grid .ben-item:focus-within {
+  translate: 0 -4px;
+  box-shadow: 0 2px 4px rgba(16, 24, 40, .07), 0 28px 48px -24px rgba(16, 24, 40, .55);
+}
+.internal-site[data-page="account-types"] .ben-grid .ben-no {
+  width: 28px;
+  height: 28px;
+  border-radius: 9px;
+  font-size: 13px;
+  margin-top: 1px;
+}
+.internal-site[data-page="account-types"] .ben-grid .ben-item h3 {
+  margin-bottom: 8px;
+}
+@media (max-width: 1000px) {
+  .internal-site[data-page="account-types"] .ben-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 900px) {
+  .internal-site[data-page="account-types"] .ben-grid {
+    gap: 14px;
+    padding: 16px;
+    border-radius: 16px;
+    background-size: 200% auto;
+    background-position: 50% 30%;
+  }
+  .internal-site[data-page="account-types"] .ben-grid .ben-item {
+    padding: 20px 18px;
+    border-radius: 12px;
+    min-height: 118px;
+  }
+}
+@media (max-width: 620px) {
+  .internal-site[data-page="account-types"] .ben-grid {
+    grid-template-columns: 1fr;
+  }
+  .internal-site[data-page="account-types"] .ben-grid .ben-item {
+    min-height: 0;
+  }
+}
+
+/* ==========================================================================
+   账户类型页 · 三种账户卡的「立即开户」（2026-11-13）
+   —— 默认沿用全站统一的次按钮：白底 + 2px 彩虹描边；
+      鼠标移入 / 键盘聚焦时整颗变成主按钮同款「蓝 → 绿」实心（白字 + 白箭头），
+      移出即恢复。色带取「下载 APP」按钮的采样值，与首页信任区卡片同源。
+   为什么覆盖 background 简写：次按钮的底是双层 clip（padding-box 白底 +
+   border-box 彩虹边）。只改 padding-box 那层会留下彩虹边，观感是「渐变底 + 彩边」，
+   与参考图不符，故 hover 直接给单层渐变（默认 clip 到 border-box，铺满整颗）。
+   渐变之间不可插值，底色是"点亮式"瞬切；阴影与文字色走过渡，衔接不至生硬。
+   末尾两个 border-box = origin + clip：默认 origin 是 padding-box，2px 边框区
+   会由背景平铺的边缘像素补齐，胶囊左右端点会各露出一条 2px 的渐变末色（绿）细边。
+   ========================================================================== */
+.internal-site[data-page="account-types"] .trade-account-comparison .acct .btn-outline {
+  transition: box-shadow .30s var(--ease), color .18s var(--ease);
+}
+.internal-site[data-page="account-types"] .trade-account-comparison .acct .btn-outline:focus-visible {
+  background: linear-gradient(90deg, #1E5CD2 0%, #1A73C6 30%, #1599AA 62%, #14BF8B 100%) border-box border-box;
+  border-color: transparent;
+  color: #fff;
+  transform: none;
+  box-shadow: 0 12px 26px -14px rgba(16, 74, 160, .62);
+}
+@media (hover: hover) {
+  .internal-site[data-page="account-types"] .trade-account-comparison .acct .btn-outline:hover {
+    background: linear-gradient(90deg, #1E5CD2 0%, #1A73C6 30%, #1599AA 62%, #14BF8B 100%) border-box border-box;
+    border-color: transparent;
+    color: #fff;
+    transform: none;
+    box-shadow: 0 12px 26px -14px rgba(16, 74, 160, .62);
+  }
 }

@@ -11,6 +11,8 @@
 }
 .navigation-complete .nav-home { padding: 24px 0; }
 .navigation-complete .nav-trigger { gap: 6px; }
+/* 用户要求：去掉桌面导航的 ⌄ 箭头，悬停即展开（2026-11-11） */
+.navigation-complete .nav-trigger b { display: none; }
 .navigation-complete .dropdown {
   min-width: 218px;
   top: 100%;

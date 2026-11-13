@@ -1,0 +1,84 @@
+/* ==========================================================================
+   M-02 打字出场 / Type-In
+   规范：00-项目管理/2026-11-12_动效规范库.md
+   标签整行上移 → 标题逐字显影 → 正文逐行上推，三段连贯，播一次
+   ========================================================================== */
+
+:root{
+  --ti-dur: 500ms;
+  --ti-ease-ch: cubic-bezier(0.33, 1, 0.68, 1);    /* power2.out */
+  --ti-ease-inout: cubic-bezier(0.65, 0, 0.35, 1);  /* power2.inOut */
+}
+
+/* 遮罩：每字/每行一层，负责裁切。padding 补偿 descender（g/y/p 下伸部） */
+.ti-mask{
+  display: inline-block;
+  overflow: clip;
+  padding-bottom: .12em;
+  margin-bottom: -.12em;
+}
+
+/* 位移单元：字与行共用 */
+.ti-unit{
+  display: inline-block;
+}
+
+/* 逐行模式下遮罩独占一行 */
+.type-in.ti-line .ti-mask{
+  display: block;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+/* 初始隐藏 —— 只在前置 js 标记下生效，脚本失效时文字照常全显 */
+html.js .type-in:not(.ti-done) .ti-unit{
+  opacity: 0;
+  transform: translateX(10px) scale(1.4);
+}
+html.js .type-in.ti-line:not(.ti-done) .ti-unit{
+  transform: translateY(100%);
+}
+html.js .type-in-eyebrow:not(.ti-done){
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+/* 播放 */
+.type-in.ti-play .ti-unit{
+  will-change: transform, opacity;
+  animation: tiChar var(--ti-dur) var(--ti-ease-ch) both;
+  animation-delay: calc(var(--i, 0) * var(--ti-step, 11ms));
+}
+.type-in.ti-line.ti-play .ti-unit{
+  animation-name: tiLine;
+  animation-delay: calc(var(--ti-lead, 680ms) + var(--i, 0) * 50ms);
+}
+.type-in-eyebrow.ti-play{
+  animation: tiLine var(--ti-dur) var(--ti-ease-inout) both;
+}
+
+@keyframes tiChar{
+  from{ opacity: 0; transform: translateX(10px) scale(1.4); }
+  to  { opacity: 1; transform: none; }
+}
+@keyframes tiLine{
+  from{ opacity: 0; transform: translateY(100%); }
+  to  { opacity: 1; transform: none; }
+}
+
+/* 动效总开关 / 系统偏好：直接呈现终态 */
+body.motion-off .type-in .ti-unit,
+body.motion-off .type-in-eyebrow{
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+}
+@media (prefers-reduced-motion: reduce){
+  .type-in .ti-unit,
+  .type-in-eyebrow{
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    will-change: auto;
+  }
+}

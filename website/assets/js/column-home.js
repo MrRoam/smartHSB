@@ -68,7 +68,9 @@
   syncVisibility();
   // All copy is readable before enhancement, and after cancellation or script failure.
   if ('IntersectionObserver' in window) {
-    const revealTargets = document.querySelectorAll('.overview-intro h2, .platform-copy, .platform-visual, .markets .section-head');
+    // M-02「打字出场」已接管的文案块跳过整套 WAAPI 入场，避免两套动效叠加
+    const revealTargets = [...document.querySelectorAll('.overview-intro h2, .platform-copy, .platform-visual, .markets .section-head')]
+      .filter(el => !el.matches('[data-type-in]') && !el.querySelector('[data-type-in]'));
     const entrance = new IntersectionObserver(entries => entries.forEach(entry => {
       if (!entry.isIntersecting || !motion || document.hidden) return;
       entrance.unobserve(entry.target);
@@ -339,4 +341,261 @@
   }
   pointMap(document.querySelector('#world-dots'));
   pointMap(document.querySelector('#footer-dots'),true);
+})();
+
+/* 卡片光标光斑描边（2026-11-12，参照 SmartHSB-main/website）：把指针位置写进 --mouse-x/--mouse-y */
+(() => {
+  const cards = document.querySelectorAll('.spotlight-card');
+  if (!cards.length) return;
+  cards.forEach(card => {
+    card.addEventListener('pointermove', e => {
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty('--mouse-x', `${(e.clientX - rect.left).toFixed(1)}px`);
+      card.style.setProperty('--mouse-y', `${(e.clientY - rect.top).toFixed(1)}px`);
+    }, { passive: true });
+    card.addEventListener('pointerleave', () => {
+      card.style.setProperty('--mouse-x', '-999px');
+      card.style.setProperty('--mouse-y', '-999px');
+    });
+  });
+})();
+
+/* 资产规模数字滚动跳动（2026-11-12）：.stats 进入视口后，数字从 0 平滑计数到目标值。
+   前缀（$）、小数位（0.01 的 2 位）、千分位（10,000）与单位 <span> 均保留；
+   遵循 body.motion-off / prefers-reduced-motion：动效关闭时直接显示原值，不打断。 */
+(() => {
+  'use strict';
+  const stats = document.querySelector('.stats');
+  if (!stats || !('IntersectionObserver' in window)) return;
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const body = document.body;
+  const motionOn = () => !body.classList.contains('motion-off') && !reduced.matches;
+
+  // 目标数字位于 strong 的第一个含数字的文本节点，单位是其后的 <span>，不参与动画
+  const items = [...stats.querySelectorAll('strong')].map(strong => {
+    const host = strong.querySelector('.stat-num') || strong;
+    const node = [...host.childNodes].find(n => n.nodeType === 3 && /\d/.test(n.textContent));
+    if (!node) return null;
+    const m = node.textContent.match(/^([^\d]*)([\d,]+(?:\.\d+)?)([\s\S]*)$/);
+    if (!m) return null;
+    const target = parseFloat(m[2].replace(/,/g, ''));
+    if (!isFinite(target)) return null;
+    const decimals = (m[2].split('.')[1] || '').length;
+    return { node, prefix: m[1], suffix: m[3], target, decimals };
+  }).filter(Boolean);
+  if (!items.length) return;
+
+  const write = (it, v) => {
+    it.node.textContent = it.prefix +
+      v.toLocaleString('en-US', { minimumFractionDigits: it.decimals, maximumFractionDigits: it.decimals }) +
+      it.suffix;
+  };
+
+  let raf = 0, done = false;
+  function finish() {
+    cancelAnimationFrame(raf);
+    done = true;
+    items.forEach(it => write(it, it.target));
+  }
+  function play() {
+    if (done) return;
+    if (!motionOn()) { done = true; return; }   // 动效被关闭：保持静态原值
+    done = true;
+    const DUR = 1500, STAGGER = 120;
+    const t0 = performance.now();
+    const ease = p => 1 - Math.pow(1 - p, 4);   // easeOutQuart：先快后慢，收尾平滑
+    const tick = now => {
+      if (!motionOn()) { finish(); return; }    // 动画中途被关闭：立刻落到终值
+      let all = true;
+      items.forEach((it, i) => {
+        const p = Math.min(Math.max((now - t0 - i * STAGGER) / DUR, 0), 1);
+        if (p < 1) all = false;
+        write(it, it.target * ease(p));
+      });
+      if (!all) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+  }
+
+  const io = new IntersectionObserver(entries => entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    io.disconnect();
+    play();
+  }), { threshold: 0.4 });
+  io.observe(stats);
+
+  // 全站动效开关切换：未播完则直接定格，避免残留中间值
+  body.addEventListener('smarthsb-motion-change', e => { if (!e.detail.enabled && !done) done = true; });
+})();
+
+/* ==========================================================================
+   M-01+R 弹出+旋转入场（2026-11-12）
+   规范：00-项目管理/2026-11-12_动效规范库.md → M-01+R
+   四张地图卡（.map-chip）各自独立触发：卡片顶边跨过视口 90% 处时开始，
+   scale 0→1 + rotate(倾斜角+20deg → 倾斜角)，1000ms，power2.inOut，播一次。
+   动画结束后加 .pop-done 让初始隐藏规则失效，把 transform 交还给 hover 规则。
+   ========================================================================== */
+(() => {
+  const chips = [...document.querySelectorAll('.home-minpilot .map-chip')];
+  if (!chips.length) return;
+
+  const body = document.body;
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const motionOn = () => !body.classList.contains('motion-off') && !reduced.matches;
+  const finish = chip => {
+    chip.classList.remove('pop-play');
+    chip.classList.add('pop-done');   // 交还 transform 给基础倾斜与 :hover
+  };
+
+  // 动效关闭 / 不支持 IO：直接落到终态，卡片正常显示
+  if (!motionOn() || !('IntersectionObserver' in window)) {
+    chips.forEach(chip => chip.classList.add('pop-done'));
+    return;
+  }
+
+  const play = chip => {
+    chip.classList.add('pop-play');
+    chip.addEventListener('animationend', e => {
+      if (e.animationName === 'chipPopR') finish(chip);
+    }, { once: true });
+    // 兜底：标签页切走等情况下 animationend 可能不派发，避免卡在 scale(0)
+    setTimeout(() => finish(chip), 1200);
+  };
+
+  const io = new IntersectionObserver(entries => entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    io.unobserve(entry.target);
+    play(entry.target);
+  }), { rootMargin: '0px 0px -10% 0px', threshold: 0 });
+  chips.forEach(chip => io.observe(chip));
+
+  // 全站动效开关关闭：立即定格终态
+  body.addEventListener('smarthsb-motion-change', e => {
+    if (e.detail.enabled) return;
+    chips.forEach(chip => { io.unobserve(chip); finish(chip); });
+  });
+})();
+
+/* ==========================================================================
+   M-01+R 弹出+旋转入场（2026-11-12）—— funding 区「入金 / 出金」两张卡
+   规范：00-项目管理/2026-11-12_动效规范库.md → M-01+R
+   scale 0→1 + rotate 20deg→0，1000ms，power2.inOut，播一次。
+   两张卡同一基线并排，由容器统一触发、同时弹出（不带 +D 错峰）。
+   注意容器里还有 .insurance-note（保险说明，跨两列），必须排除。
+   ========================================================================== */
+(() => {
+  const wrap = document.querySelector('.home-minpilot .funding-details');
+  if (!wrap) return;
+
+  const cards = [...wrap.children].filter(el => !el.classList.contains('insurance-note'));
+  if (!cards.length) return;
+
+  const body = document.body;
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const motionOn = () => !body.classList.contains('motion-off') && !reduced.matches;
+  const finish = card => {
+    card.classList.remove('pop-play');
+    card.classList.add('pop-done');   // 交还 transform 给卡片自身
+  };
+
+  if (!motionOn() || !('IntersectionObserver' in window)) {
+    cards.forEach(finish);
+    return;
+  }
+
+  const play = () => cards.forEach(card => {
+    card.classList.add('pop-play');
+    card.addEventListener('animationend', e => {
+      if (e.animationName === 'cardPopR') finish(card);
+    }, { once: true });
+    // 兜底：时长 + 余量，防止 animationend 未派发时停在 scale(0)
+    setTimeout(() => finish(card), 1000 + 250);
+  });
+
+  const io = new IntersectionObserver(entries => entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    io.disconnect();
+    play();
+  }), { rootMargin: '0px 0px -10% 0px', threshold: 0 });
+  io.observe(wrap);
+
+  // 全站动效开关关闭：立即定格终态
+  body.addEventListener('smarthsb-motion-change', e => {
+    if (e.detail && e.detail.enabled) return;
+    io.disconnect();
+    cards.forEach(finish);
+  });
+})();
+
+/* ==========================================================================
+   M-01 / M-01+D 弹出（+错峰）、M-04 飞入 入场（2026-11-12）
+   规范：00-项目管理/2026-11-12_动效规范库.md → M-01 / M-01+D / M-04
+   M-01：scale 0→1，700ms，power1.out = cubic-bezier(0.5, 1, 0.89, 1)，不淡入
+   M-04：translateX(150px)+opacity 0 → 原位，700ms，power2.out，淡入
+   同基线并排的元素纯 M-01 会同时弹，故按 M-01+D / M-04+D 补 70ms 递进延迟。
+   动画结束加 .pop-done 让初始隐藏规则失效，把 transform 交还给元素自身。
+   三处共用：awards 六枚奖章、funding 支付 logo、媒体关注 5 枚 logo。
+   ========================================================================== */
+(() => {
+  const body = document.body;
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+
+  const run = (container, items, STEP, ANIM = 'popIn01', DUR = 700) => {
+    if (!container || !items.length) return;
+    const motionOn = () => !body.classList.contains('motion-off') && !reduced.matches;
+    const finish = el => {
+      el.classList.remove('pop-play');
+      el.classList.add('pop-done');
+      el.style.removeProperty('animation-delay');
+    };
+
+    if (!motionOn() || !('IntersectionObserver' in window)) {
+      items.forEach(el => el.classList.add('pop-done'));
+      return;
+    }
+
+    const play = () => items.forEach((el, i) => {
+      el.style.animationDelay = (i * STEP) + 'ms';
+      el.classList.add('pop-play');
+      // 不用 {once:true}：块内子元素（如 M-02 打字单元）的动画结束也会冒泡到这里，
+      // once 会被首个冒泡事件吃掉，导致自身动画结束后无人收尾、闪回初始态。
+      const onEnd = e => {
+        if (e.animationName !== ANIM) return;
+        el.removeEventListener('animationend', onEnd);
+        finish(el);
+      };
+      el.addEventListener('animationend', onEnd);
+      // 兜底：延迟 + 时长 + 余量，防止 animationend 未派发时停在初始态
+      setTimeout(() => { el.removeEventListener('animationend', onEnd); finish(el); }, i * STEP + DUR + 250);
+    });
+
+    const io = new IntersectionObserver(entries => entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      io.disconnect();
+      play();
+    }), { rootMargin: '0px 0px -10% 0px', threshold: 0 });
+    io.observe(container);
+
+    body.addEventListener('smarthsb-motion-change', e => {
+      if (e.detail && e.detail.enabled) return;
+      io.disconnect();
+      items.forEach(finish);
+    });
+  };
+
+  // awards：六枚奖章同基线，左→右 70ms 递进
+  const awardGrid = document.querySelector('.home-minpilot .award-grid');
+  if (awardGrid) run(awardGrid, [...awardGrid.children], 70);
+
+  // funding：BCA / Mandiri / BNI 三个支付方式图标同基线，左→右 70ms 递进
+  const paymentLogos = document.querySelector('.home-minpilot .payment-logos');
+  if (paymentLogos) run(paymentLogos, [...paymentLogos.querySelectorAll('img')], 70);
+
+  // media-line：5 枚媒体 logo，逆序（最右先入）70ms 递进 → 波峰从右往左
+  const mediaLine = document.querySelector('.home-minpilot .media-line');
+  if (mediaLine) run(mediaLine, [...mediaLine.querySelectorAll('img')].reverse(), 70, 'flyIn04', 900);
+
+  // rewards：整张卡片从中心弹出（单块，无错峰）
+  const rewardsInner = document.querySelector('.home-minpilot .rewards-inner');
+  if (rewardsInner) run(rewardsInner, [rewardsInner], 0);
 })();

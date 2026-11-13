@@ -1,0 +1,26 @@
+/* ==========================================================================
+   M-01 弹出 / Pop-In —— 规范：00-项目管理/2026-11-12_动效规范库.md
+   滚入视口（顶边到 90% vh）时从 scale(0) 放大到 1，700ms，power1.out
+   = cubic-bezier(0.5, 1, 0.89, 1)，原点居中；不淡入、不位移、不旋转，只播一次。
+   用法：给目标元素加 class="pop-in"（可多块，各自独立触发）
+   初始隐藏由 JS 加 .pop-ready 触发（不依赖 html.js），脚本失效时元素照常显示。
+   ========================================================================== */
+@keyframes popIn01 {
+  from { transform: scale(0); }
+  to   { transform: scale(1); }
+}
+
+.pop-in.pop-ready:not(.pop-done) {
+  transform: scale(0);
+  transform-origin: 50% 50%;
+}
+
+.pop-in.pop-play {
+  animation: popIn01 700ms cubic-bezier(0.5, 1, 0.89, 1) 1 both;
+  transform-origin: 50% 50%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pop-in.pop-ready:not(.pop-done) { transform: none; }
+  .pop-in.pop-play { animation: none; }
+}

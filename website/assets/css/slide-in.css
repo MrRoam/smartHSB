@@ -1,0 +1,55 @@
+/* ==========================================================================
+   M-05 · 方位移入（Directional Slide-In）
+   规范：00-项目管理/2026-11-12_动效规范库.md → M-05
+   用法：<div class="si-group"> 包住一组 <div class="slide-in" data-dir="bottom">
+   - 起始 opacity 0 + 自身尺寸 60% 的方位偏移，500ms power1.out 归位
+   - 组内错峰总量 0.4s（可用 data-si-total 覆盖），组触发一次，不随滚动回退
+   - 初始隐藏只在 html.js 下生效；脚本失效 / 减弱动效 / body.motion-off 直接显示终态
+   ========================================================================== */
+
+.slide-in {
+  --si-dur: 500ms;
+  --si-ease: cubic-bezier(0.5, 1, 0.89, 1);
+  --si-x: 0px;
+  --si-y: 0px;
+}
+
+/* 方位 → 起始偏移：百分比按元素自身宽/高换算，任何尺寸都保持同一观感 */
+.slide-in[data-dir="bottom"] { --si-y: 60%; }
+.slide-in[data-dir="top"]    { --si-y: -60%; }
+.slide-in[data-dir="left"]   { --si-x: -60%; }
+.slide-in[data-dir="right"]  { --si-x: 60%; }
+
+html.js .slide-in:not(.si-done) {
+  opacity: 0;
+  transform: translate(var(--si-x), var(--si-y));
+}
+
+/* 声明了固定位移的组可能横向超界（整幅宽块 + data-si-shift），
+   在组上裁掉横向溢出，避免撑出页面横向滚动条；
+   clip 不像 hidden 那样强制另一轴，纵向内容照常溢出可见 */
+html.js .si-group[data-si-shift] {
+  overflow-x: clip;
+}
+
+@keyframes slideIn05 {
+  from { opacity: 0; transform: translate(var(--si-x), var(--si-y)); }
+  to   { opacity: 1; transform: translate(0, 0); }
+}
+
+/* fill-mode:both 让错峰等待期间停在起始态，不靠额外 opacity 规则兜 */
+html.js .slide-in.si-play {
+  animation: slideIn05 var(--si-dur) var(--si-ease) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.js .slide-in:not(.si-done) { opacity: 1; transform: none; }
+  html.js .slide-in.si-play { animation: none; }
+}
+
+body.motion-off .slide-in,
+body.motion-off .slide-in:not(.si-done) {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+}

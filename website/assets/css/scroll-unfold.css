@@ -1,0 +1,15 @@
+/* ==========================================================================
+   M-03 · 滚动展开（Scroll-Unfold）· 内容型适配版
+   规范：00-项目管理/2026-11-12_动效规范库.md → M-03+C
+   - 外层 .unfold 包住任意块级内容，随滚动从中心向左右两侧展开（宽度 0→100%）
+   - 内部保持最终版式不重排、不缩放，只用 clip-path 裁切，零 reflow
+   - 关闭态由 JS 写入 inline clip-path；脚本失效 / 减弱动效时内容照常完整显示
+   ========================================================================== */
+
+.unfold { position: relative; }
+
+@media (prefers-reduced-motion: reduce) {
+  .unfold { clip-path: none !important; }
+}
+
+body.motion-off .unfold { clip-path: none !important; }

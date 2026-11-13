@@ -16,9 +16,12 @@
 .home-minpilot p {color:var(--muted);text-wrap:pretty;}
 .home-minpilot .section-label {font:500 14px/1.5 Suisse,"Microsoft YaHei",sans-serif;color:var(--green-dark);letter-spacing:0;margin-bottom:18px;}
 .home-minpilot .button {min-height:52px;padding:12px 25px;border-radius:999px;font-size:16px;gap:22px;box-shadow:none;line-height:1.5;transition:background-color 220ms,color 220ms;}
-.home-minpilot :is(.button-primary,.button-white) {background:var(--lime);color:var(--ink);border:1px solid var(--green-dark);}
-.home-minpilot :is(.button-primary,.button-white):is(:hover,:focus-visible) {background:var(--grass);transform:none;}
-.home-minpilot .button-primary:active {background:var(--mint);}
+/* 主按钮：蓝 → 青绿渐变（2026-11-12 由亮绿底改为渐变底，尺寸/动效/圆角不变）
+   前缀 .button 是为了压过本文件后面 `.home-minpilot .button{color:var(--ink)}` 的同级具体度
+   边框保留 1px 但设为 transparent，只为保持盒模型尺寸与原按钮一致 */
+.home-minpilot .button:is(.button-primary,.button-white) {background:linear-gradient(90deg,#2B6CF6 0%,#1FA9E0 50%,#22E0A6 100%);color:#fff;border:1px solid transparent;}
+.home-minpilot .button:is(.button-primary,.button-white):is(:hover,:focus-visible) {background:linear-gradient(90deg,#1F55D6 0%,#1587B8 50%,#14BF8B 100%);transform:none;}
+.home-minpilot .button.button-primary:active {background:linear-gradient(90deg,#1B49B8 0%,#12739E 50%,#0FA377 100%);}
 .home-minpilot .button span {color:inherit;}
 .home-minpilot .text-link {color:var(--green-dark);min-height:44px;font-size:16px;gap:18px;}
 .home-minpilot .text-link:is(:hover,:focus-visible) {color:var(--blue);}
@@ -70,16 +73,16 @@
 .home-minpilot .world-map { position: absolute; width: 100%; height: 100%; object-fit: contain; opacity: .85; }
 .home-minpilot .map-chip { position: absolute; display: inline-flex; gap: 11px; align-items: center; background: #fff; padding: 11px 18px 11px 11px; border-radius: 8px; box-shadow: 0 8px 24px #285a5015; color: #24484c; font-size: 14px; }
 .home-minpilot .map-chip i { display: grid; place-items: center; width: 34px; height: 34px; background: #e6f2fc; border-radius: 50%; font: 500 16px/1 Suisse, sans-serif; color: var(--green-dark); }
-.home-minpilot .map-chip--one { left: 9%; top: 24%; transform: rotate(-5deg); }
-.home-minpilot .map-chip--two { right: 12%; top: 12%; transform: rotate(4deg); }
-.home-minpilot .map-chip--three { left: 28%; bottom: 14%; transform: rotate(3deg); }
-.home-minpilot .map-chip--four { right: 5%; bottom: 23%; transform: rotate(-5deg); }
+.home-minpilot .map-chip--one { left: 9%; top: 24%; --tilt: -5deg; transform: rotate(var(--tilt)); }
+.home-minpilot .map-chip--two { right: 12%; top: 12%; --tilt: 4deg; transform: rotate(var(--tilt)); }
+.home-minpilot .map-chip--three { left: 28%; bottom: 14%; --tilt: 3deg; transform: rotate(var(--tilt)); }
+.home-minpilot .map-chip--four { right: 5%; bottom: 23%; --tilt: -5deg; transform: rotate(var(--tilt)); }
 .home-minpilot .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin: 8px 0 0; padding: 30px 0 34px; border-top: 1px solid var(--line); }
 .home-minpilot .stats > div { border-top: 0; padding: 0 28px; border-right: 1px solid var(--line); }
 .home-minpilot .stats > div:first-child { padding-left: 0; }
 .home-minpilot .stats > div:last-child { border-right: 0; }
 .home-minpilot .stats strong { display: inline; font-size: 29px; line-height: 1.3; color: var(--ink); letter-spacing: -.025em; font-variant-numeric: tabular-nums; }
-.home-minpilot .stats strong span { font-size: 14px; margin-left: 4px; color: var(--muted); }
+.home-minpilot .stats strong span:not(.stat-num) { font-size: 14px; margin-left: 4px; color: var(--muted); }
 .home-minpilot .stats p { font-size: 14px; margin-top: 7px; }
 .home-minpilot .platform { position: relative; isolation: isolate; overflow: clip; background: #fff; }
 .home-minpilot .platform::before { content: ""; position: absolute; inset: 0; z-index: -1; background: radial-gradient(ellipse at 85% 22%,#bfff374d 0%,transparent 43%), radial-gradient(ellipse at 68% 48%,#5bffc366 0%,transparent 45%), radial-gradient(ellipse at 80% 88%,#235dfe1f 0%,transparent 44%), #fff; }
@@ -334,8 +337,9 @@
 .home-minpilot .faq-list details a {color:var(--green);text-decoration:underline;text-underline-offset:4px;}
 .home-minpilot .final-cta {position:relative;isolation:isolate;overflow:hidden;background:#fff;padding:96px 0;}
 .home-minpilot .final-cta::before {content:"";position:absolute;inset:25% 10%;z-index:-1;pointer-events:none;background:linear-gradient(90deg,#BCFFF4,#DDFF90);opacity:.6;filter:blur(80px);}
-.home-minpilot .final-inner .button {background:var(--blue);color:#fff;border:1px solid var(--blue);}
-.home-minpilot .final-inner .button:is(:hover,:focus-visible) {background:#1849D6;}
+/* CTA 按钮与主按钮共用同一套蓝→青绿渐变（2026-11-12 由纯蓝 --blue 改） */
+.home-minpilot .final-inner .button {background:linear-gradient(90deg,#2B6CF6 0%,#1FA9E0 50%,#22E0A6 100%);color:#fff;border:1px solid transparent;}
+.home-minpilot .final-inner .button:is(:hover,:focus-visible) {background:linear-gradient(90deg,#1F55D6 0%,#1587B8 50%,#14BF8B 100%);}
 .home-minpilot .final-inner small {font-size:14px;}
 .home-minpilot .site-footer {background:var(--soft);}
 .home-minpilot .legal :is(p,a,span), .home-minpilot .footer-links a {font-size:14px;line-height:1.8;}
@@ -505,4 +509,338 @@
 .home-minpilot *, .home-minpilot *::before, .home-minpilot *::after {animation:none!important;transition:none!important;scroll-behavior:auto!important}
 .home-minpilot .button-label>span, .home-minpilot .button>.button-arrow {transform:none!important}
 .home-minpilot .button-label__back {visibility:hidden}
+}
+
+/* ==========================================================================
+   市场卡片悬停动效（2026-11-12，参照 SmartHSB-main/website/index.html）
+   原站 .map-chip 只有静态倾斜角、无任何 hover 规则；此处补：上浮 5px + 放大 5% +
+   摆正倾斜角、阴影加深、描边变绿、图标放大，并加光标跟随的 1px 光斑描边。
+   ========================================================================== */
+.home-minpilot .map-chip {
+  border: 1px solid rgba(1, 166, 107, 0.12);
+  cursor: pointer;
+  user-select: none;
+  transition:
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.25s ease;
+}
+
+.home-minpilot .map-chip i {
+  transition:
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.25s ease;
+}
+
+.home-minpilot .map-chip:hover {
+  transform: translateY(-5px) scale(1.05) rotate(0deg);
+  box-shadow: 0 18px 36px rgba(1, 166, 107, 0.18), 0 4px 14px rgba(0, 0, 0, 0.08);
+  border-color: rgba(1, 166, 107, 0.38);
+  z-index: 10;
+}
+
+.home-minpilot .map-chip:active {
+  transform: translateY(-2px) scale(1.02) rotate(0deg);
+}
+
+.home-minpilot .map-chip:hover i {
+  transform: scale(1.12);
+  background: #d8f3e5;
+}
+
+/* 光标跟随光斑描边（spotlight） */
+.spotlight-card {
+  position: relative;
+  isolation: isolate;
+}
+
+.spotlight-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: radial-gradient(
+    320px circle at var(--mouse-x, -999px) var(--mouse-y, -999px),
+    rgba(0, 134, 95, 0.45),
+    rgba(16, 185, 129, 0.15) 35%,
+    transparent 65%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+  z-index: 2;
+}
+
+.spotlight-card:hover::before { opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .home-minpilot .map-chip,
+  .home-minpilot .map-chip i { transition: none; }
+}
+
+/* ==========================================================================
+   资产规模数字配色：蓝→绿渐变（2026-11-12，按设计稿）
+   数字独占 .stat-num，90° 渐变按固定 110px 长度铺开：短数字（4、25）只吃到左段仍以蓝为主，
+   长数字（$10,000）尾段走满绿；底层再叠一层纯绿，超过 110px 的部分仍为绿色、不会漏字。
+   单位字（大类/个/手）取渐变末端绿；下方说明文字保持原样不变。
+   ========================================================================== */
+.home-minpilot .stats { --stat-blue: #0d6fe7; --stat-green: #01a67a; }
+
+
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .home-minpilot .stats .stat-num {
+    background-image:
+      linear-gradient(90deg, var(--stat-blue) 0%, var(--stat-green) 100%),
+      linear-gradient(var(--stat-green), var(--stat-green));
+    background-size: 110px 100%, 100% 100%;
+    background-repeat: no-repeat, no-repeat;
+    background-position: left top;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.home-minpilot .stats strong span:not(.stat-num) { color: var(--stat-green); }
+
+/* ==========================================================================
+   M-01+R 弹出+旋转入场（2026-11-12）
+   规范：00-项目管理/2026-11-12_动效规范库.md → M-01+R
+   scale 0→1、rotate (自身倾斜角+20deg) → 自身倾斜角，1000ms，power2.inOut
+   = cubic-bezier(0.65, 0, 0.35, 1)。不淡入。
+   --------------------------------------------------------------------------
+   两个设计决策：
+   1) 旋转终点不是 0deg，而是卡片自己的 --tilt。M-01+R 原始参数（20deg→0）来自
+      水平摆放的广告卡；本页四张卡各有 -5/4/3/-5deg 的静态倾斜，若收到 0deg 会把
+      原设计的随手感抹掉，故终点取 --tilt。
+   2) 入场用 animation，hover 用 transition，两者抢同一个 transform。动画运行期间
+      由 animation 占据 transform；结束后必须让位，否则 hover 的上浮/放大/摆正全部
+      失效（animation 的填充值优先级高于普通声明）。这里用 .pop-done 让初始态规则
+      整体失效来实现让位，不需要 !important 也不需要包一层壳。
+   ========================================================================== */
+@keyframes chipPopR {
+  from { transform: rotate(calc(var(--tilt, 0deg) + 20deg)) scale(0); }
+  to   { transform: rotate(var(--tilt, 0deg)) scale(1); }
+}
+
+/* 初始态：仅在 JS 可用时隐藏，脚本失效则卡片照常显示（渐进增强） */
+html.js .home-minpilot .map-chip:not(.pop-done) {
+  transform: rotate(calc(var(--tilt, 0deg) + 20deg)) scale(0);
+}
+
+html.js .home-minpilot .map-chip.pop-play {
+  animation: chipPopR 1000ms cubic-bezier(0.65, 0, 0.35, 1) 1;
+}
+
+/* 入场期间锁住 hover 过渡，避免动画交还 transform 的瞬间被 transition 抢跑 */
+html.js .home-minpilot .map-chip.pop-play { transition: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html.js .home-minpilot .map-chip:not(.pop-done) { transform: none; }
+  html.js .home-minpilot .map-chip.pop-play { animation: none; }
+}
+
+/* ==========================================================================
+   M-01+D 弹出+错峰入场（2026-11-12）—— 首页 awards 六枚奖章
+   规范：00-项目管理/2026-11-12_动效规范库.md → M-01 / M-01+D
+   scale 0→1，700ms，power1.out = cubic-bezier(0.5, 1, 0.89, 1)，不淡入。
+   --------------------------------------------------------------------------
+   为什么带 +D：M-01 默认靠"各元素顶点高低不同"自然错峰，但这六枚奖章在同一
+   基线上，纯 M-01 会六张同时弹、没有层次；故按 M-01+D 补 70ms 递进延迟。
+   初始隐藏仍只对 html.js 生效，脚本失效则奖章照常显示。
+   ========================================================================== */
+@keyframes popIn01 {
+  from { transform: scale(0); }
+  to   { transform: scale(1); }
+}
+
+html.js .home-minpilot .award-grid > div:not(.pop-done) {
+  transform: scale(0);
+  transform-origin: 50% 50%;
+}
+
+html.js .home-minpilot .award-grid > div.pop-play {
+  animation: popIn01 700ms cubic-bezier(0.5, 1, 0.89, 1) 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.js .home-minpilot .award-grid > div:not(.pop-done) { transform: none; }
+  html.js .home-minpilot .award-grid > div.pop-play { animation: none; }
+}
+
+/* ==========================================================================
+   M-01+D 弹出+错峰（2026-11-12）—— 首页 funding 区三个支付方式 logo
+   （BCA / Mandiri / BNI）
+   规范：00-项目管理/2026-11-12_动效规范库.md → M-01 / M-01+D
+   复用上方 popIn01：scale 0→1，700ms，power1.out，不淡入，只播一次。
+   三个图标同基线并排，故按 M-01+D 给 70ms 递进（JS 写 animation-delay）。
+   图标自身无 transform，不需要外套壳；初始隐藏只对 html.js 生效。
+   ========================================================================== */
+html.js .home-minpilot .payment-logos img:not(.pop-done) {
+  transform: scale(0);
+  transform-origin: 50% 50%;
+}
+
+html.js .home-minpilot .payment-logos img.pop-play {
+  animation: popIn01 700ms cubic-bezier(0.5, 1, 0.89, 1) 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.js .home-minpilot .payment-logos img:not(.pop-done) { transform: none; }
+  html.js .home-minpilot .payment-logos img.pop-play { animation: none; }
+}
+
+/* ==========================================================================
+   M-04「飞入」/ Fly-In（2026-11-12）—— 首页媒体关注 5 枚 logo
+   规范：00-项目管理/2026-11-12_动效规范库.md → M-04 / M-04+D
+   自右侧 150px 处从 opacity 0 飞入到位，700ms，power2.out =
+   cubic-bezier(0.33, 1, 0.68, 1)，只播一次；多枚按 M-04+D 逆序 70ms 递进
+   （最右先入、波峰向左推进），整体观感即"从右往左飞入"。
+   overflow:hidden 包住行，飞入过程从行右边缘外切进来，同时避免右侧
+   溢出产生横向滚动条。5 枚 logo 自身没有 transform，不需要外套壳。
+   ========================================================================== */
+@keyframes flyIn04 {
+  from { transform: translateX(220px); opacity: 0; }
+  to   { transform: translateX(0);     opacity: 1; }
+}
+
+html.js .home-minpilot .media-line { overflow: hidden; }
+
+html.js .home-minpilot .media-line img:not(.pop-done) {
+  transform: translateX(220px);
+  opacity: 0;
+}
+
+html.js .home-minpilot .media-line img.pop-play {
+  animation: flyIn04 900ms cubic-bezier(0.16, 1, 0.3, 1) 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.js .home-minpilot .media-line img:not(.pop-done) { transform: none; opacity: 1; }
+  html.js .home-minpilot .media-line img.pop-play { animation: none; }
+}
+
+/* ==========================================================================
+   M-01+R 弹出+旋转（2026-11-12）—— 首页 funding 区「入金 / 出金」两张卡
+   规范：00-项目管理/2026-11-12_动效规范库.md → M-01+R
+   scale 0→1、rotate 20deg→0、1000ms、power2.inOut =
+   cubic-bezier(0.65, 0, 0.35, 1)。不淡入，只播一次。
+   --------------------------------------------------------------------------
+   与地图卡版本（chipPopR）的差别：这两张卡本身没有静态倾斜角（无 --tilt），
+   所以旋转终点直接取 0deg，不复用 chipPopR，另立 cardPopR 以便 JS 精确识别。
+   容器 .funding-details 里还有第三个 div（.insurance-note 保险说明，跨两列），
+   必须用 :not(.insurance-note) 排除，否则它也会跟着弹。
+   动画结束加 .pop-done 让初始隐藏规则失效，把 transform 交还给卡片自身。
+   ========================================================================== */
+@keyframes cardPopR {
+  from { transform: rotate(20deg) scale(0); }
+  to   { transform: rotate(0deg) scale(1); }
+}
+
+/* 初始态：仅在 JS 可用时隐藏，脚本失效则卡片照常显示 */
+html.js .home-minpilot .funding-details > div:not(.insurance-note):not(.pop-done) {
+  transform: rotate(20deg) scale(0);
+  transform-origin: 50% 50%;
+}
+
+html.js .home-minpilot .funding-details > div:not(.insurance-note).pop-play {
+  animation: cardPopR 1000ms cubic-bezier(0.65, 0, 0.35, 1) 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.js .home-minpilot .funding-details > div:not(.insurance-note):not(.pop-done) { transform: none; }
+  html.js .home-minpilot .funding-details > div:not(.insurance-note).pop-play { animation: none; }
+}
+
+/* ==========================================================================
+   卡片标签绿色（2026-11-12）—— 「入金 / 出金」两行小标题
+   原来继承 .home-minpilot .funding-details > div > span 的 --muted 灰色
+   （#606062），此处改为品牌 emerald #01A66B，比 --green(#006C45) 明显更亮。
+   只改颜色，字号 / 字距 / 字重一律不动。
+   ========================================================================== */
+.home-minpilot .funding-details > div:not(.insurance-note) > span {
+  color: var(--emerald);
+}
+
+/* ==========================================================================
+   M-01 弹出（2026-11-12）—— 首页 rewards 区整张卡片
+   规范：00-项目管理/2026-11-12_动效规范库.md → M-01
+   scale 0→1、700ms、power1.out = cubic-bezier(0.5, 1, 0.89, 1)。
+   不淡入、无位移/旋转，原点居中，只播一次。
+   卡片自带 overflow:hidden；内部 .reward-art 的 translateY(-50%) 随整卡一起缩放。
+   动画结束加 .pop-done 让初始隐藏规则失效，把 transform 交还卡片自身。
+   ========================================================================== */
+html.js .home-minpilot .rewards-inner:not(.pop-done) {
+  transform: scale(0);
+  transform-origin: 50% 50%;
+}
+
+html.js .home-minpilot .rewards-inner.pop-play {
+  animation: popIn01 700ms cubic-bezier(0.5, 1, 0.89, 1) 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.js .home-minpilot .rewards-inner:not(.pop-done) { transform: none; }
+  html.js .home-minpilot .rewards-inner.pop-play { animation: none; }
+}
+
+/* 品牌图标双态：深色 hero 上显示纯 S，吸顶白底后显示蓝底方块 S */
+.home-minpilot .brand-mark {
+  position: relative;
+  display: block;
+  width: 29px;
+  height: 29px;
+  flex: 0 0 auto;
+}
+.home-minpilot .brand-mark img {
+  position: absolute;
+  inset: 0;
+  width: 29px;
+  height: 29px;
+  border-radius: 0;
+  object-fit: contain;
+  transition: opacity .22s ease;
+}
+.home-minpilot .brand-mark__on-light { opacity: 0; }
+.home-minpilot .site-header.sticky .brand-mark__on-light { opacity: 1; }
+.home-minpilot .site-header.sticky .brand-mark__on-dark { opacity: 0; }
+
+@media (max-width: 767px) {
+  .home-minpilot .brand-mark,
+  .home-minpilot .brand-mark img { width: 25px; height: 25px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-minpilot .brand-mark img { transition: none; }
+}
+
+/* 与内页导航等高：非吸顶状态补 1px 透明边框，避免页面切换时 header 高度 98/99 抖动 */
+.home-minpilot .site-header:not(.sticky) { border-bottom: 1px solid transparent !important; }
+
+/* ==========================================================================
+   信任区三条：三张独立卡片（2026-11-13）
+   卡片外观（米色底 / 圆角 / 间距 / 内距）只在这里定义；
+   hover 的渐变填充与文字换色由通用件 fill-hover.css 的 M-09 负责。
+   ========================================================================== */
+.home-minpilot .trust-grid { gap: 18px; }
+.home-minpilot .trust-item.trust-card {
+  display: block;
+  padding: 30px 32px 32px;
+  border: 0;
+  border-radius: 18px;
+  background: #F5F3EB;
+}
+.home-minpilot .trust-item.trust-card + .trust-item.trust-card { margin-top: 0; }
+
+@media (max-width: 800px) {
+  .home-minpilot .trust-grid { gap: 14px; }
+  .home-minpilot .trust-item.trust-card { padding: 24px 24px 26px; border-radius: 16px; }
+}
+@media (max-width: 600px) {
+  .home-minpilot .trust-item.trust-card { padding: 22px 20px 24px; border-radius: 14px; }
 }

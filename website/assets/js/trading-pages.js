@@ -10,13 +10,31 @@
     const choose=index=>{current=index;plans.forEach((plan,i)=>plan.classList.toggle('is-current',i===index));};
     if(plans.length){
       choose(0);
+      const preview=document.querySelector('.trade-account-preview');
       const sections=[...document.querySelectorAll('.trade-account-comparison .acct')];
-      sections.forEach((plan,i)=>{plan.addEventListener('mouseenter',()=>choose(i));plan.addEventListener('focusin',()=>choose(i));});
+      const sectionHost=document.querySelector('.trade-account-comparison');
+      // 指针停在某一档上时锁定该档，离开后恢复自动轮播（计时重新开始）。
+      let hold=null,timer=0;
+      const tick=()=>{
+        if(!preview)return;
+        const bounds=preview.getBoundingClientRect();
+        if(hold===null&&motion()&&bounds.bottom>0&&bounds.top<innerHeight)choose((current+1)%plans.length);
+      };
+      const start=()=>{clearInterval(timer);timer=setInterval(tick,3500);};
+      const release=()=>{if(hold===null)return;hold=null;start();};
+      const bind=(el,i)=>{
+        el.addEventListener('mouseenter',()=>{hold=i;choose(i);});
+        el.addEventListener('focusin',()=>{hold=i;choose(i);});
+      };
+      plans.forEach(bind);
+      sections.forEach(bind);
+      if(preview)preview.addEventListener('mouseleave',release);
+      if(sectionHost)sectionHost.addEventListener('mouseleave',release);
       const io=new IntersectionObserver(entries=>{
         if(entries[0].isIntersecting) choose(current);
       },{threshold:.15});
-      io.observe(document.querySelector('.trade-account-preview'));
-      setInterval(()=>{const bounds=document.querySelector('.trade-account-preview').getBoundingClientRect();if(motion()&&bounds.bottom>0&&bounds.top<innerHeight)choose((current+1)%plans.length);},3500);
+      if(preview)io.observe(preview);
+      start();
     }
 
     const market=document.querySelector('.trade-market-workspace');

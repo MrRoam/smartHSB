@@ -361,33 +361,47 @@
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
-  opacity: 0.64;
+  opacity: 1;
   transition: opacity 0.35s ease;
 }
 
 .intro-portal__reg-list:hover {
-  opacity: 0.92;
+  opacity: 1;
 }
 
 .intro-portal__reg-item {
   position: relative;
-  width: 48px;
-  height: 48px;
+  width: 96px;
+  height: 96px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 8px;
+  padding: 16px;
   margin-left: -8px;
-  background:
-    radial-gradient(circle at 10% 50%, rgba(255, 255, 255, 0.90) 0%, rgba(255, 255, 255, 0.30) 20%, rgba(205, 208, 214, 0) 45%),
-    linear-gradient(135deg, rgba(218, 222, 228, 0.85) 0%, rgba(188, 192, 200, 0.80) 55%, rgba(168, 173, 182, 0.78) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.38);
-  box-shadow:
-    -4px 0 12px rgba(0, 0, 0, 0.45),
-    inset 1.5px 0 4px rgba(255, 255, 255, 0.65);
-  backdrop-filter: blur(6px);
-  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+  background: none;
+  border: none;
+  box-shadow: none;
+  backdrop-filter: none;
+  opacity: 0;
+  transform: translateY(18px) scale(0.72);
+  filter: blur(4px);
+  will-change: transform, opacity, filter;
+  transition:
+    opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.65s cubic-bezier(0.34, 1.56, 0.64, 1),
+    filter 0.5s ease;
+}
+
+.intro-portal__reg-item.is-entered {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+.intro-portal__reg-item.is-entered:hover {
+  transform: translateY(-3px) scale(1.08);
+  z-index: 10;
 }
 
 .intro-portal__reg-item:first-child {
@@ -401,7 +415,7 @@
 
 .intro-portal__reg-item img {
   max-width: 100%;
-  max-height: 22px;
+  max-height: 44px;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -460,13 +474,13 @@
     padding: 0 16px 20px;
   }
   .intro-portal__reg-item {
-    width: 40px;
-    height: 40px;
-    padding: 7px;
+    width: 52px;
+    height: 52px;
+    padding: 9px;
     margin-left: -6px;
   }
   .intro-portal__reg-item img {
-    max-height: 18px;
+    max-height: 24px;
   }
 }
 
@@ -555,9 +569,6 @@
 .site-header:not(.sticky) .desktop-nav > a,
 .site-header:not(.sticky) .nav-trigger {
   color: rgba(241, 245, 249, 0.94);
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0.01em;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.65);
   transition: color 0.2s ease, text-shadow 0.2s ease;
 }
