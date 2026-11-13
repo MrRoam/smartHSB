@@ -1,5 +1,14 @@
 # SmartHSB 执行记录
 
+## 2026-11-13 · 修复保险额度卡片数字压边
+
+- 目标与验收：用户反馈 deposit-withdraw.html 保险额度卡片（`.cert-band .ins-amount`）的 `$1,000,000` 数字压边。
+- 根因：subpages.css 把 `.cert-tile` 从 page.css 的 160px 缩到 135px 且无水平内边距，数字 24px + `white-space:nowrap`（约 129px 宽）几乎顶满卡片。
+- 实施：subpages.css——`.cert-band` 网格列 `160px 1fr` → `180px 1fr`；`.ins-amount` 加 `width:180px;padding:0 16px`；数字字号 24px → 22px。仅作用于此卡片，licenses.html 的 ISO 徽章 tile（135px）不受影响。
+- 缓存版本：34 页 `subpages.css?v=69fce3bd32` → `b3b9b4903e`。
+- 验证：截图核验桌面 1280px 与移动 390px，数字四周留白充足、无裁切无横向溢出。
+- 提交：本地 commit，按用户要求暂不推送 GitHub。
+
 ## 2026-11-13 · 修复内页 CTA 横幅白字不可读
 
 - 目标与验收：用户反馈多个内页 CTA 横幅（「先开模拟账户，选对档位再入金」等）背景过浅且文字为白色，不可读；要求参照首页浅色区（深色文字 + 浅渐变底）统一修复。
