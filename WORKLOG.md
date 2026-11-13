@@ -1,5 +1,19 @@
 # SmartHSB 执行记录
 
+## 2026-11-13 · 新增 M-10 旋转飞入 + 修复 12 页缺失 html.js 引导脚本
+
+- 目标与验收：用户要求关于我们页「监管与合规」六枚机构卡（`.reg-strip .r`）加「图标旋转着飞入」动效。
+- 新增 M-10「旋转飞入」Spin-Fly-In（登记进 docs/handover-20261113/动效规范库.md 入场类表与 about 反查表）：
+  - 新文件 `assets/css/spin-in.css`、`assets/js/spin-in.js`（模式与 M-05 slide-in 一致：组触发一次、motion-off/reduce-motion/无 IO 直落终态、不用 {once:true}、animationName 过滤冒泡）
+  - 参数：卡从右 220px 外飞入 900ms expo.out（与 M-04 一致）；卡内 img 同步 rotate(-360deg) scale(.5)→归位，文字保持正立；变体 `data-sp-dir="left"`（M-10+L）、`data-sp-spin="cw"`（M-10+B）；组错峰 70ms/枚（`data-sp-step` 可覆盖）
+  - `about.html`：`.reg-strip` 加 `.spin-group`，6 个 `.r` 加 `.spin-in`，head/body 挂载 css/js（版本号 1dea1efbc5 / 21bfd66156）
+- **重要根因修复（顺带发现）**：全站动效 CSS 的 `html.js` 作用域依赖根元素 `js` 类，该类由 head 内联脚本 `document.documentElement.className+=" js"` 设置——**只有 23 页有此脚本，12 页缺失**（about/contact/help/news/download/trading-tools/404/customer-complaint/fraud-warning/platform-tutorial/privacy-policy/user-agreement）。缺失页面上 M-05 slide-in、M-06 tilt-up、home-minpilot 的 html.js 规则全部静默失效（动画从未播放，靠回退定时器补 si-done 伪装完成）。已给 12 页补齐同款内联脚本。副作用：这 12 页此前静止的入场动画将开始真实播放，推送前建议做一轮多宽度布局复核。
+- 验证（Playwright 系统 Chrome 通道 + 计算样式采样）：
+  - about.html 补脚本后：触发后 +200ms 卡片 translateX(41px)/op 0.81/图标约 -68° 旋转中 → +600ms 归位 → si-done，expo.out 曲线符合规范
+  - 修复前对照组：si-play 存在但 computed transform 恒为 none（html.js 不匹配，动画未应用），证实根因
+  - 整页终态截图：六卡完整正立、图标彩色正常；JS `node --check` 通过
+- 范围：新增 2 文件 + about.html + 12 页 head 一行内联脚本 + 规范库文档；不推送。
+
 ## 2026-11-13 · 修复保险额度卡片数字压边
 
 - 目标与验收：用户反馈 deposit-withdraw.html 保险额度卡片（`.cert-band .ins-amount`）的 `$1,000,000` 数字压边。

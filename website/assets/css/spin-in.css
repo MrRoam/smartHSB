@@ -1,0 +1,61 @@
+/* ==========================================================================
+   M-10 · 旋转飞入（Spin-Fly-In）
+   规范：docs/handover-20261113/动效规范库.md → M-10
+   用法：<div class="spin-group"> 包住一组 <div class="spin-in">
+   - 卡片从右侧 220px 外带淡入飞入原位（参数与 M-04 一致）：
+     900ms，expo.out = cubic-bezier(0.16, 1, 0.3, 1)
+   - 卡内直接子级 img 图标同步从 rotate(-360deg) scale(.5) 旋转归位，
+     文字保持正立可读；变体 data-sp-spin="cw" 改为顺时针 +360deg
+   - 组内错峰 70ms（可用组上 data-sp-step 覆盖），组触发一次，不 scrub
+   - 默认内容可见；仅播放关键帧时使用起始位移，脚本失效仍可阅读
+   ========================================================================== */
+
+.spin-in {
+  --sp-dur: 900ms;
+  --sp-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --sp-x: 220px;
+  --sp-rot: -360deg;
+}
+
+/* 变体：M-10+L 从左飞入；M-10+B 顺时针旋转 */
+.spin-in[data-sp-dir="left"] { --sp-x: -220px; }
+.spin-in[data-sp-spin="cw"]  { --sp-rot: 360deg; }
+
+/* Resting content is visible. Only an actively playing entrance has a start frame. */
+
+@keyframes spinFlyIn10 {
+  from { opacity: 0; transform: translateX(var(--sp-x)); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes spinIcon10 {
+  from { opacity: 0; transform: rotate(var(--sp-rot)) scale(0.5); }
+  to   { opacity: 1; transform: rotate(0deg) scale(1); }
+}
+
+/* fill-mode:both 让错峰等待期间停在起始态，不靠额外 opacity 规则兜 */
+html.js .spin-in.si-play {
+  animation: spinFlyIn10 var(--sp-dur) var(--sp-ease) both;
+}
+html.js .spin-in.si-play > img {
+  animation: spinIcon10 var(--sp-dur) var(--sp-ease) both;
+}
+
+/* 卡片右外侧飞行可能撑出横向滚动条，在组上裁掉横向溢出；
+   clip 不像 hidden 那样强制另一轴，纵向内容照常溢出可见 */
+html.js .spin-group {
+  overflow-x: clip;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.js .spin-in.si-play,
+  html.js .spin-in.si-play > img { animation: none; }
+}
+
+body.motion-off .spin-in,
+body.motion-off .spin-in.si-play,
+body.motion-off .spin-in.si-play > img {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+}
