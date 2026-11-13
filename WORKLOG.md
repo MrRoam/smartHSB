@@ -1,5 +1,11 @@
 # SmartHSB 执行记录
 
+## 2026-11-13 · fraud-warning 两区块文字宽度对齐页面容器
+
+- 目标与验收：用户要求「官方声明与澄清」声明卡 + 警示条、「HSB 官方公告」正文文字宽度以实际页面宽度为准（撑满 `.wrap`）。验收：三块与容器左右偏差为 0。
+- 实施：去掉 `.quote` / `.note-warn` 的内联 `max-width:900px`；`.prose` 因全局规则 `.internal-site .prose{max-width:820px}`（不改动，他页仍需），本页内联 `max-width:none` 覆写。
+- 结果与证据：1280/390 采样 quote/prose/note 与 wrap 左右偏差均 0、无溢出。仅本地提交，暂不推送。
+
 ## 2026-11-13 · 帮助中心 8 卡 hover 补充浅蓝填充（对齐次按钮 hover 态）
 
 - 目标与验收：用户要求 hover 态除彩虹描边外，补上参考按钮（次按钮 hover）的填充色。验收：hover = 浅蓝填充 + 彩虹描边 + 深色文字，与次按钮 hover 完全一致。
