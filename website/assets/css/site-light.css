@@ -685,6 +685,17 @@
   padding:18px 16px;border:1px solid #DCE7E1;background:#fff;gap:12px;
 }
 .internal-site[data-page="help"] .hc-cat-card.motion-link b {font-weight:500;}
+/* 帮助中心 8 张分类卡：hover 改为次按钮同款彩虹渐变描边（白底双层 background-clip，2026-11-13） */
+.internal-site[data-page="help"] .hc-cat-card.motion-link:is(:hover,:focus-visible) {
+  border:2px solid transparent;
+  background:
+    linear-gradient(#fff,#fff) padding-box,
+    linear-gradient(180deg,#FFEAB5 20%,#F2A85D 40%,#8052E4 60%,#2E85EA 80%,#68EFAE 100%) border-box;
+  box-shadow:none;
+}
+/* motion-link 的 hover 白字规则是给深色填充准备的，白底彩虹边下必须压回深色 */
+.internal-site[data-page="help"] .hc-cat-card.motion-link:is(:hover,:focus-visible) :is(b,.hc-cc-ic) {color:var(--site-ink);}
+.internal-site[data-page="help"] .hc-cat-card.motion-link:is(:hover,:focus-visible) .hc-cc-ic {background:var(--site-surface-blue);}
 /* Document reading stays flat. Only its headings, notes and related links gain accents. */
 .internal-site[data-page] :is(.doc-single,.tutorial-reading) :is(.note-info,.callout:not(.warn)) {
   background:linear-gradient(115deg,#ECF4FF,#ECFFF6);border-color:#C9E2D9;

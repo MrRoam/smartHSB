@@ -1,5 +1,11 @@
 # SmartHSB 执行记录
 
+## 2026-11-13 · 帮助中心 8 张分类卡 hover 改彩虹渐变描边
+
+- 目标与验收：用户要求 help.html 8 张分类导航卡（平台介绍/开户/KYC 认证/入金/交易/出金/账户安全/名词百科）hover 时显示次按钮同款彩虹渐变边（白底），替代原 M-09 深色渐变填充。
+- 实施：8 卡移除 `fill-hover` 类并去掉本页 fill-hover.css 引用（M-09 填充不再触发）；site-light.css help 块新增 hover 规则——双层 background-clip 白底 + 彩虹渐变 border-box（与次按钮完全同色 180deg 五停点），描边 1px→2px。坑：`.motion-link:hover b{color:#fff}` 是给深色填充准备的通用规则，白底下文字会消失，已用更高特异性压回 `--site-ink`、图标底压回 surface-blue。site-light.css 版本号 bump 至 e8437057b1（全站 34 页）。
+- 结果与证据：hover/focus-visible 截图确认彩虹边 + 深色文字 + 图标正常；默认态 8 卡白底细边无残留。仅本地提交，暂不推送。
+
 ## 2026-11-13 · live-quotes 提示行与行情卡左右对齐
 
 - 目标与验收：用户要求提示文字与白色行情卡对齐（此前提示行在外层通用 wrap 1200px，卡片在 workspace 专用 wrap 1112px，左缘差 85px）。验收：三档视口左右偏差为 0。
