@@ -1,5 +1,12 @@
 # SmartHSB 执行记录
 
+## 2026-11-13 · promotions.html 活动安全六卡接入 M-10
+
+- 目标与验收：用户要求优惠活动页「活动安全有保障」监管六卡（`.reg-strip`）按 about.html 同样方式接入 M-10 旋转飞入。
+- 实施：`.reg-strip` 加 `.spin-group`、6 个 `.r` 加 `.spin-in`；head 挂 `spin-in.css?v=1dea1efbc5`、body 挂 `spin-in.js?v=21bfd66156`。全站 `.reg-strip` 仅 about / promotions 两处，均已接入。
+- 验证：计算样式采样——触发后中间帧 op 0.84 / translateX(36px) / 图标约 -52° 旋转中，终态 6 卡全部 si-done 归位。
+- 提交：本地 commit，暂不推送。
+
 ## 2026-11-13 · 新增 M-10 旋转飞入 + 修复 12 页缺失 html.js 引导脚本
 
 - 目标与验收：用户要求关于我们页「监管与合规」六枚机构卡（`.reg-strip .r`）加「图标旋转着飞入」动效。
