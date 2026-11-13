@@ -1,0 +1,19 @@
+/* ==========================================================================
+   M-03 · 滚动展开（Scroll-Unfold）· 标准宽度型（对照规范 M-03）
+   - 与 M-03+C（clip-path 内容型）的区别：本版动画「宽度 0→100%」，
+     卡片边框随宽度一同从中心向两侧生长，观感为实体卡片展开
+   - 内层 .m3w-body 宽度由 JS 一次性锁定为最终像素宽，
+     展开过程中文字零重排（中心两侧对称裁切）
+   - 触发节奏：start = 顶边贴视口底；end = 30% 线贴视口中线；
+     scrub 0.8s；clamp 0%/100%；双向可逆
+   - 关闭态：JS 写入 inline width；脚本失效 / 减弱动效时照常完整显示
+   ========================================================================== */
+
+.js-m3w { overflow: hidden; margin-left: auto; margin-right: auto; display: flex; justify-content: center; }
+.js-m3w > .m3w-body { flex: 0 0 auto; width: 100%; }
+
+@media (prefers-reduced-motion: reduce) {
+  .js-m3w { width: 100% !important; }
+}
+
+body.motion-off .js-m3w { width: 100% !important; }
