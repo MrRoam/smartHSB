@@ -48,6 +48,10 @@
 .internal-site .step h3,.internal-site .step h4{font-weight:500;font-size:16px}.internal-site .step p{font-size:12px;line-height:1.9;color:var(--site-muted)}
 .internal-site .note{border:1px solid var(--site-line);border-radius:6px;background:var(--site-surface-blue);color:var(--site-muted);padding:17px 20px;font-size:12px;line-height:1.9}.internal-site .note-warn{background:#f2f1ed;border-color:#e5e0d5;color:#635c4c}
 .internal-site .cert-band{background:#fff;border:1px solid var(--line);border-radius:8px;box-shadow:none;padding:30px;gap:36px;grid-template-columns:180px 1fr}.internal-site .cert-band .s-lead{font-size:13px}.internal-site .cert-band .cert-tile{width:135px;height:135px}.internal-site .cert-band .ins-amount{background:var(--site-surface-blue);color:var(--site-ink);border-color:var(--site-line);border-radius:8px;width:180px;padding:0 16px}.internal-site .cert-band .ins-amount b{font-size:22px}
+.internal-site .cert-band .ins-logos{grid-column:1/-1;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding-top:20px;border-top:1px solid var(--site-line)}
+.internal-site .cert-band .ins-logos .ins-label{font-size:12px;color:var(--site-muted);letter-spacing:.02em}
+.internal-site .cert-band .ins-logos .ins-chip{display:inline-flex;align-items:center;height:44px;background:var(--site-surface-blue);border:1px solid var(--site-line);border-radius:8px;padding:0 14px}
+.internal-site .cert-band .ins-logos .ins-chip img{height:24px;width:auto;display:block}
 .internal-site .faq-item{border:0;border-bottom:1px solid var(--line);border-radius:0;background:none;box-shadow:none;margin-bottom:0}
 .internal-site .faq-q{padding:22px 0;font-size:14px;font-weight:400;color:var(--site-ink);line-height:1.8;gap:20px;text-align:left}.internal-site .faq-q svg{flex-shrink:0}
 .internal-site .faq-a{padding:0 20px 22px 0;font-size:13px;color:var(--site-muted);line-height:1.95}.internal-site .faq-a a{color:var(--site-blue);text-underline-offset:3px}
