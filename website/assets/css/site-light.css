@@ -685,11 +685,11 @@
   padding:18px 16px;border:1px solid #DCE7E1;background:#fff;gap:12px;
 }
 .internal-site[data-page="help"] .hc-cat-card.motion-link b {font-weight:500;}
-/* 帮助中心 8 张分类卡：hover 改为次按钮同款彩虹渐变描边（白底双层 background-clip，2026-11-13） */
+/* 帮助中心 8 张分类卡：hover 为次按钮同款彩虹渐变描边 + 浅蓝填充（双层 background-clip，2026-11-13） */
 .internal-site[data-page="help"] .hc-cat-card.motion-link:is(:hover,:focus-visible) {
   border:2px solid transparent;
   background:
-    linear-gradient(#fff,#fff) padding-box,
+    linear-gradient(var(--site-surface-blue),var(--site-surface-blue)) padding-box,
     linear-gradient(180deg,#FFEAB5 20%,#F2A85D 40%,#8052E4 60%,#2E85EA 80%,#68EFAE 100%) border-box;
   box-shadow:none;
 }

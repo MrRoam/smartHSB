@@ -1,5 +1,11 @@
 # SmartHSB 执行记录
 
+## 2026-11-13 · 帮助中心 8 卡 hover 补充浅蓝填充（对齐次按钮 hover 态）
+
+- 目标与验收：用户要求 hover 态除彩虹描边外，补上参考按钮（次按钮 hover）的填充色。验收：hover = 浅蓝填充 + 彩虹描边 + 深色文字，与次按钮 hover 完全一致。
+- 实施：site-light.css help 块 hover 规则第一层 padding-box 由 `#fff` 改为 `var(--site-surface-blue)`（次按钮 hover 同款变量）；图标底色本就是 surface-blue，无需改。site-light.css 版本号 bump 至 aefa8695f2（全站 34 页）。
+- 结果与证据：hover 截图确认「出金」卡浅蓝填充 + 彩虹边 + 深色文字清晰；默认态不受影响。仅本地提交，暂不推送。
+
 ## 2026-11-13 · 帮助中心 8 张分类卡 hover 改彩虹渐变描边
 
 - 目标与验收：用户要求 help.html 8 张分类导航卡（平台介绍/开户/KYC 认证/入金/交易/出金/账户安全/名词百科）hover 时显示次按钮同款彩虹渐变边（白底），替代原 M-09 深色渐变填充。
