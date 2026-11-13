@@ -1,5 +1,11 @@
 # SmartHSB 执行记录
 
+## 2026-11-13 · Real 账户卡改用彩虹渐变描边
+
+- 目标与验收：用户要求把次按钮的彩虹渐变边框应用到「真实账户（Real）」卡的边框，且比按钮更亮丽。验收：渐变贴合 12px 圆角、Demo 卡不受影响、内容清晰。
+- 实施：subpages.css 内页主题层新增 `.internal-site .cmp.real` 覆写——双层 background-clip（白底 padding-box + 渐变 border-box，边框透明）保住圆角（border-image 不走圆角所以不用）；渐变取按钮同款五色相（黄→橙→紫→蓝→绿）整体提亮加饱和：`#FFDE59/#FF9A4D/#9A5CF0/#2E9BF0/#4BEFAE`，方向 160deg 对角，描边 1.5px→2px。34 页 subpages.css 版本号 bump 至 e26733b441。
+- 结果与证据：截图确认渐变边贴合圆角、Demo 卡与卡内内容不受影响；`.cmp.real` 全站仅 account-real.html 一处使用，无外溢。仅本地提交，暂不推送。
+
 ## 2026-11-13 · account-real「真实账户支持」四卡接入 M-05
 
 - 目标与验收：用户指定「HSB 为真实账户提供的支持」区四张 kv 卡（专属促销/账户等级/积分与奖励/1对1导师课）按 M-05 方位移入处理。

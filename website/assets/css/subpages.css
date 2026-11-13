@@ -85,3 +85,6 @@
 /* FAQ 只修 gap bug：内页复用首页 .faq-grid 类名，column-home.css 的 .9fr/1.1fr + gap:80px 会串到内页 */
 .internal-site .faq-grid{gap:24px 40px;grid-template-columns:1fr 1fr}
 @media(max-width:1024px){.internal-site .faq-grid{grid-template-columns:1fr;gap:16px}}
+
+/* Real 账户卡：次按钮同款彩虹渐变描边（提亮加饱和版，对角方向），双层 background-clip 保圆角 */
+.internal-site .cmp.real{border:2px solid transparent;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(160deg,#FFDE59 12%,#FF9A4D 32%,#9A5CF0 54%,#2E9BF0 76%,#4BEFAE 94%) border-box;box-shadow:none}
