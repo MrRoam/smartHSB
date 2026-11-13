@@ -1,5 +1,15 @@
 # SmartHSB 执行记录
 
+## 2026-11-13 · 修复内页 CTA 横幅白字不可读
+
+- 目标与验收：用户反馈多个内页 CTA 横幅（「先开模拟账户，选对档位再入金」等）背景过浅且文字为白色，不可读；要求参照首页浅色区（深色文字 + 浅渐变底）统一修复。
+- 根因：`style.css` 基础样式 `.cta-banner` 为深蓝底白字（`color:#fff` 在容器上）；此前改版在 `site-light.css` 仅覆写背景为浅色渐变 `#EAF1FF→#E7FFF4→#F4FFE5`，未覆写文字色，白字落在近白底上。
+- 实施：`site-light.css` 的 `.internal-site[data-page] .cta-banner` 一组规则补齐——容器 `color:var(--ink)` + 1px `--site-line` 描边；`h2` 深墨色；`p` 改 `--site-muted` 并去掉 0.82 透明度；`::after` 装饰光斑由白色改为淡蓝 `rgba(35,93,254,.10)`。共 34 个内页生效（含 download.html 的 `.lite` 变体，文字同为深色，一并统一）。
+- 缓存版本：34 个引用 `site-light.css` 的页面版本号 `08fd13c0a7` → `453d0b6567`（git hash-object 前 10 位）。
+- 验证：`git diff --check` 通过；Playwright（系统 Chrome 通道）整页截图抽查 `account-types.html` 与 `deposit-withdraw.html`，横幅标题/副标题均为深色、清晰可读，浅渐变底与右侧渐变按钮正常；未动首页（首页不引用 site-light.css）。
+- 范围：仅 `website/assets/css/site-light.css` 与 34 个内页 HTML 的版本号替换，无业务内容改动。
+- 下一步：提交、整合远端、推送 main 并跟踪本次 Pages 部署，核验公开页面。
+
 ## 2026-11-13 · 接续交接版的全站视觉与动效优化
 
 - 目标与验收：先拉取另一位作者的最新版本，以新版首页与账户类型页为基准，优化其余页面的文字、卡片、悬停与渐变；保留所有文字、数字、链接和内容顺序。完成五档响应式、关键交互、动效开关、减少动效及无脚本检查后发布。

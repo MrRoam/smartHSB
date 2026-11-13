@@ -714,7 +714,11 @@
 }
 .internal-site[data-page="trading-tools"].js-motion .tool-scene.motion-visible>i {animation:toolSweep 4.8s var(--ease) infinite;}
 @keyframes toolSweep {0%,20%{transform:translateX(-120%)}75%,100%{transform:translateX(120%)}}
-.internal-site[data-page] .cta-banner {background:linear-gradient(115deg,#EAF1FF,#E7FFF4 78%,#F4FFE5);}
+/* CTA 横幅：浅色渐变底 + 深色文字（style.css 基础样式为深蓝底白字，此处浅底必须覆写文字色，否则白字不可读） */
+.internal-site[data-page] .cta-banner {background:linear-gradient(115deg,#EAF1FF,#E7FFF4 78%,#F4FFE5);color:var(--ink);border:1px solid var(--site-line);}
+.internal-site[data-page] .cta-banner h2 {color:var(--ink);}
+.internal-site[data-page] .cta-banner p {color:var(--site-muted);opacity:1;}
+.internal-site[data-page] .cta-banner::after {background:radial-gradient(circle,rgba(35,93,254,.10),transparent 65%);}
 .internal-site[data-page] .faq-item {transition:background-color 220ms;}
 .internal-site[data-page] .faq-item:focus-within {background:#F0FAF6;}
 @media (hover:hover) and (pointer:fine) {
