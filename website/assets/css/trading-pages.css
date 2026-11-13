@@ -76,3 +76,12 @@ body.motion-off .trade-route-live,body.motion-off .trade-demo-chart path{animati
 /* 同意条款勾选框：表单内 input 统一 min-height:46px 会把 checkbox 拉高、勾选框掉到文字下方 */
 .internal-site.page-demo .field label.check{display:flex;align-items:flex-start;gap:9px;min-height:0;font-size:12.5px;line-height:1.7}
 .internal-site.page-demo .field label.check input[type=checkbox]{width:16px;height:16px;min-height:0;max-height:16px;flex:0 0 16px;margin:3px 0 0;padding:0;border:0;border-radius:2px}
+
+/* live-quotes 行情卡下方的跳转提示：不再用 note 信息框，直接以灰字置于白卡下方 */
+.internal-site.trading-family .mkt-links-note{font-size:12px;color:var(--site-muted);line-height:1.9;margin:0}
+.internal-site.trading-family .mkt-links-note .link{color:var(--site-green);font-weight:600;text-decoration:none}
+
+/* 提示行与白卡的贴合偏移：桌面更深，窄屏分区 padding 不同需减小 */
+.mkt-links-wrap{margin-top:-80px;position:relative;z-index:2}
+@media(max-width:1024px){.mkt-links-wrap{margin-top:-72px}}
+@media(max-width:600px){.mkt-links-wrap{margin-top:-44px}}
