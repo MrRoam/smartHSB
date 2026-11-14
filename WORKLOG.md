@@ -1,5 +1,10 @@
 # SmartHSB 执行记录
 
+## 2026-11-14 · 财经日历页：事件区改白 + 表格极光底框 + 使用说明区改灰
+
+- trade-calendar-workspace 背景改白；列表/周视图两个 .tbl-wrap 各外包 .cal-aurora 极光底框（同行情表语言，白表 14px 圆角去边框），周视图提示行在底框外；「如何使用财经日历」inline style 改 #F6F6F6 灰块。site-light.css bump c623458c71，提交 abab1d5。
+- 验证：桌面全页截图——事件区白、极光框内表格正常、灰块 1940–2450px 精确覆盖使用说明区、FAQ 白、页脚灰，层次分明；390px 无横向溢出、表格在框内正常滚动。仅本地提交，暂不推送。
+
 ## 2026-11-14 · 实时报价页大背景改白
 
 - 用户要求页面大背景改白色。page-hero 与 trade-market-workspace 原 --site-surface-blue(#EEF5FF) 改白，表头/徽章/hover 点缀色不动；页脚 #F6F6F6 全站统一背景保留。site-light.css bump f7540896b8，提交 0433c6f。
