@@ -85,7 +85,7 @@
 .home-minpilot .stats strong span:not(.stat-num) { font-size: 14px; margin-left: 4px; color: var(--muted); }
 .home-minpilot .stats p { font-size: 14px; margin-top: 7px; }
 .home-minpilot .platform { position: relative; isolation: isolate; overflow: clip; background: #fff; }
-.home-minpilot .platform::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(118deg,#E9F2FF 0%,#E3F5F1 46%,#DFF8EB 100%); }
+.home-minpilot .platform::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(102deg,#FFFFFF 0%,#FFFFFF 30%,#F4FAF8 48%,#E9F5F3 64%,#DFF8EB 84%,#D8F4E7 100%); }
 .home-minpilot .platform-grid { display: grid; grid-template-columns: 1fr 1.12fr; align-items: center; gap: 72px; padding-block: 112px 90px; }
 .home-minpilot .platform-copy > p { margin-top: 24px; color: var(--muted); font-size: 18px; }
 .home-minpilot .platform-copy h3 { font-size: 18px; letter-spacing: -.02em; margin: 28px 0 8px; }
@@ -397,7 +397,7 @@
 .home-minpilot .phone {width:300px}
 .home-minpilot .platform-float {left:6px;bottom:55px}
 .home-minpilot .platform-insight {right:0;top:30px}
-.home-minpilot .platform::before {background:linear-gradient(118deg,#E9F2FF 0%,#E3F5F1 46%,#DFF8EB 100%)}
+.home-minpilot .platform::before {background:linear-gradient(102deg,#FFFFFF 0%,#FFFFFF 30%,#F4FAF8 48%,#E9F5F3 64%,#DFF8EB 84%,#D8F4E7 100%)}
 .home-minpilot .market-panel {grid-template-columns:1fr;gap:26px}
 .home-minpilot .instrument-list {max-height:320px}
 .home-minpilot .trust-layout, .home-minpilot .faq-grid {grid-template-columns:1fr;gap:38px}
