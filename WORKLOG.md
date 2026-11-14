@@ -1,5 +1,12 @@
 # SmartHSB 执行记录
 
+## 2026-11-14 · 正文序号徽章放大（用户反馈偏小）
+
+**实施**：.prose h2 i 徽章 26×26/12.5px → **32×32/14.5px**（radius 9、margin-right 13、vertical-align 3px），600px 以下收为 28×28/13px；侧栏菜单序号 9px → 10.5px（subpages.css 与 platform-pages.css 两处）。覆盖全部 13 个带序号页（含原有的 user-agreement/privacy-policy）。
+
+**验证**：桌面/390 截图核对徽章与标题比例协调；35 页×3 档零溢出零 JS 错。
+- bump：subpages 1aed9d1544(34 页)、platform-pages 57fd6856a7(7 页)；page.css 无版本号直接生效。
+
 ## 2026-11-14 · 知识中心/平台教程等 11 页正文标题补「数字+绿底」序号徽章（对齐条款与条件页）
 
 **目标**：参照 user-agreement / privacy-policy 的展示（左侧 chp-nav 菜单 01/02/03…，正文 h2 前有同号「数字+绿底」徽章），补齐其余带侧栏序号导航页面的正文徽章，实现左右对应。
