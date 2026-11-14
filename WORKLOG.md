@@ -1,5 +1,11 @@
 # SmartHSB 执行记录
 
+## 2026-11-14 · 四个教程页左侧目录统一白底、悬停浅绿
+
+- 范围：tutorial-install / tutorial-open / tutorial-manage / tutorial-trade（安装/开户/账户管理/交易操作指南）。这些页侧栏是 `.tutorial-index .chp-nav .chp-in`，与隐私政策的 `.reading-sidebar` 结构不同，此前非激活项被全局规则染成浅蓝灰。
+- 实施：site-light.css 把上轮侧栏规则扩展覆盖 `.tutorial-index .chp-in a`（白底深灰字、激活项深墨加粗、悬停浅绿 #E8FFF4）；另因 platform-pages.css 有 `.chp-nav` 五类 !important 透明底规则，补一条更高优先级 `.tutorial-index .chp-nav .chp-in a:is(.on,.active,[aria-current]){background:#fff!important}`。版本 bump 5c2f319930。
+- 验证：四页采样背景集合仅白色一种、激活项白底；悬停浅绿 + 绿字。仅本地提交，暂不推送。
+
 ## 2026-11-14 · learn-risk 风险管理四步骤卡文字压边修复
 
 - 根因：内页主题把 `.step` 改为上下 25px、左右 0 padding（无边框顶线风格），而阅读页 `.doc-single .prose .step` 又带浅灰底 #f8fafc，导致文字直接贴住左右边缘。

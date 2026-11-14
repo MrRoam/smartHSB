@@ -704,10 +704,15 @@
 .internal-site[data-page] .motion-heading {text-wrap:balance;}
 .internal-site[data-page] .chp-nav a {transition:background-color 220ms,color 220ms;}
 .internal-site[data-page] .chp-nav a:is(:hover,:focus-visible) {background:#E8FFF4;color:#006C45;}
-/* 阅读页竖排侧栏：全部白底深字，当前章节加粗，悬停浅绿（仅限侧栏，不影响顶部胶囊导航） */
-.internal-site[data-page] .reading-sidebar .chp-in a {background:#fff !important;color:var(--site-muted);}
-.internal-site[data-page] .reading-sidebar .chp-in a:is(.on,.read-active) {color:var(--site-ink) !important;box-shadow:none;font-weight:600;}
-.internal-site[data-page] .reading-sidebar .chp-in a:is(:hover,:focus-visible) {background:#E8FFF4 !important;color:#006C45 !important;}
+/* 阅读页竖排侧栏 + 教程页左侧目录：全部白底深字，当前章节加粗，悬停浅绿（不影响顶部胶囊导航） */
+.internal-site[data-page] .reading-sidebar .chp-in a,
+.internal-site[data-page] .tutorial-index .chp-in a {background:#fff !important;color:var(--site-muted);}
+.internal-site[data-page] .reading-sidebar .chp-in a:is(.on,.read-active),
+.internal-site[data-page] .tutorial-index .chp-in a:is(.on,.active,[aria-current]) {color:var(--site-ink) !important;box-shadow:none;font-weight:600;}
+/* 压过 platform-pages 的 .chp-nav 五类 !important 透明底规则 */
+.internal-site[data-page] .tutorial-index .chp-nav .chp-in a:is(.on,.active,[aria-current]) {background:#fff !important;}
+.internal-site[data-page] .reading-sidebar .chp-in a:is(:hover,:focus-visible),
+.internal-site[data-page] .tutorial-index .chp-in a:is(:hover,:focus-visible) {background:#E8FFF4 !important;color:#006C45 !important;}
 .internal-site[data-page] .stat-row .stat {border-radius:12px;background:linear-gradient(135deg,#EEF5FF,#F1FFF7);padding:24px;}
 .internal-site[data-page] .stat-row .stat .n {color:#006C45;}
 /* Small illustrations reuse existing SVG paths. They never imply live market data. */
