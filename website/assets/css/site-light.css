@@ -780,3 +780,14 @@
   .internal-site[data-page] .motion-card :is(.ic-ic,.f-ic,.cc-ic) {translate:none;rotate:none;}
   .internal-site[data-page] .tool-scene>i {display:none;}
 }
+
+/* 交易工具页 · 工具三卡外层极光底带（2026-11-14，对齐账户类型页三种账户卡语言）
+   容器铺 aurora-mesh.svg，18px 缝 + 22px 外沿露出彩色；卡内渐变底、扫光动效均不变 */
+.internal-site[data-page="trading-tools"] .tool-directory {
+  padding:18px;gap:16px;border-radius:20px;border:0;
+  background-color:#F3F4F6;
+  background-image:url(../img/aurora-mesh.svg);
+  background-size:108% auto;background-position:50% 52%;
+  box-shadow:0 40px 70px -50px rgba(16,24,40,.45);
+}
+.internal-site[data-page="trading-tools"] .tool-directory>.icard {margin-bottom:0;}

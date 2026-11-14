@@ -1,5 +1,10 @@
 # SmartHSB 执行记录
 
+## 2026-11-14 · trading-tools 工具三卡外层加极光底带
+
+- 用户要求按账户类型页定价卡样式给交易工具三卡加底色，原动效不变。实施：site-light.css 追加 `.tool-directory` 容器铺 aurora-mesh.svg（与账户类型页同一张图、108% 铺法、20px 圆角、40px 投影、18px 缝），卡内渐变底/扫光动效/slide-in 均不动；icard 原余量 margin-bottom 清零由容器 gap 16px 接管。版本 bump 77030e612f。
+- 验证：截图确认极光带生效、缝隙露彩色、卡内清晰；无横向溢出。仅本地提交，暂不推送。
+
 ## 2026-11-14 · 四个教程页左侧目录统一白底、悬停浅绿
 
 - 范围：tutorial-install / tutorial-open / tutorial-manage / tutorial-trade（安装/开户/账户管理/交易操作指南）。这些页侧栏是 `.tutorial-index .chp-nav .chp-in`，与隐私政策的 `.reading-sidebar` 结构不同，此前非激活项被全局规则染成浅蓝灰。
