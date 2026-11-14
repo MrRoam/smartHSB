@@ -805,6 +805,8 @@
    只画线（non-scaling-stroke 保 1px），任何宽度都与节点中心精确对齐
    ========================================================================== */
 @keyframes routeTransfer{0%{stroke-dashoffset:340;opacity:0}15%{opacity:1}85%{opacity:1}100%{stroke-dashoffset:-340;opacity:0}}
+/* 卡片上下白色留白减半：96px → 48px（2026-11-14 用户反馈） */
+.internal-site[data-page="download"] .dl-steps-sec {padding-block:48px;}
 .internal-site[data-page="download"] .dl-route {
   position:relative;isolation:isolate;overflow:hidden;
   border-radius:20px;border:1px solid var(--line);
