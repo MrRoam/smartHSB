@@ -901,6 +901,31 @@ body.motion-off .internal-site[data-page="download"] .dl-route-live {animation:n
 }
 
 /* ==========================================================================
+   交易品种页（2026-11-14）：对齐实时报价页风格
+   1) 品种明细与参数区大背景 浅蓝 → 白（hero 同步）
+   2) 搜索工具栏 + 分类 tabs + 4 张品种表包 .spec-aurora 极光底框，
+      内层 .spec-card 白卡承装（对齐实时报价 .mkt 白卡语言）
+   3) tabs 选中态由柠檬绿改为实时报价同款「深墨下划线」
+   ========================================================================== */
+.internal-site[data-page="products"] .page-hero,
+.internal-site[data-page="products"] .trade-market-workspace {background:#fff;}
+.internal-site[data-page="products"] .spec-aurora {margin-top:56px;--aurora-pad:24px;}
+.internal-site[data-page="products"] .spec-card {background:#fff;border-radius:14px;overflow:hidden;}
+.internal-site[data-page="products"] .spec-card .trade-market-toolbar {margin:22px 24px 0;}
+.internal-site[data-page="products"] .spec-card .tabs.light {margin:0 24px 28px;background:transparent;border:0;padding:0;display:flex;gap:24px;border-bottom:1px solid var(--site-line);border-radius:0;overflow-x:auto;}
+.internal-site[data-page="products"] .spec-card .tabs.light .tab {background:transparent;border:0;border-bottom:2px solid transparent;border-radius:0;color:var(--site-muted);padding:15px 3px;font-size:13px;box-shadow:none;white-space:nowrap;}
+.internal-site[data-page="products"] .spec-card .tabs.light .tab:hover {color:var(--site-ink);border-bottom-color:transparent;}
+.internal-site[data-page="products"] .spec-card .tabs.light .tab.on {background:transparent;border-bottom-color:var(--site-ink);color:var(--site-ink);box-shadow:none;}
+.internal-site[data-page="products"] .spec-card .tab>span {font-size:9px;background:var(--site-surface-blue);color:var(--site-muted);border-radius:3px;padding:2px 5px;}
+.internal-site[data-page="products"] .spec-card .tab-panel.active {animation:tradePanel .4s cubic-bezier(.1,0,.1,1);}
+.internal-site[data-page="products"] .spec-card .tbl-wrap {background:transparent;border:0;border-radius:0;box-shadow:none;}
+@media (max-width:600px) {
+  .internal-site[data-page="products"] .spec-aurora {--aurora-pad:14px;}
+  .internal-site[data-page="products"] .spec-card .trade-market-toolbar {margin:17px 17px 0;}
+  .internal-site[data-page="products"] .spec-card .tabs.light {margin:0 17px 22px;gap:22px;}
+}
+
+/* ==========================================================================
    卡片 hover 全站统一（2026-11-14，走查 P1-6）
    一种语言：2px 彩虹渐变描边 + 浅蓝填充，零位移、零阴影、零缩放。
    - 描边用 ::before + mask 遮罩绘制（padding:2px 只留边缘），不占布局，

@@ -1,5 +1,18 @@
 # SmartHSB 执行记录
 
+## 2026-11-14 · 交易品种页「品种明细与参数」对齐实时报价页风格
+
+**目标**：products.html 品种明细模块按 live-quotes「全量行情」模块语言重做——表格加极光底色框、模块大背景改白。
+
+**根因/现状**：该模块原为浅蓝大底（--site-surface-blue）上直接铺 tabs + 白色 tbl-wrap（方角、底部分割线），与实时报价页「白区 + 极光框 + 白卡」语言不一致；且 tabs 选中态被 site-light 的柠檬绿规则（同权重后加载）压过 trading-pages 的下划线规则。
+
+**实施**
+- products.html：搜索工具栏 + tabs + 4 张品种表 tab-panel 包进 `.spec-aurora.aurora-frame`，内层再包 `.spec-card` 白卡（对齐实时报价 .mkt 白卡语言）；保证金说明 note 保持框外。
+- site-light.css 新增 products 作用域段：页面大背景改白；`.spec-card` 白卡 14px 圆角 + overflow hidden；工具栏/tabs 左右 24px 内边距；`.tbl-wrap` 去边框方角改透明白；tabs 选中态覆写为「深墨下划线」（0,5,0 胜出柠檬绿规则）；tab 计数徽章改浅蓝底；600px 断点 pad 14px / 边距 17px。
+- bump：site-light.css v=1acf72624b（34 页）。
+
+**验证**：桌面 1440 与移动 390 截图核对（极光框、白卡、下划线 tabs、浅蓝表头均正确）；搜索过滤「显示 1 / 2 个品种」、tab 切换 forex 正常、零 JS 错；全站 35 页 × 1440/768/390 零溢出。
+
 ## 2026-11-14 · 走查 P1 批量收口：主按钮 / 表头 / 卡片 hover（P1-4/5/6，P1-7 上午已完成）
 
 - **P1-4 主按钮**：实测全站 32 页 `.btn-primary` 本就统一为蓝绿渐变（走查报告误判——site-light.css 里柠檬绿规则在第 148 行渐变规则之前，同权重被覆盖）。本轮删除柠檬绿死规则（#BFFF37+深字+hover 位移）与 `cta-band` 蓝色死规则（类名全站无使用，改指 .btn 同渐变）。柠檬绿仅保留 tabs 选中态等标签用途。
