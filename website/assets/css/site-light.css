@@ -882,3 +882,8 @@ body.motion-off .internal-site[data-page="download"] .dl-route-live {animation:n
 @media (max-width:600px) {
   .internal-site[data-page="live-quotes"] .mkt-aurora {padding:14px;}
 }
+
+/* 实时报价页 · 页面大背景改白色（2026-11-14）：hero 与行情工作区原本是
+   --site-surface-blue 浅蓝，改白；表头/徽章/hover 等局部点缀色不动 */
+.internal-site[data-page="live-quotes"] .page-hero,
+.internal-site[data-page="live-quotes"] .trade-market-workspace {background:#fff;}
