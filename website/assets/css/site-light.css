@@ -866,3 +866,19 @@ body.motion-off .internal-site[data-page="download"] .dl-route-live {animation:n
 @media (prefers-reduced-motion:reduce) {
   .internal-site[data-page="download"] .dl-route-live {animation:none!important;stroke-dashoffset:0;}
 }
+
+/* ==========================================================================
+   实时报价页 · 行情表外层极光底框（2026-11-14，对齐账户类型页/交易工具页语言）
+   .mkt 白卡外包 .mkt-aurora：aurora-mesh.svg 底、24px 内边距、20px 圆角、同款投影
+   ========================================================================== */
+.internal-site[data-page="live-quotes"] .mkt-aurora {
+  margin-top:56px;padding:24px;border-radius:20px;
+  background-color:#F3F4F6;
+  background-image:url(../img/aurora-mesh.svg);
+  background-size:170% auto;background-position:50% 45%;
+  box-shadow:0 40px 70px -50px rgba(16,24,40,.45);
+}
+.internal-site[data-page="live-quotes"] .mkt {margin-top:0;border-radius:14px;}
+@media (max-width:600px) {
+  .internal-site[data-page="live-quotes"] .mkt-aurora {padding:14px;}
+}
