@@ -1,5 +1,13 @@
 # SmartHSB 执行记录
 
+## 2026-11-14 · hero-ticker / 页脚点阵补 reduced-motion（走查报告 P0-3）
+
+- 排查结论：`world-points.js` 实为纯点阵坐标数据（无任何动画代码），走查报告判为缺失属误报；真正的绘制与动效控制在 `column-home.js` 的 `pointMap()`，彼处 `motion` 判定（系统 reduce / body.motion-off）早已完备。仅在 world-points.js 头部补职责注释，防止下次误判。
+- 实际缺口在 `hero-ticker.js` + `site-light.css`：内页 hero 提示条此前只依赖 CSS 的 `@media (prefers-reduced-motion)` 静态规则，JS 仍测量宽度并写入 `--ticker-*`；且页内动效开关（body.motion-off，subpages.js 分发）关闭后提示条仍会滚动。
+- 修复：hero-ticker.js 重写 layout——系统 reduce 或 body.motion-off 时移除 `--ticker-from/to/dur` 与 `is-static`，交给 CSS 静态居中；监听 `prefers-reduced-motion change` 与 `smarthsb-motion-change` 事件，开关切换即时恢复/静止。site-light.css 新增 `.internal-site.motion-off .hero-ticker__track{animation:none;width:100%;justify-content:center}`（与系统 reduce 规则同构）。
+- 验证（Playwright 双上下文实测）：reduce → animation none、0 帧重绘、提示条居中完整无裁切、`--ticker-from` 为空；no-preference → tickerSlide 正常滚动（约 45px/s）；手动点动效开关 → 立即静止（animation none）。页脚点阵 reduce 下 0 帧、no-preference 下 31fps，符合预期。
+- 版本：hero-ticker.js bump af7d5c4baf（34 页）、site-light.css bump 847bf4767b（34 页），仅本地提交。
+
 ## 2026-11-14 · 首页 M-06 倾斜横向溢出修复（走查报告 P0-1）
 
 - 问题实测：1440/1280/1024 视口 docScroll 各超出 137/142/131px（768 超出 172），源自 M-06 倾斜中间态把 1280 宽卡片撑到约 1714；此前靠 `html.js{overflow-x:hidden}` 兜底，滚动条虽隐藏但内容尺寸仍超宽，且劫持根滚动容器。

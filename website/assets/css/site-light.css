@@ -284,6 +284,13 @@
   .internal-site .hero-ticker__track { animation: none; width: 100%; justify-content: center; }
 }
 
+/* 页内动效开关关闭（body.motion-off）时与系统「减少动效」同样处理：静止居中 */
+.internal-site.motion-off .hero-ticker__track {
+  animation: none;
+  width: 100%;
+  justify-content: center;
+}
+
 /* 文字比条宽时改为居中静止，避免小幅抖动 */
 .internal-site .hero-ticker.is-static .hero-ticker__track {
   left: 50%;
