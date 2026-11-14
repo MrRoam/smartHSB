@@ -1,5 +1,11 @@
 # SmartHSB 执行记录
 
+## 2026-11-14 · 首页 M-06 倾斜横向溢出修复（走查报告 P0-1）
+
+- 问题实测：1440/1280/1024 视口 docScroll 各超出 137/142/131px（768 超出 172），源自 M-06 倾斜中间态把 1280 宽卡片撑到约 1714；此前靠 `html.js{overflow-x:hidden}` 兜底，滚动条虽隐藏但内容尺寸仍超宽，且劫持根滚动容器。
+- 修复：裁切改放 `.markets` 整幅区块 `overflow-x:clip`（边界=屏幕边缘，圆角不被切）；移除 html 级 hidden 与 ≤767px 的 `.tilt-stage` clip 兜底；tilt-up.css 顶部写明裁切位置约定。
+- 验证：四档宽度 docScroll 全部归位且不可横向滚动；全站 35 页 × 4 档复检零溢出；倾斜中间态截图两侧自然出画无切边。tilt-up.css bump 4f15f22f6a / home-minpilot 0b27a33716，提交 51d4ca4，仅本地。
+
 ## 2026-11-14 · 极光底框收口为 .aurora-frame 通用类（走查报告 4.1）
 
 - site-motion.css 新增 `.aurora-frame` 通用件（35 页共享），底框全部参数化为 `--aurora-bg/image/size/pos/pad/radius/shadow` 七个变量，全站唯一实现；39 处底框（6 处定制框 + 32 处 M-07 motion-aurora）挂类、删除各自复制粘贴的背景/内边距/圆角/投影声明，只留变量覆盖；媒体查询断点同步改变量。
