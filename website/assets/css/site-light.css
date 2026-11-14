@@ -704,7 +704,7 @@
 .internal-site[data-page] :is(.doc-single,.tutorial-reading) :is(.note-info,.callout:not(.warn)) {
   background:linear-gradient(115deg,#ECF4FF,#ECFFF6);border-color:#C9E2D9;
 }
-.internal-site[data-page] .doc-sec>h2>i {background:#E8F8F0;color:#006C45;}
+.internal-site[data-page] .doc-sec>h2>i {background:var(--site-ic-bg);color:var(--site-ic-ink);}
 .internal-site[data-page] .motion-heading {text-wrap:balance;}
 .internal-site[data-page] .chp-nav a {transition:background-color 220ms,color 220ms;}
 .internal-site[data-page] .chp-nav a:is(:hover,:focus-visible) {background:#E8FFF4;color:#006C45;}

@@ -371,7 +371,7 @@ table.week td{vertical-align:top;height:96px}
 .chip:hover{color:var(--primary);border-color:#c7d7f9;background:#f4f8ff}
 
 /* ---------- 法律文本页 ---------- */
-.prose h2 i{display:inline-flex;align-items:center;justify-content:center;min-width:26px;height:26px;padding:0 5px;border-radius:8px;background:var(--primary-l);color:var(--primary);font-size:12.5px;font-style:normal;font-weight:800;margin-right:11px;vertical-align:2px}
+.prose h2 i{display:inline-flex;align-items:center;justify-content:center;min-width:26px;height:26px;padding:0 5px;border-radius:8px;background:var(--site-ic-bg);color:var(--site-ic-ink);font-size:12.5px;font-style:normal;font-weight:800;margin-right:11px;vertical-align:2px}
 .doc-sec{scroll-margin-top:96px}
 .prose .doc-grp{font-size:13.5px;font-weight:700;color:var(--ink);margin:22px 0 8px;letter-spacing:.2px}
 .prose .doc-lead{font-weight:700;color:var(--ink);letter-spacing:.3px}

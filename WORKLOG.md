@@ -1,5 +1,18 @@
 # SmartHSB 执行记录
 
+## 2026-11-14 · 知识中心/平台教程等 11 页正文标题补「数字+绿底」序号徽章（对齐条款与条件页）
+
+**目标**：参照 user-agreement / privacy-policy 的展示（左侧 chp-nav 菜单 01/02/03…，正文 h2 前有同号「数字+绿底」徽章），补齐其余带侧栏序号导航页面的正文徽章，实现左右对应。
+
+**排查（脚本全站比对侧栏序号 vs 正文徽章）**：11 页缺失——deposit-bank(8)/deposit-ewallet(6)/deposit-va(8)/learn-basic(7)/learn-risk(8)/learn-technical(8)/learn-terms(10)/tutorial-install(7)/tutorial-manage(7)/tutorial-open(6)/tutorial-trade(6)，共 81 个标题；user-agreement、privacy-policy 本已齐。
+
+**实施**
+- 11 页正文 h2/h3（带 id=sN）按侧栏编号前插 `<i>NN</i>`（脚本按 nav 映射注入，site-motion.js 对 .motion-heading 只做整块位移动画、不拆文本，插入安全）。
+- 徽章色统一：page.css `.prose h2 i` 与 site-light.css `.doc-sec>h2>i` 由两套近似的绿（#F1FFF7/#E8F8F0）统一改用 `--site-ic-bg/--site-ic-ink`。
+- bump：site-light 2f07ea922c(34 页)；page.css 无版本号直接生效。
+
+**验证**：13 个相关页 nav 序号与正文徽章一一对应、徽章计算样式唯一 rgb(231,247,240)/rgb(0,108,69)、零 JS 错；learn-basic/tutorial-install 截图核对；35 页×3 档零溢出。
+
 ## 2026-11-14 · 知识中心 4 个板块序号底色改图标规范色
 
 **实施**：learn.html 4 个序号标签加 `ic-tag-num` 修饰类（与其余页 ic-tag 文字标签区分，避免误伤）；site-light.css 在 .ic-tag 蓝色规则后追加 `.ic-tag-num{background:var(--site-ic-bg);color:var(--site-ic-ink)}`。bump：site-light bd340756b6(34 页)。
