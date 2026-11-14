@@ -1,5 +1,11 @@
 # SmartHSB 执行记录
 
+## 2026-11-14 · 首页品种表加极光底框
+
+- 用户要求参照账户类型页给首页 #markets 品种表加底色框，动效不变。
+- 实施：极光底框做在 .market-explorer（M-06 倾斜目标）上，内部新增 .market-explorer-inner 白卡承载原内容 —— 底框随卡片一起后仰扶正（先试过底框放 .tilt-stage 静态外层，倾斜中间态白卡悬在框外，弃用）。≤540px 底框 14px / 内卡 16px 12px。home-minpilot.css bump 0b9386fce5，提交 326b2f2。
+- 验证：滚动过动画终点截图，底框四边均匀、终态与账户类型页一致；桌面/390px 无横向溢出；倾斜/扫光等动效未动。仅本地提交，暂不推送。
+
 ## 2026-11-14 · 下载中心路线卡上下留白减半
 
 - 用户反馈卡片上下白色留白太多。实测 dl-steps-sec 上下 padding 各 96px（site-light `.sec{padding-block:96px}` 覆盖了 page.css 的 30px），各减半为 48px。版本 bump eaaf7dbcd7（34 页同步），提交 2a55edd。仅本地提交，暂不推送。
