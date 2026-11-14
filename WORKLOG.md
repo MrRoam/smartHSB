@@ -1,5 +1,10 @@
 # SmartHSB 执行记录
 
+## 2026-11-14 · help.html 移除左侧目录菜单
+
+- 用户要求去掉帮助中心左侧「目录」侧栏（hc-side：8 个分类导航 + 展开全部按钮）。JS 依赖均有空值保护（if(hcAll)、空数组 IO），直接删除 aside 安全；editorial-pages.css 追加 `.page-help .hc-layout` 单列布局，正文占满容器。版本 bump 83c405f025。
+- 验证：1280/390 正文与容器左右偏差 0、无溢出、无 JS 错误；截图确认侧栏消失、内容满宽。仅本地提交，暂不推送。
+
 ## 2026-11-14 · privacy-policy 侧栏全部白底（上轮修正：仅激活项白底不彻底）
 
 - 用户反馈侧栏整体仍显灰色（所有项底色都是 --site-surface-blue），要求统一白色、仅悬停浅绿。上轮只改了激活项，本轮补全：侧栏所有 `.chp-in a` 白底深灰字（!important 压过 surface-blue 基础规则），激活项深墨加粗，悬停浅绿 #E8FFF4。site-light.css 版本 bump 至 06d0cebde4。
