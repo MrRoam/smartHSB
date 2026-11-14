@@ -1,5 +1,15 @@
 # SmartHSB 执行记录
 
+## 2026-11-14 · 走查 P1 批量收口：主按钮 / 表头 / 卡片 hover（P1-4/5/6，P1-7 上午已完成）
+
+- **P1-4 主按钮**：实测全站 32 页 `.btn-primary` 本就统一为蓝绿渐变（走查报告误判——site-light.css 里柠檬绿规则在第 148 行渐变规则之前，同权重被覆盖）。本轮删除柠檬绿死规则（#BFFF37+深字+hover 位移）与 `cta-band` 蓝色死规则（类名全站无使用，改指 .btn 同渐变）。柠檬绿仅保留 tabs 选中态等标签用途。
+- **P1-5 表头**：`table.spec th` + `.qhead`（14 页）浅绿 #F1FFF7/深绿字 → 浅蓝 `--site-surface-blue`(#EEF5FF)/中性灰 `--site-muted`(#606062)；help 页 `.hc-a thead th`（#F5F8FD/深墨）同步。实测 deposit/live-quotes/products/economic-calendar 四页 computed 一致。
+- **P1-6 卡片 hover**：统一为「2px 彩虹渐变描边 + 浅蓝填充，零位移零阴影」。描边用 `::before + mask(xor)` 遮罩绘制（padding:2px 只留边缘，不占布局、无 2px 文字抖动，opacity 220ms 淡入）；覆盖 `.motion-card`（全站白卡）、`.acct`、`.cmp`、trading-tools 三卡。旧规则清理：page.css 的 `.icard/a.icard/.art/.acct` 位移、style.css 的 `.feat`、subpages.css 归零规则去 `.feat`、trading-pages.css 账户卡浅蓝平铺、site-light.css 账户卡上浮+阴影与 motion-card 的 `translate:0 -4px`+光斑（focus-within 同步）。保留分支：平铺分割线卡片无反馈、资讯列表 `.art` 走 fill-hover 深色铺满、help 8 卡沿用 2026-11-13 的 border 版彩虹边（避免与 `.motion-link::before` fill-hover 冲突）。
+- **P1-7 极光底框**：上午已完成（.aurora-frame 通用类 + 39 处挂类，提交 dc73c70），本次核对无误。
+- bump：site-light 0c69fb5ec4（34 页）/ subpages ee1785c384（34 页）/ trading-pages 3ef2027eab（10 页）；page.css 与 style.css 无版本号引用，直接生效。
+- 验证：35 页 × 390/768/1440 三档零溢出、零 JS 错误；卡片 hover 终态实测（account-types/about/trading-tools/account-real/download）= 浅蓝底 #EEF5FF + 无渐变图 + ::before opacity 1 + 无 transform；Real 卡彩虹描边圆角完整、内容清晰（截图核对）。
+- 仅本地提交。
+
 ## 2026-11-14 · hero-ticker / 页脚点阵补 reduced-motion（走查报告 P0-3）
 
 - 排查结论：`world-points.js` 实为纯点阵坐标数据（无任何动画代码），走查报告判为缺失属误报；真正的绘制与动效控制在 `column-home.js` 的 `pointMap()`，彼处 `motion` 判定（系统 reduce / body.motion-off）早已完备。仅在 world-points.js 头部补职责注释，防止下次误判。

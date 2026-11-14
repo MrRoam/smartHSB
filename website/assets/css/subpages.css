@@ -27,7 +27,8 @@
 .internal-site .kicker{font:9px/1.6 SuisseMono,monospace;letter-spacing:.08em;color:var(--site-muted);margin-bottom:13px;text-transform:uppercase}
 .internal-site .g2,.internal-site .g3,.internal-site .g4{gap:32px}.internal-site .g5{gap:20px}
 .internal-site .icard,.internal-site .feat{background:transparent;border:0;border-top:1px solid var(--site-line);border-radius:0;padding:25px 0;box-shadow:none;transform:none}
-.internal-site .icard:hover,.internal-site .feat:hover{transform:none;box-shadow:none;border-color:var(--site-line)}
+/* 平铺分割线卡片（阅读页/教程目录/资讯列表）：hover 无视觉变化，只压掉旧位移 */
+.internal-site .icard:hover{transform:none;box-shadow:none}
 .internal-site .icard h3,.internal-site .icard h4,.internal-site .feat h3{font-size:18px;line-height:1.5;font-weight:500;color:var(--site-ink);margin-bottom:12px}
 .internal-site .icard p,.internal-site .feat p{font-size:13px;line-height:1.9;color:var(--site-muted)}.internal-site .icard .more{font-size:12px;color:var(--site-ink);margin-top:20px}
 .internal-site .icard .ic-tag{font-size:10px;padding:3px 8px;border-radius:4px;color:var(--site-muted);background:var(--site-surface-blue);font-weight:400}

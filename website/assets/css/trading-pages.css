@@ -25,7 +25,7 @@
    此处原「扁平分割表格」容器规则（background:#fff / padding:0 / radius:0）已无页面使用，
    移除以免以 0,3,0 权重盖掉通用件的底框与内边距。 */
 .internal-site.trading-family .trade-account-comparison .acct{background:transparent;border:0;border-right:1px solid var(--site-line);border-radius:0;box-shadow:none;padding:32px 28px;transition:background .3s;transform:none;min-width:0}
-.internal-site.trading-family .trade-account-comparison .acct:last-child{border-right:0}.internal-site.trading-family .trade-account-comparison .acct:hover{background:var(--site-surface-blue);transform:none;box-shadow:none}
+.internal-site.trading-family .trade-account-comparison .acct:last-child{border-right:0}/* 账户卡 hover 统一走 site-light.css 末尾的彩虹描边 + 浅蓝填充 */
 .trade-account-comparison .acct-name{font-size:26px;font-weight:500;letter-spacing:-.02em}.trade-account-comparison .acct-top{align-items:baseline;gap:10px;flex-wrap:wrap}
 .trade-account-comparison .acct-tag{background:none;border-radius:0;color:var(--site-muted);padding:0;font-size:10px}
 .trade-account-comparison .acct-tag.hot{background:none;color:var(--site-green)}.trade-account-comparison .acct-price{padding:25px 0 22px;border-top:0;margin-top:5px}

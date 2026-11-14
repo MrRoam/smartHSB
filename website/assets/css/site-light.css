@@ -51,8 +51,8 @@
 .internal-site[data-page] .page-hero :is(.crumb,.crumb a,.ph-meta>span) {color:var(--site-muted);font-size:12px;}
 .internal-site[data-page] .ph-meta b {color:var(--ink);}
 .internal-site[data-page] .btn {border-radius:999px;min-height:48px;height:auto;padding:12px 22px;font-size:14px;gap:12px;transition:background-color 220ms,color 220ms,transform 300ms var(--ease);}
-.internal-site[data-page] .btn-primary {background:var(--site-lime);color:var(--ink);border:1px solid var(--site-green);}
-.internal-site[data-page] .btn-primary:is(:hover,:focus-visible) {background:#97F05E;color:var(--ink);transform:translateY(-2px);box-shadow:none;}
+/* 主按钮（.btn-primary）已统一为蓝绿渐变，见本文件「内页按钮统一（2026-11-12）」段；
+   原先的柠檬绿实底规则（#BFFF37 + 深色字 + hover 位移）已删除，柠檬绿只保留为标签/徽章点缀。 */
 .internal-site[data-page] .btn-outline {background:#fff;color:var(--ink);border:1px solid #81938A;}
 .internal-site[data-page] .btn-outline:is(:hover,:focus-visible) {background:var(--site-surface-blue);color:var(--site-blue);border-color:var(--site-blue);}
 .internal-site[data-page] .btn-ghost {color:var(--site-green);background:var(--site-surface-mint);border:1px solid var(--line);}
@@ -70,7 +70,7 @@
 .internal-site[data-page] .tabs [data-tab].on {background:var(--site-lime);color:var(--ink);box-shadow:none;}
 .internal-site[data-page] .tabs .tnum {opacity:1;color:var(--site-muted);}
 .internal-site[data-page] .hc-nav a b {color:var(--site-muted);}
-.internal-site[data-page] :is(table.spec th,.qhead) {background:var(--site-surface-mint);color:var(--site-green);}
+.internal-site[data-page] :is(table.spec th,.qhead) {background:var(--site-surface-blue);color:var(--site-muted);}
 .internal-site[data-page] :is(table.spec td,.faq-a,.prose,.prose p,.prose li) {color:var(--site-muted);}
 .internal-site[data-page] .faq-q {font-size:16px;color:var(--ink);}
 .internal-site[data-page] .faq-q:is(:hover,:focus-visible) {color:var(--site-green);}
@@ -91,8 +91,7 @@
 .internal-site[data-page] .cta-band {position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(110deg,#EEF5FF,#F1FFF7 55%,#EBFFD3);color:var(--ink);border-radius:16px;}
 .internal-site[data-page] .cta-band :is(h2,h3) {color:var(--ink);}
 .internal-site[data-page] .cta-band p {color:var(--site-muted);font-size:15px;}
-.internal-site[data-page] .cta-band .btn-primary {background:var(--site-blue);border-color:var(--site-blue);color:#fff;}
-.internal-site[data-page] .cta-band .btn-primary:hover {background:#1849D6;}
+.internal-site[data-page] .cta-band .btn {background:linear-gradient(90deg,#1E5CD2 0%,#176EAC 48%,#00795F 78%,#006C45 100%);border-color:transparent;color:#fff;}
 .internal-site[data-page] .cta-band .btn-outline {background:#fff;color:var(--ink);border-color:#81938A;}
 .internal-site[data-page] .site-footer {background:#F6F6F6;color:var(--ink);}
 .internal-site[data-page] .footer-top {border-color:var(--line);}
@@ -397,9 +396,10 @@
 }
 .internal-site[data-page] .trade-account-comparison .acct:hover,
 .internal-site[data-page] .trade-account-comparison .acct:focus-within {
+  /* 2026-11-14：hover 统一为「彩虹描边 + 浅蓝填充」（文件末尾统一段），此处不再位移/加阴影 */
   border: 0;
-  translate: 0 -4px;
-  box-shadow: 0 2px 4px rgba(16, 24, 40, .07), 0 28px 48px -24px rgba(16, 24, 40, .55);
+  translate: none;
+  box-shadow: none;
 }
 /* 中间档（Standard）给一点绿意，读起来仍是白卡 */
 .internal-site[data-page] .trade-account-comparison .acct[data-plan-index="2"] {
@@ -664,8 +664,8 @@
   background:radial-gradient(260px circle at var(--pointer-x,50%) var(--pointer-y,40%),#5BFFC352,transparent 80%);
   transition:opacity 260ms;
 }
-.internal-site[data-page] .motion-card:focus-within {translate:0 -4px;}
-.internal-site[data-page] .motion-card:focus-within::after {opacity:1;}
+.internal-site[data-page] .motion-card:focus-within {translate:none;}
+.internal-site[data-page] .motion-card:focus-within::after {opacity:0;}
 .internal-site[data-page] .motion-card :is(.ic-ic,.f-ic,.cc-ic) {
   background:#E7F7F0;color:#006C45;
   transition:rotate 300ms var(--ease),background-color 220ms;
@@ -742,8 +742,8 @@
 .internal-site[data-page] .faq-item {transition:background-color 220ms;}
 .internal-site[data-page] .faq-item:focus-within {background:#F0FAF6;}
 @media (hover:hover) and (pointer:fine) {
-  .internal-site[data-page] .motion-card:hover {translate:0 -4px;}
-  .internal-site[data-page] .motion-card:hover::after {opacity:1;}
+  .internal-site[data-page] .motion-card:hover {translate:none;}
+  .internal-site[data-page] .motion-card:hover::after {opacity:0;}
   .internal-site[data-page] .motion-card:hover :is(.ic-ic,.f-ic,.cc-ic) {rotate:-5deg;}
   .internal-site[data-page] .motion-link:hover :is(p,.meta,.meta *,.cat,b,.more) {color:#fff;}
   .internal-site[data-page] .motion-link:hover :is(.cat,.hc-cc-ic) {background:#FFFFFF0F;color:#fff;}
@@ -898,4 +898,42 @@ body.motion-off .internal-site[data-page="download"] .dl-route-live {animation:n
 }
 @media (max-width:600px) {
   .internal-site[data-page="economic-calendar"] .cal-aurora {--aurora-pad:12px;--aurora-radius:16px;}
+}
+
+/* ==========================================================================
+   卡片 hover 全站统一（2026-11-14，走查 P1-6）
+   一种语言：2px 彩虹渐变描边 + 浅蓝填充，零位移、零阴影、零缩放。
+   - 描边用 ::before + mask 遮罩绘制（padding:2px 只留边缘），不占布局，
+     不会像 2px 真边框那样把卡内文字挤动 2px；hover 只做 opacity 淡入。
+   - 填充只换 background（浅蓝 --site-surface-blue），卡内文字颜色不动。
+   覆盖：.motion-card（全站白卡：about / 权益 / 投诉 / 下载 / 帮助 / 教程等）、
+         .acct（账户类型三卡）、.cmp（账户对比卡）、
+         trading-tools 工具三卡（.tool-directory>.icard，渐变底卡）。
+   不覆盖：阅读页/教程页/资讯页的 .icard 平铺分割线（本就不是卡片外观，保持无反馈）；
+           资讯列表 .art 与首页新闻的 .fill-hover（列表型内容走深色铺满，属另一套语言）；
+           帮助中心 8 张 .hc-cat-card（2026-11-13 已实现同款彩虹边，避免与 .motion-link::before 冲突）。
+   ========================================================================== */
+.internal-site[data-page] :is(.motion-card,.acct,.cmp)::before,
+.internal-site[data-page="trading-tools"] .tool-directory>.icard::before {
+  content:""; position:absolute; inset:0; z-index:2; pointer-events:none;
+  border-radius:inherit; padding:2px;
+  background:linear-gradient(180deg,#FFEAB5 20%,#F2A85D 40%,#8052E4 60%,#2E85EA 80%,#68EFAE 100%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite:exclude;
+  opacity:0; transition:opacity 220ms ease;
+}
+/* .cmp 原为 static，::before 需要它作定位包含块 */
+.internal-site[data-page] .cmp {position:relative;}
+
+.internal-site[data-page] :is(.motion-card,.acct,.cmp):is(:hover,:focus-within,:focus-visible)::before,
+.internal-site[data-page="trading-tools"] .tool-directory>.icard:is(:hover,:focus-within,:focus-visible)::before {opacity:1;}
+
+.internal-site[data-page] :is(.motion-card,.acct,.cmp):is(:hover,:focus-within,:focus-visible),
+.internal-site[data-page="trading-tools"] .tool-directory>.icard:is(:hover,:focus-within,:focus-visible) {
+  background-color:var(--site-surface-blue);
+  background-image:none;
+  translate:none; transform:none; box-shadow:none;
+  border-color:transparent;
 }

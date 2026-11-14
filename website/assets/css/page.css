@@ -32,14 +32,13 @@
 
 /* ---------- 信息卡（与 .feat 同风格，允许无图标） ---------- */
 .icard{background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);padding:28px;box-shadow:var(--sh-card);position:relative;transition:transform .25s,box-shadow .25s}
-.icard:hover{transform:translateY(-3px);box-shadow:var(--sh-md)}
+/* 2026-11-14：旧「上浮 3px + 阴影」卡片 hover 已废弃；卡片统一走 site-light.css 末尾的彩虹描边 + 浅蓝填充 */
 .icard h3,.icard h4{font-size:17px;font-weight:700;margin-bottom:10px}
 .icard p{font-size:14px;line-height:1.75;color:var(--ink-2)}
 .icard p b{color:var(--ink)}
 .icard .ic-tag{display:inline-block;font-size:12px;font-weight:600;color:var(--primary);background:var(--primary-l);border-radius:999px;padding:3px 10px;margin-bottom:12px}
 .icard .more{display:inline-flex;align-items:center;gap:4px;margin-top:14px;font-size:13.5px;font-weight:600;color:var(--primary)}
 a.icard{display:block;color:inherit;text-decoration:none}
-a.icard:hover{transform:translateY(-3px);box-shadow:var(--sh-md);border-color:#c7d7f9}
 
 /* ---------- 数据表 ---------- */
 .tbl-wrap{background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);box-shadow:var(--sh-card);overflow-x:auto}
@@ -218,7 +217,7 @@ table.spec .sym small{font-weight:400;font-size:12px;color:var(--ink-3)}
 /* ---------- 账户价格卡 ---------- */
 .acct-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start}
 .acct{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:30px 28px 28px;box-shadow:var(--sh-card);position:relative;display:flex;flex-direction:column;transition:.18s}
-.acct:hover,.acct:focus-within{border:1.5px solid var(--primary);box-shadow:0 2px 4px rgba(37,99,235,.08),0 22px 44px -20px rgba(37,99,235,.30);transform:translateY(-3px)}
+.acct:hover,.acct:focus-within{border-color:transparent;box-shadow:none;transform:none}
 .acct-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
 .acct-name{font-size:20px;font-weight:700;letter-spacing:.2px}
 .acct-tag{font-size:11.5px;font-weight:600;color:var(--ink-2);background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:3px 10px;white-space:nowrap}
@@ -363,11 +362,9 @@ table.week td{vertical-align:top;height:96px}
 /* ---------- 资讯列表 ---------- */
 .news-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .art{display:block;background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);box-shadow:var(--sh-card);padding:24px 26px;transition:transform .2s,box-shadow .2s,border-color .2s}
-.art:hover{transform:translateY(-3px);box-shadow:var(--sh-md);border-color:#c7d7f9}
 .art .meta{display:flex;align-items:center;gap:10px;font-size:12.5px;color:var(--ink-3);margin-bottom:9px}
 .art .meta .cat{font-size:11.5px;font-weight:600;color:var(--primary);background:var(--primary-l);border-radius:999px;padding:2px 9px}
 .art h3{font-size:17px;font-weight:700;line-height:1.5;color:var(--ink)}
-.art:hover h3{color:var(--primary)}
 .art p{font-size:13.5px;line-height:1.72;color:var(--ink-2);margin-top:8px}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
 .chip{font-size:12.5px;padding:6px 12px;border-radius:999px;background:var(--bg);border:1px solid var(--line);color:var(--ink-2);cursor:pointer;transition:.15s}
@@ -640,7 +637,7 @@ table.week td{vertical-align:top;height:96px}
 .hc-a code{padding:1px 5px;border-radius:5px;background:#f1f4f9;border:1px solid #e6eaf2;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12.5px;color:#12325e;white-space:nowrap}
 .hc-a .tw{margin:12px 0;overflow-x:auto;border:1px solid var(--line);border-radius:10px;-webkit-overflow-scrolling:touch}
 .hc-a table{width:100%;min-width:440px;border-collapse:collapse;font-size:13px}
-.hc-a thead th{padding:9px 12px;background:#f5f8fd;color:var(--ink);font-weight:600;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+.hc-a thead th{padding:9px 12px;background:#EEF5FF;color:#606062;font-weight:600;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
 .hc-a td{padding:9px 12px;border-bottom:1px solid #f0f2f7;vertical-align:top;line-height:1.75}
 .hc-a tbody tr:last-child td{border-bottom:0}
 .hc-a .callout{margin:12px 0;padding:11px 14px;border-radius:10px;background:var(--primary-l);border:1px solid #d7e4fd;font-size:13.2px;line-height:1.8;color:#1e3a6b}

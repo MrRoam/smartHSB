@@ -201,7 +201,7 @@ h1 .mark{color:var(--primary);position:relative;background:linear-gradient(trans
 .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .feat{box-shadow:var(--sh-card);background:#fff;border:1px solid var(--line);border-radius:var(--r-md);padding:28px 26px;transition:.18s;position:relative;overflow:hidden}
 .feat::after{content:"";position:absolute;left:0;top:0;width:3px;height:0;background:var(--primary);transition:.25s;border-radius:0 2px 2px 0}
-.feat:hover{transform:translateY(-4px);box-shadow:var(--sh-md)}
+/* 2026-11-14：.feat 作为白卡时改用统一彩虹描边 + 浅蓝填充（site-light.css 末尾），旧上浮规则已删 */
 .feat:hover::after{height:44px}
 .f-ic{width:46px;height:46px;border-radius:12px;background:var(--primary-l);color:var(--primary);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
 .feat h3{font-size:17px;font-weight:700;margin-bottom:8px}
