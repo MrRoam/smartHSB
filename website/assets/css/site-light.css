@@ -800,13 +800,16 @@
    下载中心 · 三步路线动画（2026-11-14，完全参照真实账户页 HERO 路线场景）
    结构：柔和渐变底 + 点阵 + 三枚节点（圈 + 序号 + 标题 + 说明），
          连线为虚线基线 + 绿色光段（routeTransfer 4.8s 从左向右循环）
+   2026-11-14 补：去掉标签压缩高度；圆点改 HTML 百分比定位（SVG 在宽屏
+   等比缩放会左右留白导致圆点内收错位），SVG preserveAspectRatio=none
+   只画线（non-scaling-stroke 保 1px），任何宽度都与节点中心精确对齐
    ========================================================================== */
 @keyframes routeTransfer{0%{stroke-dashoffset:340;opacity:0}15%{opacity:1}85%{opacity:1}100%{stroke-dashoffset:-340;opacity:0}}
 .internal-site[data-page="download"] .dl-route {
   position:relative;isolation:isolate;overflow:hidden;
   border-radius:20px;border:1px solid var(--line);
   background:linear-gradient(115deg,#FFF7DE 0%,#ECFAE2 45%,#DFF7EC 100%);
-  padding:34px 44px 32px;
+  padding:20px 44px 22px;
   box-shadow:0 40px 70px -50px rgba(16,24,40,.45);
 }
 .internal-site[data-page="download"] .dl-route::before {
@@ -816,21 +819,21 @@
   mask-image:radial-gradient(ellipse at 50% 38%,#000 22%,transparent 74%);
   -webkit-mask-image:radial-gradient(ellipse at 50% 38%,#000 22%,transparent 74%);
 }
-.internal-site[data-page="download"] .dl-route-label {
-  position:relative;z-index:1;
-  font:10px SuisseMono,monospace;letter-spacing:.16em;color:var(--site-muted);
-}
-.internal-site[data-page="download"] .dl-route-stage {position:relative;z-index:1;}
-.internal-site[data-page="download"] .dl-route-svg {display:block;width:100%;height:180px;overflow:visible;}
+.internal-site[data-page="download"] .dl-route-track {position:relative;z-index:1;}
+.internal-site[data-page="download"] .dl-route-svg {display:block;width:100%;height:70px;overflow:visible;}
 .internal-site[data-page="download"] .dl-route-svg path {fill:none;stroke:#A9B8B0;stroke-width:1;vector-effect:non-scaling-stroke;}
 .internal-site[data-page="download"] .dl-route-svg .dl-route-base {stroke-dasharray:3 5;}
 .internal-site[data-page="download"] .dl-route-svg .dl-route-live {
   stroke:var(--site-green);stroke-width:2;stroke-dasharray:55 285;
   animation:routeTransfer 4.8s cubic-bezier(.3,0,.3,1) infinite;
 }
-.internal-site[data-page="download"] .dl-route-svg circle {fill:#EFE6FF;stroke:var(--site-ink);stroke-width:1.5;}
+.internal-site[data-page="download"] .dl-route-dot {
+  position:absolute;top:50%;width:12px;height:12px;
+  transform:translate(-50%,-50%);
+  background:#EFE6FF;border:1.5px solid var(--site-ink);border-radius:50%;
+}
 .internal-site[data-page="download"] .dl-route-nodes {
-  list-style:none;margin:-67px 0 0;padding:0;position:relative;
+  list-style:none;margin:-12px 0 0;padding:0;position:relative;
   display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
 }
 .internal-site[data-page="download"] .dl-route-nodes>li {text-align:center;min-width:0;padding:0 12px;}
@@ -846,15 +849,15 @@
   display:block;font-size:12px;line-height:1.8;color:var(--site-muted);margin-top:6px;
 }
 @media (max-width:800px) {
-  .internal-site[data-page="download"] .dl-route {padding:26px 24px 26px;}
-  .internal-site[data-page="download"] .dl-route-svg {height:150px;}
-  .internal-site[data-page="download"] .dl-route-nodes {margin-top:-52px;}
+  .internal-site[data-page="download"] .dl-route {padding:18px 24px 20px;}
+  .internal-site[data-page="download"] .dl-route-svg {height:56px;}
+  .internal-site[data-page="download"] .dl-route-nodes {margin-top:-4px;}
   .internal-site[data-page="download"] .dl-route-nodes strong {font-size:14px;}
   .internal-site[data-page="download"] .dl-node-desc {font-size:11px;}
 }
 @media (max-width:600px) {
-  .internal-site[data-page="download"] .dl-route-nodes {grid-template-columns:1fr;gap:14px;margin-top:6px;}
-  .internal-site[data-page="download"] .dl-route-svg {display:none;}
+  .internal-site[data-page="download"] .dl-route-nodes {grid-template-columns:1fr;gap:14px;margin-top:4px;}
+  .internal-site[data-page="download"] .dl-route-track {display:none;}
 }
 /* 动效关闭 / 减弱动效偏好：光段静止为一段绿色短线 */
 body.motion-off .internal-site[data-page="download"] .dl-route-live {animation:none!important;stroke-dashoffset:0;}
