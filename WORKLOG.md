@@ -1,5 +1,14 @@
 # SmartHSB 执行记录
 
+## 2026-11-14 · 许可证与认证页新增「客户资金保险」区块
+
+**需求**：在 licenses.html「行业奖项」之后增加客户资金保险内容（属许可证与认证范围），原页面内容不动，仅增项并保证整页协调。
+
+**实施**：新增 `<section id="insurance">`（kicker Fund Protection），复用出入金页同款结构——`.ins-aurora.aurora-frame` 极光底框 + 内层 `.cert-band` 白卡（$1,000,000 色块 / 隔离账户与承保两段正文 / 四重保障提示条 / aswata + wtw 标识行），文案口径与 deposit-withdraw 完全一致，提示条内链接改指「入金与出金 →」。site-light.css `.ins-aurora` 作用域扩展至 `[data-page="licenses"]`（3 处选择器同步）。
+
+**验证**：1280/390 截图核对——新区块渲染正常；整页节奏 行业奖项 → 资金保险（极光白卡）→ ISO 认证（灰底 cert-band）→ 防诈骗 → FAQ 衔接协调；移动端 0 横向溢出、0 JS 错。
+- bump：site-light b11f578a71（34 页）。
+
 ## 2026-11-14 · 出入金页资金保险卡加极光底框
 
 **需求**：参照账户卡（demo 页）样式，给 deposit-withdraw「客户资金保险」白卡加渐变极光底色。
