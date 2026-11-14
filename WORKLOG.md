@@ -1,5 +1,12 @@
 # SmartHSB 执行记录
 
+## 2026-11-14 · 下载中心三步模块重构为 HERO 路线动画
+
+- 用户要求参照真实账户页 HERO 区动画重构 download.html 三步模块：三个独立节点 + 动态横线从左向右循环。
+- 实施：dl-route 路线场景（渐变底卡 #FFF7DE→#ECFAE2→#DFF7EC + 点阵 + mono 标签 + SVG 路线 + 三节点 01/02/03）；连线 = 虚线基线 + 绿色光段 routeTransfer 4.8s 左→右循环（pathLength=340 归一化，节奏同真实账户页 tradeTransfer）。
+- 关键细节：viewBox 必须与栅格同宽（1126×180）且栅格去 gap 改 li 内边距，圆点才精确压在 16.7%/50%/83.3% 节点中心（之前 420 viewBox 被居中留白，圆点错位 61px）；≤600px 隐藏路线、节点纵向堆叠；motion-off / prefers-reduced-motion 下光段静止。
+- site-light.css bump a96501f7f5，34 个内页引用同步 bump，提交 dd74929。桌面/390px/动画采样均已验证。仅本地提交，暂不推送。
+
 ## 2026-11-14 · trading-tools 删除 APP 使用提示
 
 - 删除工具三卡下方「以上工具在 APP 内使用；信号与汇率数据以平台实时显示为准。」提示行。提交 70e2c10。
