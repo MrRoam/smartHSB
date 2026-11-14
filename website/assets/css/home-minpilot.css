@@ -165,7 +165,7 @@
    横向溢出视口 130~170px。裁切放在本整幅区块上：边界=屏幕边缘，
    卡片圆角不被切；不再依赖根元素 html{overflow-x:hidden}。
    详见 tilt-up.css 顶部约定。 */
-.home-minpilot .markets {background:var(--ice);padding:104px 0;overflow-x:clip;}
+.home-minpilot .markets {background:var(--soft);padding:104px 0;overflow-x:clip;}
 .home-minpilot .market-catalog-summary {margin-top:20px;font-size:16px;}
 .home-minpilot .market-catalog-summary span {color:var(--muted);margin-left:12px;}
 /* 品种表外层极光底框（2026-11-14，对齐账户类型页三种账户卡语言）

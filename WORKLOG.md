@@ -1,5 +1,14 @@
 # SmartHSB 执行记录
 
+## 2026-11-14 · 首页市场区块背景改灰色（对齐资金区块）
+
+**需求**：#markets 大背景原为淡蓝 --ice(#EEF5FF)，改为资金区块同款灰色调。
+
+**实施**：home-minpilot.css `.home-minpilot .markets` 背景由 `var(--ice)` 改 `var(--soft)`（#F6F6F6）。其余（极光边框白卡、tabs、内边距）不动。
+
+**验证**：实测 markets 与 funding-section 背景均 rgb(246,246,246)；截图核对灰底上极光边框白卡与文字清晰；0 JS 错。
+- bump：home-minpilot 4027758987（index.html）。
+
 ## 2026-11-14 · 首页 APP 区背景改为左白右蓝绿（右下泛白修复）
 
 **需求**：上一版(cb50edf)整块铺蓝绿改错了——用户要求保持原图：左侧白底，仅右侧蓝绿渐变一直延伸到底（右下圈出处不再泛白）。
