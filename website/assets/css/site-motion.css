@@ -42,3 +42,30 @@
   :is(.home-minpilot,.internal-site) *, :is(.home-minpilot,.internal-site) *::before, :is(.home-minpilot,.internal-site) *::after {animation:none!important;transition:none!important;scroll-behavior:auto!important;}
   :is(.home-minpilot,.internal-site) .footer-wordmark {background:none!important;color:#006C45!important;}
 }
+
+/* ==========================================================================
+   极光底框 · 通用件（2026-11-14）
+   全站唯一实现：底色 + aurora-mesh 底图 + 圆角 + 投影。
+   各模块只在自身规则里覆盖 --aurora-* 变量，不再复制整段背景声明。
+   用法：容器加 class="aurora-frame"，按需覆盖
+     --aurora-bg / --aurora-image / --aurora-size / --aurora-pos
+     --aurora-pad / --aurora-radius / --aurora-shadow
+   ========================================================================== */
+.aurora-frame {
+  --aurora-bg:#F3F4F6;
+  --aurora-image:url(../img/aurora-mesh.svg);
+  --aurora-size:170% auto;
+  --aurora-pos:50% 45%;
+  --aurora-pad:24px;
+  --aurora-radius:20px;
+  --aurora-shadow:0 40px 70px -50px rgba(16,24,40,.45);
+  padding:var(--aurora-pad);
+  border:0;
+  border-radius:var(--aurora-radius);
+  background-color:var(--aurora-bg);
+  background-image:var(--aurora-image);
+  background-size:var(--aurora-size);
+  background-position:var(--aurora-pos);
+  box-shadow:var(--aurora-shadow);
+  isolation:isolate;
+}

@@ -166,14 +166,11 @@
 .home-minpilot .market-catalog-summary span {color:var(--muted);margin-left:12px;}
 /* 品种表外层极光底框（2026-11-14，对齐账户类型页三种账户卡语言）
    底框做在 .market-explorer（M-06 倾斜目标）上、内部包白卡
-   .market-explorer-inner —— 底框随卡片一起倾斜，动效不变 */
+   .market-explorer-inner —— 底框随卡片一起倾斜，动效不变
+   底框视觉统一走 .aurora-frame（site-motion.css），此处只覆盖内边距 */
 .home-minpilot .market-explorer {
-  display:block;padding:24px;border:0;border-radius:20px;overflow:visible;
-  background-color:#F3F4F6;
-  background-image:url(../img/aurora-mesh.svg);
-  background-size:170% auto;
-  background-position:50% 45%;
-  box-shadow:0 40px 70px -50px rgba(16,24,40,.45);
+  display:block;overflow:visible;
+  --aurora-pad:24px;
 }
 .home-minpilot .market-explorer-inner {
   background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px;
@@ -447,9 +444,8 @@
 .home-minpilot .section-head>.text-link {margin-top:12px}
 .home-minpilot .market-catalog-summary {font-size:14px;line-height:1.9}
 .home-minpilot .market-catalog-summary span {display:block;margin:0}
-.home-minpilot .market-explorer {border-radius:16px;padding:14px}
+.home-minpilot .market-explorer {--aurora-pad:14px;--aurora-radius:16px}
 .home-minpilot .market-explorer-inner {border-radius:12px;padding:16px 12px}
-.home-minpilot .markets .tilt-stage {padding:14px;border-radius:16px}
 .home-minpilot .market-selector {gap:5px;padding-bottom:20px}
 .home-minpilot .market-tab {flex:1;min-width:0;flex-direction:column;gap:0;padding:10px 4px}
 .home-minpilot .market-tab.active {padding:9px 3px}
@@ -499,7 +495,7 @@
 .home-minpilot .platform-copy h2, .home-minpilot .overview h2 {font-size:32px}
 .home-minpilot .platform-actions {flex-direction:column;align-items:stretch}
 .home-minpilot .platform-actions :is(.button,.iris-shell) {width:100%}
-.home-minpilot .market-explorer {padding:16px 10px}
+.home-minpilot .market-explorer {--aurora-pad:16px 10px}
 .home-minpilot .market-tab strong {font-size:13px}
 .home-minpilot .market-tab .tab-count {font-size:11px}
 .home-minpilot .panel-title h3 {font-size:22px}

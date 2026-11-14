@@ -370,6 +370,7 @@
    背景：minpilot feature 区同一张极光网格（10 个模糊椭圆），卡片不透明白
          铺满，彩色只从 20px 缝与 24px 外沿透出 → 形成层次
    ========================================================================== */
+/* 2026-11-14 起底框统一走 .aurora-frame（site-motion.css），此处只留布局与变量 */
 .internal-site[data-page] .trade-account-comparison {
   position: relative;
   isolation: isolate;
@@ -377,14 +378,7 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
   align-items: stretch;
   gap: 20px;
-  padding: 24px;
-  border: 0;
-  border-radius: 20px;
-  background-color: #F3F4F6;
-  background-image: url(../img/aurora-mesh.svg);
-  background-size: 170% auto;
-  background-position: 50% 45%;
-  box-shadow: 0 40px 70px -50px rgba(16, 24, 40, .45);
+  --aurora-pad: 24px;
 }
 .internal-site[data-page] .trade-account-comparison .acct {
   background: #fff;
@@ -432,12 +426,10 @@
   .internal-site[data-page] .trade-account-comparison {
     grid-template-columns: 1fr;
     gap: 16px;
-    padding: 16px;
-    border-radius: 16px;
-  }
-  .internal-site[data-page] .trade-account-comparison {
-    background-size: 200% auto;
-    background-position: 50% 30%;
+    --aurora-pad: 16px;
+    --aurora-radius: 16px;
+    --aurora-size: 200% auto;
+    --aurora-pos: 50% 30%;
   }
   .internal-site[data-page] .trade-account-comparison .acct {
     padding: 24px 22px;
@@ -540,16 +532,11 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
   margin-top: 34px;
-  padding: 18px;
-  border: 0;
-  border-radius: 20px;
-  background-color: #F3F4F6;
-  background-image: url(../img/aurora-mesh.svg);
   /* 与账户卡区同一张极光图，但本块更扁（约 3.6:1），170% 会只剩单色块，
      故按 108% 铺，让多个色块同时出现、缝里看到的是柔和过渡而非纯色 */
-  background-size: 108% auto;
-  background-position: 50% 52%;
-  box-shadow: 0 40px 70px -50px rgba(16, 24, 40, .45);
+  --aurora-pad: 18px;
+  --aurora-size: 108% auto;
+  --aurora-pos: 50% 52%;
 }
 .internal-site[data-page="account-types"] .ben-grid .ben-item {
   display: flex;
@@ -639,10 +626,16 @@
 }
 /* 2026-11-13: extend the handover's M-07 surfaces to selected content groups.
    Existing grids and DOM order remain in charge of layout. */
+/* 2026-11-14 起底框统一走 .aurora-frame（site-motion.css），此处只留布局与变量 */
 .internal-site[data-page] .motion-aurora {
-  padding:18px;gap:18px;border:0;border-radius:16px;
-  background:#EEF5FF var(--site-aurora) 50% 48% / 125% auto;
-  isolation:isolate;
+  --aurora-bg: #EEF5FF;
+  --aurora-size: 125% auto;
+  --aurora-pos: 50% 48%;
+  --aurora-pad: 18px;
+  --aurora-radius: 16px;
+  --aurora-shadow: none;
+  gap: 18px;
+  isolation: isolate;
 }
 .internal-site[data-page] .motion-card {
   position:relative;isolation:isolate;min-width:0;
@@ -751,7 +744,7 @@
   .internal-site[data-page] .faq-item:hover {background:#F0FAF6;}
 }
 @media(max-width:900px) {
-  .internal-site[data-page] .motion-aurora {padding:14px;gap:14px;background-size:180% auto;}
+  .internal-site[data-page] .motion-aurora {--aurora-pad:14px;--aurora-size:180% auto;gap:14px;}
   .internal-site[data-page] .motion-card {padding:22px;}
   .internal-site[data-page="trading-tools"] .tool-directory>.icard {padding:24px;gap:10px 22px;}
 }
@@ -760,7 +753,7 @@
   .internal-site[data-page="trading-tools"] .tool-directory .tool-scene {min-height:0;padding:14px 8px;}
 }
 @media(max-width:479px) {
-  .internal-site[data-page] .motion-aurora {padding:10px;gap:12px;background-image:none;background-color:#EAF6F1;}
+  .internal-site[data-page] .motion-aurora {--aurora-pad:10px;--aurora-bg:#EAF6F1;--aurora-image:none;gap:12px;}
   .internal-site[data-page] .motion-card {padding:20px;}
   .internal-site[data-page="help"] .hc-cat-card.motion-link {padding:14px 10px;gap:8px;}
   .internal-site[data-page="trading-tools"] .tool-directory>.icard {padding:20px;grid-template-columns:minmax(0,1fr);}
@@ -787,11 +780,9 @@
    margin-bottom:20px（此前被清零导致三卡贴死、底色透不出来）；
    底图纵向拉伸 180% 并定位 95%，让极光彩色核同时压中两条卡缝 */
 .internal-site[data-page="trading-tools"] .tool-directory {
-  padding:18px;border-radius:20px;border:0;
-  background-color:#F3F4F6;
-  background-image:url(../img/aurora-mesh.svg);
-  background-size:170% 180%;background-position:50% 95%;
-  box-shadow:0 40px 70px -50px rgba(16,24,40,.45);
+  --aurora-pad:18px;
+  --aurora-size:170% 180%;
+  --aurora-pos:50% 95%;
 }
 .internal-site[data-page="trading-tools"] .tool-directory>.icard {margin-bottom:20px;}
 .internal-site[data-page="trading-tools"] .tool-directory>.icard:last-child {margin-bottom:0;}
@@ -872,15 +863,12 @@ body.motion-off .internal-site[data-page="download"] .dl-route-live {animation:n
    .mkt 白卡外包 .mkt-aurora：aurora-mesh.svg 底、24px 内边距、20px 圆角、同款投影
    ========================================================================== */
 .internal-site[data-page="live-quotes"] .mkt-aurora {
-  margin-top:56px;padding:24px;border-radius:20px;
-  background-color:#F3F4F6;
-  background-image:url(../img/aurora-mesh.svg);
-  background-size:170% auto;background-position:50% 45%;
-  box-shadow:0 40px 70px -50px rgba(16,24,40,.45);
+  margin-top:56px;
+  --aurora-pad:24px;
 }
 .internal-site[data-page="live-quotes"] .mkt {margin-top:0;border-radius:14px;}
 @media (max-width:600px) {
-  .internal-site[data-page="live-quotes"] .mkt-aurora {padding:14px;}
+  .internal-site[data-page="live-quotes"] .mkt-aurora {--aurora-pad:14px;}
 }
 
 /* 实时报价页 · 页面大背景改白色（2026-11-14）：hero 与行情工作区原本是
@@ -896,15 +884,11 @@ body.motion-off .internal-site[data-page="download"] .dl-route-live {animation:n
    ========================================================================== */
 .internal-site[data-page="economic-calendar"] .trade-calendar-workspace {background:#fff;}
 .internal-site[data-page="economic-calendar"] .cal-aurora {
-  padding:18px;border-radius:20px;
-  background-color:#F3F4F6;
-  background-image:url(../img/aurora-mesh.svg);
-  background-size:170% auto;background-position:50% 45%;
-  box-shadow:0 40px 70px -50px rgba(16,24,40,.45);
+  --aurora-pad:18px;
 }
 .internal-site[data-page="economic-calendar"] .cal-aurora .tbl-wrap {
   border:0;border-radius:14px;
 }
 @media (max-width:600px) {
-  .internal-site[data-page="economic-calendar"] .cal-aurora {padding:12px;border-radius:16px;}
+  .internal-site[data-page="economic-calendar"] .cal-aurora {--aurora-pad:12px;--aurora-radius:16px;}
 }

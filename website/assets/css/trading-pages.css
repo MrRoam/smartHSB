@@ -21,7 +21,9 @@
 .trade-preview-plan small{display:block;font-size:10px;color:var(--site-muted);margin-top:5px}.trade-preview-plan i{position:absolute;right:22px;top:50%;width:5px;height:5px;background:#b6c8c5;border-radius:50%;box-shadow:0 0 0 5px #44b48b10}
 .trade-preview-plan.is-current{transform:translateX(-12px);background:#fff}.trade-preview-plan.is-current i{background:var(--site-green);box-shadow:0 0 0 5px #44b48b20}
 .trade-account-preview>p{margin-top:15px;font-size:10px;color:var(--site-muted);text-align:right}
-.internal-site.trading-family .trade-account-comparison{gap:0;background:#fff;border-top:1px solid var(--site-line);border-bottom:1px solid var(--site-line);border-radius:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+/* 2026-11-14：account-types 的账户对比已改为极光底框（site-light.css .aurora-frame），
+   此处原「扁平分割表格」容器规则（background:#fff / padding:0 / radius:0）已无页面使用，
+   移除以免以 0,3,0 权重盖掉通用件的底框与内边距。 */
 .internal-site.trading-family .trade-account-comparison .acct{background:transparent;border:0;border-right:1px solid var(--site-line);border-radius:0;box-shadow:none;padding:32px 28px;transition:background .3s;transform:none;min-width:0}
 .internal-site.trading-family .trade-account-comparison .acct:last-child{border-right:0}.internal-site.trading-family .trade-account-comparison .acct:hover{background:var(--site-surface-blue);transform:none;box-shadow:none}
 .trade-account-comparison .acct-name{font-size:26px;font-weight:500;letter-spacing:-.02em}.trade-account-comparison .acct-top{align-items:baseline;gap:10px;flex-wrap:wrap}
