@@ -1,5 +1,11 @@
 # SmartHSB 执行记录
 
+## 2026-11-14 · trading-tools 三卡间距修复，极光彩色透过卡缝
+
+- 用户反馈参照账户类型页三种账户卡：三卡之间要有间隔、底色要看得清。排查发现根因：`.tool-directory` 基础样式为 `display:block`（platform-pages.css），上一轮加底带时用容器 `gap` 接管卡距且把 `.icard` 的 `margin-bottom` 清零 —— block 容器 gap 无效，三卡完全贴死，底色只在四周露出。
+- 实施：恢复 `.icard{margin-bottom:20px}`（末卡除外）；底图改 `background-size:170% 180%` + `position:50% 95%`，纵向拉伸后极光彩色核（青 #00E5E0 / 橙 #FFB000 等）同时压中两条水平卡缝（缝隙呈橙→青、青→绿渐变）。版本 bump 5cc81ebe6a，提交 91aa1fe。
+- 验证：measure.js 量得 card2 顶 − card1 底 = 20px；截图确认缝隙彩色明显、外沿橙/青边保留。仅本地提交，暂不推送。
+
 ## 2026-11-14 · trading-tools 工具三卡外层加极光底带
 
 - 用户要求按账户类型页定价卡样式给交易工具三卡加底色，原动效不变。实施：site-light.css 追加 `.tool-directory` 容器铺 aurora-mesh.svg（与账户类型页同一张图、108% 铺法、20px 圆角、40px 投影、18px 缝），卡内渐变底/扫光动效/slide-in 均不动；icard 原余量 margin-bottom 清零由容器 gap 16px 接管。版本 bump 77030e612f。
