@@ -1,5 +1,13 @@
 # SmartHSB 执行记录
 
+## 2026-11-14 · 帮助中心 FAQ 文字压边修复
+
+**根因**：editorial-pages.css 把 help 页 FAQ 的内边距覆写为左右 0（.faq-q `21px 0`、.faq-a `0 0 24px 0`），问题与答案文字直接贴到列表容器边缘。
+
+**实施**：.faq-q 左右 12px、.faq-a 左右 12px（与问题对齐）、移动端 ≤600px 收为 10px。bump：editorial-pages 14c481c4fa（17 页）。
+
+**验证**：展开态实测问题文字与答案段落左缩进均为 12px（相对卡片）；help 页 1440/768/390 零溢出零 JS 错；截图核对。
+
 ## 2026-11-14 · 初步定版推送 GitHub Pages
 
 **动作**：`git push origin main` 0692fef → 1c9e933，累计 54 个本地提交一次性推送；GitHub Pages 自动部署完成。
