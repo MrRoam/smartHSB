@@ -1,5 +1,10 @@
 # SmartHSB 执行记录
 
+## 2026-11-14 · 实时报价页大背景改白
+
+- 用户要求页面大背景改白色。page-hero 与 trade-market-workspace 原 --site-surface-blue(#EEF5FF) 改白，表头/徽章/hover 点缀色不动；页脚 #F6F6F6 全站统一背景保留。site-light.css bump f7540896b8，提交 0433c6f。
+- 验证：全页截图采样，hero/workspace/FAQ 区均为纯白。仅本地提交，暂不推送。
+
 ## 2026-11-14 · 实时报价页行情表加极光底框
 
 - 用户要求参照账户类型页给 live-quotes 行情表加底色。
