@@ -1,5 +1,11 @@
 # SmartHSB 执行记录
 
+## 2026-11-14 · 知识中心 4 个板块序号底色改图标规范色
+
+**实施**：learn.html 4 个序号标签加 `ic-tag-num` 修饰类（与其余页 ic-tag 文字标签区分，避免误伤）；site-light.css 在 .ic-tag 蓝色规则后追加 `.ic-tag-num{background:var(--site-ic-bg);color:var(--site-ic-ink)}`。bump：site-light bd340756b6(34 页)。
+
+**验证**：learn.html 实测 01–04 均 rgb(231,247,240)/rgb(0,108,69)，同页其它 ic-tag（无 ic-tag-num）不受影响，零 JS 错，截图核对通过。
+
 ## 2026-11-14 · 全站图标徽章底色统一（规范色 #E7F7F0 + #006C45）
 
 **目标**：用户指定以参考截图实测色 rgb(231,247,240)=#E7F7F0 底 + rgb(0,108,69)=#006C45 图标线条为准，全站排查统一。

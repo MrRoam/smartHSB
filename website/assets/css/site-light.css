@@ -65,6 +65,8 @@
 .internal-site[data-page] :is(.icard h3,.feat h3) {font-size:22px;color:var(--ink);}
 .internal-site[data-page] :is(.f-ic,.ic-ic,.step .no) {background:var(--site-surface-mint);color:var(--site-green);border-color:var(--line);}
 .internal-site[data-page] .icard .ic-tag {background:var(--site-surface-blue);color:var(--site-blue);}
+/* 知识中心 4 个板块序号（01–04）：底色与文字色沿用全站图标徽章规范色 */
+.internal-site[data-page] .icard .ic-tag-num {background:var(--site-ic-bg);color:var(--site-ic-ink);}
 .internal-site[data-page] :is(.icard .more,.prose a,.faq-a a) {color:var(--site-green);}
 .internal-site[data-page] :is(.tabs,.note,.chp-nav a) {background:var(--site-surface-blue);}
 .internal-site[data-page] .note-warn {background:#FFF7E6;color:#635124;border-color:#E8D9B3;}
