@@ -35,9 +35,11 @@ html:has(.platform-family .tutorial-reading){scroll-padding-top:0}
 .platform-family .instruction-steps>li:after{content:'';position:absolute;left:10px;top:29px;bottom:6px;width:1px;background:var(--site-line);transform:scaleY(.3);transform-origin:top;transition:transform .8s cubic-bezier(.1,0,.1,1)}
 .platform-family .instruction-steps>li:last-child{padding-bottom:0}.platform-family .instruction-steps>li:last-child:after{display:none}
 .platform-family .platform-chapter.pf-visible .instruction-steps>li:after{transform:scaleY(1)}
-.platform-family .tutorial-path{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--site-line);margin-top:42px;padding-top:18px;gap:22px;position:relative;z-index:1}
+.platform-family .tutorial-path{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:1px solid var(--site-line);margin-top:42px;padding-top:18px;gap:22px;position:relative;z-index:1}
 .platform-family .tutorial-path>a{display:flex;gap:12px;align-items:center;font-size:12px;color:var(--site-muted);padding:8px 0;min-height:42px;white-space:nowrap}
 .platform-family .tutorial-path>a>span{font:9px SuisseMono,monospace;color:var(--site-muted)}.platform-family .tutorial-path>a>i{font-style:normal;font-size:14px;margin-left:auto;color:var(--site-muted)}
+.platform-family .tutorial-path>a[aria-current=page]:not([href]){cursor:default}
+.platform-family .tutorial-path>a[aria-current=page]:not([href]):is(:hover,:focus-visible){transform:none}
 .platform-family .tutorial-path>a[aria-current=page]{color:var(--site-ink);font-weight:500}.platform-family .tutorial-path>a[aria-current=page]>span{color:var(--site-green)}.platform-family .tutorial-path>a[aria-current=page]>i{color:var(--site-ink)}
 .platform-family .tutorial-directory{display:grid;grid-template-columns:1fr 1fr;gap:0 48px}
 .platform-family .tutorial-directory>.icard{display:grid;grid-template-columns:34px 1fr;gap:8px 16px;border:0;border-top:1px solid var(--site-line);border-radius:0;background:transparent!important;box-shadow:none;padding:28px 0;min-width:0;transition:none}
