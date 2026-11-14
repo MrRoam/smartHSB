@@ -1,5 +1,14 @@
 # SmartHSB 执行记录
 
+## 2026-11-14 · 首页「入金 / 出金」两张卡加彩虹渐变描边
+
+**需求**：参照次按钮（iris-shell「试用模拟账户」胶囊）的渐变边框，给首页 funding 区两张白卡加同款描边。
+
+**实施**：home-minpilot.css `.home-minpilot .funding-details>div`（335 行，现行生效规则）由 `border:1px solid var(--line)+白底` 改为双层 background-clip 渐变描边：`border:2px solid transparent` + `linear-gradient(#fff,#fff) padding-box` + `linear-gradient(180deg,#ffeab5 20%,#f2a85d 40%,#8052e4 60%,#2e85ea 80%,#68efae 100%) border-box`（与 iris-shell 同一渐变、同一垂直方向），不占布局、圆角 20px 保持。仅 index.html 引用该 css。
+
+**验证**：1280/390 截图核对——两卡描边呈 黄→橙→紫→蓝→绿 垂直渐变、圆角处均匀、文字无压边；移动端 0 横向溢出、0 JS 错。
+- bump：home-minpilot aaff8f3800（index.html）。
+
 ## 2026-11-14 · 许可证与认证页白灰交替节奏
 
 **需求**：licenses 页各区块大背景按 白、灰交替，提升视觉节奏（用户指定以行业奖项的灰色调为基准）。

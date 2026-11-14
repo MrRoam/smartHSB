@@ -332,7 +332,7 @@
 .home-minpilot .funding-grid {grid-template-columns:.85fr 1.15fr;gap:60px;align-items:start;}
 .home-minpilot .funding-grid>div>p {font-size:16px;line-height:1.7;}
 .home-minpilot .funding-details {display:grid;grid-template-columns:1fr 1fr;gap:24px;background:none;padding:0;}
-.home-minpilot .funding-details>div {padding:24px;margin:0;background:#fff;border:1px solid var(--line);border-radius:20px;}
+.home-minpilot .funding-details>div {padding:24px;margin:0;border:2px solid transparent;border-radius:20px;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(180deg,#ffeab5 20%,#f2a85d 40%,#8052e4 60%,#2e85ea 80%,#68efae 100%) border-box;}
 .home-minpilot .funding-details h3 {overflow-wrap:anywhere;}
 .home-minpilot .funding-details .insurance-note {grid-column:1/-1;background:none;padding:0;}
 .home-minpilot .insurance-note :is(p,small) {font-size:14px;line-height:1.7;color:var(--muted);}
