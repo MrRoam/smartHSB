@@ -141,7 +141,7 @@ table.spec .sym small{font-weight:400;font-size:12px;color:var(--ink-3)}
 .reg-shell{display:grid;grid-template-columns:1.14fr .86fr;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:0 2px 4px rgba(16,24,40,.04),0 30px 60px -30px rgba(16,24,40,.22);overflow:hidden}
 .reg-form{padding:30px 32px 28px;display:flex;flex-direction:column;gap:16px;min-width:0}
 .rf-head{display:flex;gap:13px;align-items:center;padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:2px}
-.rc-ic{flex:0 0 auto;width:44px;height:44px;border-radius:13px;background:var(--primary-l);border:1px solid #d3e2fc;color:var(--primary);display:flex;align-items:center;justify-content:center}
+.rc-ic{flex:0 0 auto;width:44px;height:44px;border-radius:13px;background:var(--site-ic-bg);border:1px solid transparent;color:var(--site-ic-ink);display:flex;align-items:center;justify-content:center}
 .rc-title h3{font-size:18px;font-weight:700;letter-spacing:.2px}
 .rc-title p{font-size:13px;color:var(--ink-3);margin-top:3px}
 .reg-form .btn-lg{width:100%;margin-top:6px}
@@ -654,7 +654,7 @@ table.week td{vertical-align:top;height:96px}
 .hc-empty p{margin-top:6px;font-size:13px}
 
 .hc-way{display:flex;flex-direction:column}
-.hc-way-ic{width:40px;height:40px;border-radius:12px;background:var(--primary-l);color:var(--primary);display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.hc-way-ic{width:40px;height:40px;border-radius:12px;background:var(--site-ic-bg);color:var(--site-ic-ink);display:flex;align-items:center;justify-content:center;margin-bottom:12px}
 .hc-way h3{font-size:15.5px}
 .hc-way .more{margin-top:auto;padding-top:12px}
 

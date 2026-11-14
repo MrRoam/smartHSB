@@ -5,6 +5,8 @@
   --site-ink:#1D1D1F; --site-muted:#606062; --site-line:#DCE7E1;
   --site-blue:#235DFE; --site-green:#006C45; --site-mint:#5BFFC3;
   --site-lime:#BFFF37; --site-surface-blue:#EEF5FF; --site-surface-mint:#F1FFF7;
+  /* 图标徽章唯一色（2026-11-14 统一）：浅绿底 + 深绿线条，取代各处浅蓝底灰字 */
+  --site-ic-bg:#E7F7F0; --site-ic-ink:#006C45;
   --primary:var(--site-green); --primary-d:#005637; --primary-l:var(--site-surface-mint);
   --ink:var(--site-ink); --ink-2:var(--site-muted); --ink-3:var(--site-muted);
   --line:var(--site-line); --line-2:#81938A; --bg:#fff; --card:#fff;
@@ -667,7 +669,7 @@
 .internal-site[data-page] .motion-card:focus-within {translate:none;}
 .internal-site[data-page] .motion-card:focus-within::after {opacity:0;}
 .internal-site[data-page] .motion-card :is(.ic-ic,.f-ic,.cc-ic) {
-  background:#E7F7F0;color:#006C45;
+  background:var(--site-ic-bg);color:var(--site-ic-ink);
   transition:rotate 300ms var(--ease),background-color 220ms;
 }
 .internal-site[data-page] .motion-card .ic-tag {display:table;width:fit-content;max-width:100%;}

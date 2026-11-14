@@ -1,5 +1,21 @@
 # SmartHSB 执行记录
 
+## 2026-11-14 · 全站图标徽章底色统一（规范色 #E7F7F0 + #006C45）
+
+**目标**：用户指定以参考截图实测色 rgb(231,247,240)=#E7F7F0 底 + rgb(0,108,69)=#006C45 图标线条为准，全站排查统一。
+
+**排查（Playwright 全站 35 页计算样式扫描）**：图标徽章共 6 类。已是规范色：.cc-ic(4 页 16 处)、.f-ic(3 页 22 处)；偏差：help 页 .hc-cc-ic/.hc-cat-ic/.hc-way-ic 用了浅一档 #F1FFF7（上轮误用 surface-mint）；demo 注册 .rc-ic 与下载页三端 .dl-ic 为浅蓝底灰字。排除项：.ic-tag（文字标签胶囊非图标）、.ins-chip（保险公司 logo 容器，保持中性）、.mp-pin（地图实心圆 pin）、.dv-pf（设备样机内浮层）、page.css .dl-ic-apple/android/win 品牌色定义（已被 page-download 覆盖，未生效，保留）。
+
+**实施**
+- site-light.css 新增规范 token `--site-ic-bg:#E7F7F0; --site-ic-ink:#006C45`，`.motion-card :is(.ic-ic,.f-ic,.cc-ic)` 改用 token。
+- editorial-pages.css：help 三类图标 → token（修正上轮 #F1FFF7）。
+- page.css：.hc-way-ic、.rc-ic → token（rc-ic 边框改 transparent）。
+- trading-pages.css：page-demo .rc-ic 覆写 → token。
+- platform-pages.css：下载页 .dl-ic → token（原浅蓝灰字）。
+- bump：site-light 6225f47add(34 页) / editorial f6b58db23f(17) / trading a88a64e75f(10) / platform ed04f715fb(7)。
+
+**验证**：全站图标徽章计算样式唯一组合 rgb(231,247,240)/rgb(0,108,69)；download/demo 截图核对；35 页×1440/768/390 零溢出零 JS 错。
+
 ## 2026-11-14 · 帮助中心图标底色统一为薄荷绿
 
 **目标**：用户指定 help.html 图标底色统一为站内薄荷绿语言（--site-surface-mint 底 + --site-green 线条，与导航 hover/页签选中一致）。
