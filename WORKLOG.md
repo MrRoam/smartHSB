@@ -1,5 +1,9 @@
 # SmartHSB 执行记录
 
+## 2026-11-14 · trading-tools 删除 APP 使用提示
+
+- 删除工具三卡下方「以上工具在 APP 内使用；信号与汇率数据以平台实时显示为准。」提示行。提交 70e2c10。
+
 ## 2026-11-14 · trading-tools 三卡间距修复，极光彩色透过卡缝
 
 - 用户反馈参照账户类型页三种账户卡：三卡之间要有间隔、底色要看得清。排查发现根因：`.tool-directory` 基础样式为 `display:block`（platform-pages.css），上一轮加底带时用容器 `gap` 接管卡距且把 `.icard` 的 `margin-bottom` 清零 —— block 容器 gap 无效，三卡完全贴死，底色只在四周露出。
