@@ -887,3 +887,24 @@ body.motion-off .internal-site[data-page="download"] .dl-route-live {animation:n
    --site-surface-blue 浅蓝，改白；表头/徽章/hover 等局部点缀色不动 */
 .internal-site[data-page="live-quotes"] .page-hero,
 .internal-site[data-page="live-quotes"] .trade-market-workspace {background:#fff;}
+
+/* ==========================================================================
+   财经日历页（2026-11-14）
+   1) 本周财经事件区背景 浅蓝 → 白
+   2) 表格外包 .cal-aurora 极光底框（对齐实时报价页行情表）
+   3) 如何使用财经日历区背景 → #F6F6F6（灰色块，与上下白色区形成层次）
+   ========================================================================== */
+.internal-site[data-page="economic-calendar"] .trade-calendar-workspace {background:#fff;}
+.internal-site[data-page="economic-calendar"] .cal-aurora {
+  padding:18px;border-radius:20px;
+  background-color:#F3F4F6;
+  background-image:url(../img/aurora-mesh.svg);
+  background-size:170% auto;background-position:50% 45%;
+  box-shadow:0 40px 70px -50px rgba(16,24,40,.45);
+}
+.internal-site[data-page="economic-calendar"] .cal-aurora .tbl-wrap {
+  border:0;border-radius:14px;
+}
+@media (max-width:600px) {
+  .internal-site[data-page="economic-calendar"] .cal-aurora {padding:12px;border-radius:16px;}
+}
