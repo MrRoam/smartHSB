@@ -860,3 +860,7 @@ html.js .home-minpilot .rewards-inner.pop-play {
 @media (max-width: 600px) {
   .home-minpilot .trust-item.trust-card { padding: 22px 20px 24px; border-radius: 14px; }
 }
+
+/* 首页 overview 标题单句：桌面一行，窄屏在逗号后换行 */
+.home-minpilot .overview-intro .h2-br-m {display:none;}
+@media(max-width:600px) {.home-minpilot .overview-intro .h2-br-m {display:inline;}}

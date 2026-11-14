@@ -25,7 +25,7 @@
     var out = [];
     Array.prototype.forEach.call(el.childNodes, function (n) {
       if (n.nodeType === 3) out.push({ text: norm(n.nodeValue) });
-      else if (n.nodeName === 'BR') out.push({ br: true });
+      else if (n.nodeName === 'BR') out.push({ br: true, cls: n.className || '' });
       else if (n.nodeType === 1) out.push({ text: norm(n.textContent) });
     });
     return out;
@@ -43,7 +43,7 @@
 
     segs.forEach(function (seg) {
       if (seg.br) {
-        pieces.push({ br: true });
+        pieces.push({ br: true, cls: seg.cls || '' });
         atStart = true;
         lastSpace = false;
         return;
@@ -76,7 +76,7 @@
 
     var frag = document.createDocumentFragment();
     pieces.forEach(function (p) {
-      if (p.br) frag.appendChild(document.createElement('br'));
+      if (p.br) { var br = document.createElement('br'); if (p.cls) br.className = p.cls; frag.appendChild(br); }
       else if (p.space) frag.appendChild(document.createTextNode(' '));
       else frag.appendChild(p.node);
     });

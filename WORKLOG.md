@@ -1,5 +1,17 @@
 # SmartHSB 执行记录
 
+## 2026-11-14 · 首页 overview 标题合并为一句一行
+
+**需求**：「一个账户 / 打开全球市场」两行标题合并为一句、桌面一行显示。
+
+**实施**：
+1. index.html：标题改为「一个账户，打开全球市场」，逗号后加 `<br class="h2-br-m">`（窄屏断行锚点）。
+2. home-minpilot.css：`.h2-br-m` 桌面 display:none（单行），≤600px display:inline（逗号后自然断行，避免“打/开”被拆开）。
+3. type-in.js 修复：segments/splitChars 重建 DOM 时 `<br>` 会丢 class，两处（segments 收集 28 行、pieces 透传 46 行、重建 79 行）补 `cls` 透传，重建后的 br 保留原类名，CSS 断行控制对动画后的 DOM 依然生效（顺带修复所有页 type-in 场景同类问题）。
+
+**验证**：桌面 1280 标题单行（h2 高 72px ≈ 一行）；390 移动端在逗号后两行整齐断行；licenses 内页 type-in 动画抽查正常；0 JS 错。
+- bump：home-minpilot b8d6c000d6（index.html）、type-in.js 8719720f4b（35 页）。
+
 ## 2026-11-14 · 首页世界地图底图去渐变（干净化）
 
 **需求**：首页 overview-world 地图背后的蓝/绿渐变光晕显脏，去掉渐变色让图更干净。
