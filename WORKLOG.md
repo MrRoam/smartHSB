@@ -1,5 +1,14 @@
 # SmartHSB 执行记录
 
+## 2026-11-14 · 首页保险说明盾形图标加淡绿徽章底
+
+**需求**：参照「01」序号徽章样式，给 funding 区 insurance-note 的对勾盾形图标加底色。
+
+**实施**：home-minpilot.css 新增 `.home-minpilot .funding-details .insurance-note>.mini-shield`：34×34、去描边、圆角 10px、底色 #E7F7F0、对勾 #006C45、字号 14px（与内页图标/序号徽章 token 同色系）。
+
+**验证**：实测渲染 34×34、rgb(231,247,240)/rgb(0,108,69)/radius 10px，截图核对与文字对齐良好，0 JS 错。
+- bump：home-minpilot 13e8074b2e（index.html）。
+
 ## 2026-11-14 · 首页「入金 / 出金」两张卡加彩虹渐变描边
 
 **需求**：参照次按钮（iris-shell「试用模拟账户」胶囊）的渐变边框，给首页 funding 区两张白卡加同款描边。

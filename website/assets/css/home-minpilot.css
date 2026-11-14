@@ -335,6 +335,7 @@
 .home-minpilot .funding-details>div {padding:24px;margin:0;border:2px solid transparent;border-radius:20px;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(180deg,#ffeab5 20%,#f2a85d 40%,#8052e4 60%,#2e85ea 80%,#68efae 100%) border-box;}
 .home-minpilot .funding-details h3 {overflow-wrap:anywhere;}
 .home-minpilot .funding-details .insurance-note {grid-column:1/-1;background:none;padding:0;}
+.home-minpilot .funding-details .insurance-note>.mini-shield {width:34px;height:34px;border:0;border-radius:10px;background:#E7F7F0;color:#006C45;font-size:14px;}
 .home-minpilot .insurance-note :is(p,small) {font-size:14px;line-height:1.7;color:var(--muted);}
 .home-minpilot .rewards-section {padding:80px 0;background:#fff;}
 .home-minpilot .rewards-inner {width:min(1280px,calc(100% - 112px));background:var(--mint-wash);border-radius:28px;}
