@@ -704,6 +704,9 @@
 .internal-site[data-page] .motion-heading {text-wrap:balance;}
 .internal-site[data-page] .chp-nav a {transition:background-color 220ms,color 220ms;}
 .internal-site[data-page] .chp-nav a:is(:hover,:focus-visible) {background:#E8FFF4;color:#006C45;}
+/* 阅读页竖排侧栏：当前章节白底深字，悬停保持浅绿（仅限侧栏，不影响顶部胶囊导航） */
+.internal-site[data-page] .reading-sidebar .chp-in a:is(.on,.read-active) {background:#fff !important;border-bottom-color:var(--site-line);color:var(--site-ink) !important;box-shadow:none;font-weight:600;}
+.internal-site[data-page] .reading-sidebar .chp-in a:is(.on,.read-active):is(:hover,:focus-visible) {background:#E8FFF4 !important;color:#006C45 !important;}
 .internal-site[data-page] .stat-row .stat {border-radius:12px;background:linear-gradient(135deg,#EEF5FF,#F1FFF7);padding:24px;}
 .internal-site[data-page] .stat-row .stat .n {color:#006C45;}
 /* Small illustrations reuse existing SVG paths. They never imply live market data. */
