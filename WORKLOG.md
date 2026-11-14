@@ -1,5 +1,11 @@
 # SmartHSB 执行记录
 
+## 2026-11-14 · learn-risk 风险管理四步骤卡文字压边修复
+
+- 根因：内页主题把 `.step` 改为上下 25px、左右 0 padding（无边框顶线风格），而阅读页 `.doc-single .prose .step` 又带浅灰底 #f8fafc，导致文字直接贴住左右边缘。
+- 实施：subpages.css 追加 `.internal-site .doc-single .prose .step{padding:25px 22px}`（限定带底色的阅读页步骤卡，不影响裸露式步骤条）；34 页版本 bump 30754e178d。
+- 验证：桌面左右间隙 22px、移动端无溢出；截图确认四卡文字留白正常。仅本地提交，暂不推送。
+
 ## 2026-11-14 · help.html 移除左侧目录菜单
 
 - 用户要求去掉帮助中心左侧「目录」侧栏（hc-side：8 个分类导航 + 展开全部按钮）。JS 依赖均有空值保护（if(hcAll)、空数组 IO），直接删除 aside 安全；editorial-pages.css 追加 `.page-help .hc-layout` 单列布局，正文占满容器。版本 bump 83c405f025。

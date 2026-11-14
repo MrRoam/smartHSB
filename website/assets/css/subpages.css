@@ -88,3 +88,6 @@
 
 /* Real 账户卡：次按钮同款彩虹渐变描边（提亮加饱和版，对角方向），双层 background-clip 保圆角 */
 .internal-site .cmp.real{border:2px solid transparent;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(160deg,#FFDE59 12%,#FF9A4D 32%,#9A5CF0 54%,#2E9BF0 76%,#4BEFAE 94%) border-box;box-shadow:none}
+
+/* 带浅底色的步骤卡补水平内边距，避免文字压边（learn-risk 等阅读页 .doc-single .prose .step） */
+.internal-site .doc-single .prose .step{padding:25px 22px}
