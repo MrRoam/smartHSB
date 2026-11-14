@@ -1,5 +1,13 @@
 # SmartHSB 执行记录
 
+## 2026-11-14 · 帮助中心图标底色统一为薄荷绿
+
+**目标**：用户指定 help.html 图标底色统一为站内薄荷绿语言（--site-surface-mint 底 + --site-green 线条，与导航 hover/页签选中一致）。
+
+**实施**：editorial-pages.css 两处（均 page-help 作用域）——8 张分类卡 `.hc-cc-ic` 与各分类区头 `.hc-cat-ic` 由「浅蓝底 + 灰字」改为「薄荷绿底 + 深绿字」。bump：editorial-pages.css v=eed8dafca3（17 页引用）。
+
+**验证**：help.html 实测 8 枚 .hc-cc-ic 与 .hc-cat-ic computed 均为 rgb(241,255,247)/rgb(0,108,69)，样式唯一、零 JS 错，截图核对通过。
+
 ## 2026-11-14 · 交易品种页「品种明细与参数」对齐实时报价页风格
 
 **目标**：products.html 品种明细模块按 live-quotes「全量行情」模块语言重做——表格加极光底色框、模块大背景改白。
