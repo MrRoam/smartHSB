@@ -1,5 +1,11 @@
 # SmartHSB 执行记录
 
+## 2026-11-14 · 极光底框收口为 .aurora-frame 通用类（走查报告 4.1）
+
+- site-motion.css 新增 `.aurora-frame` 通用件（35 页共享），底框全部参数化为 `--aurora-bg/image/size/pos/pad/radius/shadow` 七个变量，全站唯一实现；39 处底框（6 处定制框 + 32 处 M-07 motion-aurora）挂类、删除各自复制粘贴的背景/内边距/圆角/投影声明，只留变量覆盖；媒体查询断点同步改变量。
+- 清理：trading-pages.css 删除遗留「账户对比扁平表格」容器规则（唯一使用页 account-types 已改极光框，且 0,3,0 权重会盖掉通用件，曾致 padding/background 丢失）；home-minpilot 删 tilt-stage 残留 padding 规则。
+- 验证：39 处 computed padding/size/pos/radius/shadow 与改前逐项一致（脚本扫描 PROBLEM:0）；900/600/479/359 断点覆盖生效；六模块截图（账户卡/权益/工具/行情/日历/首页品种表）视觉无变化。三份 css bump（site-motion affbfa7239 / site-light 2702f56c29 / home-minpilot 3db77d0736 / trading-pages 29facaa967），提交 dc73c70，仅本地。
+
 ## 2026-11-14 · 财经日历页：事件区改白 + 表格极光底框 + 使用说明区改灰
 
 - trade-calendar-workspace 背景改白；列表/周视图两个 .tbl-wrap 各外包 .cal-aurora 极光底框（同行情表语言，白表 14px 圆角去边框），周视图提示行在底框外；「如何使用财经日历」inline style 改 #F6F6F6 灰块。site-light.css bump c623458c71，提交 abab1d5。
