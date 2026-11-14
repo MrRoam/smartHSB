@@ -1,5 +1,14 @@
 # SmartHSB 执行记录
 
+## 2026-11-14 · 真实账户页「支持」四卡加彩虹渐变描边
+
+**需求**：account-real「HSB 为真实账户提供的支持」四张 .kv 卡（专属促销/账户等级/积分与奖励/1对1导师课）加与首页入金/出金两卡同款渐变边框。
+
+**实施**：site-light.css 末尾新增 `.internal-site[data-page="account-real"] .kv`：`border:2px solid transparent` + 双层 background-clip（白底 padding-box + 同款 180deg 五色渐变 border-box），去投影；radius/内边距沿用原值。作用域限定 account-real 页，不影响 learn-risk 的 .kv 灰边样式。
+
+**验证**：1280/390 截图核对——四卡描边渐变均匀、文字无压边；移动端 0 横向溢出、0 JS 错。
+- bump：site-light 92aa5740d9（34 页）。
+
 ## 2026-11-14 · 首页保险说明盾形图标加淡绿徽章底
 
 **需求**：参照「01」序号徽章样式，给 funding 区 insurance-note 的对勾盾形图标加底色。

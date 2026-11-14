@@ -986,3 +986,13 @@ body.motion-off .internal-site[data-page="download"] .dl-route-live {animation:n
   .internal-site[data-page="deposit-withdraw"] .ins-aurora,
   .internal-site[data-page="licenses"] .ins-aurora {--aurora-pad:14px;--aurora-radius:14px;}
 }
+
+/* ==========================================================================
+   真实账户页 · 支持四卡（2026-11-14）：彩虹渐变描边（对齐首页入金/出金两卡）
+   ========================================================================== */
+.internal-site[data-page="account-real"] .kv {
+  border:2px solid transparent;
+  box-shadow:none;
+  background:linear-gradient(#fff,#fff) padding-box,
+             linear-gradient(180deg,#ffeab5 20%,#f2a85d 40%,#8052e4 60%,#2e85ea 80%,#68efae 100%) border-box;
+}
