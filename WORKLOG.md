@@ -1,5 +1,9 @@
 # SmartHSB 执行记录
 
+## 2026-11-14 · 下载中心路线卡上下留白减半
+
+- 用户反馈卡片上下白色留白太多。实测 dl-steps-sec 上下 padding 各 96px（site-light `.sec{padding-block:96px}` 覆盖了 page.css 的 30px），各减半为 48px。版本 bump eaaf7dbcd7（34 页同步），提交 2a55edd。仅本地提交，暂不推送。
+
 ## 2026-11-14 · 下载中心路线模块：去标签压高度 + 圆点对齐修复
 
 - 用户反馈：模块太高（去 SMARTHSB / DOWNLOAD WORKFLOW 标签、高度参照改前）；圆点只有 02 对齐，01/03 错位。
