@@ -782,12 +782,16 @@
 }
 
 /* 交易工具页 · 工具三卡外层极光底带（2026-11-14，对齐账户类型页三种账户卡语言）
-   容器铺 aurora-mesh.svg，18px 缝 + 22px 外沿露出彩色；卡内渐变底、扫光动效均不变 */
+   容器铺 aurora-mesh.svg，18px 缝 + 22px 外沿露出彩色；卡内渐变底、扫光动效均不变
+   2026-11-14 补：容器是 display:block，gap 无效 —— 卡距恢复用 .icard 的
+   margin-bottom:20px（此前被清零导致三卡贴死、底色透不出来）；
+   底图纵向拉伸 180% 并定位 95%，让极光彩色核同时压中两条卡缝 */
 .internal-site[data-page="trading-tools"] .tool-directory {
-  padding:18px;gap:16px;border-radius:20px;border:0;
+  padding:18px;border-radius:20px;border:0;
   background-color:#F3F4F6;
   background-image:url(../img/aurora-mesh.svg);
-  background-size:108% auto;background-position:50% 52%;
+  background-size:170% 180%;background-position:50% 95%;
   box-shadow:0 40px 70px -50px rgba(16,24,40,.45);
 }
-.internal-site[data-page="trading-tools"] .tool-directory>.icard {margin-bottom:0;}
+.internal-site[data-page="trading-tools"] .tool-directory>.icard {margin-bottom:20px;}
+.internal-site[data-page="trading-tools"] .tool-directory>.icard:last-child {margin-bottom:0;}
