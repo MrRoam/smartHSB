@@ -1,5 +1,13 @@
 # SmartHSB 执行记录
 
+## 2026-11-14 · 首页删除「交易之外，还有更多值得期待」积分横幅
+
+**需求**：用户要求去掉 rewards 区块（交易之外/了解积分奖励/查看当前活动/rewards-orbit 插画）。
+
+**实施**：index.html 整段删除 `<section class="rewards-section" id="rewards">…</section>`（24 行）；CSS 中残留 .rewards-section 规则不再生效，暂保留不清理。全站无 #rewards 锚点引用；rewards.html / promotions.html 页面本身不受影响。
+
+**验证**：#rewards 已不存在；行业奖项区块与上一区块衔接正常无空白异常；0 JS 错。
+
 ## 2026-11-14 · 首页市场区块背景改灰色（对齐资金区块）
 
 **需求**：#markets 大背景原为淡蓝 --ice(#EEF5FF)，改为资金区块同款灰色调。
