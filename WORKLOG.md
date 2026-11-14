@@ -1,5 +1,13 @@
 # SmartHSB 执行记录
 
+## 2026-11-14 · 隐私政策页分组标题框压边修复 + 移动端多列列表断点失效修复
+
+**根因 1**：`.internal-site .doc-grp` 给 h3 加了边框圆角白底，但基础规则无 padding，标题文字贴框左上缘。修复：加 `padding:12px 16px`（margin 微调 20px 0 10px）。
+**根因 2（顺带发现）**：移动端 ≤600px 收单列的覆写选择器写成了 `.doc-grp .cols3`，但 HTML 中 h3.doc-grp 与 ul.cols3 是平级而非嵌套，选择器永远匹配不到——390px 下三列列表一直被挤压换行。修复：改为 `.internal-site ul.cols3, .internal-site ul.cols2{grid-template-columns:1fr}`（cols2 同步收单列）；桌面列数不变（3/2）。
+
+**验证**：390 实测 cols3/cols2 均 1 列、1440 保持 3/2 列；标题框文字四周留白；privacy-policy × 1440/768/390 零溢出零 JS 错。
+- bump：editorial-pages 77dfe061ce（17 页）。
+
 ## 2026-11-14 · 隐私政策页联系方式键标签压边修复
 
 **根因**：privacy-policy 底部 doc-contact 的键标签（电子邮箱/官方网站/地址）浅蓝底块被 flex 默认 stretch 拉伸到整行高度（"地址"行值文字换行后行很高），文字行盒贴块上下缘。
