@@ -1,5 +1,11 @@
 # SmartHSB 执行记录
 
+## 2026-11-14 · 初步定版推送 GitHub Pages
+
+**动作**：`git push origin main` 0692fef → 1c9e933，累计 54 个本地提交一次性推送；GitHub Pages 自动部署完成。
+
+**线上校验**：https://mrroam.github.io/smartHSB/ ，tutorial-trade/manage 资源串已是 platform-pages.css?v=5cb2b14061（最新）；index / products / help / live-quotes / tutorial-manage 均 200；tutorial-manage 线上 HTML 路径条为 5 项、当前页项无 href 无箭头、其余 4 项带 ↗。
+
 ## 2026-11-14 · 路径条恢复箭头 + 可跳转项文字标蓝
 
 **实施**：4 个教程页为带 href 的 4 项恢复 ↗（当前页项不带）；新增 `.tutorial-path>a[href]{color:var(--site-blue)}`，箭头 color:inherit 同步标蓝（opacity .75）；当前页项无 href 保持深墨 #1D1D1F 不标蓝。两端均匀分布布局保持不变（箭头紧贴文字后，不再悬空）。移动端 ≤760px 箭头隐藏（5 列太窄）。bump：platform-pages 5cb2b14061（7 页）。
