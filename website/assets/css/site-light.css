@@ -966,3 +966,20 @@ body.motion-off .internal-site[data-page="download"] .dl-route-live {animation:n
   translate:none; transform:none; box-shadow:none;
   border-color:transparent;
 }
+
+/* ==========================================================================
+   出入金页 · 资金保险卡（2026-11-14）：包 .aurora-frame 极光底框
+   内层 .cert-band 白卡承装（对齐品种表 .spec-card / 账户卡语言）
+   ========================================================================== */
+.internal-site[data-page="deposit-withdraw"] .ins-aurora {
+  --aurora-bg:#EEF5FF;
+  --aurora-size:125% auto;
+  --aurora-pos:50% 48%;
+  --aurora-pad:20px;
+  --aurora-radius:16px;
+  --aurora-shadow:none;
+}
+.internal-site[data-page="deposit-withdraw"] .ins-aurora .cert-band {box-shadow:none;}
+@media(max-width:600px) {
+  .internal-site[data-page="deposit-withdraw"] .ins-aurora {--aurora-pad:14px;--aurora-radius:14px;}
+}

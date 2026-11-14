@@ -1,5 +1,14 @@
 # SmartHSB 执行记录
 
+## 2026-11-14 · 出入金页资金保险卡加极光底框
+
+**需求**：参照账户卡（demo 页）样式，给 deposit-withdraw「客户资金保险」白卡加渐变极光底色。
+
+**实施**：`.cert-band` 外包一层 `.ins-aurora.aurora-frame`（复用 site-motion.css 通用底框），site-light.css 末尾新增作用域段：`--aurora-bg:#EEF5FF / size:125% / pad:20px / radius:16px / shadow:none`，内层 cert-band 去投影，移动端 pad 收 14px。白卡内容零改动。
+
+**验证**：1280/390 截图核对——外层淡蓝渐变底框 + 内层白卡，$1,000,000 色块、两段正文、四重保障提示条、aswata/wtw 标识均正常无压边，0 JS 错。
+- bump：site-light 9747f71246（34 页）。
+
 ## 2026-11-14 · 数据表表头统一改淡绿底（对齐图标/序号徽章 token）
 
 **需求**：平台教程/知识中心等内页的表头原为浅蓝灰底（--site-surface-blue + 中性灰字），统一改为序号徽章同款淡绿底 + 深绿字。
