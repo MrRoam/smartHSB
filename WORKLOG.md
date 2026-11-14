@@ -1,5 +1,14 @@
 # SmartHSB 执行记录
 
+## 2026-11-14 · 数据表表头统一改淡绿底（对齐图标/序号徽章 token）
+
+**需求**：平台教程/知识中心等内页的表头原为浅蓝灰底（--site-surface-blue + 中性灰字），统一改为序号徽章同款淡绿底 + 深绿字。
+
+**实施**：site-light.css 表头规则由 `:is(table.spec th,.qhead)` 改为 `:is(table.spec th,.qhead,.hc-a thead th)`，底色/字色改 `var(--site-ic-bg)/var(--site-ic-ink)`（#E7F7F0 / #006C45）。新增 `.hc-a thead th` 覆盖帮助中心 FAQ 内 59 张裸 `<table>`（原 page.css #EEF5FF 浅蓝被覆盖）。覆盖面：learn-* ×4、tutorial-* ×4、deposit-* ×4、products、fraud-warning、economic-calendar、help、live-quotes（.qhead）。
+
+**验证**：tutorial-open / help（展开 FAQ）/ live-quotes 三处实测底色 rgb(231,247,240)、字色 rgb(0,108,69)，截图核对表头与正文区分清晰。
+- bump：site-light 1ab8e6d1fc（34 页）。
+
 ## 2026-11-14 · 隐私政策页分组标题框压边修复 + 移动端多列列表断点失效修复
 
 **根因 1**：`.internal-site .doc-grp` 给 h3 加了边框圆角白底，但基础规则无 padding，标题文字贴框左上缘。修复：加 `padding:12px 16px`（margin 微调 20px 0 10px）。
