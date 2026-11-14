@@ -1,13 +1,15 @@
 # SmartHSB 执行记录
 
-## 2026-11-14 · 首页 APP 介绍区背景改蓝绿纯色过渡
+## 2026-11-14 · 首页世界地图底图去渐变（干净化）
 
-**需求**：#platform 区背景原为柠檬绿/薄荷/蓝三色 radial 光斑叠白底，观感显「脏」；改为纯色 + 过渡色的干净蓝绿渐变。
+**需求**：首页 overview-world 地图背后的蓝/绿渐变光晕显脏，去掉渐变色让图更干净。
 
-**实施**：home-minpilot.css 两处 `.home-minpilot .platform::before`（88 行桌面 / 400 行移动端覆写）统一改为 `linear-gradient(118deg,#E9F2FF 0%,#E3F5F1 46%,#DFF8EB 100%)`——左上淡蓝 → 右下淡绿的斜向柔和过渡，删除全部光斑。
+**实施**（两处）：
+1. `assets/img/home/world-map.svg`：点阵 stroke 的 `land` 渐变（#4f91c3→#34ac83 蓝→绿）两处 stop 统一为单色 `#9FB4CB`（柔和蓝灰），点阵整幅均匀一色；index.html 引用加 `?v=20261114` 防缓存。
+2. home-minpilot.css `.home-minpilot .map-glow`：去掉双 radial-gradient（左蓝 #badcff / 右绿 #c4efe3 + blur）改为 `display:none`，整块背景回归纯白。
 
-**验证**：1440/390 截图核对——背景干净无杂色斑驳，手机模型、市场分析卡、按钮文字清晰；0 JS 错。
-- bump：home-minpilot 25fdf6e90c（index.html）。
+**验证**：截图核对——背景纯白、点阵单色浅蓝灰、绿色航线与端点、四枚白色标签卡均清晰；390 移动端 0 横向溢出、0 JS 错。
+- bump：home-minpilot 01895f111e（index.html）。
 
 ## 2026-11-14 · 真实账户页「支持」四卡加彩虹渐变描边
 

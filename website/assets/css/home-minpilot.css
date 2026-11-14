@@ -69,7 +69,7 @@
 .home-minpilot .overview-intro { text-align: center; max-width: 820px; margin: 0 auto; }
 .home-minpilot .overview-intro > p { margin: 22px 0 12px; font-size: 16px; line-height: 1.9; }
 .home-minpilot .overview-world { position: relative; height: 410px; max-width: 1000px; margin: 30px auto 0; }
-.home-minpilot .map-glow { position: absolute; inset: 14% 4% 0; background: radial-gradient(ellipse at 30% 55%, #badcff 0%, transparent 58%), radial-gradient(ellipse at 78% 50%, #c4efe3 0%, transparent 48%); filter: blur(24px); }
+.home-minpilot .map-glow { position: absolute; inset: 14% 4% 0; display: none; }
 .home-minpilot .world-map { position: absolute; width: 100%; height: 100%; object-fit: contain; opacity: .85; }
 .home-minpilot .map-chip { position: absolute; display: inline-flex; gap: 11px; align-items: center; background: #fff; padding: 11px 18px 11px 11px; border-radius: 8px; box-shadow: 0 8px 24px #285a5015; color: #24484c; font-size: 14px; }
 .home-minpilot .map-chip i { display: grid; place-items: center; width: 34px; height: 34px; background: #e6f2fc; border-radius: 50%; font: 500 16px/1 Suisse, sans-serif; color: var(--green-dark); }
@@ -85,7 +85,7 @@
 .home-minpilot .stats strong span:not(.stat-num) { font-size: 14px; margin-left: 4px; color: var(--muted); }
 .home-minpilot .stats p { font-size: 14px; margin-top: 7px; }
 .home-minpilot .platform { position: relative; isolation: isolate; overflow: clip; background: #fff; }
-.home-minpilot .platform::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(118deg,#E9F2FF 0%,#E3F5F1 46%,#DFF8EB 100%); }
+.home-minpilot .platform::before { content: ""; position: absolute; inset: 0; z-index: -1; background: radial-gradient(ellipse at 85% 22%,#bfff374d 0%,transparent 43%), radial-gradient(ellipse at 68% 48%,#5bffc366 0%,transparent 45%), radial-gradient(ellipse at 80% 88%,#235dfe1f 0%,transparent 44%), #fff; }
 .home-minpilot .platform-grid { display: grid; grid-template-columns: 1fr 1.12fr; align-items: center; gap: 72px; padding-block: 112px 90px; }
 .home-minpilot .platform-copy > p { margin-top: 24px; color: var(--muted); font-size: 18px; }
 .home-minpilot .platform-copy h3 { font-size: 18px; letter-spacing: -.02em; margin: 28px 0 8px; }
@@ -397,7 +397,7 @@
 .home-minpilot .phone {width:300px}
 .home-minpilot .platform-float {left:6px;bottom:55px}
 .home-minpilot .platform-insight {right:0;top:30px}
-.home-minpilot .platform::before {background:linear-gradient(118deg,#E9F2FF 0%,#E3F5F1 46%,#DFF8EB 100%)}
+.home-minpilot .platform::before {background:radial-gradient(ellipse at 85% 55%,#BFFF3733,transparent 34%),radial-gradient(ellipse at 50% 70%,#5BFFC359,transparent 38%),radial-gradient(ellipse at 75% 90%,#235DFE17,transparent 34%),#fff}
 .home-minpilot .market-panel {grid-template-columns:1fr;gap:26px}
 .home-minpilot .instrument-list {max-height:320px}
 .home-minpilot .trust-layout, .home-minpilot .faq-grid {grid-template-columns:1fr;gap:38px}
