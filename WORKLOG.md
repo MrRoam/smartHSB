@@ -1,5 +1,13 @@
 # SmartHSB 执行记录
 
+## 2026-11-14 · 教程页学习路径条移除当前页自链接
+
+**目标**：用户指出 tutorial-path 路径条里指向当前页自身的链接（aria-current="page"）多余，应去掉。
+
+**实施**：4 个教程页（install/open/manage/trade）各移除 1 个自链接项，每页剩 4 项；编号保持全局路径位（如 install 页显示 02 开户…05 交易，trade 页显示 01 安装…04 资金），用户可据此判断自己处于五步路径的第几步；platform-pages.css 路径网格 repeat(5→4) 列。bump：platform-pages 3d2f8789da（7 页）。
+
+**验证**：4 页均无自链接、4 列均匀分布、零 JS 错；桌面截图核对无孤立箭头；4 页×1440/768/390 零溢出。
+
 ## 2026-11-14 · 正文序号徽章放大（用户反馈偏小）
 
 **实施**：.prose h2 i 徽章 26×26/12.5px → **32×32/14.5px**（radius 9、margin-right 13、vertical-align 3px），600px 以下收为 28×28/13px；侧栏菜单序号 9px → 10.5px（subpages.css 与 platform-pages.css 两处）。覆盖全部 13 个带序号页（含原有的 user-agreement/privacy-policy）。
