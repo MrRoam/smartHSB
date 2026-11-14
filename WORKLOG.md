@@ -1,5 +1,13 @@
 # SmartHSB 执行记录
 
+## 2026-11-14 · 隐私政策页联系方式键标签压边修复
+
+**根因**：privacy-policy 底部 doc-contact 的键标签（电子邮箱/官方网站/地址）浅蓝底块被 flex 默认 stretch 拉伸到整行高度（"地址"行值文字换行后行很高），文字行盒贴块上下缘。
+
+**实施**：editorial-pages.css `.internal-site .doc-ck` 加 `padding:5px 8px; border-radius:4px; align-self:center`（flex-basis 84px 保持，border-box 全局生效）。bump：editorial-pages 39fe0d1ff9（17 页）。
+
+**验证**：键块高 30px、文字四周留白；桌面/390 截图核对（地址行块居中、值多行正常）；privacy-policy × 1440/768/390 零溢出零 JS 错。
+
 ## 2026-11-14 · 帮助中心 FAQ 文字压边修复
 
 **根因**：editorial-pages.css 把 help 页 FAQ 的内边距覆写为左右 0（.faq-q `21px 0`、.faq-a `0 0 24px 0`），问题与答案文字直接贴到列表容器边缘。
