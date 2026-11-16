@@ -189,7 +189,7 @@
 body.motion-off .intro-portal__reg-item { animation: none; }
 
 /* ==========================================================================
-   首屏视口容器：hero + 徽章条合并进第一屏（100vh），
+   首屏视口容器：hero、徽章条与风险提示合并进第一屏（100vh），
    打开首页即可同时看到风险提示与 6 枚资质徽章，无需下翻。
    ========================================================================== */
 .holo-viewport {
@@ -197,6 +197,7 @@ body.motion-off .intro-portal__reg-item { animation: none; }
   height: 100dvh;
   display: flex;
   flex-direction: column;
+  background: #02030b;
 }
 
 .holo-viewport .intro-portal {
@@ -207,7 +208,7 @@ body.motion-off .intro-portal__reg-item { animation: none; }
 /* ==========================================================================
    HERO CTA + 风险提示（2026-11-11）
    CTA：蓝→绿渐变胶囊按钮，呼应品牌字渐变；入场与标题动效错峰（2.5s）。
-   风险提示：小号浅蓝灰长文案，满足金融网站风险披露义务。
+   风险提示：固定于第一屏最下方的小号黄色文字，满足金融网站风险披露义务。
    注意：.holo-stage 为 pointer-events:none，CTA 必须单独恢复 auto。
    ========================================================================== */
 .holo-cta {
@@ -254,22 +255,27 @@ body.motion-off .intro-portal__reg-item { animation: none; }
 }
 
 .holo-risk {
-  position: absolute;
-  right: clamp(14px, 2.6vw, 40px);
-  top: 50%;
-  transform: translateY(-50%);
+  position: relative;
+  align-self: flex-end;
+  flex: 0 0 auto;
   z-index: 6;
-  margin: 0;
-  max-width: none;
-  white-space: nowrap;
+  margin: 0 clamp(14px, 2.6vw, 40px);
+  padding: 4px 0 14px;
+  max-width: min(80vw, 620px);
+  white-space: normal;
   font-size: clamp(.68rem, .82vw, .84rem);
-  font-weight: 300;
+  font-weight: 500;
   line-height: 1.7;
   letter-spacing: .02em;
-  color: rgba(255, 255, 255, .88);
+  color: #ffd35c;
   text-align: right;
-  text-shadow: 0 1px 10px rgba(2, 3, 11, .65);
-  animation: holoRiskIn .9s ease 2.75s backwards;
+  text-shadow: 0 0 8px rgba(255, 211, 92, .28);
+  animation: none;
+}
+
+/* 覆盖首页通用段落的灰色，确保底部风险提示保留黄色高对比文字。 */
+.home-minpilot .holo-risk {
+  color: #ffd35c;
 }
 
 @keyframes holoRiskIn {
@@ -287,7 +293,7 @@ body.motion-off .intro-portal__reg-item { animation: none; }
   filter: drop-shadow(0 0 5px rgba(255, 196, 77, .4));
 }
 
-/* 资质徽章条：hero 正下方深色延续条，徽章水平居中；风险提示绝对定位条带右下角 */
+/* 资质徽章条：hero 正下方的深色延续条，徽章水平居中。 */
 .holo-regstrip {
   position: relative;
   z-index: 5;
@@ -296,18 +302,6 @@ body.motion-off .intro-portal__reg-item { animation: none; }
   align-items: center;
   justify-content: center;
   padding: 20px 5.5vw 22px;
-}
-
-/* 窄屏（<1280px）：徽章与右侧提示会挤在一起，风险提示退回徽章下方一行居中 */
-@media (max-width: 1280px) {
-  .holo-regstrip { flex-direction: column; gap: 6px; }
-  .holo-risk {
-    position: static;
-    transform: none;
-    max-width: 100%;
-    text-align: center;
-    font-size: .74rem;
-  }
 }
 
 /* 系统减少动效 / 站点关闭动效：CTA 与风险提示直接到位 */
@@ -326,7 +320,7 @@ body.motion-off .holo-risk { animation: none; }
     letter-spacing: .12em;
     font-size: .95rem;
   }
-  .holo-risk { font-size: .7rem; letter-spacing: .03em; text-align: center; white-space: normal; }
+  .holo-risk { align-self: stretch; margin: 0 16px; padding: 4px 0 12px; max-width: none; font-size: .7rem; letter-spacing: .03em; text-align: right; white-space: normal; }
   .holo-regstrip { padding: 14px 16px 16px; }
 }
 
@@ -340,36 +334,67 @@ body.motion-off .holo-risk { animation: none; }
 }
 
 /* ==========================================================================
-   资质图标尺寸归一（2026-11-12）
-   6 枚徽章改用官方高清矢量（深底反白版）后，宽长比差异很大（OJK 2.65:1、
-   ICDX 2.86:1，BAPPEBTI/ASPEBTINDO 接近 1:1）。原 96px 圆形容器 + 16px 内边距
-   只剩 64px 内容宽，横版长标会被压到 22~24px 高，与竖版 44px 高差一倍。
-   改为「统一 44px 高、宽度自适应」，容器宽度随图内容自适应，窄屏换行。
+   资质图标视觉归一（2026-11-16）
+   原文件的画布比例不同：横向的 OJK/ICDX 若与竖向标志使用同一像素高度，会显得
+   过宽；Bank Indonesia、ASPEBTINDO 则会显得过小。统一徽章槽位后，按原始图形
+   的可见比例校正各自高度，令六枚标志的视觉量感接近。
    ========================================================================== */
 .holo-regstrip .intro-portal__reg-item {
-  width: auto;
-  min-width: 96px;
-  padding: 8px 12px;
+  width: 124px;
+  min-width: 0;
+  height: 68px;
+  padding: 0;
   margin-left: 0;
 }
 
-.holo-regstrip .intro-portal__reg-item img {
-  height: 44px;
-  max-height: 44px;
+.holo-regstrip .intro-portal__reg-item .reg-logo {
+  position: relative;
+  display: block;
+  height: auto;
+  max-height: none;
   max-width: none;
   width: auto;
 }
 
-.holo-regstrip .intro-portal__reg-list { flex-wrap: wrap; justify-content: center; row-gap: 2px; }
+.holo-regstrip .reg-item--bappebti .reg-logo { height: 50px; }
+.holo-regstrip .reg-item--ojk .reg-logo { height: 43px; }
+.holo-regstrip .reg-item--bank-indonesia .reg-logo { height: 52px; }
+.holo-regstrip .reg-item--icdx .reg-logo { height: 38px; }
+.holo-regstrip .reg-item--ich .reg-logo { height: 50px; }
+.holo-regstrip .reg-item--aspebtindo .reg-logo { height: 49px; }
+
+/* OJK 的原始右侧文字为深灰色；仅叠加同一 SVG 的右侧部分为白色，保留左侧彩色徽记。 */
+.holo-regstrip .reg-item--ojk .ojk-white-wordmark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-width: none;
+  clip-path: inset(0 0 0 55%);
+  filter: brightness(0) invert(1);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+.holo-regstrip .intro-portal__reg-list { flex-wrap: wrap; justify-content: center; gap: 4px 0; margin-top: -1em; }
 
 @media (max-width: 900px) {
-  .holo-regstrip .intro-portal__reg-item { min-width: 0; padding: 6px 8px; }
-  .holo-regstrip .intro-portal__reg-item img { height: 32px; max-height: 32px; }
+  .holo-regstrip .intro-portal__reg-item { width: 96px; height: 54px; }
+  .holo-regstrip .reg-item--bappebti .reg-logo { height: 38px; }
+  .holo-regstrip .reg-item--ojk .reg-logo { height: 32px; }
+  .holo-regstrip .reg-item--bank-indonesia .reg-logo { height: 40px; }
+  .holo-regstrip .reg-item--icdx .reg-logo { height: 30px; }
+  .holo-regstrip .reg-item--ich .reg-logo { height: 38px; }
+  .holo-regstrip .reg-item--aspebtindo .reg-logo { height: 38px; }
 }
 
 @media (max-width: 480px) {
-  .holo-regstrip .intro-portal__reg-item { padding: 4px 6px; }
-  .holo-regstrip .intro-portal__reg-item img { height: 26px; max-height: 26px; }
+  .holo-regstrip .intro-portal__reg-item { width: 100px; height: 48px; }
+  .holo-regstrip .reg-item--bappebti .reg-logo { height: 32px; }
+  .holo-regstrip .reg-item--ojk .reg-logo { height: 28px; }
+  .holo-regstrip .reg-item--bank-indonesia .reg-logo { height: 34px; }
+  .holo-regstrip .reg-item--icdx .reg-logo { height: 25px; }
+  .holo-regstrip .reg-item--ich .reg-logo { height: 32px; }
+  .holo-regstrip .reg-item--aspebtindo .reg-logo { height: 32px; }
 }
 
 /* Preserve the subtitle as one accessible phrase while its visual glyphs animate. */
