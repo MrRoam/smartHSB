@@ -40,3 +40,11 @@ test('desktop dropdowns remain connected to their trigger without a hover gap', 
   assert.doesNotMatch(homeStyles, /\.site-header\.sticky \.dropdown \{top:calc\(100% \+ 8px\)/);
   assert.doesNotMatch(internalStyles, /\.site-header \.dropdown \{top:calc\(100% \+ 8px\)/);
 });
+
+test('internal-page hero background extends behind the fixed navigation', () => {
+  const internalStyles = read('website/assets/css/site-light.css');
+
+  assert.match(internalStyles, /\.internal-site\[data-page\]\.header-fixed main \{padding-top:0;\}/);
+  assert.match(internalStyles, /\.internal-site\[data-page\] \.page-hero \{padding-top:168px;\}/);
+  assert.match(internalStyles, /@media \(max-width:800px\)[\s\S]*?\.internal-site\[data-page\] \.page-hero \{padding-top:137px;\}/);
+});

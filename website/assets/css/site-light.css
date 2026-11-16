@@ -1035,7 +1035,8 @@ body.motion-off .internal-site[data-page="download"] .dl-route-live {animation:n
   height:66px;
   padding:0 22px;
 }
-.internal-site[data-page].header-fixed main {padding-top:98px;}
+.internal-site[data-page].header-fixed main {padding-top:0;}
+.internal-site[data-page] .page-hero {padding-top:168px;}
 .internal-site[data-page] .site-header .brand {color:#121820;}
 .internal-site[data-page] .site-header .brand-name__accent {color:#087C68;}
 .internal-site[data-page] .site-header :is(.nav-trigger,.nav-home,.language-placeholder) {color:#525967;}
@@ -1058,10 +1059,12 @@ body.motion-off .internal-site[data-page="download"] .dl-route-live {animation:n
   .internal-site[data-page] .site-header,
   .internal-site[data-page] .site-header.sticky {top:12px;width:calc(100% - 40px);border-radius:24px;}
   .internal-site[data-page] .site-header .nav-inner {height:68px;padding:0 14px;}
-  .internal-site[data-page].header-fixed main {padding-top:92px;}
+  .internal-site[data-page].header-fixed main {padding-top:0;}
+  .internal-site[data-page] .page-hero {padding-top:137px;}
 }
 @media (max-width:540px) {
   .internal-site[data-page] .site-header,
   .internal-site[data-page] .site-header.sticky {width:calc(100% - 24px);}
   .internal-site[data-page] .site-header .nav-inner {padding:0 12px;}
+  .internal-site[data-page] .page-hero {padding-top:126px;}
 }
