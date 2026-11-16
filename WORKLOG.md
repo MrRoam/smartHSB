@@ -631,3 +631,10 @@
 - 修复：`site-light.css` 中移除提示条自带的 `background` 渐变与顶部 `mask-image` 渐隐（后者仅为融合色带而设），文字直接悬浮在 HERO 光场底色上。
 - 缓存：34 个内页 HTML 的 `site-light.css` 引用版本 `v=457` → `v=458`；首页不引用该文件，根目录镜像无需变更。
 - 发布：提交 `0261ca8` 推送 `main`，本次 Pages 工作流部署成功；已验证 `about.html` HTTP 200 且线上 CSS 含 `background: none` 新规则。
+
+## 2026-11-16 · learn.html 高频术语数量修正
+
+- 问题：用户反馈知识中心页 HERO 元信息「高频术语 10 个」与下方实际 9 个术语卡不符。
+- 排查：全站核对了 learn/platform-tutorial/news/rewards/account-types/demo/products/account-real/customer-complaint/about/licenses 等页的数量声明（板块数、模块数、FAQ 数、材料数、渠道数等），仅 learn.html 存在 2 处不一致。
+- 修复：learn.html HERO 元信息与学习路径第 1 步的「10 个」均改为「9 个」，与术语卡数量及区块副标题「9 个最常用交易术语」对齐。
+- 发布：提交 `c965ed5` 推送 `main`，本次 Pages 部署成功；已验证线上 learn.html 两处文本均为「9 个」。
