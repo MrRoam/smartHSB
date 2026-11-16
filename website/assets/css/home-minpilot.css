@@ -864,3 +864,47 @@ html.js .home-minpilot .rewards-inner.pop-play {
 /* 首页 overview 标题单句：桌面一行，窄屏在逗号后换行 */
 .home-minpilot .overview-intro .h2-br-m {display:none;}
 @media(max-width:600px) {.home-minpilot .overview-intro .h2-br-m {display:inline;}}
+
+/* 首页仅在穿过 HERO 后升起为顶部浮层；首屏保留已确认的深色内嵌导航。 */
+.home-minpilot .site-header.sticky {
+  top:18px;
+  left:50%;
+  right:auto;
+  width:min(1280px,calc(100% - 96px));
+  transform:translateX(-50%);
+  color:#161B22;
+  background:#FFFFfff2;
+  border:1px solid #FFFFFFB8;
+  border-radius:999px;
+  box-shadow:0 14px 34px #07132126,0 2px 7px #07132114;
+  backdrop-filter:blur(18px) saturate(1.08);
+}
+.home-minpilot .site-header.sticky .nav-inner {
+  width:100%;
+  max-width:none;
+  height:70px;
+  padding:0 22px;
+}
+.home-minpilot .site-header.sticky .brand {color:#121820;}
+.home-minpilot .site-header.sticky .brand-name__accent {color:#087C68;}
+.home-minpilot .site-header.sticky :is(.nav-trigger,.nav-home,.language-placeholder) {color:#525967;}
+.home-minpilot .site-header.sticky .nav-home[aria-current=page] {color:#121820;}
+.home-minpilot .site-header.sticky .nav-actions .button-outline {
+  min-height:46px;
+  padding-inline:24px;
+  color:#fff;
+  background:#10161E;
+  border:0;
+  border-radius:999px;
+  box-shadow:none;
+}
+.home-minpilot .site-header.sticky .nav-actions .button-outline:hover {background:#087C68;}
+.home-minpilot .site-header.sticky .dropdown {top:calc(100% + 8px);}
+@media (max-width:1050px) {
+  .home-minpilot .site-header.sticky {top:12px;width:calc(100% - 40px);border-radius:24px;}
+  .home-minpilot .site-header.sticky .nav-inner {height:68px;padding:0 14px;}
+}
+@media (max-width:540px) {
+  .home-minpilot .site-header.sticky {width:calc(100% - 24px);}
+  .home-minpilot .site-header.sticky .nav-inner {padding:0 12px;}
+}

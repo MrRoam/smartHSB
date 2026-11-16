@@ -159,3 +159,16 @@
 @media (prefers-reduced-motion: reduce) {
   .mobile-nav-group summary span { transition: none; }
 }
+
+/* 浮层导航展开时，让移动端菜单独立成卡，避免撑开顶部胶囊。 */
+@media (max-width:1050px) {
+  .site-header.sticky .mobile-nav:not([hidden]) {
+    position:absolute;
+    top:calc(100% + 8px);
+    left:0;
+    right:0;
+    border:1px solid var(--line);
+    border-radius:22px;
+    box-shadow:0 16px 34px #07132120;
+  }
+}

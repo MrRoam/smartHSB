@@ -100,6 +100,7 @@
   }
 
   const header = document.querySelector('#header');
+  const introPortal=document.querySelector('#intro-portal');
   header.classList.remove('hidden-header');
   const groups = [...document.querySelectorAll('.nav-group')];
   function closeGroups() { groups.forEach(group => { group.classList.remove('open'); group.querySelector('button').setAttribute('aria-expanded','false'); }); }
@@ -123,16 +124,20 @@
   document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeGroups(); closeMobile(); } });
   matchMedia('(min-width:1051px)').addEventListener('change', e => { if (e.matches) closeMobile(); });
   header.addEventListener('focusin', () => header.classList.remove('hidden-header'));
+  function syncHeaderMode(){
+    const pastHero=Boolean(introPortal&&introPortal.getBoundingClientRect().bottom<=96);
+    header.classList.toggle('sticky',pastHero);
+  }
   let scrollQueued = false;
   addEventListener('scroll', () => {
     if (scrollQueued) return;
     scrollQueued = true;
     requestAnimationFrame(() => {
-      const y = scrollY;
-      header.classList.toggle('sticky', y > 120);
+      syncHeaderMode();
       scrollQueued = false;
     });
   }, {passive:true});
+  syncHeaderMode();
 
   const marketData = {
     gold:{symbol:'XAU / USD',name:'黄金，全球共同的语言。',description:'关注黄金与白银，把握贵金属市场的变化。',icon:'Au',price:'2,384.70',change:'+0.45% ↗',short:'黄金 / 美元',values:[164,155,160,139,144,126,137,105,112,126,90,101,82,94,62,72,49,60,32,40,20,29]},

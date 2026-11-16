@@ -34,14 +34,16 @@
   document.addEventListener('keydown',e=>{if(e.key==='Escape'){const wasMobile=mobile&&!mobile.hidden;closeGroups();closeMobile();if(wasMobile)menuButton.focus();}});
   matchMedia('(min-width:1051px)').addEventListener('change',e=>{if(e.matches)closeMobile();});
   const progress=document.createElement('div');progress.className='reading-progress';progress.setAttribute('aria-hidden','true');body.append(progress);
+  header?.classList.add('sticky');
+  body.classList.add('header-fixed');
   header?.addEventListener('focusin',()=>header.classList.remove('hidden-header'));
-  let prior=scrollY,queued=false;
+  let queued=false;
   function onScroll(){
-    const y=scrollY, fixed=y>120;
-    if(header){header.classList.toggle('sticky',fixed);body.classList.toggle('header-fixed',fixed);header.classList.toggle('hidden-header',fixed&&y>prior+4&&mobile?.hidden&&!header.contains(document.activeElement));if(y<prior-3)header.classList.remove('hidden-header');}
+    const y=scrollY;
+    if(header){header.classList.add('sticky');header.classList.remove('hidden-header');body.classList.add('header-fixed');}
     const remaining=document.documentElement.scrollHeight-innerHeight;
     body.style.setProperty('--read-progress',remaining>0?String(Math.min(1,y/remaining)):'0');
-    prior=y;queued=false;
+    queued=false;
   }
   addEventListener('scroll',()=>{if(!queued){queued=true;requestAnimationFrame(onScroll);}},{passive:true});
   onScroll();
