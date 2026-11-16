@@ -57,3 +57,14 @@ test('internal-page hero uses a bright blue and green light field instead of a g
   assert.match(internalStyles, /\.internal-site\[data-page\] \.page-hero::before \{[\s\S]*?z-index:0/);
   assert.match(internalStyles, /\.internal-site\[data-page\] \.page-hero>\.wrap \{position:relative;z-index:1;\}/);
 });
+
+test('download-app navigation action uses the same blue-green brand gradient on every page', () => {
+  const homeStyles = read('website/assets/css/home-minpilot.css');
+  const internalStyles = read('website/assets/css/site-light.css');
+
+  assert.match(homeStyles, /\.home-minpilot \.site-header \.nav-actions \.button-outline \{[\s\S]*?color:#fff;[\s\S]*?linear-gradient\(90deg,#1E5CD2 0%,#176EAC 48%,#00795F 78%,#006C45 100%\)/);
+  assert.match(homeStyles, /\.home-minpilot \.site-header\.sticky \.nav-actions \.button-outline \{[\s\S]*?color:#fff;[\s\S]*?linear-gradient\(90deg,#1E5CD2 0%,#176EAC 48%,#00795F 78%,#006C45 100%\)/);
+  assert.match(internalStyles, /\.internal-site\[data-page\] \.site-header \.nav-actions \.button-outline \{[\s\S]*?color:#fff;[\s\S]*?linear-gradient\(90deg,#1E5CD2 0%,#176EAC 48%,#00795F 78%,#006C45 100%\)/);
+  assert.doesNotMatch(homeStyles, /\.site-header\.sticky \.nav-actions \.button-outline \{[\s\S]*?background:#10161E/);
+  assert.doesNotMatch(internalStyles, /\.site-header \.nav-actions \.button-outline \{[\s\S]*?background:#10161E/);
+});

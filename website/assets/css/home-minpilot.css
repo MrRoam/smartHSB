@@ -55,8 +55,8 @@
 .home-minpilot .site-header:not(.sticky) :is(.nav-trigger, .nav-home, .language-placeholder) { color: #fff; }
 .home-minpilot .site-header:not(.sticky) :is(a, button):focus-visible { outline-color: #b9e8ff; }
 .home-minpilot .site-header:not(.sticky) .nav-home[aria-current=page] { color: #c2e9ff; }
-.home-minpilot .site-header .nav-actions .button-outline { min-height: 44px; padding: 0 22px; color: white; background: #147b96; border: 0; }
-.home-minpilot .site-header:not(.sticky) .nav-actions .button-outline { background: #147b96; }
+.home-minpilot .site-header .nav-actions .button-outline { min-height: 44px; padding: 0 22px; color:#fff; background:linear-gradient(90deg,#1E5CD2 0%,#176EAC 48%,#00795F 78%,#006C45 100%); border:0; }
+.home-minpilot .site-header:not(.sticky) .nav-actions .button-outline { background:linear-gradient(90deg,#1E5CD2 0%,#176EAC 48%,#00795F 78%,#006C45 100%); }
 .home-minpilot .site-header.sticky { top: 0; color: var(--ink); background: #fff; box-shadow: 0 1px 0 var(--line); }
 .home-minpilot .site-header.sticky :is(.nav-trigger, .nav-home, .language-placeholder) { color: var(--ink); }
 .home-minpilot .site-header.sticky .brand-name__accent { color: #125f77; }
@@ -894,12 +894,12 @@ html.js .home-minpilot .rewards-inner.pop-play {
   min-height:46px;
   padding-inline:24px;
   color:#fff;
-  background:#10161E;
+  background:linear-gradient(90deg,#1E5CD2 0%,#176EAC 48%,#00795F 78%,#006C45 100%);
   border:0;
   border-radius:999px;
   box-shadow:none;
 }
-.home-minpilot .site-header.sticky .nav-actions .button-outline:hover {background:#087C68;}
+.home-minpilot .site-header.sticky .nav-actions .button-outline:hover {background:linear-gradient(90deg,#174CB4 0%,#115F98 48%,#006B54 78%,#005637 100%);}
 .home-minpilot .site-header.sticky .dropdown {top:100%;}
 @media (max-width:1050px) {
   .home-minpilot .site-header.sticky {top:12px !important;width:calc(100% - 40px);border-radius:24px;}

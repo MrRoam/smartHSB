@@ -1038,12 +1038,12 @@ body.motion-off .internal-site[data-page="download"] .dl-route-live {animation:n
   min-height:46px;
   padding-inline:24px;
   color:#fff;
-  background:#10161E;
+  background:linear-gradient(90deg,#1E5CD2 0%,#176EAC 48%,#00795F 78%,#006C45 100%);
   border:0;
   border-radius:999px;
   box-shadow:none;
 }
-.internal-site[data-page] .site-header .nav-actions .button-outline:hover {background:#087C68;}
+.internal-site[data-page] .site-header .nav-actions .button-outline:hover {background:linear-gradient(90deg,#174CB4 0%,#115F98 48%,#006B54 78%,#005637 100%);}
 .internal-site[data-page] .site-header .dropdown {top:100%;}
 @media (max-width:1100px) {
   .internal-site[data-page] .site-header,

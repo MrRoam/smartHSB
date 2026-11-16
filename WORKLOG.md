@@ -638,3 +638,8 @@
 - 排查：全站核对了 learn/platform-tutorial/news/rewards/account-types/demo/products/account-real/customer-complaint/about/licenses 等页的数量声明（板块数、模块数、FAQ 数、材料数、渠道数等），仅 learn.html 存在 2 处不一致。
 - 修复：learn.html HERO 元信息与学习路径第 1 步的「10 个」均改为「9 个」，与术语卡数量及区块副标题「9 个最常用交易术语」对齐。
 - 发布：提交 `c965ed5` 推送 `main`，本次 Pages 部署成功；已验证线上 learn.html 两处文本均为「9 个」。
+
+## 2026-11-16 · 顶部“下载 APP”按钮统一品牌主行动色
+
+- 视觉：移除首页浮层和内页顶部导航中的黑色按钮，统一使用网站蓝绿主渐变（蓝 → 青蓝 → 深绿），文字与箭头固定为白色。
+- 一致性：首页 HERO 内、首页滚动后的浮层，以及下载页和其他内页均使用同一套按钮底色、文字色与悬停深色渐变，避免下载页出现黑底绿字。
