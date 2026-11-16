@@ -3,3 +3,8 @@ Thumbs.db
 Desktop.ini
 node_modules/
 .vscode/
+
+# AI 工具本地工作数据（不随仓库分发）
+.workbuddy/
+.agents/
+skills-lock.json
