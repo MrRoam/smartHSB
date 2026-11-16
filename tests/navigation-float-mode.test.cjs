@@ -48,3 +48,12 @@ test('internal-page hero background extends behind the fixed navigation', () => 
   assert.match(internalStyles, /\.internal-site\[data-page\] \.page-hero \{padding-top:168px;\}/);
   assert.match(internalStyles, /@media \(max-width:800px\)[\s\S]*?\.internal-site\[data-page\] \.page-hero \{padding-top:137px;\}/);
 });
+
+test('internal-page hero uses a bright blue and green light field instead of a grey-white wash', () => {
+  const internalStyles = read('website/assets/css/site-light.css');
+
+  assert.match(internalStyles, /linear-gradient\(118deg,#EAF6FF 0%,#F1FBFF 36%,#E8FFF5 67%,#DFFFEA 100%\)/);
+  assert.match(internalStyles, /radial-gradient\(66% 100% at 100% 2%,rgba\(182,255,115,\.45\)/);
+  assert.match(internalStyles, /\.internal-site\[data-page\] \.page-hero::before \{[\s\S]*?z-index:0/);
+  assert.match(internalStyles, /\.internal-site\[data-page\] \.page-hero>\.wrap \{position:relative;z-index:1;\}/);
+});
