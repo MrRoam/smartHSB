@@ -867,10 +867,11 @@ html.js .home-minpilot .rewards-inner.pop-play {
 
 /* 首页仅在穿过 HERO 后升起为顶部浮层；首屏保留已确认的深色内嵌导航。 */
 .home-minpilot .site-header.sticky {
-  top:18px;
+  top:18px !important;
   left:50%;
   right:auto;
   width:min(1280px,calc(100% - 96px));
+  padding:0;
   transform:translateX(-50%);
   color:#161B22;
   background:#FFFFfff2;
@@ -882,7 +883,7 @@ html.js .home-minpilot .rewards-inner.pop-play {
 .home-minpilot .site-header.sticky .nav-inner {
   width:100%;
   max-width:none;
-  height:70px;
+  height:66px;
   padding:0 22px;
 }
 .home-minpilot .site-header.sticky .brand {color:#121820;}
@@ -899,9 +900,9 @@ html.js .home-minpilot .rewards-inner.pop-play {
   box-shadow:none;
 }
 .home-minpilot .site-header.sticky .nav-actions .button-outline:hover {background:#087C68;}
-.home-minpilot .site-header.sticky .dropdown {top:calc(100% + 8px);}
+.home-minpilot .site-header.sticky .dropdown {top:100%;}
 @media (max-width:1050px) {
-  .home-minpilot .site-header.sticky {top:12px;width:calc(100% - 40px);border-radius:24px;}
+  .home-minpilot .site-header.sticky {top:12px !important;width:calc(100% - 40px);border-radius:24px;}
   .home-minpilot .site-header.sticky .nav-inner {height:68px;padding:0 14px;}
 }
 @media (max-width:540px) {

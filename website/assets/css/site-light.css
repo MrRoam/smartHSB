@@ -1049,7 +1049,7 @@ body.motion-off .internal-site[data-page="download"] .dl-route-live {animation:n
   box-shadow:none;
 }
 .internal-site[data-page] .site-header .nav-actions .button-outline:hover {background:#087C68;}
-.internal-site[data-page] .site-header .dropdown {top:calc(100% + 8px);}
+.internal-site[data-page] .site-header .dropdown {top:100%;}
 @media (max-width:1100px) {
   .internal-site[data-page] .site-header,
   .internal-site[data-page] .site-header.sticky {width:calc(100% - 64px);}

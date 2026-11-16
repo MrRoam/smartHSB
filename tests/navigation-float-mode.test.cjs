@@ -28,4 +28,15 @@ test('floating navigation has a pill surface on home and internal pages', () => 
 
   assert.match(homeStyles, /\.home-minpilot \.site-header\.sticky[\s\S]*?border-radius:999px/);
   assert.match(internalStyles, /\.internal-site\[data-page\] \.site-header[\s\S]*?position:fixed[\s\S]*?border-radius:999px/);
+  assert.match(homeStyles, /\.home-minpilot \.site-header\.sticky[\s\S]*?padding:0/);
+  assert.match(homeStyles, /\.home-minpilot \.site-header\.sticky \.nav-inner[\s\S]*?height:66px/);
+  assert.match(internalStyles, /\.internal-site\[data-page\] \.site-header \.nav-inner[\s\S]*?height:66px/);
+});
+
+test('desktop dropdowns remain connected to their trigger without a hover gap', () => {
+  const homeStyles = read('website/assets/css/home-minpilot.css');
+  const internalStyles = read('website/assets/css/site-light.css');
+
+  assert.doesNotMatch(homeStyles, /\.site-header\.sticky \.dropdown \{top:calc\(100% \+ 8px\)/);
+  assert.doesNotMatch(internalStyles, /\.site-header \.dropdown \{top:calc\(100% \+ 8px\)/);
 });
