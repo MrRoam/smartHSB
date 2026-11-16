@@ -63,6 +63,7 @@
   function syncVisibility() {
     body.classList.toggle('is-background', document.hidden);
     if (document.hidden) finishEnhancements();
+    canvasRenderers.forEach(renderer => renderer());
   }
   document.addEventListener('visibilitychange', syncVisibility);
   syncVisibility();
@@ -251,11 +252,14 @@
       [184,34,'TYO']
     ];
     const arcs=[[0,1,0],[1,3,.24],[1,2,.48],[4,3,.16],[3,2,.66]];
+    function stop(){cancelAnimationFrame(frame);frame=0;}
+    function schedule(){if(!motion||!visible||document.hidden||frame)return;frame=requestAnimationFrame(now=>{frame=0;draw(now);});}
     function size(){const r=canvas.getBoundingClientRect();w=r.width;h=r.height;dpr=Math.min(devicePixelRatio||1,2);canvas.width=w*dpr;canvas.height=h*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);buildGrid();restart();}
     function draw(now,force=false){
       const introMix=!isFooter?(window.__hsbHeroIntroMix||0):0;
       const frameGap=introMix>.005?15:32;
-      if(!force&&(!visible||document.hidden||now-last<frameGap)){if(motion)frame=requestAnimationFrame(draw);return;}
+      if(!force&&(!visible||document.hidden))return;
+      if(!force&&now-last<frameGap){schedule();return;}
       last=now;ctx.clearRect(0,0,w,h);
       const mobile=w<600;
       const progress=motion?Math.min(1,Math.max(0,(now-start-260)/5000)):1;
@@ -329,14 +333,14 @@
         });
       }
       ctx.globalAlpha=1;
-      if(motion)frame=requestAnimationFrame(draw);
+      schedule();
     }
     const parent=canvas.parentElement;
     parent.addEventListener('pointermove',e=>{if(!motion)return;const r=canvas.getBoundingClientRect();pointer.x=e.clientX-r.left;pointer.y=e.clientY-r.top;},{passive:true});
     parent.addEventListener('pointerleave',()=>{pointer.x=-10000;pointer.y=-10000;});
     new ResizeObserver(size).observe(canvas);
-    new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;},{rootMargin:'100px'}).observe(canvas);
-    function restart(){cancelAnimationFrame(frame);if(motion)frame=requestAnimationFrame(draw);else draw(performance.now(),true);}
+    new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;if(visible)restart();else stop();},{rootMargin:'100px'}).observe(canvas);
+    function restart(){stop();if(!visible||document.hidden)return;if(motion)schedule();else draw(performance.now(),true);}
     canvasRenderers.push(restart);size();
   }
   pointMap(document.querySelector('#world-dots'));
