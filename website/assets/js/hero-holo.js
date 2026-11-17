@@ -204,6 +204,71 @@
     }
   }
 
+  /* ---------- 市场信号：随 K 线通道推进的四类交易品类 ---------- */
+  const MARKET_SIGNALS = [
+    { label: '贵金属', kind: 'metal', color: '255,204,112', X: -14.4, Y: 4.0, Z: 43 },
+    { label: '股指', kind: 'indices', color: '113,189,255', X: -8.5, Y: 5.4, Z: 33 },
+    { label: '外汇', kind: 'fx', color: '177,147,255', X: 8.5, Y: 5.1, Z: 39 },
+    { label: '能源', kind: 'energy', color: '65,231,177', X: 14.4, Y: 3.9, Z: 29 }
+  ];
+
+  function drawMarketGlyph(kind, size) {
+    const s = size;
+    ctx.beginPath();
+    if (kind === 'metal') {
+      ctx.moveTo(-s * .72, -s * .22); ctx.lineTo(s * .2, -s * .5); ctx.lineTo(s * .72, -s * .1);
+      ctx.lineTo(-s * .2, s * .2); ctx.closePath();
+      ctx.moveTo(-s * .2, s * .2); ctx.lineTo(-s * .06, s * .55); ctx.lineTo(s * .84, s * .22); ctx.lineTo(s * .72, -s * .1);
+    } else if (kind === 'indices') {
+      ctx.rect(-s * .66, -s * .56, s * 1.32, s * 1.12);
+      ctx.moveTo(-s * .22, -s * .56); ctx.lineTo(-s * .22, s * .56);
+      ctx.moveTo(s * .22, -s * .56); ctx.lineTo(s * .22, s * .56);
+      ctx.moveTo(-s * .66, s * .1); ctx.lineTo(s * .66, s * .1);
+      ctx.moveTo(-s * .52, s * .34); ctx.lineTo(-s * .16, s * .05); ctx.lineTo(s * .06, s * .2); ctx.lineTo(s * .52, -s * .34);
+      ctx.moveTo(s * .3, -s * .34); ctx.lineTo(s * .52, -s * .34); ctx.lineTo(s * .52, -s * .12);
+    } else if (kind === 'fx') {
+      ctx.moveTo(-s * .7, -s * .24); ctx.lineTo(s * .58, -s * .24); ctx.lineTo(s * .28, -s * .52);
+      ctx.moveTo(s * .58, -s * .24); ctx.lineTo(s * .28, s * .04);
+      ctx.moveTo(s * .7, s * .24); ctx.lineTo(-s * .58, s * .24); ctx.lineTo(-s * .28, s * .52);
+      ctx.moveTo(-s * .58, s * .24); ctx.lineTo(-s * .28, -s * .04);
+    } else {
+      ctx.moveTo(0, -s * .65); ctx.bezierCurveTo(s * .6, -s * .06, s * .52, s * .42, 0, s * .62);
+      ctx.bezierCurveTo(-s * .52, s * .42, -s * .6, -s * .06, 0, -s * .65); ctx.closePath();
+      ctx.moveTo(s * .08, -s * .35); ctx.lineTo(-s * .22, s * .08); ctx.lineTo(s * .04, s * .08); ctx.lineTo(-s * .08, s * .4);
+    }
+    ctx.stroke();
+  }
+
+  function drawMarketSignals(t2, scroll) {
+    const reveal = sm(.55, 1.65, t2);
+    ctx.save();
+    ctx.globalCompositeOperation = 'lighter';
+    ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+    for (const signal of MARKET_SIGNALS) {
+      const Z = 10 + ((signal.Z - scroll) % 46 + 46) % 46;
+      if (Z < 13 || Z > 52) continue;
+      proj3(signal.X, signal.Y, Z);
+      const size = clamp(p_ * .68, 8, 30);
+      if (sx_ < -size * 2 || sx_ > W + size * 2 || sy_ < -size * 2 || sy_ > H + size * 2) continue;
+      const edge = Math.min(clamp((Z - 13) / 8, 0, 1), clamp((52 - Z) / 7, 0, 1));
+      const alpha = reveal * edge * .72;
+      ctx.save();
+      ctx.translate(sx_, sy_);
+      ctx.strokeStyle = `rgba(${signal.color},${alpha})`;
+      ctx.fillStyle = `rgba(${signal.color},${alpha * .12})`;
+      ctx.lineWidth = clamp(size * .075, 1, 2.1);
+      drawMarketGlyph(signal.kind, size);
+      if (W > 760 && size > 11) {
+        ctx.fillStyle = `rgba(${signal.color},${alpha * .9})`;
+        ctx.font = `${Math.round(clamp(size * .52, 8, 13))}px SuisseIntl, Arial, sans-serif`;
+        ctx.textAlign = 'center'; ctx.textBaseline = 'top';
+        ctx.fillText(signal.label, 0, size + 10);
+      }
+      ctx.restore();
+    }
+    ctx.restore();
+  }
+
   const RINGS = [
     { R: 6.6, ax: 1.15, sx: 0.0, ay: 0, sy: 0.35, az: 0.2, sz: 0.0, h: 190, sp: 0.9 },
     { R: 5.3, ax: 0.2, sx: 0.28, ay: 0.6, sy: 0.0, az: 0, sz: 0.22, h: 265, sp: -1.2 },
@@ -334,6 +399,7 @@
 
     /* candle corridor */
     candles(t2, scroll);
+    drawMarketSignals(t2, scroll);
 
     /* dust */
     for (const d of DUST) {
