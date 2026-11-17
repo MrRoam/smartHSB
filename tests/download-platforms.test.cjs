@@ -29,6 +29,8 @@ test('both download pages use the dedicated responsive design and motion-safe st
   const styles = read('website/assets/css/download-platforms.css');
   assert.match(styles, /@media \(prefers-reduced-motion:reduce\)/);
   assert.match(styles, /\.download-platform\.motion-off/);
+  assert.match(styles, /\.download-platform \.icard\{[^}]*padding:31px 32px 32px/);
+  assert.match(styles, /\.page-download-mt5\.download-platform \.mt5-intro\{max-width:none;width:100%/);
 });
 
 test('published navigation sends visitors to one of the two platform pages, not the former download hub', () => {
