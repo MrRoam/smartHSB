@@ -789,3 +789,11 @@
 - 可访问性与动效：`:hover` 和 `:focus-visible` 均触发；`prefers-reduced-motion` 与现有 `body.motion-off` 禁用过渡。
 - 缓存：`column-home.css` 内容哈希更新为 `99e8d0fa83`，37 个正式页面及根目录预览镜像同步更新引用。
 - 检查：全量 18 项 Node 回归测试通过，`git diff --check` 通过。状态：仅本地存档未推送。
+
+## 2026-11-17 · 删除孤儿页 download.html
+
+- 排查：全站 36 页 + 根镜像中仅 download.html 自身（canonical/og:url）与 sitemap.xml 引用它，导航/页脚/内容均无入口，内容已被 download-app 与 download-mt5 两页覆盖。
+- 实施：删除 website/download.html；sitemap.xml 移除该条；tutorial-install.html 3 处「下载中心」文字改为具体页名（前往 SmartHSB APP 下载页 / SmartHSB APP 下载页 / MT5 下载页）。
+- 连带：占位审计文档 5.1/5.3 与汇总表同步更新（占位 39→38）。
+- 检查：全站无 download.html 残留引用；HTML/XML 解析通过。
+- 状态：仅本地存档未推送。
