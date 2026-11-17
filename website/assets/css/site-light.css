@@ -1043,6 +1043,7 @@ body.motion-off .internal-site[data-page="download"] .dl-route-live {animation:n
   border-radius:999px;
   box-shadow:none;
 }
+.internal-site[data-page] .site-header .nav-actions .button-outline.current-page {color:#fff!important;}
 .internal-site[data-page] .site-header .nav-actions .button-outline:hover {background:linear-gradient(90deg,#174CB4 0%,#115F98 48%,#006B54 78%,#005637 100%);}
 .internal-site[data-page] .site-header .dropdown {top:100%;}
 @media (max-width:1100px) {

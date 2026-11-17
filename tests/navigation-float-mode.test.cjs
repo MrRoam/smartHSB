@@ -65,6 +65,7 @@ test('download-app navigation action uses the same blue-green brand gradient on 
   assert.match(homeStyles, /\.home-minpilot \.site-header \.nav-actions \.button-outline \{[\s\S]*?color:#fff;[\s\S]*?linear-gradient\(90deg,#1E5CD2 0%,#176EAC 48%,#00795F 78%,#006C45 100%\)/);
   assert.match(homeStyles, /\.home-minpilot \.site-header\.sticky \.nav-actions \.button-outline \{[\s\S]*?color:#fff;[\s\S]*?linear-gradient\(90deg,#1E5CD2 0%,#176EAC 48%,#00795F 78%,#006C45 100%\)/);
   assert.match(internalStyles, /\.internal-site\[data-page\] \.site-header \.nav-actions \.button-outline \{[\s\S]*?color:#fff;[\s\S]*?linear-gradient\(90deg,#1E5CD2 0%,#176EAC 48%,#00795F 78%,#006C45 100%\)/);
+  assert.match(internalStyles, /\.internal-site\[data-page\] \.site-header \.nav-actions \.button-outline\.current-page \{color:#fff!important;\}/);
   assert.doesNotMatch(homeStyles, /\.site-header\.sticky \.nav-actions \.button-outline \{[\s\S]*?background:#10161E/);
   assert.doesNotMatch(internalStyles, /\.site-header \.nav-actions \.button-outline \{[\s\S]*?background:#10161E/);
 });
