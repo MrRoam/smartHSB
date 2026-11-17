@@ -711,3 +711,10 @@
 - 修复：site-light.css 新增 account-real 页专属规则 `.kv-list{grid-template-columns:repeat(3,1fr)}`，桌面单行三列；移动端仍走 page.css 既有单列断点。learn-risk 页仍用两列，不受影响。
 - 缓存：site-light.css 版本号按内容哈希更新 69740f2e5e → 4597614283（35 个内页）。
 - 状态：仅本地存档未推送。
+
+## 2026-11-17 · MT5 下载页占位二维码换为真实码
+
+- 背景：download-mt5.html 的 iPhone / Android 两卡此前为手绘 SVG 示意占位，不可扫。用户提供两张带 UTM 归因的真实二维码（App Store / Google Play，400×400 PNG）。
+- 实施：新图覆盖 assets/img/qr/qr_mt5_ios.png 与 qr_mt5_android.png（下载中心 download.html 同名引用随之统一为同一套真实码）；download-mt5.html 两处占位 SVG 替换为 img 引用；download-platforms.css 补 .mt5-qr-ph img 填充样式。
+- 检查：HTML 解析通过、图片校验通过、无「示意图」残留。
+- 状态：仅本地存档未推送。
