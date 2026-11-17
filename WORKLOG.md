@@ -781,3 +781,11 @@
 - 发布内容：积分奖励模块下线、促销页重构为「首次入金最高赠 $350」、联系我们页删留言与社媒模块、真实账户页 CTA 改模拟账户、MT5 页真实二维码与悬停放大、下载中心删 Windows 二维码占位、首页「开通模拟账户」文案、learn 术语数量修正等。
 - 发布：`37f970d..4fc92c3` 推送 main，本次 Pages 工作流 success。
 - 验证：线上 promotions.html 三处「参照活动规则，在 APP 首次入金后领取」、无 Promo 残留；download-mt5.html 新文案上线；download.html 无 download-qr-slot 且 CSS 版本 a193dbdaa7；首页「开通模拟账户」2 处；页面均 200。
+
+## 2026-11-17 · 页脚应用商店二维码预览
+
+- 需求：在全站页脚「下载 APP」内，悬停或键盘聚焦 App Store / Google Play 徽章时，右侧二维码应切换为对应渠道的大尺寸二维码；当前保留可替换占位码。
+- 实施：`column-home.css` 在共用 `.dl-box` 上增加双渠道状态。App Store 对应 `assets/img/qr/qr_appstore.png`，Google Play 对应 `assets/img/qr/qr_googleplay.png`；常态仍显示「待上线」占位，激活时 QR 框扩至 152px（手机 132px）并在框内显示对应码。未来上架时覆盖同名文件即可，无须修改交互代码。
+- 可访问性与动效：`:hover` 和 `:focus-visible` 均触发；`prefers-reduced-motion` 与现有 `body.motion-off` 禁用过渡。
+- 缓存：`column-home.css` 内容哈希更新为 `99e8d0fa83`，37 个正式页面及根目录预览镜像同步更新引用。
+- 检查：全量 18 项 Node 回归测试通过，`git diff --check` 通过。状态：仅本地存档未推送。
