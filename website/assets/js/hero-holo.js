@@ -205,11 +205,12 @@
   }
 
   /* ---------- 市场信号：随 K 线通道推进的四类交易品类 ---------- */
+  const MARKET_SIGNAL_COLOR = '255,211,92';
   const MARKET_SIGNALS = [
-    { label: '贵金属', kind: 'metal', color: '255,204,112', X: -14.4, Y: 4.0, Z: 43 },
-    { label: '股指', kind: 'indices', color: '113,189,255', X: -8.5, Y: 5.4, Z: 33 },
-    { label: '外汇', kind: 'fx', color: '177,147,255', X: 8.5, Y: 5.1, Z: 39 },
-    { label: '能源', kind: 'energy', color: '65,231,177', X: 14.4, Y: 3.9, Z: 29 }
+    { label: 'Metals', kind: 'metal', X: -14.4, Y: 4.0, Z: 43 },
+    { label: 'Indices', kind: 'indices', X: -8.5, Y: 5.4, Z: 33 },
+    { label: 'Forex', kind: 'fx', X: 8.5, Y: 5.1, Z: 39 },
+    { label: 'Energy', kind: 'energy', X: 14.4, Y: 3.9, Z: 29 }
   ];
 
   function drawMarketGlyph(kind, size) {
@@ -254,12 +255,12 @@
       const alpha = reveal * edge * .72;
       ctx.save();
       ctx.translate(sx_, sy_);
-      ctx.strokeStyle = `rgba(${signal.color},${alpha})`;
-      ctx.fillStyle = `rgba(${signal.color},${alpha * .12})`;
+      ctx.strokeStyle = `rgba(${MARKET_SIGNAL_COLOR},${alpha})`;
+      ctx.fillStyle = `rgba(${MARKET_SIGNAL_COLOR},${alpha * .12})`;
       ctx.lineWidth = clamp(size * .075, 1, 2.1);
       drawMarketGlyph(signal.kind, size);
       if (W > 760 && size > 11) {
-        ctx.fillStyle = `rgba(${signal.color},${alpha * .9})`;
+        ctx.fillStyle = `rgba(${MARKET_SIGNAL_COLOR},${alpha * .9})`;
         ctx.font = `${Math.round(clamp(size * .52, 8, 13))}px SuisseIntl, Arial, sans-serif`;
         ctx.textAlign = 'center'; ctx.textBaseline = 'top';
         ctx.fillText(signal.label, 0, size + 10);

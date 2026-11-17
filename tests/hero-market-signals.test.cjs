@@ -10,9 +10,10 @@ test('homepage hero renders four market signals within the existing canvas scene
   const source = read('website/assets/js/hero-holo.js');
 
   assert.match(source, /const MARKET_SIGNALS = \[/);
-  for (const label of ['贵金属', '股指', '外汇', '能源']) {
+  for (const label of ['Metals', 'Indices', 'Forex', 'Energy']) {
     assert.match(source, new RegExp(`label: '${label}'`));
   }
+  assert.match(source, /const MARKET_SIGNAL_COLOR = '255,211,92'/);
   assert.match(source, /function drawMarketSignals\(t2, scroll\)/);
   assert.match(source, /candles\(t2, scroll\);\s*drawMarketSignals\(t2, scroll\);/);
 });
