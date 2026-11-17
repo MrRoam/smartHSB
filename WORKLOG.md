@@ -696,3 +696,11 @@
 - 改动（account-real.html）：HERO 主按钮「立即开通真实账户」→「立即开通模拟账户」（href 改为 demo.html）；次按钮「先开模拟账户练手」→「查看账户类型」（href 改为 account-types.html）；页底 CTA 按钮同步改为「立即开通模拟账户」；「3 步开通」第 1 步说明文字同步改为 APP 内开户表述。
 - 全站排查：其余「开通真实账户」出现处均为 FAQ 标题或说明文字（account-real FAQ、about、learn-basic、tutorial-open），非操作按钮，予以保留。
 - 状态：仅本地存档未推送。
+
+## 2026-11-17 · 积分奖励模块整体下线
+
+- 需求：删除积分奖励模块及全站相关内容。
+- 实施：删除 `website/rewards.html` 整页；34 个内页 + 首页镜像的桌面导航、移动导航、页脚链接移除 rewards 入口；promotions 页删除 HERO 次按钮、「积分兑换专场」活动卡及积分相关文案；account-types 三张账户对比表删除「HSB 积分奖励」行；account-real 删除「积分与奖励」权益行并调整 FAQ 文案；根目录 index.html 镜像同步删除历史遗留的 rewards-section 区块（此前 8daddee 删除首页区块时镜像未同步）。
+- 排查确认：design/ 目录下设计规范文档中的积分提法为内部过程文档，未改动。
+- 检查：全部 HTML 解析通过，全站无 rewards/积分 残留引用（design/ 除外）。
+- 状态：提交 `b6bfa4e`，仅本地存档未推送。
