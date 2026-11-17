@@ -767,3 +767,9 @@
 - 缓存：platform-pages.css 版本 5cb2b14061 → a193dbdaa7（9 个引用页面）。
 - 检查：HTML 解析通过，全站无 download-qr-slot 残留；该卡为 flex 列布局、无固定高度，删除后不留空档。
 - 状态：仅本地存档未推送。
+
+## 2026-11-17 · 批量发布（30 个提交）
+
+- 发布内容：积分奖励模块下线、促销页重构为「首次入金最高赠 $350」、联系我们页删留言与社媒模块、真实账户页 CTA 改模拟账户、MT5 页真实二维码与悬停放大、下载中心删 Windows 二维码占位、首页「开通模拟账户」文案、learn 术语数量修正等。
+- 发布：`37f970d..4fc92c3` 推送 main，本次 Pages 工作流 success。
+- 验证：线上 promotions.html 三处「参照活动规则，在 APP 首次入金后领取」、无 Promo 残留；download-mt5.html 新文案上线；download.html 无 download-qr-slot 且 CSS 版本 a193dbdaa7；首页「开通模拟账户」2 处；页面均 200。
