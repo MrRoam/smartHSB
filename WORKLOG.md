@@ -759,3 +759,11 @@
 - 需求：首页平台区虹彩胶囊按钮「试用模拟账户」改为「开通模拟账户」。
 - 实施：website/index.html 与根目录镜像 index.html 各改 2 处（按钮翻转正/背面各一份文字）。
 - 状态：仅本地存档未推送。
+
+## 2026-11-17 · 下载中心删除 MT5 Windows 二维码占位框
+
+- 判断：Windows 用户在桌面端直接点「立即下载」获取 .exe，扫码无意义（手机扫到的安装包不可用），无需预留二维码。
+- 实施：download.html MT5 Windows 卡删除 144×144 虚线占位框（含「安装包二维码预留」文案）；platform-pages.css 删除两条 .download-qr-slot 规则（仅此处使用）。
+- 缓存：platform-pages.css 版本 5cb2b14061 → a193dbdaa7（9 个引用页面）。
+- 检查：HTML 解析通过，全站无 download-qr-slot 残留；该卡为 flex 列布局、无固定高度，删除后不留空档。
+- 状态：仅本地存档未推送。
