@@ -718,3 +718,11 @@
 - 实施：新图覆盖 assets/img/qr/qr_mt5_ios.png 与 qr_mt5_android.png（下载中心 download.html 同名引用随之统一为同一套真实码）；download-mt5.html 两处占位 SVG 替换为 img 引用；download-platforms.css 补 .mt5-qr-ph img 填充样式。
 - 检查：HTML 解析通过、图片校验通过、无「示意图」残留。
 - 状态：仅本地存档未推送。
+
+## 2026-11-17 · MT5 下载页二维码悬停放大
+
+- 需求：82px 二维码扫码不便，悬停需自动放大、离开恢复，放大时隐藏鼠标指针。
+- 实施：download-platforms.css 为 .mt5-qr-ph 增加 transform-origin 100% 100%（右下角原点，放大向卡片内部延伸，不受卡片 overflow:hidden 裁切）+ 0.25s 过渡；卡片悬停放大 2.4 倍（约 197px）并投影、置顶；悬停在码上时 cursor:none；prefers-reduced-motion 下关闭过渡。
+- 触发区域用整卡悬停而非仅码体，避免放大后指针落点在元素外造成缩放闪烁循环。
+- 缓存：download-platforms.css 版本 fe9fefb799 → 按内容哈希更新（download-mt5 / download-app 两页引用）。
+- 状态：仅本地存档未推送。
