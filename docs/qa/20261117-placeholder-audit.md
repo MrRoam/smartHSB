@@ -12,7 +12,7 @@
 | 2 | 资讯文章详情 | `news.html` 8 张文章卡 | 8 | `href="#"`，点击弹「文章详情即将开放」，无详情页 |
 | 3 | 交易工具 | `trading-tools.html` | 2 | 「查看信号 →」（交易信号 · Trading Central）弹「信号即将开放」；「打开计算器 →」（汇率换算计算器）弹「计算器即将开放」 |
 | 4 | APP 下载二维码（下载页） | `download-app.html` | 2 | 手绘 SVG 示意图（App Store / Google Play），不可扫 |
-| 5 | APP 上架状态（下载中心 + 页脚） | `download.html`、全站页脚 | 39 | 见下方 5.1 / 5.2 |
+| 5 | APP 上架状态（下载页 + 页脚） | `download-app.html`、全站页脚 | 38 | 见下方 5.1 / 5.2 |
 | 6 | 数据与业务接口 | `live-quotes` / `products` / `economic-calendar` / `demo` | 4 页 | 见下方第六节 |
 
 合计 toast 占位提示 49 处、占位图形/文案 9 处。
@@ -39,11 +39,11 @@
 
 ## 五、APP 下载链路（APP 未上架期间）
 
-### 5.1 下载页（`download-app.html` 2 处 + `download.html` 3 处文案）
+### 5.1 下载页（`download-app.html` 2 处）
 
 - `download-app.html`：iPhone / Android 两卡二维码为 SVG 示意图（`aria-label` 含「示意图」）。
-- `download.html` APP 区两卡：文案「上架后开放下载」；APP 区底部注明「正在上架审核中，正式商店链接将在上线后第一时间更新」。
 - 页内商店按钮与页脚徽标均指向 `download-app.html`（内部页），不指向商店，无死外链。
+- 原下载中心页 `download.html` 为孤儿页面（全站无入口），已于 2026-11-17 删除，并同步移除 sitemap 条目、修正 `tutorial-install.html` 中 3 处「下载中心」文字表述。
 
 ### 5.2 全站页脚「下载 APP」盒（36 页 × 1）
 
@@ -58,7 +58,7 @@
 1. 用真实 App Store / Google Play 链接重新生成两张二维码，覆盖 `qr_appstore.png` / `qr_googleplay.png`；
 2. 替换 `download-app.html` 两张 SVG 示意图为真实码；
 3. 页脚 `.dl-qr` 默认态改为显示真实码、移除「待上线」标签；
-4. `download.html` 删除「上架后开放下载 / 正在上架审核中」文案，商店徽标改指向真实商店页。
+4. 商店徽标（页脚与 `download-app.html`）改指向真实商店页。
 
 ## 六、数据与业务接口（4 页）
 
@@ -93,3 +93,4 @@
 3. news 8 篇详情：等实际接口对接，暂保留占位；
 4. MT5 Windows 二维码：不需要，已删除占位框（提交 `chore: drop MT5 Windows QR placeholder slot`）；
 5. 行情 / 日历 / 开户·短信：等实际接口对接。
+6. 下载中心孤儿页 `download.html`：确认全站无入口后删除，连带移除 sitemap 条目并修正 `tutorial-install.html` 表述。
