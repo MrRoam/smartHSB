@@ -1003,6 +1003,8 @@ body.motion-off .internal-site[data-page="download"] .dl-route-live {animation:n
   background:linear-gradient(#fff,#fff) padding-box,
              linear-gradient(180deg,#ffeab5 20%,#f2a85d 40%,#8052e4 60%,#2e85ea 80%,#68efae 100%) border-box;
 }
+/* 权益卡 4 项减为 3 项（2026-11-17 移除积分奖励）：桌面改为单行三列，移动端仍走 page.css 的单列断点 */
+.internal-site[data-page="account-real"] .kv-list { grid-template-columns:repeat(3,1fr); }
 
 /* 内页导航从首屏起固定为同一顶部浮层，方便在任意位置继续导航。 */
 .internal-site[data-page] .site-header,
