@@ -704,3 +704,10 @@
 - 排查确认：design/ 目录下设计规范文档中的积分提法为内部过程文档，未改动。
 - 检查：全部 HTML 解析通过，全站无 rewards/积分 残留引用（design/ 除外）。
 - 状态：提交 `b6bfa4e`，仅本地存档未推送。
+
+## 2026-11-17 · 真实账户页权益卡改单行三列
+
+- 背景：积分奖励行删除后 kv-list 仅剩 3 项，原 1fr 1fr 两列网格呈现 2+1 两行，观感失衡。
+- 修复：site-light.css 新增 account-real 页专属规则 `.kv-list{grid-template-columns:repeat(3,1fr)}`，桌面单行三列；移动端仍走 page.css 既有单列断点。learn-risk 页仍用两列，不受影响。
+- 缓存：site-light.css 版本号按内容哈希更新 69740f2e5e → 4597614283（35 个内页）。
+- 状态：仅本地存档未推送。
