@@ -831,3 +831,15 @@
 - 保留不改（口径确认）：账户对比表列头及卡片（account-types、tutorial-open、tutorial-manage、help A12 表头）、products「最低入金」小节标题、deposit 渠道页费用表行标签——均为门槛概念/表格标签；help D3 原文已是「首次最低入金」。
 - 检查：12 个 HTML 解析通过，git diff --check 通过，全站无「手机号或邮箱 / MetaTrader 5 HSB / 选择账户」残留。
 - 状态：仅本地存档未推送（commit a85d818）。
+
+## 2026-11-18 · 首页「一个账户，打开全球市场」模块重构
+
+- 需求：标题下原世界地图 + 统计模块（intro 段落、了解 SmartHSB 链接、overview-world 地图卡、stats 四项统计）整体去掉，换为原市场品种面板（品种目录摘要 + 探索全部品种 + tilt-stage 市场面板）；「市场各有节奏。选择你的关注。」标题模块整体去掉；相应底色与动效保留。
+- 实施（website/index.html 与根目录镜像同步）：
+  - overview-intro 仅保留 h2 标题。
+  - markets section-head 删除 h2，保留 market-catalog-summary 与「探索全部品种」链接。
+  - 整个 section#markets 移动至 section#overview 之后、section#platform 之前（原在 platform 之后）。
+  - sitemap.xml 首页 lastmod → 2026-11-18。
+- 动效与底色：未改任何 CSS/JS；reveal/type-in/tilt/aurora-frame、markets 区 var(--soft) 底色全部保留。column-home.js 的 .stats 计数与 .map-chip 弹出动效均有空值守卫，元素移除后安全跳过。
+- 检查：两个 index HTML 解析通过，git diff --check 通过。
+- 状态：仅本地存档未推送。
