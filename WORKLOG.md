@@ -864,3 +864,9 @@
 - 首页修复：首页专属 `.footer-links a` 将下载徽章改为 flex 居中，覆盖共用徽章的块级裁切，导致 PNG 画布在徽章内错位。为 `.home-minpilot .footer-links .store-btn` 显式恢复 `display:block` 与左上对齐；`home-minpilot.css` 缓存版本更新为 `5944e6b7cb`，正式首页与根目录预览镜像同步。
 - 文案：全部页脚二维码占位的可见文字从「待上线」改为「扫码下载」，并同步移除无障碍标签中的旧状态文字。
 - 检查：页脚交互回归测试、全量 Node 测试与 `git diff --check` 通过。状态：仅本地存档未推送。
+
+## 2026-11-18 · 页脚下载入口发布
+
+- 发布：本地提交 `b2f34e2..c531b5c` 已推送至 GitHub `main`。
+- 部署：GitHub Pages 工作流 #39（commit `c531b5c`）success：<https://github.com/MrRoam/smartHSB/actions/runs/44225473708>。
+- 线上验证：<https://mrroam.github.io/smartHSB/?v=c531b5c> 返回 HTTP 200；首页含「扫码下载」、不含旧「待上线」，并加载 `column-home.css?v=59688259f6` 和 `home-minpilot.css?v=5944e6b7cb`。
