@@ -870,3 +870,12 @@
 - 发布：本地提交 `b2f34e2..c531b5c` 已推送至 GitHub `main`。
 - 部署：GitHub Pages 工作流 #39（commit `c531b5c`）success：<https://github.com/MrRoam/smartHSB/actions/runs/44225473708>。
 - 线上验证：<https://mrroam.github.io/smartHSB/?v=c531b5c> 返回 HTTP 200；首页含「扫码下载」、不含旧「待上线」，并加载 `column-home.css?v=59688259f6` 和 `home-minpilot.css?v=5944e6b7cb`。
+
+## 2026-11-18 · 定版前全站复查 + 占位审计文档更新
+
+- 需求：网站定版前全面检查页面调用与优化点；重新梳理占位接口明细；更新 docs/qa/20261117-placeholder-audit.md。
+- 检查（脚本化全量）：站内链接/锚点、本地资源引用、sitemap 比对、缓存版本参数与文件内容哈希比对、根目录镜像一致性、占位标记（toast/待上线/示意图/接口预留）、外链清单、JS 死代码。
+- 结果：无死链/死锚点/缺失资源；占位 6 类（语言开关 35、news 详情 8、信号 1、下载页 SVG 码 2、页脚扫码下载占位、接口预留 4 页），toast 合计 44 处。
+- 新发现 4 项待用户决策：① sitemap 含已删页 rewards.html（死条目），download-app/download-mt5 未收录；② 根镜像 index.html 落后（3 处版本参数、h2 响应式换行、aurora-frame 结构）；③ subpages.js / pop-in.js 版本参数两套并存分裂缓存，且 v 值≠内容哈希；④ subpages.js 留言分支死代码仍未清理。另 5.4：36 处 data-qr 指向不存在的 qr_app_download.png（原审计已记录，现含 404.html 共 36 处）。
+- 文档：20261117-placeholder-audit.md 已更新（复查口径汇总、5.2 页脚现状、新增 5.4 / 十 / 十一节）。
+- 状态：仅提交审计文档与记录，站点代码未改动；优化项待用户确认后执行。
