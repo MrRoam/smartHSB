@@ -329,7 +329,7 @@ body.motion-off .holo-risk { animation: none; }
    原下一屏顶部 340px 薄荷绿渐变（#cfe6df → 透明）改为纯白。
    ========================================================================== */
 .home-minpilot .overview {
-  padding: 53px 0 53px;
+  padding: 106px 0 0;
   background: #fff;
 }
 
