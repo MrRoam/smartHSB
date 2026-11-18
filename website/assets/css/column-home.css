@@ -31,13 +31,13 @@ body.motion-off *,body.motion-off *:before,body.motion-off *:after{animation-dur
 .footer-links .foot-dl{min-width:0}
 .footer-links .foot-dl .dl-box{position:relative;display:flex;align-items:center;gap:12px}
 .footer-links .dl-btns{display:flex;flex-direction:column;gap:8px}
-/* Source badges include a large transparent canvas. Crop that canvas here so the
-   official mark, wordmark, and rounded outline fill one compact download pill. */
-.footer-links .store-btn{display:block;width:174px;height:58px;line-height:0;border-radius:999px;overflow:hidden;background:#fff;box-shadow:0 1px 0 #111a4a12;transition:transform .16s,box-shadow .16s}
+/* Source badges include a large transparent canvas. Crop that canvas, but retain
+   only the official badge surface; a second white button surface made it look heavy. */
+.footer-links .store-btn{display:block;width:156px;height:52px;line-height:0;border-radius:0;overflow:hidden;background:transparent;box-shadow:none;transition:transform .16s,filter .16s}
 .footer-links .store-btn img{display:block;max-width:none;height:auto;transform-origin:top left}
-.footer-links .store-btn:nth-child(1) img{width:292px}
-.footer-links .store-btn:nth-child(2) img{width:258px;transform:translateY(3px)}
-.footer-links .store-btn:hover{transform:translateY(-1px);box-shadow:0 7px 18px rgba(17,26,74,.16)}
+.footer-links .store-btn:nth-child(1) img{width:262px}
+.footer-links .store-btn:nth-child(2) img{width:231px;transform:translateY(3px)}
+.footer-links .store-btn:hover{transform:translateY(-1px);filter:drop-shadow(0 6px 12px rgba(17,26,74,.12))}
 .footer-links .dl-qr{width:88px;height:88px;flex:0 0 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;background:#fff;border-radius:10px;box-shadow:0 0 0 1px #e2e5ec;color:#94a1b5;font-size:9px;line-height:1}
 .footer-links .dl-qr svg{opacity:.5}
 /* Footer store QR previews: replace these two files after the apps are listed.
@@ -51,4 +51,4 @@ body.motion-off *,body.motion-off *:before,body.motion-off *:after{animation-dur
 @media(prefers-reduced-motion:reduce){.footer-links .dl-qr,.footer-links .dl-qr>*,.footer-links .dl-qr::after{transition:none}}
 body.motion-off .footer-links .dl-qr,body.motion-off .footer-links .dl-qr>*,body.motion-off .footer-links .dl-qr::after{transition:none}
 @media(max-width:1100px){.footer-links{grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 24px}.footer-links .foot-dl{grid-column:2/4}.footer-links .foot-dl .dl-box{gap:16px}}
-@media(max-width:600px){.footer-links{grid-template-columns:1fr 1fr;gap:24px;margin:35px 0}.footer-links .foot-dl{grid-column:1/-1}.footer-links .foot-dl .dl-box{align-items:flex-start;gap:10px}.footer-links .store-btn{width:160px;height:54px}.footer-links .store-btn:nth-child(1) img{width:268px}.footer-links .store-btn:nth-child(2) img{width:238px}.footer-links .dl-qr{width:80px;height:80px}.footer-links .dl-qr::after{transform:scale(.72)}.footer-links .dl-box:has(.store-btn:nth-child(1):is(:hover,:focus-visible)) .dl-qr::after,.footer-links .dl-box:has(.store-btn:nth-child(2):is(:hover,:focus-visible)) .dl-qr::after{transform:scale(1.5)}}
+@media(max-width:600px){.footer-links{grid-template-columns:1fr 1fr;gap:24px;margin:35px 0}.footer-links .foot-dl{grid-column:1/-1}.footer-links .foot-dl .dl-box{align-items:flex-start;gap:10px}.footer-links .store-btn{width:150px;height:50px}.footer-links .store-btn:nth-child(1) img{width:252px}.footer-links .store-btn:nth-child(2) img{width:222px}.footer-links .dl-qr{width:80px;height:80px}.footer-links .dl-qr::after{transform:scale(.72)}.footer-links .dl-box:has(.store-btn:nth-child(1):is(:hover,:focus-visible)) .dl-qr::after,.footer-links .dl-box:has(.store-btn:nth-child(2):is(:hover,:focus-visible)) .dl-qr::after{transform:scale(1.5)}}

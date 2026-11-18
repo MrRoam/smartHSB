@@ -9,7 +9,7 @@ const read = file => fs.readFileSync(path.join(root, file), 'utf8');
 test('footer download badges reveal their channel-specific QR placeholder on hover and keyboard focus', () => {
   const styles = read('website/assets/css/column-home.css');
 
-  assert.match(styles, /\.footer-links \.store-btn\{[^}]*width:174px[^}]*height:58px/);
+  assert.match(styles, /\.footer-links \.store-btn\{[^}]*width:156px[^}]*height:52px[^}]*background:transparent/);
   assert.match(styles, /\.footer-links \.dl-qr::after\{[^}]*transform:scale\(\.72\)/);
   assert.match(styles, /\.dl-box:has\(\.store-btn:nth-child\(1\):is\(:hover,:focus-visible\)\) \.dl-qr::after\{[^}]*transform:scale\(1\.5\)/);
   assert.match(styles, /url\('\.\.\/img\/qr\/qr_appstore\.png'\)/);
