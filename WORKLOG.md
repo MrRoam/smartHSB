@@ -805,3 +805,17 @@
 - 连带：占位审计文档同步（交易工具占位 2 → 1，toast 合计 48 处）。
 - 检查：HTML 解析通过，页面无「汇率」残留。
 - 状态：仅本地存档未推送。
+
+## 2026-11-18 · 开户与入金文案统一调整
+
+- 需求：按用户 8 条指定文案修改，统一「注册 / KYC / 最低入金 / MT5 标题」表述。
+- 实施：
+  - download-app.html：「手机号或邮箱快速注册」→「手机号快速注册」；「入金出金与多币种」→「入金出金」；「多币种账户余额管理」→「账户余额管理」。
+  - account-real.html：步骤 3 标题与正文「选择账户并入金 / 选择最符合您需求的账户类型…」→「开户完成并入金 / 开户完成后并入金…」；HERO 流程节点 03 同步改为「开户完成并入金」。
+  - tutorial-open.html：开户步骤「选择账户并入金」→「开户完成并入金」。
+  - deposit-withdraw.html：统计卡与 HERO 提示、FAQ 答案共 3 处「最低入金」→「首次最低入金」。
+  - download-mt5.html：标题「下载 MetaTrader 5 HSB」→「下载 MetaTrader 5」（含注释）。
+  - sitemap.xml：account-real / deposit-withdraw / tutorial-open lastmod 更新为 2026-11-18。
+- 未动（非本次指定字符串）：download-app.html 两处「手机号或邮箱注册」描述、download-mt5.html meta description「MetaTrader 5 HSB 官方下载」，待用户确认是否同步。
+- 检查：5 个页面 HTML 解析通过，git diff --check 通过。
+- 状态：仅本地存档未推送（commit b441b9a）。
