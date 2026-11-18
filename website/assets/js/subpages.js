@@ -53,16 +53,4 @@
     const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)readingLinks.forEach(a=>a.classList.toggle('read-active',a.getAttribute('href')==='#'+e.target.id));});},{rootMargin:'-15% 0px -65% 0px'});
     readingLinks.forEach(a=>{const target=document.getElementById(a.hash.slice(1));if(target)io.observe(target);});
   }
-  const contactForm=document.querySelector('.page-contact form.form-grid');
-  if(contactForm){
-    const pending=document.createElement('p');
-    pending.className='contact-interface-status';pending.setAttribute('role','status');
-    pending.textContent='留言接口待接入，当前不会发送或保存留言。';
-    contactForm.append(pending);
-    contactForm.addEventListener('submit',e=>{
-      e.preventDefault();e.stopImmediatePropagation();
-      pending.textContent='留言接口待接入，当前未发送或保存留言。请使用页面列出的客服联系方式。';
-      window.toast?.('留言接口待接入，当前未发送或保存留言');
-    },true);
-  }
 })();

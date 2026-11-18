@@ -886,3 +886,13 @@
 - 实施：sitemap.xml 移除 rewards 条目，在 economic-calendar 前按字母序插入 download-app（lastmod 2026-11-18）与 download-mt5（lastmod 2026-11-18）；XML 解析通过。
 - 复核：sitemap 34 条与 website/ 下 34 个正式页（除 404.html）完全一一对应。
 - 状态：仅本地存档未推送。
+
+## 2026-11-18 · 定版收尾：镜像重生成 / 版本哈希统一 / 死属性与死代码清理（用户逐条确认）
+
+1. 根镜像 index.html：按 website/index.html 重新生成（assets 与内页链接加 website/ 前缀，canonical/og 保留绝对域名）；3 处版本参数、h2-br-m 响应式换行、market-explorer aurora-frame 结构差异全部消除，规范化 diff=0。
+2. 版本参数：全部 40 个版本化 CSS/JS 统一重建为部署内容（LF 归一化）md5 前 10 位；subpages.js / pop-in.js 两套 URL 分裂消除；全站 661 处引用 0 差异。
+3. data-qr 死属性：36 处（35 页 + 404 + 镜像）指向不存在文件 qr_app_download.png 的属性批量删除，全站清零。
+4. 死代码：subpages.js 删除留言表单分支（原 56–65 行）；subpages.css 孤立 .contact-interface-status 规则一并删除；node --check 通过。
+- 检查：36 个 HTML 解析通过；版本哈希校验 661 处 0 mismatch；data-qr / 留言接口待接入 / contact-interface-status 全站无残留；git diff --check 通过。
+- 文档：审计文档 5.4 / 七 / 十一节同步标记「已处理」。
+- 状态：仅本地存档未推送。

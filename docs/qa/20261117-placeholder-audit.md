@@ -60,10 +60,10 @@
 3. 页脚 `.dl-qr` 默认态改为显示真实码、移除「扫码下载」占位文字；
 4. 商店徽标（页脚与 `download-app.html`）改指向真实商店页。
 
-### 5.4 `.dl-qr` 死属性（35 页 + 404.html = 36 处）
+### 5.4 `.dl-qr` 死属性（已清理，2026-11-18）
 
-- 每页页脚 `.dl-qr` 均带 `data-qr="assets/img/qr_app_download.png"`，该文件**不存在**，且无任何 JS/CSS 消费此属性（二维码预览实际走 CSS `::after` + `qr/` 目录图片）。
-- 属无效残留，建议全站批量删除该属性（无任何功能影响）。
+- 原状：每页页脚 `.dl-qr` 均带 `data-qr="assets/img/qr_app_download.png"`（35 页 + 404.html = 36 处），文件不存在且无消费方。
+- 处理（2026-11-18，用户确认）：全站 36 处属性已批量删除，无任何功能影响；全站 `data-qr` 引用清零。
 
 ## 六、数据与业务接口（4 页）
 
@@ -76,11 +76,9 @@
 
 - 计划：等真实行情源、日历源、开户/短信接口对接后替换；当前均有明确用户可见的说明，风险可控。
 
-## 七、死代码（1 处）
+## 七、死代码（已清理，2026-11-18）
 
-- `assets/js/subpages.js` 的留言表单分支（`.page-contact form.form-grid` 绑定、「留言接口待接入」提示）。
-- 背景：2026-11-17 已删除 `contact.html` 留言表单，该分支不再被任何页面触发。
-- 建议：下次触及该文件时一并清理。
+- `assets/js/subpages.js` 的留言表单分支（原第 56–65 行）已于 2026-11-18 删除；`subpages.css` 中孤立的 `.contact-interface-status` 规则一并删除；`node --check` 通过。
 
 ## 八、健康项（2026-11-18 复查确认）
 
@@ -111,9 +109,9 @@
 4. 全站开户/入金文案统一调整（「手机号注册」「首次最低入金」「开户完成并入金」「下载 MetaTrader 5」），不改变占位性质；
 5. 首页市场面板重构后按用户要求恢复原样（提交/撤销均未影响占位清单）。
 
-## 十一、2026-11-18 全站复查新发现（非占位，待用户决策）
+## 十一、2026-11-18 全站复查新发现（均已处理）
 
-1. **sitemap 死条目**：`rewards.html`（积分奖励页已删除）仍列在 sitemap 第 160 行，线上访问 404 → 建议移除该条目；同时 `download-app.html`、`download-mt5.html` 未收录，是否补录由用户决定（当前明确不涉及 SEO）。
-2. **根目录镜像 `index.html` 落后于 `website/index.html`**：① `site-motion.css`（8548352686 / affbfa7239）、`tilt-up.css`（20261112f / 4f15f22f6a）、`type-in.js`（91adaef375 / 8719720f4b）三处版本参数不一致；② H2 缺响应式换行 `br.h2-br-m`；③ `.market-explorer` 缺 `aurora-frame` 类与 `.market-explorer-inner` 包裹层 → 建议按 `website/index.html` 重新生成镜像。
-3. **版本参数不统一（缓存分裂）**：`subpages.js` 32 页用 `v=200a31d1a6`、download-app/download-mt5 两页用 `v=a3d1d5dcd3`；`pop-in.js` 32 页用 `v=20261113a`、about 用 `v=20261113b`。同一文件两种 URL 会分裂浏览器缓存；且现有 v 值均不等于当前文件内容 md5（与「内容哈希」约定不符），功能无碍 → 建议统一为当前内容哈希。
-4. **死代码待清理**：`assets/js/subpages.js` 第 56–65 行留言表单分支仍存在（2026-11-17 已删留言表单，该分支不可触达）→ 建议下次触及该文件时一并清理（与首查结论一致，仍未处理）。
+1. **sitemap 死条目（已处理）**：移除已删页 `rewards.html` 条目；同时补录 `download-app.html`、`download-mt5.html`（提交 `3e71d9d`）。现 sitemap 34 条与 website/ 34 个正式页面一一对应。
+2. **根目录镜像落后（已处理）**：已按 `website/index.html` 重新生成根镜像，`site-motion.css` / `tilt-up.css` / `type-in.js` 版本参数、H2 响应式换行 `br.h2-br-m`、`.market-explorer` 的 `aurora-frame` 结构差异全部消除；前缀规范化后逐行 diff 为 0。
+3. **版本参数不统一（已处理）**：全部 40 个版本化 CSS/JS 的引用参数已统一重建为部署内容 md5（LF 归一化）前 10 位，`subpages.js`、`pop-in.js` 两套 URL 分裂问题随之消除；全站 661 处版本引用与文件内容哈希比对 0 差异。
+4. **死代码（已处理）**：见第七节。
