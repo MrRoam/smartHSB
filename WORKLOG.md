@@ -843,3 +843,11 @@
 - 动效与底色：未改任何 CSS/JS；reveal/type-in/tilt/aurora-frame、markets 区 var(--soft) 底色全部保留。column-home.js 的 .stats 计数与 .map-chip 弹出动效均有空值守卫，元素移除后安全跳过。
 - 检查：两个 index HTML 解析通过，git diff --check 通过。
 - 状态：仅本地存档未推送。
+
+## 2026-11-18 · 首页标题垂直居中微调
+
+- 需求：标题「一个账户，打开全球市场」放到其所在浅色留白区域的中间位置（附截图标注）。
+- 排查：home-minpilot.css 的 .overview padding 53px 规则被后加载的 hero-holo.css 同名规则（padding:106px 0 0; background:#fff）覆盖，需改 hero-holo.css 才生效。
+- 实施：hero-holo.css 与 home-minpilot.css 的 .overview padding 统一改为「53px 0 53px」（≤800px 断点 36px、≤540px 断点 32px，均补齐下内边距）；两份 CSS 内容哈希版本号更新（home-minpilot 5fbf6e0749、hero-holo 09c2e58cf9），双入口 index 同步引用。
+- 验证：本地 http.server + 浏览器实测，标题上/下留白各 53px，垂直居中；截图确认。临时截图与 .playwright-cli 已清理。
+- 状态：仅本地存档未推送。
