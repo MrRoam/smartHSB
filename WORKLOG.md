@@ -862,4 +862,5 @@
 - 动效与可访问性：二维码预览层不接收指针事件；`prefers-reduced-motion` 和页面动效开关仍会取消过渡。
 - 缓存：`column-home.css` 内容哈希更新为 `59688259f6`，36 个正式页面及根目录预览镜像同步更新引用。
 - 首页修复：首页专属 `.footer-links a` 将下载徽章改为 flex 居中，覆盖共用徽章的块级裁切，导致 PNG 画布在徽章内错位。为 `.home-minpilot .footer-links .store-btn` 显式恢复 `display:block` 与左上对齐；`home-minpilot.css` 缓存版本更新为 `5944e6b7cb`，正式首页与根目录预览镜像同步。
+- 文案：全部页脚二维码占位的可见文字从「待上线」改为「扫码下载」，并同步移除无障碍标签中的旧状态文字。
 - 检查：页脚交互回归测试、全量 Node 测试与 `git diff --check` 通过。状态：仅本地存档未推送。

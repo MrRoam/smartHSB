@@ -24,3 +24,16 @@ test('two replaceable QR placeholder assets exist for the footer channels', () =
   assert.ok(fs.existsSync(path.join(root, 'website/assets/img/qr/qr_appstore.png')));
   assert.ok(fs.existsSync(path.join(root, 'website/assets/img/qr/qr_googleplay.png')));
 });
+
+test('footer QR placeholders consistently invite visitors to scan for download', () => {
+  const pages = [
+    'index.html',
+    ...fs.readdirSync(path.join(root, 'website')).filter(file => file.endsWith('.html')).map(file => `website/${file}`),
+  ];
+
+  for (const page of pages) {
+    const source = read(page);
+    assert.match(source, /class="dl-qr"[\s\S]*?<span>扫码下载<\/span>/, page);
+    assert.doesNotMatch(source, /<span>待上线<\/span>/, page);
+  }
+});
