@@ -831,3 +831,11 @@
 - 保留不改（口径确认）：账户对比表列头及卡片（account-types、tutorial-open、tutorial-manage、help A12 表头）、products「最低入金」小节标题、deposit 渠道页费用表行标签——均为门槛概念/表格标签；help D3 原文已是「首次最低入金」。
 - 检查：12 个 HTML 解析通过，git diff --check 通过，全站无「手机号或邮箱 / MetaTrader 5 HSB / 选择账户」残留。
 - 状态：仅本地存档未推送（commit a85d818）。
+
+## 2026-11-18 · 存档并推送发布（含首页恢复原样）
+
+- 背景：推送前发现工作区有一批未提交改动，内容为撤销 ddd7c66（首页市场面板重构）与 62ac00a（标题居中）——恢复世界地图/统计模块、.overview 内边距 106px 0 0、sitemap 首页 lastmod 2026-11-04，CSS 内容哈希同步再生成（home-minpilot 2d804ac11b、hero-holo 0fbf2f4bea）。经用户确认按「先提交恢复改动，再推送」执行。
+- 实施：7bd5f39 提交恢复改动 → 推送 main（364d0d7..7bd5f39，共 14 个提交，含本轮全站文案同步与首页两个改动的历史提交）。
+- 部署跟踪：Actions run #38（对应 7bd5f39）completed success，https://github.com/MrRoam/smartHSB/actions/runs/44216109158 。
+- 线上验证：首页 HTTP 200；包含「首次最低入金门槛约 $25」（文案同步已生效）、overview-world（原始首页结构已恢复）、home-minpilot.css?v=2d804ac11b（恢复版 CSS）；account-real.html 含「开户完成并入金」「首次最低入金 Rp400.000（约 $25）即可开始真实交易」。
+- 状态：已推送并部署成功，origin/main = 7bd5f39，工作区干净。
