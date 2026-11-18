@@ -896,3 +896,14 @@
 - 检查：36 个 HTML 解析通过；版本哈希校验 661 处 0 mismatch；data-qr / 留言接口待接入 / contact-interface-status 全站无残留；git diff --check 通过。
 - 文档：审计文档 5.4 / 七 / 十一节同步标记「已处理」。
 - 状态：仅本地存档未推送。
+
+## 2026-11-18 · 推送发布（审计文档 + sitemap 修复 + 定版收尾清理）
+
+- 推送：main 9be7c22..39c8a38，3 个提交上线（cbaff57 审计文档更新、3e71d9d sitemap 修复、39c8a38 镜像重生成/版本哈希统一/死属性与死代码清理）。
+- 部署跟踪：Actions run（对应 39c8a38）completed success。
+- 线上验证（mrroam.github.io/smartHSB）：
+  - 首页 HTTP 200；
+  - 版本参数已为内容哈希：column-home.css?v=6d8ed61583、site-motion.css?v=383d557e69；
+  - 页面引用 subpages.js?v=e76e627156 与线上文件实际 md5 e76e627156 完全一致（内容哈希约定恢复）；
+  - 全站 data-qr / 「待上线」残留 0；account-real 含「开户完成并入金」「首次最低入金」。
+- 状态：已推送并部署成功，origin/main = 39c8a38，工作区干净。
