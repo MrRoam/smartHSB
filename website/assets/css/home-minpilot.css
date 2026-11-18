@@ -307,7 +307,9 @@
 .home-minpilot .footer-links a { color: var(--muted); font-size: 14px; line-height: 1.6; margin: 0; min-height: 30px; display: flex; align-items: center; }
 .home-minpilot .footer-links a:hover { color: var(--green-dark); }
 .home-minpilot .footer-links .foot-dl { grid-column: auto; }
-.home-minpilot .footer-links .store-btn { min-height: 0; }
+/* Override the generic homepage footer-link flex rule: source badge canvases must
+   stay top-left aligned inside their crop instead of being flex-centred. */
+.home-minpilot .footer-links .store-btn { display:block; align-items:initial; min-height:0; }
 .home-minpilot .footer-links .dl-qr { box-shadow: none; border: 1px solid var(--line); color: var(--muted); border-radius: 8px; }
 .home-minpilot .footer-wordmark { display: block; font: 500 clamp(60px, 14.4vw, 194px)/1.05 Suisse, sans-serif; color: #7A877F; letter-spacing: -.04em; white-space: nowrap; margin: 0 0 30px; user-select: none; }
 .home-minpilot .legal { border-color: var(--line); padding: 24px 0; }

@@ -8,6 +8,7 @@ const read = file => fs.readFileSync(path.join(root, file), 'utf8');
 
 test('footer download badges reveal their channel-specific QR placeholder on hover and keyboard focus', () => {
   const styles = read('website/assets/css/column-home.css');
+  const homeStyles = read('website/assets/css/home-minpilot.css');
 
   assert.match(styles, /\.footer-links \.store-btn\{[^}]*width:156px[^}]*height:52px[^}]*background:transparent/);
   assert.match(styles, /\.footer-links \.dl-qr::after\{[^}]*transform:scale\(\.72\)/);
@@ -16,6 +17,7 @@ test('footer download badges reveal their channel-specific QR placeholder on hov
   assert.match(styles, /\.dl-box:has\(\.store-btn:nth-child\(2\):is\(:hover,:focus-visible\)\) \.dl-qr::after/);
   assert.match(styles, /url\('\.\.\/img\/qr\/qr_googleplay\.png'\)/);
   assert.doesNotMatch(styles, /\.dl-box:has\([^}]+\) \.dl-qr\{[^}]*\b(?:width|height):/);
+  assert.match(homeStyles, /\.home-minpilot \.footer-links \.store-btn\s*\{[^}]*display:\s*block[^}]*align-items:\s*initial/);
 });
 
 test('two replaceable QR placeholder assets exist for the footer channels', () => {
