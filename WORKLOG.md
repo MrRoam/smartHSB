@@ -819,3 +819,15 @@
 - 未动（非本次指定字符串）：download-app.html 两处「手机号或邮箱注册」描述、download-mt5.html meta description「MetaTrader 5 HSB 官方下载」，待用户确认是否同步。
 - 检查：5 个页面 HTML 解析通过，git diff --check 通过。
 - 状态：仅本地存档未推送（commit b441b9a）。
+
+## 2026-11-18 · 全站同类文案同步（承接上一轮 8 条指定修改）
+
+- 范围（用户确认：一、二、四全改 + 三中仅叙述句与渠道页统计卡）：
+  - 注册方式 3 处「手机号或邮箱注册」→「手机号注册」（download-app 流程节点 02 + FAQ、download-mt5 FAQ）。
+  - download-mt5.html meta/og description「MetaTrader 5 HSB 官方下载」→「MetaTrader 5 官方下载」。
+  - 「最低入金」加「首次」共 15 处叙述句与统计卡：account-real HERO/FAQ、demo 3 处、learn-basic 2 处、products HERO 信息条/FAQ、首页信息条（website + 根镜像）、deposit-bank/ewallet/va 统计卡、deposit-withdraw HERO lead/统计卡。
+  - account-real FAQ ③「选择账户类型并通过官方隔离账户入金」→「开户完成并入金，即可开始交易」。
+  - sitemap lastmod：demo / learn-basic / products / deposit-bank / deposit-ewallet / deposit-va 更新为 2026-11-18。
+- 保留不改（口径确认）：账户对比表列头及卡片（account-types、tutorial-open、tutorial-manage、help A12 表头）、products「最低入金」小节标题、deposit 渠道页费用表行标签——均为门槛概念/表格标签；help D3 原文已是「首次最低入金」。
+- 检查：12 个 HTML 解析通过，git diff --check 通过，全站无「手机号或邮箱 / MetaTrader 5 HSB / 选择账户」残留。
+- 状态：仅本地存档未推送（commit a85d818）。
