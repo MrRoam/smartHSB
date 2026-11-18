@@ -165,9 +165,13 @@
    横向溢出视口 130~170px。裁切放在本整幅区块上：边界=屏幕边缘，
    卡片圆角不被切；不再依赖根元素 html{overflow-x:hidden}。
    详见 tilt-up.css 顶部约定。 */
-.home-minpilot .markets {background:var(--soft);padding:104px 0;overflow-x:clip;}
+.home-minpilot .markets {background:#fff;padding:104px 0;overflow-x:clip;}
 .home-minpilot .market-catalog-summary {margin-top:20px;font-size:16px;}
 .home-minpilot .market-catalog-summary span {color:var(--muted);margin-left:12px;}
+.home-minpilot .market-section-head {margin-bottom:38px;}
+.home-minpilot .market-section-head h2 {max-width:760px;margin:0 auto 32px;text-align:center;font-size:clamp(36px,4.5vw,64px);}
+.home-minpilot .market-summary-row {display:flex;align-items:center;justify-content:space-between;gap:32px;}
+.home-minpilot .market-section-head .market-catalog-summary {margin:0;}
 /* 品种表外层极光底框（2026-11-14，对齐账户类型页三种账户卡语言）
    底框做在 .market-explorer（M-06 倾斜目标）上、内部包白卡
    .market-explorer-inner —— 底框随卡片一起倾斜，动效不变
@@ -861,9 +865,16 @@ html.js .home-minpilot .rewards-inner.pop-play {
   .home-minpilot .trust-item.trust-card { padding: 22px 20px 24px; border-radius: 14px; }
 }
 
-/* 首页 overview 标题单句：桌面一行，窄屏在逗号后换行 */
-.home-minpilot .overview-intro .h2-br-m {display:none;}
-@media(max-width:600px) {.home-minpilot .overview-intro .h2-br-m {display:inline;}}
+/* 市场区标题：桌面一行，窄屏在逗号后换行。 */
+.home-minpilot .market-section-head .h2-br-m {display:none;}
+@media(max-width:600px) {.home-minpilot .market-section-head .h2-br-m {display:inline;}}
+@media(max-width:540px) {
+  .home-minpilot .market-section-head {margin-bottom:30px;}
+  .home-minpilot .market-section-head h2 {font-size:36px;margin-bottom:24px;}
+  .home-minpilot .market-summary-row {display:block;}
+  .home-minpilot .market-summary-row .text-link {display:inline-flex;margin-top:12px;}
+}
+@media(max-width:359px) {.home-minpilot .market-section-head h2 {font-size:32px;}}
 
 /* 首页仅在穿过 HERO 后升起为顶部浮层；首屏保留已确认的深色内嵌导航。 */
 .home-minpilot .site-header.sticky {

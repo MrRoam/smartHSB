@@ -70,7 +70,7 @@
   // All copy is readable before enhancement, and after cancellation or script failure.
   if ('IntersectionObserver' in window) {
     // M-02「打字出场」已接管的文案块跳过整套 WAAPI 入场，避免两套动效叠加
-    const revealTargets = [...document.querySelectorAll('.overview-intro h2, .platform-copy, .platform-visual, .markets .section-head')]
+    const revealTargets = [...document.querySelectorAll('.platform-copy, .platform-visual')]
       .filter(el => !el.matches('[data-type-in]') && !el.querySelector('[data-type-in]'));
     const entrance = new IntersectionObserver(entries => entries.forEach(entry => {
       if (!entry.isIntersecting || !motion || document.hidden) return;
