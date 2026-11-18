@@ -879,3 +879,10 @@
 - 新发现 4 项待用户决策：① sitemap 含已删页 rewards.html（死条目），download-app/download-mt5 未收录；② 根镜像 index.html 落后（3 处版本参数、h2 响应式换行、aurora-frame 结构）；③ subpages.js / pop-in.js 版本参数两套并存分裂缓存，且 v 值≠内容哈希；④ subpages.js 留言分支死代码仍未清理。另 5.4：36 处 data-qr 指向不存在的 qr_app_download.png（原审计已记录，现含 404.html 共 36 处）。
 - 文档：20261117-placeholder-audit.md 已更新（复查口径汇总、5.2 页脚现状、新增 5.4 / 十 / 十一节）。
 - 状态：仅提交审计文档与记录，站点代码未改动；优化项待用户确认后执行。
+
+## 2026-11-18 · sitemap 一致性修复
+
+- 用户确认：移除已删页 rewards.html 的 sitemap 死条目；download-app / download-mt5 两个下载页补录（本为 download.html 拆分产物，删除旧页时漏补）。
+- 实施：sitemap.xml 移除 rewards 条目，在 economic-calendar 前按字母序插入 download-app（lastmod 2026-11-18）与 download-mt5（lastmod 2026-11-18）；XML 解析通过。
+- 复核：sitemap 34 条与 website/ 下 34 个正式页（除 404.html）完全一一对应。
+- 状态：仅本地存档未推送。
