@@ -75,6 +75,8 @@ test('dropdown and mobile submenu entries use consistent functional icons', () =
 
   assert.match(styles, /\.navigation-complete \.dropdown a::before,[\s\S]*?\.navigation-complete-mobile \.mobile-nav-links a::before/);
   assert.match(styles, /-webkit-mask:\s*var\(--nav-menu-icon\) center\/contain no-repeat/);
+  assert.match(styles, /:where\(\.navigation-complete \.dropdown a,\.navigation-complete-mobile \.mobile-nav-links a\) \{\s*--nav-menu-icon:/);
+  assert.doesNotMatch(styles, /\.navigation-complete \.dropdown a,\s*\.navigation-complete-mobile \.mobile-nav-links a \{\s*--nav-menu-icon:/);
   assert.match(styles, /\[href\$="account-types\.html"\][\s\S]*?--nav-menu-icon:/);
   assert.match(styles, /\[href\$="products\.html"\][\s\S]*?--nav-menu-icon:/);
   assert.match(styles, /\[href\$="download-app\.html"\][\s\S]*?--nav-menu-icon:/);
