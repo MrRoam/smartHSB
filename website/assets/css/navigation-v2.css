@@ -48,6 +48,37 @@
   right: -20px;
 }
 
+/* 头部奖项标识：品牌名称后的细分隔线与金色 A+++ 徽章。 */
+.site-header .brand > span:last-child {
+  display: inline-flex;
+  align-items: center;
+}
+.site-header .brand > span:last-child::after {
+  content: "";
+  width: 1px;
+  height: 22px;
+  margin-left: 13px;
+  border-left: 1px solid rgba(112, 119, 141, .42);
+}
+.site-header .brand::after {
+  content: "";
+  flex: 0 0 auto;
+  width: 48px;
+  height: 22px;
+  margin-left: -4px;
+  background: linear-gradient(135deg, #f6dc8d 0%, #d4a735 55%, #a66d09 100%);
+  -webkit-mask: url("../img/awards/badge_award_2026_color.png") center/contain no-repeat;
+  mask: url("../img/awards/badge_award_2026_color.png") center/contain no-repeat;
+  filter: drop-shadow(0 1px 3px rgba(201, 145, 24, .28));
+}
+.site-header:not(.sticky) .brand > span:last-child::after {
+  border-color: rgba(248, 234, 188, .52);
+}
+@media (max-width: 1100px) {
+  .site-header .brand > span:last-child::after,
+  .site-header .brand::after { display: none; }
+}
+
 /* 二级入口以功能图标辅助识别。图标只出现于展开菜单，避免一级导航变得拥挤。 */
 :where(.navigation-complete .dropdown a,.navigation-complete-mobile .mobile-nav-links a) {
   --nav-menu-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 3h10l4 4v14H5z'/%3E%3Cpath d='M15 3v5h5M8 13h8M8 17h6'/%3E%3C/svg%3E");
