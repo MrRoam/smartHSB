@@ -85,9 +85,12 @@ test('dropdown and mobile submenu entries use consistent functional icons', () =
 
 test('header brand places the 2026 A+++ award after a divider', () => {
   const styles = read('website/assets/css/navigation-v2.css');
+  const home = read('website/index.html');
+  const internal = read('website/about.html');
 
-  assert.match(styles, /\.site-header \.brand > span:last-child::after \{[\s\S]*?border-left: 1px solid/);
-  assert.match(styles, /\.site-header \.brand::after \{[\s\S]*?badge_award_2026_color\.png/);
-  assert.match(styles, /background: linear-gradient\(135deg, #f6dc8d 0%, #d4a735 55%, #a66d09 100%\)/);
-  assert.match(styles, /@media \(max-width: 1100px\) \{[\s\S]*?\.site-header \.brand::after \{ display: none; \}/);
+  assert.match(home, /<span aria-hidden="true" class="brand-divider">\|<\/span><img alt="" aria-hidden="true" class="brand-award"[\s\S]*?badge_award_2026_color\.webp/);
+  assert.match(internal, /<span aria-hidden="true" class="brand-divider">\|<\/span><img alt="" aria-hidden="true" class="brand-award"[\s\S]*?badge_award_2026_color\.webp/);
+  assert.match(styles, /\.site-header \.brand-award \{[\s\S]*?width: 70px;[\s\S]*?filter: brightness\(0\)/);
+  assert.match(styles, /@media \(max-width: 1100px\) \{[\s\S]*?\.site-header \.brand-award \{ display: none; \}/);
+  assert.doesNotMatch(styles, /\.site-header \.brand::after/);
 });

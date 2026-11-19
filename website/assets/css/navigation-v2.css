@@ -49,34 +49,25 @@
 }
 
 /* 头部奖项标识：品牌名称后的细分隔线与金色 A+++ 徽章。 */
-.site-header .brand > span:last-child {
-  display: inline-flex;
-  align-items: center;
+.site-header .brand-divider {
+  color: rgba(112, 119, 141, .58);
+  font-size: 21px;
+  font-weight: 300;
+  line-height: 1;
+  margin-left: 3px;
 }
-.site-header .brand > span:last-child::after {
-  content: "";
-  width: 1px;
-  height: 22px;
-  margin-left: 13px;
-  border-left: 1px solid rgba(112, 119, 141, .42);
-}
-.site-header .brand::after {
-  content: "";
+.site-header .brand-award {
+  display: block;
   flex: 0 0 auto;
-  width: 48px;
-  height: 22px;
-  margin-left: -4px;
-  background: linear-gradient(135deg, #f6dc8d 0%, #d4a735 55%, #a66d09 100%);
-  -webkit-mask: url("../img/awards/badge_award_2026_color.png") center/contain no-repeat;
-  mask: url("../img/awards/badge_award_2026_color.png") center/contain no-repeat;
-  filter: drop-shadow(0 1px 3px rgba(201, 145, 24, .28));
+  width: 70px;
+  height: 31px;
+  object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(76%) sepia(44%) saturate(650%) hue-rotate(1deg) brightness(91%) contrast(91%) drop-shadow(0 1px 3px rgba(201, 145, 24, .28));
 }
-.site-header:not(.sticky) .brand > span:last-child::after {
-  border-color: rgba(248, 234, 188, .52);
-}
+.site-header:not(.sticky) .brand-divider { color: rgba(248, 234, 188, .72); }
 @media (max-width: 1100px) {
-  .site-header .brand > span:last-child::after,
-  .site-header .brand::after { display: none; }
+  .site-header .brand-divider,
+  .site-header .brand-award { display: none; }
 }
 
 /* 二级入口以功能图标辅助识别。图标只出现于展开菜单，避免一级导航变得拥挤。 */
