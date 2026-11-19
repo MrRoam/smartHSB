@@ -64,6 +64,11 @@
   object-fit: contain;
   filter: brightness(0) saturate(100%) invert(76%) sepia(44%) saturate(650%) hue-rotate(1deg) brightness(91%) contrast(91%) drop-shadow(0 1px 3px rgba(201, 145, 24, .28));
 }
+/* 内页的通用 logo 规则只应用于 S 标志，不得缩小奖项徽章。 */
+.internal-site[data-page] .site-header .brand-award {
+  width: 70px;
+  height: 31px;
+}
 .site-header:not(.sticky) .brand-divider { color: rgba(248, 234, 188, .72); }
 @media (max-width: 1100px) {
   .site-header .brand-divider,

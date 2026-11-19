@@ -91,6 +91,7 @@ test('header brand places the 2026 A+++ award after a divider', () => {
   assert.match(home, /<span aria-hidden="true" class="brand-divider">\|<\/span><img alt="" aria-hidden="true" class="brand-award"[\s\S]*?badge_award_2026_color\.webp/);
   assert.match(internal, /<span aria-hidden="true" class="brand-divider">\|<\/span><img alt="" aria-hidden="true" class="brand-award"[\s\S]*?badge_award_2026_color\.webp/);
   assert.match(styles, /\.site-header \.brand-award \{[\s\S]*?width: 70px;[\s\S]*?filter: brightness\(0\)/);
+  assert.match(styles, /\.internal-site\[data-page\] \.site-header \.brand-award \{\s*width: 70px;\s*height: 31px;/);
   assert.match(styles, /@media \(max-width: 1100px\) \{[\s\S]*?\.site-header \.brand-award \{ display: none; \}/);
   assert.doesNotMatch(styles, /\.site-header \.brand::after/);
 });
