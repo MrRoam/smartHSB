@@ -69,3 +69,14 @@ test('download-app navigation action uses the same blue-green brand gradient on 
   assert.doesNotMatch(homeStyles, /\.site-header\.sticky \.nav-actions \.button-outline \{[\s\S]*?background:#10161E/);
   assert.doesNotMatch(internalStyles, /\.site-header \.nav-actions \.button-outline \{[\s\S]*?background:#10161E/);
 });
+
+test('dropdown and mobile submenu entries use consistent functional icons', () => {
+  const styles = read('website/assets/css/navigation-v2.css');
+
+  assert.match(styles, /\.navigation-complete \.dropdown a::before,[\s\S]*?\.navigation-complete-mobile \.mobile-nav-links a::before/);
+  assert.match(styles, /-webkit-mask:\s*var\(--nav-menu-icon\) center\/contain no-repeat/);
+  assert.match(styles, /\[href\$="account-types\.html"\][\s\S]*?--nav-menu-icon:/);
+  assert.match(styles, /\[href\$="products\.html"\][\s\S]*?--nav-menu-icon:/);
+  assert.match(styles, /\[href\$="download-app\.html"\][\s\S]*?--nav-menu-icon:/);
+  assert.match(styles, /\[href\$="privacy-policy\.html"\][\s\S]*?--nav-menu-icon:/);
+});

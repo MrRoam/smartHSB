@@ -47,6 +47,88 @@
   left: auto;
   right: -20px;
 }
+
+/* 二级入口以功能图标辅助识别。图标只出现于展开菜单，避免一级导航变得拥挤。 */
+.navigation-complete .dropdown a,
+.navigation-complete-mobile .mobile-nav-links a {
+  --nav-menu-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 3h10l4 4v14H5z'/%3E%3Cpath d='M15 3v5h5M8 13h8M8 17h6'/%3E%3C/svg%3E");
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr) auto;
+  justify-content: initial;
+  column-gap: 10px;
+}
+.navigation-complete .dropdown a::before,
+.navigation-complete-mobile .mobile-nav-links a::before {
+  content: "";
+  grid-column: 1;
+  width: 18px;
+  height: 18px;
+  background: #257a7c;
+  -webkit-mask: var(--nav-menu-icon) center/contain no-repeat;
+  mask: var(--nav-menu-icon) center/contain no-repeat;
+  opacity: .9;
+}
+.navigation-complete .dropdown a span,
+.navigation-complete-mobile .mobile-nav-links a span { grid-column: 3; }
+.navigation-complete .dropdown a:is(:hover,:focus-visible)::before,
+.navigation-complete-mobile .mobile-nav-links a:is(:hover,:focus-visible)::before { background: var(--green-dark); }
+
+:where(.navigation-complete .dropdown a,.navigation-complete-mobile .mobile-nav-links a)[href$="account-types.html"] {
+  --nav-menu-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='7' r='4'/%3E%3Cpath d='M4 21a8 8 0 0 1 16 0'/%3E%3C/svg%3E");
+}
+:where(.navigation-complete .dropdown a,.navigation-complete-mobile .mobile-nav-links a)[href$="demo.html"] {
+  --nav-menu-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3'/%3E%3Cpath d='M8 16h8'/%3E%3C/svg%3E");
+}
+:where(.navigation-complete .dropdown a,.navigation-complete-mobile .mobile-nav-links a)[href$="account-real.html"],
+:where(.navigation-complete .dropdown a,.navigation-complete-mobile .mobile-nav-links a)[href$="deposit-withdraw.html"] {
+  --nav-menu-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 7h18v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z'/%3E%3Cpath d='M3 10h18M16 15h2'/%3E%3C/svg%3E");
+}
+:where(.navigation-complete .dropdown a,.navigation-complete-mobile .mobile-nav-links a)[href$="promotions.html"] {
+  --nav-menu-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 12v9H4v-9M2 7h20v5H2zM12 7v14M7.5 7a2.5 2.5 0 1 1 4.5-1.5V7M16.5 7A2.5 2.5 0 1 0 12 5.5V7'/%3E%3C/svg%3E");
+}
+:where(.navigation-complete .dropdown a,.navigation-complete-mobile .mobile-nav-links a)[href$="products.html"],
+:where(.navigation-complete .dropdown a,.navigation-complete-mobile .mobile-nav-links a)[href$="live-quotes.html"] {
+  --nav-menu-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 19V5M4 17l5-5 4 3 7-8'/%3E%3Cpath d='M16 7h4v4'/%3E%3C/svg%3E");
+}
+:where(.navigation-complete .dropdown a,.navigation-complete-mobile .mobile-nav-links a)[href$="economic-calendar.html"] {
+  --nav-menu-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='5' width='18' height='16' rx='2'/%3E%3Cpath d='M16 3v4M8 3v4M3 10h18M8 14h3M8 18h6'/%3E%3C/svg%3E");
+}
+:where(.navigation-complete .dropdown a,.navigation-complete-mobile .mobile-nav-links a)[href$="news.html"] {
+  --nav-menu-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 5h16v15H4zM8 9h7M8 13h8M8 17h5'/%3E%3C/svg%3E");
+}
+:where(.navigation-complete .dropdown a,.navigation-complete-mobile .mobile-nav-links a)[href$="platform-tutorial.html"],
+:where(.navigation-complete .dropdown a,.navigation-complete-mobile .mobile-nav-links a)[href$="learn.html"] {
+  --nav-menu-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 5.5A3.5 3.5 0 0 1 7.5 4H20v15.5H7.5A3.5 3.5 0 0 0 4 23z'/%3E%3Cpath d='M4 5.5V19.5M8 8h8M8 12h7'/%3E%3C/svg%3E");
+}
+:where(.navigation-complete .dropdown a,.navigation-complete-mobile .mobile-nav-links a)[href$="trading-tools.html"] {
+  --nav-menu-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 7h16M4 17h16M8 4v6M16 14v6'/%3E%3C/svg%3E");
+}
+:where(.navigation-complete .dropdown a,.navigation-complete-mobile .mobile-nav-links a)[href$="download-app.html"] {
+  --nav-menu-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='7' y='2.5' width='10' height='19' rx='2'/%3E%3Cpath d='M10 18.5h4'/%3E%3C/svg%3E");
+}
+:where(.navigation-complete .dropdown a,.navigation-complete-mobile .mobile-nav-links a)[href$="download-mt5.html"] {
+  --nav-menu-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='13' rx='2'/%3E%3Cpath d='M8 21h8M12 17v4M7 12l3-3 2 2 4-4'/%3E%3C/svg%3E");
+}
+:where(.navigation-complete .dropdown a,.navigation-complete-mobile .mobile-nav-links a)[href$="about.html"] {
+  --nav-menu-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M12 10v6M12 7h.01'/%3E%3C/svg%3E");
+}
+:where(.navigation-complete .dropdown a,.navigation-complete-mobile .mobile-nav-links a)[href$="licenses.html"] {
+  --nav-menu-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3 5 6v5c0 4.5 3 8.2 7 10 4-1.8 7-5.5 7-10V6z'/%3E%3Cpath d='m9 12 2 2 4-4'/%3E%3C/svg%3E");
+}
+:where(.navigation-complete .dropdown a,.navigation-complete-mobile .mobile-nav-links a)[href$="contact.html"],
+:where(.navigation-complete .dropdown a,.navigation-complete-mobile .mobile-nav-links a)[href$="help.html"],
+:where(.navigation-complete .dropdown a,.navigation-complete-mobile .mobile-nav-links a)[href$="customer-complaint.html"] {
+  --nav-menu-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 5h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H10l-5 3v-3H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z'/%3E%3Cpath d='M8 11h8M8 14h5'/%3E%3C/svg%3E");
+}
+:where(.navigation-complete .dropdown a,.navigation-complete-mobile .mobile-nav-links a)[href$="user-agreement.html"] {
+  --nav-menu-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 3h9l3 3v15H6z'/%3E%3Cpath d='M14 3v4h4M9 12h6M9 16h6'/%3E%3C/svg%3E");
+}
+:where(.navigation-complete .dropdown a,.navigation-complete-mobile .mobile-nav-links a)[href$="fraud-warning.html"] {
+  --nav-menu-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m12 3 10 18H2z'/%3E%3Cpath d='M12 9v4M12 17h.01'/%3E%3C/svg%3E");
+}
+:where(.navigation-complete .dropdown a,.navigation-complete-mobile .mobile-nav-links a)[href$="privacy-policy.html"] {
+  --nav-menu-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='5' y='10' width='14' height='10' rx='2'/%3E%3Cpath d='M8 10V7a4 4 0 0 1 8 0v3M12 14v2'/%3E%3C/svg%3E");
+}
 .navigation-complete-mobile { display: none; }
 
 @media (min-width: 1051px) {
