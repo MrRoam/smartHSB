@@ -48,6 +48,77 @@
   right: -20px;
 }
 
+/* 语言入口使用与二级导航相同的卡片语汇；当前只呈现可用语言，不触发页面切换。 */
+.language-menu {
+  position: relative;
+  color: #5a6580;
+  font-size: 11px;
+}
+.language-menu > summary {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 36px;
+  padding: 4px 0;
+  cursor: pointer;
+  list-style: none;
+  white-space: nowrap;
+  transition: color .2s ease;
+}
+.language-menu > summary::-webkit-details-marker { display: none; }
+.language-menu > summary::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  margin-top: -3px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform .2s ease;
+}
+.language-menu[open] > summary::after { transform: translateY(3px) rotate(225deg); }
+.language-menu > summary:hover { color: #11131a; }
+.language-menu__list {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: -12px;
+  z-index: 2;
+  display: grid;
+  min-width: 166px;
+  margin: 0;
+  padding: 7px;
+  list-style: none;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+.language-menu__list li {
+  display: flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 9px 13px;
+  border-radius: 5px;
+  color: #575f78;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+.language-menu__list li[aria-current="true"] {
+  background: var(--canvas);
+  color: var(--green-dark);
+  font-weight: 500;
+}
+.language-menu__list li[aria-current="true"]::before {
+  content: "✓";
+  width: 18px;
+  margin-right: 10px;
+  color: var(--green-dark);
+  font-size: 13px;
+}
+.site-header:not(.sticky) .language-menu { color: #e2e8f0; }
+.internal-site[data-page] .site-header .language-menu { color: #525967; }
+
 /* 头部奖项标识：品牌名称后的细分隔线与金色 A+++ 徽章。 */
 .site-header .brand-divider {
   color: rgba(112, 119, 141, .58);
@@ -170,6 +241,7 @@
 
 @media (max-width: 1050px) {
   .site-header .desktop-nav { display: none; }
+  .site-header .language-menu { display: none; }
   .site-header .nav-inner { height: 70px; }
   .site-header .support-link { display: none; }
   .site-header .menu-toggle {
@@ -206,7 +278,8 @@
     max-height: calc(100dvh - 70px);
   }
   .navigation-complete-mobile .mobile-home,
-  .navigation-complete-mobile .mobile-nav-group summary {
+  .navigation-complete-mobile .mobile-nav-group summary,
+  .navigation-complete-mobile .mobile-language-menu summary {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -220,20 +293,25 @@
   .navigation-complete-mobile .mobile-home {
     border-bottom: 1px solid var(--line);
   }
-  .mobile-nav-group { border-bottom: 1px solid var(--line); }
-  .mobile-nav-group summary {
+  .mobile-nav-group,
+  .mobile-language-menu { border-bottom: 1px solid var(--line); }
+  .mobile-nav-group summary,
+  .mobile-language-menu summary {
     cursor: pointer;
     list-style: none;
   }
-  .mobile-nav-group summary::-webkit-details-marker { display: none; }
-  .mobile-nav-group summary span {
+  .mobile-nav-group summary::-webkit-details-marker,
+  .mobile-language-menu summary::-webkit-details-marker { display: none; }
+  .mobile-nav-group summary span,
+  .mobile-language-menu summary > span {
     color: #70778d;
     font-size: 18px;
     font-weight: 400;
     line-height: 1;
     transition: transform .2s ease;
   }
-  .mobile-nav-group[open] summary span { transform: rotate(45deg); }
+  .mobile-nav-group[open] summary span,
+  .mobile-language-menu[open] summary > span { transform: rotate(45deg); }
   .navigation-complete-mobile .mobile-nav-links { padding: 0 0 12px 16px; }
   .navigation-complete-mobile .mobile-nav-links a {
     display: flex;
@@ -251,6 +329,22 @@
     font-size: 12px;
   }
   .navigation-complete-mobile .mobile-nav-links a:hover { color: var(--navy); }
+  .mobile-language-menu ul {
+    display: grid;
+    gap: 2px;
+    margin: 0;
+    padding: 0 0 12px 16px;
+    list-style: none;
+  }
+  .mobile-language-menu li {
+    min-height: 44px;
+    padding: 10px 0;
+    color: #575f78;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .mobile-language-menu li[aria-current="true"] { color: var(--green-dark); font-weight: 500; }
+  .mobile-language-menu li[aria-current="true"]::before { content: "✓"; margin-right: 10px; }
 }
 
 @media (max-width: 600px) {
@@ -268,7 +362,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .mobile-nav-group summary span { transition: none; }
+  .mobile-nav-group summary span,
+  .mobile-language-menu summary > span,
+  .language-menu > summary::after { transition: none; }
 }
 
 /* 浮层导航展开时，让移动端菜单独立成卡，避免撑开顶部胶囊。 */
