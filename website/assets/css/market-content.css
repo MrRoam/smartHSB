@@ -90,3 +90,8 @@
   .market-page .market-hero{padding-top:126px;}
   .market-page .market-hero h1{font-size:32px;}
 }
+
+/* 详情正文Contain浮动（2026-11-20）：源文章自带 <style>（fxs-faq 模块）使用 float:left，
+   不隔离时 FAQ 白卡会溢出面板压到免责声明，声明文字被挤成竖排 */
+.article-body{display:flow-root;}
+.article-body::after{content:"";display:block;clear:both;}
