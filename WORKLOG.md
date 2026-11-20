@@ -1093,3 +1093,11 @@
 - 修复：market-content.css 新增 .article-body{display:flow-root} 与 ::after clear:both，隔离源内容浮动。哈希 97e9722bfc，5 个引用页同步。
 - 验证（Playwright，文章 4576713 含 FAQ、390/1440 两档）：声明段回到面板正下方，全宽横排（1220px、高 52px，与面板同宽同 x），无重叠、无竖排、页面无横向溢出；修复前声明高 660 且被浮块覆盖。
 - 状态：仅本地存档未推送。
+
+## 2026-11-20 · 全站去掉「（UTC+7）」标注（方案A）
+
+- 需求：用户要求网站不做 UTC+7 时区说明。先做影响评估：17 处均为纯文字，无功能依赖（时区换算用 Asia/Jakarta 硬编码计算，与文字无关）；3 处去掉整段会产生歧义（报价时钟、出金批次表、日历时间戳）。经确认采用方案A：只删「（UTC+7）」，保留 WIB 标注。
+- 替换明细：deposit-bank 到账提示、economic-calendar FAQ、help 出金批次说明、learn-basic 外汇时段、live-quotes 8 处（meta/og/hero/副标/时钟/2 条 FAQ）、news 模块卡、products 交易时间（改为「WIB，冬令时顺延 1 小时」）、main.js 时钟注释、market-content.js 两个 hero 简介。
+- 版本：main.js → ba98d4e86b、market-content.js → b634fc4ac2，36 页引用同步；根镜像重生成（规范化一致）。
+- 验证：全站 html/js/css/xml 无残留 UTC+7；node --check 通过；版本哈希零差异。
+- 状态：仅本地存档未推送。
