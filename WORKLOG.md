@@ -1063,3 +1063,8 @@
 - 修复 2：14 页裸 slide-in.js 引用统一补内容哈希版本参数 ?v=7f846fd426（about/contact/customer-complaint/download-app/download-mt5/fraud-warning/help/news-detail/news/platform-tutorial/privacy-policy/trading-signal-detail/trading-signals/user-agreement），消除同文件双缓存键。
 - 复核：修复后全站（含根镜像）版本参数与内容哈希零差异；无版本参数仅剩既有约定 4 项（style.css/page.css/home-refinements-v2.css/world-points.js）；根镜像 HTML 解析通过。
 - 状态：仅本地存档未推送。
+
+## 2026-11-20 · 推送与部署验证
+
+- 推送 9242df1..c74f191（19 个提交）至 origin/main；Pages 部署 run 44673450952 完成成功。
+- 线上验证（mrroam.github.io/smartHSB）：news.html 两个模块、economic-calendar.html 三个模块、trading-signals.html CTA 均已上线；导航「交易策略」链接与 navigation-v2.css?v=88f099b618 生效；根镜像同步正常。
