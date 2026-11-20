@@ -1021,3 +1021,17 @@
 - 页面与配置：删除 website/trading-tools.html；sitemap 移除该条目（35 条 URL，33 页面 + 首页 + news 详情占位? 以实际为准——XML 校验通过）；market-content.js 哈希 → a0b376adf3（4 页同步）、navigation-v2.css 删除 trading-tools 图标死规则后哈希 → 88f099b618（36 页同步）。
 - 检查：37 个 HTML 解析通过；页面/JS/sitemap 中 trading-tools 引用清零；全站无死链。遗留说明：site-light.css 中 20 条 data-page="trading-tools" 页面级规则已无触发元素，属无害死样式，留待后续统一清理。
 - 状态：仅本地存档未推送。
+
+## 2026-11-20 · 资讯中心接真实接口 + 新增资讯详情页
+
+- 数据源核对：content.adxpm99.com 前端 SPA 实际调用 /api/v1/content/articles/page（pageNum/pageSize/type/symbol），无独立详情接口——原站详情数据来自列表项（含全文 content），经 localStorage 缓存传递（news-content.article.<articleId>）。
+- 列表页 news.html（market-content.js news() 重写）：
+  - 弃用 5 条硬编码快照，改接 NEWS_API 实时数据（每页 10 条、加载更多、分类 tabs 全部/外汇/商品/指数/技术分析/财经指标 对应 type 参数、加载中/出错重试/空态）。
+  - 卡片字段对齐源站：标题、abstract 摘要、source 来源、WIB 时间、images.thumbnail 缩略图（onerror 隐藏）、相关品种 symbols 芯片（≤4）、isImportant「重要」徽标；阅读摘要 → news-detail.html?id=<articleId>（点击时写入 localStorage）。
+  - news.html meta/og description 去「静态快照」表述。
+- 新增详情页 website/news-detail.html（复用整站页面壳，data-news-detail-app）：
+  - market-content.js 新增 newsDetail()：优先读 localStorage 缓存，未命中时回退拉取首页 20 条按 articleId 匹配，均无则展示「文章可能已下线」；正文剥除 <script> 后渲染。
+  - 版式对齐策略详情风格：article-panel 白卡（标题/来源/WIB 时间/作者/重要徽标/相关品种芯片/正文排版含 img、表格、引用）、底部信息说明（第三方来源免责）。
+- 版本哈希：market-content.css → da102e56de、market-content.js → 1507676d49（5 个引用页同步）；sitemap 新增 news-detail.html（36 条与 36 页一一对应）。
+- 验证：Playwright 实测——列表 10 张卡实时数据/缩略图/芯片/加载更多、外汇 tab 过滤 ?category=fx 正常；详情页 id=4576640 标题/来源 fxstreet/5 个品种芯片/正文 6711 字符渲染正常；面包屑 首页/资讯中心/资讯详情；1440 与 390 两档无溢出。node --check、38 页 HTML 解析通过；临时截图已清理。
+- 状态：仅本地存档未推送。
