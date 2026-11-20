@@ -977,3 +977,13 @@
   - 版本哈希：market-content.css → b544962541、market-content.js → 088e2f3925，4 个引用页同步更新；sitemap economic-calendar lastmod → 2026-11-20。
 - 验证：node --check 通过；4 页 HTML 解析通过；本地 http.server + Playwright 实测 1440/390 两档布局正常、无横向溢出；「只看重要」选中态为绿底勾选框（URL ?important=true 正常工作）；临时截图已清理。
 - 状态：仅本地存档未推送。
+
+## 2026-11-20 · 财经日历：日期选择器修复 + 日期条宽度优化
+
+- 需求：① 日历图标按钮点击打不开日期选择器（原实现为 opacity:0 覆盖的 input[type=date]，点击只聚焦不弹原生日历）；② 日期条横跨 1220px 页面显宽、与整体不协调。
+- 实施：
+  - market-content.js：calendar-picker label 绑定 click → 调用 input.showPicker()（不支持时退化为 focus）；▣ 字形换为内联 SVG 日历图标。
+  - market-content.css：.calendar-toolbar 加 max-width:680px（日期条不再撑满整页）；.calendar-picker 图标样式化（56px 宽、SVG 显示块级）；650px 断点微调。
+  - 版本哈希：market-content.css → bf90ec6210、market-content.js → 751251ca88，4 个引用页同步。
+- 验证：Playwright 实测——点击 picker 触发 showPicker（monkeypatch 计数=1）；1440px 日期条 680px 与分类行左对齐、图标清晰；390px 无溢出无挤压；node --check、4 页 HTML 解析通过；临时截图已清理。
+- 状态：仅本地存档未推送。
