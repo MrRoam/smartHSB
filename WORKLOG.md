@@ -1010,3 +1010,14 @@
 - sitemap：全部 lastmod 统一更新为 2026-11-20（全站导航文案变更）。
 - 检查：38 个 HTML 解析通过；导航残留「trading-tools.html + 交易工具」0 处。
 - 状态：仅本地存档未推送（commit b8d3ef3）。
+
+## 2026-11-20 · 下线 trading-tools.html 过渡页并清除全部入口
+
+- 需求：交易工具菜单已改指 trading-signals.html，trading-tools.html 作为过渡页不再被调用，排查并清除全站入口。
+- 排查结果（3 类入口）：
+  1. 全站页脚「平台与工具」列「交易工具」链接（36 页 + 根镜像共 37 处）→ 删除；
+  2. 首页信任卡「让信息更透明」（website/index.html + 根镜像）→ 改指 trading-signals.html，文案「分析工具」→「策略信号」；
+  3. trading-signals / trading-signal-detail 面包屑（market-content.js 2 处）→ {href:'trading-signals.html',label:'交易策略'}。
+- 页面与配置：删除 website/trading-tools.html；sitemap 移除该条目（35 条 URL，33 页面 + 首页 + news 详情占位? 以实际为准——XML 校验通过）；market-content.js 哈希 → a0b376adf3（4 页同步）、navigation-v2.css 删除 trading-tools 图标死规则后哈希 → 88f099b618（36 页同步）。
+- 检查：37 个 HTML 解析通过；页面/JS/sitemap 中 trading-tools 引用清零；全站无死链。遗留说明：site-light.css 中 20 条 data-page="trading-tools" 页面级规则已无触发元素，属无害死样式，留待后续统一清理。
+- 状态：仅本地存档未推送。
