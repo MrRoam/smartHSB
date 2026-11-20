@@ -987,3 +987,11 @@
   - 版本哈希：market-content.css → bf90ec6210、market-content.js → 751251ca88，4 个引用页同步。
 - 验证：Playwright 实测——点击 picker 触发 showPicker（monkeypatch 计数=1）；1440px 日期条 680px 与分类行左对齐、图标清晰；390px 无溢出无挤压；node --check、4 页 HTML 解析通过；临时截图已清理。
 - 状态：仅本地存档未推送。
+
+## 2026-11-20 · 财经日历筛选区合并单行
+
+- 需求：用户建议分类 tabs、「只看重要」、日期条、日历图标统一放到一行更协调（附截图）。
+- 实施：market-content.js 模板合并为单个 .calendar-controls-row（tabs → 只看重要 → 日期条 flex:1 → 日历图标）；market-content.css 删除 .calendar-filter-row / .calendar-toolbar 规则，新建单行布局（align-items:center，toggle margin-left:auto），复选框样式选择器重定向；650px 断点改为自然换行（tabs+toggle / 日期条+图标）。
+- 版本哈希：market-content.css → da67a57969、market-content.js → db85b99559，4 个引用页同步。
+- 验证：Playwright 实测 1440px 单行布局（分类+复选框靠左、日期条拉伸、图标居右）、390px 自然换行两行无溢出；点击 picker 仍触发 showPicker；无 filter-row/toolbar 残留；node --check、4 页 HTML 解析通过；临时截图已清理。
+- 状态：仅本地存档未推送。
