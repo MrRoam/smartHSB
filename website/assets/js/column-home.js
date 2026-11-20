@@ -114,6 +114,17 @@
     group.addEventListener('focusout', e => { if (!group.contains(e.relatedTarget)) closeGroups(); });
   });
   document.addEventListener('click', e => { if (!e.target.closest('.nav-group')) closeGroups(); });
+  const langMenus = [...document.querySelectorAll('.site-header .language-menu')];
+  function closeLangMenus() { langMenus.forEach(m => { m.open = false; }); }
+  langMenus.forEach(menu => {
+    const hoverable = () => matchMedia('(hover:hover)').matches;
+    menu.addEventListener('mouseenter', () => { if (hoverable()) { closeLangMenus(); menu.open = true; } });
+    menu.addEventListener('mouseleave', () => { menu.open = false; });
+    menu.querySelector('summary')?.addEventListener('click', e => { if (hoverable()) { e.preventDefault(); menu.open = true; } });
+    menu.addEventListener('focusout', e => { if (!menu.contains(e.relatedTarget)) menu.open = false; });
+  });
+  document.addEventListener('click', e => { if (!e.target.closest('.language-menu')) closeLangMenus(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLangMenus(); });
   const menu = document.querySelector('#mobile-nav');
   const menuToggle = document.querySelector('.menu-toggle');
   function closeMobile() { menu.hidden = true; menuToggle.setAttribute('aria-expanded','false'); menuToggle.setAttribute('aria-label','打开菜单'); }

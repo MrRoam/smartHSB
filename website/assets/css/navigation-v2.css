@@ -66,17 +66,7 @@
   transition: color .2s ease;
 }
 .language-menu > summary::-webkit-details-marker { display: none; }
-.language-menu > summary::after {
-  content: "";
-  width: 6px;
-  height: 6px;
-  margin-top: -3px;
-  border-right: 1.5px solid currentColor;
-  border-bottom: 1.5px solid currentColor;
-  transform: rotate(45deg);
-  transition: transform .2s ease;
-}
-.language-menu[open] > summary::after { transform: translateY(3px) rotate(225deg); }
+/* 用户要求：去掉上下箭头指示，与其它菜单一致悬停展开（2026-11-20） */
 .language-menu > summary:hover { color: #11131a; }
 .language-menu > ul {
   position: absolute;
@@ -364,8 +354,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .mobile-nav-group summary span,
-  .mobile-language-menu summary > span,
-  .language-menu > summary::after { transition: none; }
+  .mobile-language-menu summary > span { transition: none; }
 }
 
 /* 浮层导航展开时，让移动端菜单独立成卡，避免撑开顶部胶囊。 */
