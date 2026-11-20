@@ -1077,3 +1077,11 @@
 - 37 页版本参数同步更新，根镜像 index.html 重生成（规范化一致）；修复后全站版本哈希零差异。
 - Playwright 实测（系统 Chrome）：内页/首页悬停展开、移开收起、悬停下点击不关闭、summary::after 为 none、移动端语言菜单仍点击展开，全部通过。
 - 状态：仅本地存档未推送。
+
+## 2026-11-20 · 三个市场页 HERO 与其它内页统一
+
+- 需求：财经日历 / 资讯中心 / 交易策略 三个动态页 HERO 底色与其它内页风格不一致，统一为一个风格。
+- 对比确认：其它内页 hero 由 site-light.css 统一提供蓝绿光场背景（两层 radial 光斑 + 118deg 渐变 #EAF6FF→#DFFFEA）+ ::before 光场叠加 + padding 168/76 + h1 clamp(36px,4.1vw,58px)；market 页原为独立 122deg 浅渐变（#edf5ff→#eefaf4）+ 142/58 留白 + 更大的标题。
+- assets/css/market-content.css 末尾新增 .market-page .market-hero 统一段：完整复用内页背景与 ::before、padding 168/76、h1/em/lead 字级与颜色（em 用 var(--site-green)），并按内页断点适配（≤1050: 60px、≤800: 137px 顶距、≤540: 126px）。新哈希 3af7aeacf9，5 个引用页同步。
+- 验证：Playwright 计算样式对比——三个 market 页与 learn.html 的 hero 背景渐变、留白、h1 字号完全一致；1440 截图视觉一致；390 移动端头部无遮挡（h1 顶距 196 > 头部底 82）。
+- 状态：仅本地存档未推送。
