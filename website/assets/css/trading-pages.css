@@ -72,6 +72,21 @@
 .internal-site.trade-document-page .chp-in{padding:0;gap:7px}.internal-site.trade-document-page .chp-nav .chp-in a.on,.internal-site.trade-document-page .chp-nav .chp-in a.on:hover{background:var(--site-ink)!important;border-color:var(--site-ink)!important;color:#fff!important;box-shadow:none;font-weight:500}
 .internal-site.trade-document-page .chp-tip{max-width:900px;margin:0 auto 22px}.internal-site.trade-document-page .chp-nav a{font-size:10px;border-radius:4px}.internal-site.trade-document-page .chp-more button{font-size:10px}
 .internal-site.page-demo .reg-form .phone-row{font-size:13px}.internal-site.page-demo .reg-form .phone-row input{font-family:inherit;font-size:13px}
+.internal-site.page-demo .demo-entry__steps{list-style:none;margin:0;padding:0;display:grid;gap:16px}
+.internal-site.page-demo .demo-entry__steps>li{display:flex;gap:12px;align-items:flex-start}
+.internal-site.page-demo .demo-entry__steps .n{flex:0 0 auto;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:var(--site-surface-blue);border:1px solid var(--site-line);color:var(--site-muted);font:10px/1 SuisseMono,monospace}
+.internal-site.page-demo .demo-entry__steps>li>div>b{display:block;font-size:13px;font-weight:500;line-height:1.6;color:var(--site-ink)}
+.internal-site.page-demo .demo-entry__steps>li>div>em{display:block;margin-top:3px;font-style:normal;font-size:11px;line-height:1.8;color:var(--site-muted)}
+.internal-site.page-demo .demo-entry__cta{margin-top:6px;display:flex;align-items:center;justify-content:center;gap:4px;text-decoration:none}
+.internal-site.page-demo .demo-entry__main .rc-foot{margin-top:4px}
+.internal-site.page-demo .demo-entry__prep{margin-top:2px;padding-top:20px;border-top:1px solid var(--site-line)}
+.internal-site.page-demo .demo-entry__prep-t{display:block;font-size:11px;letter-spacing:.04em;color:var(--site-muted);margin-bottom:10px}
+.internal-site.page-demo .demo-entry__prep ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.internal-site.page-demo .demo-entry__prep li{position:relative;padding-left:18px;font-size:12px;line-height:1.75;color:var(--site-muted)}
+.internal-site.page-demo .demo-entry__prep li::before{content:"";position:absolute;left:2px;top:8px;width:5px;height:5px;border-radius:50%;background:var(--site-green,#0d9d6c)}
+.internal-site.page-demo .demo-entry__more{display:inline-flex;align-self:flex-start;margin-top:2px;font-size:12px;color:var(--site-ink);text-decoration:none;border-bottom:1px solid var(--site-line);padding-bottom:2px;transition:border-color .2s,color .2s}
+.internal-site.page-demo .demo-entry__more:hover,.internal-site.page-demo .demo-entry__more:focus-visible{border-color:var(--site-ink)}
+@media(max-width:600px){.internal-site.page-demo .demo-entry__steps>li>div>b{font-size:12px}}
 @media(max-width:600px){.trade-quotes-surface .qrow .sym{font-size:12px}.trade-quotes-surface .qrow .sym small{font-size:10px}.trade-quotes-surface .qval{font-size:11px}.trade-quotes-surface .chg{font-size:10px}.trade-quotes-surface .qhead{font-size:10px}}
 body.motion-off .trade-route-live,body.motion-off .trade-demo-chart path{animation:none!important;stroke-dashoffset:0}body.motion-off .trade-preview-plan{transform:none!important}
 @media(prefers-reduced-motion:reduce){.trade-route-live,.trade-demo-chart path{animation:none!important;stroke-dashoffset:0}.trade-preview-plan{transition:none!important;transform:none!important}.trade-calendar-workspace .tab-panel.active{animation:none}}
@@ -82,3 +97,4 @@ body.motion-off .trade-route-live,body.motion-off .trade-demo-chart path{animati
 /* live-quotes 行情卡下方的跳转提示：不再用 note 信息框，置于卡片同一 wrap 内直接对齐 */
 .internal-site.trading-family .mkt-links-note{font-size:12px;color:var(--site-muted);line-height:1.9;margin:16px 0 0}
 .internal-site.trading-family .mkt-links-note .link{color:var(--site-green);font-weight:600;text-decoration:none}
+@media(max-width:900px){.internal-site.page-demo .trade-registration-workspace{grid-template-columns:1fr}.internal-site.page-demo .reg-aside{padding:30px 26px}}

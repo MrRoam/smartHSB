@@ -105,7 +105,7 @@
 </div>
 </div>
 </section>
-<!-- ===== 开通表单 ===== -->
+<!-- ===== 开通入口 ===== -->
 <section class="sec" id="register" style="background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
 <div class="wrap">
 <div class="sec-head">
@@ -113,72 +113,35 @@
 <div class="kicker type-in-eyebrow">Get Demo</div>
 <h2 class="sec-title type-in" data-type-in="chars">开通模拟账户</h2>
 </div>
-<span class="sec-sub type-in" data-type-in="lines">手机号注册 · 验证码验证 · 即时开通</span>
+<span class="sec-sub type-in" data-type-in="lines">官方开户页填写表单 · 免费 · 即时到账</span>
 </div>
 <div class="reg-shell trade-registration-workspace">
-<p class="trade-interface-status" role="status">短信验证与开户接口待接入。当前保留申请入口，填写信息不会发送短信或创建账户。</p><form class="reg-form" id="demoForm" novalidate="">
+<p class="trade-interface-status" role="status">模拟账户开户在官方开户页完成：点击下方按钮跳转至 account.adxpm99.com 填写表单，本页不收集手机号、密码等个人信息。</p>
+<div class="reg-form demo-entry__main">
 <div class="rf-head">
 <span class="rc-ic"><svg fill="none" height="20" viewbox="0 0 24 24" width="20"><rect height="20" rx="2.5" stroke="currentColor" stroke-width="2" width="12" x="6" y="2"></rect><path d="M10.5 18.5h3" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path></svg></span>
 <div class="rc-title">
-<h3>注册模拟账户</h3>
-<p>填写手机号并验证，即刻开通</p>
+<h3>账户开通表单</h3>
+<p>开户表单由官方开户页承载，按下列 3 步完成</p>
 </div>
 </div>
-<div class="field">
-<label for="dPhone">手机号码<i>*</i></label>
-<div class="phone-row">
-<select aria-label="国家/地区区号" class="cc" id="dCc">
-<option selected="" value="+62">ID +62</option>
-<option value="+86">CN +86</option>
-<option value="+65">SG +65</option>
-<option value="+60">MY +60</option>
-<option value="+61">AU +61</option>
-<option value="+66">TH +66</option>
-<option value="+84">VN +84</option>
-<option value="+81">JP +81</option>
-<option value="+82">KR +82</option>
-<option value="+91">IN +91</option>
-<option value="+44">GB +44</option>
-<option value="+1">US +1</option>
-</select>
-<input autocomplete="tel-national" id="dPhone" inputmode="numeric" placeholder="手机号，如 812 3456 7890" type="tel"/>
-</div>
-<span class="hint">请填写常用手机号，开通结果与账户信息将发送至该号码。</span>
-</div>
-<div class="field">
-<label for="dCode">短信验证码<i>*</i></label>
-<div class="code-row">
-<input autocomplete="one-time-code" id="dCode" inputmode="numeric" maxlength="6" placeholder="6 位验证码" type="text"/>
-<button class="btn-code" id="dSendCode" type="button">发送验证码</button>
-</div>
-</div>
-<div class="field">
-<label for="dPwd">登录密码<i>*</i></label>
-<div class="pw-wrap">
-<input autocomplete="new-password" id="dPwd" placeholder="设置登录密码" type="password"/>
-<button aria-label="显示密码" aria-pressed="false" class="pw-eye" id="dEye" type="button">
-<svg class="eye-on" fill="none" height="18" viewbox="0 0 24 24" width="18"><path d="M2 12s3.8-6.5 10-6.5S22 12 22 12s-3.8 6.5-10 6.5S2 12 2 12z" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path><circle cx="12" cy="12" r="2.6" stroke="currentColor" stroke-width="2"></circle></svg>
-<svg class="eye-off" fill="none" height="18" viewbox="0 0 24 24" width="18"><path d="M4 12s3.2-5.5 8-5.5 8 5.5 8 5.5-3.2 5.5-8 5.5S4 12 4 12z" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path><path d="M4 20L20 4" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path></svg>
-</button>
-</div>
-<ul class="pw-rules" id="dPwRules">
-<li data-rule="len">8–12 个字符</li>
-<li data-rule="num">至少 1 个数字</li>
-<li data-rule="upper">至少 1 个大写字母</li>
-<li data-rule="lower">至少 1 个小写字母</li>
-<li data-rule="special">至少 1 个特殊字符</li>
+<ol class="demo-entry__steps">
+<li><span class="n">1</span><div><b>进入开户页</b><em>点击下方按钮，新标签页打开 account.adxpm99.com 的开户表单</em></div></li>
+<li><span class="n">2</span><div><b>填写手机号并验证</b><em>开户结果与账户信息将发送至该号码</em></div></li>
+<li><span class="n">3</span><div><b>设置登录密码</b><em>提交后账户即时开通，$10,000 虚拟资金到账</em></div></li>
+</ol>
+<div class="demo-entry__prep">
+<span class="demo-entry__prep-t">开户前准备</span>
+<ul>
+<li>可正常接收短信的手机号</li>
+<li>8–12 位含大小写字母、数字与符号的密码</li>
+<li>免费开通，无需入金</li>
 </ul>
 </div>
-<div class="field">
-<label for="dRef">推荐码<span class="opt">（可选）</span></label>
-<input autocomplete="off" id="dRef" placeholder="如有推荐码请填写" type="text"/>
+<a class="btn btn-primary btn-lg demo-entry__cta" href="https://account.adxpm99.com/account/open" rel="noopener" target="_blank">马上填写账户开通表单<span aria-hidden="true"> ↗</span></a>
+<p class="rc-foot">开户页与 SmartHSB APP 使用同一账号体系；模拟账户与实盘账户相互独立，不涉及任何真实资金。</p>
+<a class="demo-entry__more" href="tutorial-open.html">查看开户图文步骤 →</a>
 </div>
-<div class="field">
-<label class="check"><input id="dAgree" type="checkbox"/> <span>我已阅读并同意 <a class="link" href="user-agreement.html" onclick="event.stopPropagation()" rel="noopener" target="_blank">平台服务条款</a> 与 <a class="link" href="privacy-policy.html" onclick="event.stopPropagation()" rel="noopener" target="_blank">隐私政策</a></span></label>
-</div>
-<button class="btn btn-primary btn-lg" id="dSubmit" type="submit">提交申请</button>
-<p class="rc-foot">提交后由系统即时开通，模拟账户与实盘账户相互独立，不涉及任何真实资金。</p>
-</form>
 <aside class="reg-aside">
 <div class="ra-tag">Demo Account</div>
 <div class="ra-amount">
@@ -194,15 +157,14 @@
 <li><span>适用对象</span><b>新手练习 · 策略回测</b></li>
 </ul>
 <div class="ra-steps">
-<div class="ra-step"><span>1</span><div><b>验证手机号</b><em>获取并填写短信验证码</em></div></div>
-<div class="ra-step"><span>2</span><div><b>设置登录密码</b><em>满足 5 条安全规则</em></div></div>
-<div class="ra-step"><span>3</span><div><b>开始模拟交易</b><em>虚拟资金即时到账</em></div></div>
+<div class="ra-step"><span>1</span><div><b>打开开户页</b><em>点击开户按钮进入官方表单</em></div></div>
+<div class="ra-step"><span>2</span><div><b>验证手机号</b><em>填写并验证常用手机号</em></div></div>
+<div class="ra-step"><span>3</span><div><b>开始模拟交易</b><em>设置密码，虚拟资金即时到账</em></div></div>
 </div>
-<div class="ra-note">模拟账户与实盘账户相互独立：模拟账户使用虚拟资金，不影响真实资金；申请实盘请通过 APP 或客服渠道完成。</div>
-<div class="ra-foot"><svg fill="none" height="14" viewbox="0 0 24 24" width="14"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>同一手机号仅可注册一个模拟账户 · 验证码 1 分钟内有效</div>
+<div class="ra-note">模拟账户与实盘账户相互独立：模拟账户使用虚拟资金，不影响真实资金；申请实盘请通过 SmartHSB APP 或客服渠道完成。</div>
+<div class="ra-foot"><svg fill="none" height="14" viewbox="0 0 24 24" width="14"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>同一手机号仅可注册一个模拟账户</div>
 </aside>
-</div>
-</div>
+</div></div>
 </section>
 <!-- ===== 6 步指南 ===== -->
 <section class="sec surface-flow surface-flow--mint">
@@ -216,7 +178,7 @@
 </div>
 <div class="steps c3 si-group">
 <div class="step slide-in" data-dir="bottom"><div class="no">1</div><h3>下载 SmartHSB APP</h3><p>iOS 与 Android 均可下载。</p></div>
-<div class="step slide-in" data-dir="bottom"><div class="no">2</div><h3>开通模拟账户</h3><p>填写信息开通，$10,000 虚拟资金即时到账。</p></div>
+<div class="step slide-in" data-dir="bottom"><div class="no">2</div><h3>开通模拟账户</h3><p>在官方开户页填写表单，$10,000 虚拟资金即时到账。</p></div>
 <div class="step slide-in" data-dir="bottom"><div class="no">3</div><h3>熟悉界面</h3><p>了解行情、图表与下单面板，熟悉每个功能。</p></div>
 <div class="step slide-in" data-dir="bottom"><div class="no">4</div><h3>选择品种</h3><p>从 4 大类（贵金属、股指、外汇、能源）共 25 个品种中选择。</p></div>
 <div class="step slide-in" data-dir="bottom"><div class="no">5</div><h3>练习止盈止损</h3><p>重点练习止损（SL）与止盈（TP）等风险管理工具。</p></div>

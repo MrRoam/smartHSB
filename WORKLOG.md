@@ -1133,3 +1133,12 @@
 
 - 排查结论：A 类 CTA 按钮 5 个（首页"免费开立模拟账户"、learn"模拟账户练手"、learn-risk"用模拟账户练仓位"、learn-terms"用模拟账户验算"、tutorial-trade"模拟账户练手"）；B 类非行动元素（FAQ 手风琴问题 button 约 9 处、导航/页脚链接、hero-ticker、FAQ 内文字链接）不动。demo 注册表单提交按钮为"提交申请"，无相关字样。
 - 用户选择：只改首页大按钮。index.html 与根目录镜像的翻转按钮两面"免费开立模拟账户"→"开通账户体验"（各 2 处 span）。知识中心/教程页 4 个带语境按钮按用户决定保留。grep 无残留，git diff --check 通过。仅本地提交未推送。
+
+## 2026-11-20 15:05 · 模拟账户页"开通模拟账户"模块重构（去表单，跳转开户页）
+
+- 需求：去掉页面内实际注册功能（手机号/验证码/密码表单），改为引导至 https://account.adxpm99.com/account/open 完成开户；新增"马上填写账户开通表单"按钮。
+- website/demo.html：#register 区块改为「开通入口」：顶部状态条说明本页不收集个人信息；左栏为 3 步说明 + 开户前准备清单（手机号、8–12 位密码规则、免费无需入金）+ 主按钮（新标签页跳转开户页，rel=noopener）+ 说明与「查看开户图文步骤」链接；右栏保留权益信息，步骤文案改为"打开开户页/验证手机号/开始模拟交易"，去掉"左侧按钮"等与版式耦合的措辞。sec-sub 改为"官方开户页填写表单 · 免费 · 即时到账"；6 步指南第 2 步同步。
+- assets/js/main.js、trading-pages.js：删除已失效的模拟账户表单绑定（手机号校验、验证码倒计时、密码规则、提交拦截），node --check 通过。
+- assets/css/trading-pages.css：新增 .demo-entry__steps/.demo-entry__prep/.demo-entry__more 样式；page-demo 布局在 ≤900px 单栏堆叠（原 600px 过晚，768 双栏过挤）。
+- assets/css/subpages.css：修复既有缺陷——.internal-site .sec-head 的 align-items:flex-end 覆盖 style.css ≤1024 的 flex-start，导致全部内页区块标题在小屏右对齐；新增 ≤1024 左对齐规则。
+- 核对：1440/768/390 截图验证；HTML 标签平衡；无旧表单 id 残留；git diff --check 通过。仅本地提交未推送。

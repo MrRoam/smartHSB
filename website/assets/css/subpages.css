@@ -91,3 +91,10 @@
 
 /* 带浅底色的步骤卡补水平内边距，避免文字压边（learn-risk 等阅读页 .doc-single .prose .step） */
 .internal-site .doc-single .prose .step{padding:25px 22px}
+
+/* 窄屏区块标题左对齐：.internal-site .sec-head 的 align-items:flex-end 会覆盖
+   style.css 中 @media(max-width:1024px) 的 flex-start，导致标题在小屏右对齐 */
+@media(max-width:1024px){
+  .internal-site .sec-head{flex-direction:column;align-items:flex-start}
+  .internal-site .sec-sub{text-align:left}
+}

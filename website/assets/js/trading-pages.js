@@ -70,24 +70,6 @@
       });
     }
 
-    const form=document.querySelector('#demoForm');
-    if(form){
-      const status=document.querySelector('.trade-interface-status');
-      // Capture before legacy handlers: the endpoints are intentionally unconnected.
-      const send=form.querySelector('#dSendCode');
-      send.addEventListener('click',e=>{
-        e.preventDefault();e.stopImmediatePropagation();
-        const phone=form.querySelector('#dPhone');
-        if(phone.value.replace(/\D/g,'').length<6){window.toast?.('请先填写正确的手机号码');phone.focus();return;}
-        status.textContent='短信接口待接入，当前未发送验证码。';
-        window.toast?.('短信接口待接入，当前未发送验证码');
-      },true);
-      form.addEventListener('submit',e=>{
-        e.preventDefault();e.stopImmediatePropagation();
-        status.textContent='开户接口待接入，当前未提交申请或创建账户。请通过 APP 或客服渠道办理。';
-        window.toast?.('开户接口待接入，当前未提交申请');
-      },true);
-    }
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
