@@ -2,6 +2,7 @@
   'use strict';
   var STRATEGY_API='https://content.adxpm99.com/api/v1/content/strategies';
   var CALENDAR_API='https://content.adxpm99.com/api/v1/content/calendars/economic';
+  var NEWS_API='https://content.adxpm99.com/api/v1/content/articles/page';
   var PAGE_SIZE=12;
   var articles=[
     {type:'fx',category:'外汇',date:'11月20日 08:20',source:'FXStreet',title:'通胀数据再次强化日本央行加息押注，日元走强',summary:'市场重新评估日本货币政策的节奏，日元与主要货币的短线波动受到关注。'},
@@ -16,7 +17,85 @@
   function setQuery(key,value){var url=new URL(window.location.href);url.searchParams.set(key,value);window.history.replaceState({},'',url.toString());}
   function pageHero(eyebrow,title,intro,crumb){return '<section class="market-hero"><div class="market-wrap"><nav class="market-breadcrumb" aria-label="面包屑"><a href="index.html">首页</a><span>／</span><a href="'+crumb.href+'">'+crumb.label+'</a><span>／</span><span>'+eyebrow+'</span></nav><p class="market-eyebrow"><i></i>'+eyebrow+'</p><h1>'+title+'</h1><p class="market-intro">'+intro+'</p></div></section>';}
   function impact(level){var dots='';for(var i=0;i<3;i+=1)dots+='<i></i>';return '<span class="impact level-'+level+'" aria-label="波动级别 '+level+'（共 3 级）">'+dots+'</span>';}
-  function news(){var root=document.querySelector('[data-news-app]');if(!root)return;root.closest('body').classList.add('market-page');var active=queryValue('category',['all','fx','commodities','indices','analysis','economics'],'all'),tabs=[['all','全部'],['fx','外汇'],['commodities','商品'],['indices','指数'],['analysis','技术分析'],['economics','财经指标']];function render(){var shown=active==='all'?articles:articles.filter(function(item){return item.type===active;});root.innerHTML=pageHero('资讯中心','从市场脉络，到 <em>下一步判断</em>','外汇、商品、指数、技术分析与财经指标的内容快照。筛选设计已按当前消息页分类更新。',{href:'news.html',label:'市场'})+'<section class="market-content"><div class="market-wrap"><div class="market-section-head"><div><h2>市场消息</h2><p>当前页面为内容与筛选样式快照，后续可通过内容接口替换文章数据。</p></div></div><div class="news-tabs" role="tablist" aria-label="资讯类别">'+tabs.map(function(tab){return '<button class="news-tab" role="tab" aria-selected="'+(tab[0]===active)+'" data-news-type="'+tab[0]+'">'+tab[1]+'</button>';}).join('')+'</div><div class="news-grid" aria-live="polite">'+(shown.length?shown.map(function(item){return '<article class="news-card"><div><div class="news-card-top"><span>'+item.date+'</span><span class="news-card-tag">'+item.category+'</span></div><h3>'+item.title+'</h3><p>'+item.summary+'</p></div><footer class="news-card-footer"><span>'+item.source+'</span><a href="news.html" aria-label="查看 '+item.title+' 的详情设计">阅读摘要 <span aria-hidden="true">→</span></a></footer></article>';}).join(''):'<div class="market-empty">当前快照没有该分类内容。接入消息接口后会显示最新文章。</div>')+'</div></div></section>';root.querySelectorAll('[data-news-type]').forEach(function(button){button.addEventListener('click',function(){active=button.dataset.newsType;setQuery('category',active);render();});});}render();}
+  function news(){
+    var root=document.querySelector('[data-news-app]');
+    if(!root)return;
+    root.closest('body').classList.add('market-page');
+    var query=new URLSearchParams(window.location.search);
+    var active=queryValue('category',['all','fx','commodities','indices','analysis','economics'],'all');
+    var state={page:0,total:0,count:0,rows:[],loading:false,error:''};
+    var tabs=[['all','全部'],['fx','外汇'],['commodities','商品'],['indices','指数'],['analysis','技术分析'],['economics','财经指标']];
+    function apiUrl(){
+      var params=new URLSearchParams({pageNum:String(state.page+1),pageSize:'10'});
+      if(active!=='all')params.set('type',active);
+      return NEWS_API+'?'+params.toString();
+    }
+    function stamp(ts){
+      if(!ts)return '—';
+      return new Intl.DateTimeFormat('zh-CN',{month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false,timeZone:'Asia/Jakarta'}).format(new Date(ts*1000));
+    }
+    function card(item){
+      var thumb=item.images&&item.images.thumbnail;
+      var syms=(item.symbols||[]).slice(0,4).map(function(sym){return '<span class="news-chip">'+escapeHTML(sym)+'</span>';}).join('');
+      return '<article class="news-card"><div class="news-copy"><div class="news-card-top"><span>'+stamp(item.publishTime)+'</span><span class="news-card-tag">'+escapeHTML(item.source||'—')+'</span>'+(item.isImportant?'<span class="news-important">重要</span>':'')+'</div><h3>'+escapeHTML(item.title||'—')+'</h3><p>'+escapeHTML(item.abstract||'')+'</p>'+(syms?'<div class="news-symbols">'+syms+'</div>':'')+'</div>'+(thumb?'<img class="news-thumb" src="'+escapeHTML(thumb)+'" alt="" loading="lazy" width="74" height="74" onerror="this.style.display=&#39;none&#39;"/>':'')+'<footer class="news-card-footer"><span>&nbsp;</span><a href="news-detail.html?id='+encodeURIComponent(item.articleId)+'" data-news-open="'+escapeHTML(String(item.articleId))+'" aria-label="阅读 '+escapeHTML(item.title||'')+' 的摘要与全文">阅读摘要 <span aria-hidden="true">→</span></a></footer></article>';
+    }
+    function render(){
+      var tabsHtml='<div class="news-tabs" role="tablist" aria-label="资讯类别">'+tabs.map(function(tab){return '<button class="news-tab" role="tab" aria-selected="'+(tab[0]===active)+'" data-news-type="'+tab[0]+'">'+tab[1]+'</button>';}).join('')+'</div>';
+      var list=state.loading&&!state.rows.length?'<div class="market-empty" role="status">正在加载资讯…</div>':state.rows.length?'<div class="news-grid" aria-live="polite">'+state.rows.map(card).join('')+'</div>':'<div class="market-empty"><strong>该分类暂无资讯</strong>请切换分类，或稍后再来看看。</div>';
+      var error=state.error?'<p class="signal-error" role="status">'+escapeHTML(state.error)+'<button data-news-retry>重试</button></p>':'';
+      var load=state.count<state.total?'<button class="signal-load-more" data-news-load-more '+(state.loading?'disabled':'')+'>'+(state.loading?'正在加载…':'加载更多资讯')+'</button>':state.rows.length?'<p class="signal-end">已显示该分类的全部资讯</p>':'';
+      root.innerHTML=pageHero('资讯中心','从市场脉络，到 <em>下一步判断</em>','外汇、商品、指数、技术分析与财经指标等市场消息，支持分类浏览与全文阅读。时间为 WIB（UTC+7）。',{href:'news.html',label:'资讯中心'})+'<section class="market-content"><div class="market-wrap"><div class="market-section-head"><div><h2>市场消息</h2><p>摘要与全文由财经资讯内容接口实时提供，可按分类筛选并逐批加载。</p></div><span class="market-source">资讯内容由第三方财经资讯源提供</span></div>'+tabsHtml+list+'<div class="signal-pagination">'+error+load+'</div><p class="market-focus">资讯内容由第三方财经资讯源通过内容接口提供，仅供信息参考，不构成投资建议。</p></div></section>';
+      root.querySelectorAll('[data-news-type]').forEach(function(button){button.addEventListener('click',function(){active=button.dataset.newsType;setQuery('category',active);resetAndLoad();});});
+      root.querySelectorAll('[data-news-open]').forEach(function(link){link.addEventListener('click',function(){var hit=state.rows.filter(function(row){return String(row.articleId)===link.dataset.newsOpen;})[0];if(hit){try{localStorage.setItem('news-content.article.'+hit.articleId,JSON.stringify(hit));}catch(error){}}});});
+      var loadButton=root.querySelector('[data-news-load-more]');
+      if(loadButton)loadButton.addEventListener('click',loadMore);
+      var retryButton=root.querySelector('[data-news-retry]');
+      if(retryButton)retryButton.addEventListener('click',loadMore);
+    }
+    function resetAndLoad(){state={page:0,total:0,count:0,rows:[],loading:false,error:''};render();loadMore();}
+    function loadMore(){
+      if(state.loading||(state.total&&state.count>=state.total))return;
+      state.loading=true;state.error='';render();
+      fetch(apiUrl(),{headers:{'X-Language':'zh-CN'}}).then(function(response){if(!response.ok)throw new Error('request');return response.json();}).then(function(payload){
+        var value=payload&&payload.value;
+        if(!value||!Array.isArray(value.list))throw new Error('invalid');
+        state.page=value.pageNum||state.page+1;
+        state.total=value.total||state.total;
+        state.count+=value.list.length;
+        state.rows=state.rows.concat(value.list);
+      }).catch(function(){state.error='暂时无法加载资讯，请检查网络后重试。';}).finally(function(){state.loading=false;render();});
+    }
+    render();loadMore();
+  }
+  function newsDetail(){
+    var root=document.querySelector('[data-news-detail-app]');
+    if(!root)return;
+    root.closest('body').classList.add('market-page');
+    var id=new URLSearchParams(window.location.search).get('id');
+    function stamp(ts){
+      if(!ts)return '—';
+      return new Intl.DateTimeFormat('zh-CN',{year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false,timeZone:'Asia/Jakarta'}).format(new Date(ts*1000));
+    }
+    function shell(content){
+      root.innerHTML=pageHero('资讯详情','市场消息，<em>全文阅读</em>','文章全文由财经资讯内容接口提供，仅供信息参考。',{href:'news.html',label:'资讯中心'})+'<section class="market-content"><div class="market-wrap"><a class="market-back" href="news.html">返回资讯列表</a>'+content+'</div></section>';
+    }
+    function render(item){
+      var body=String(item.content||'').replace(/<script[\s\S]*?<\/script>/gi,'');
+      var syms=(item.symbols||[]).slice(0,6).map(function(sym){return '<span class="news-chip">'+escapeHTML(sym)+'</span>';}).join('');
+      shell('<article class="article-panel"><header class="article-head"><h2>'+escapeHTML(item.title||'—')+'</h2><p class="article-meta"><span class="article-source">'+escapeHTML(item.source||'—')+'</span> · <time datetime="'+(item.publishTime?new Date(item.publishTime*1000).toISOString():'')+'">'+stamp(item.publishTime)+' WIB</time>'+(item.author?' · '+escapeHTML(item.author):'')+(item.isImportant?' · <span class="news-important">重要</span>':'')+'</p>'+(syms?'<div class="article-tickers" aria-label="相关品种">'+syms+'</div>':'')+'</header><div class="article-body">'+body+'</div></article><p class="signal-disclaimer article-disclaimer"><b>信息说明</b> 本文由第三方财经资讯源（'+escapeHTML(item.source||'—')+'）通过内容接口提供，仅供信息参考，不构成投资建议、邀约或交易指令；观点与数据以原文为准。</p>');
+    }
+    if(!id){shell('<div class="market-empty">未找到文章编号。请从资讯列表选择一篇文章。</div>');return;}
+    var cached=null;
+    try{cached=JSON.parse(localStorage.getItem('news-content.article.'+id))||null;}catch(error){cached=null;}
+    if(cached&&cached.title){render(cached);return;}
+    shell('<div class="market-empty" role="status">正在加载文章…</div>');
+    fetch(NEWS_API+'?pageNum=1&pageSize=20',{headers:{'X-Language':'zh-CN'}}).then(function(response){if(!response.ok)throw new Error('request');return response.json();}).then(function(payload){
+      var list=(payload&&payload.value&&payload.value.list)||[];
+      var hit=list.filter(function(row){return String(row.articleId)===String(id);})[0];
+      if(hit){try{localStorage.setItem('news-content.article.'+hit.articleId,JSON.stringify(hit));}catch(error){}render(hit);}
+      else{shell('<div class="market-empty"><strong>暂时无法找到该文章</strong>文章可能已下线，请返回资讯列表查看最新内容。</div>');}
+    }).catch(function(){shell('<div class="market-empty">暂时无法加载文章，请检查网络后重试。</div>');});
+  }
   function productGroup(productType){return {FX:'fx',Commodities:'commodities',Indices:'indices'}[productType]||'other';}
   function productLabel(productType){return {FX:'外汇',Commodities:'商品',Indices:'指数'}[productType]||'其他';}
   function direction(signal){return '<span class="signal-direction '+(signal.direction==='up'?'up':'down')+'">'+(signal.direction==='up'?'看涨 ↑':'看跌 ↓')+'</span>';}
@@ -108,5 +187,5 @@
     render();
     loadMore();
   }
-  document.addEventListener('DOMContentLoaded',function(){calendar();news();signalList();signalDetail();});
+  document.addEventListener('DOMContentLoaded',function(){calendar();news();newsDetail();signalList();signalDetail();});
 }());
