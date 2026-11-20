@@ -1142,3 +1142,11 @@
 - assets/css/trading-pages.css：新增 .demo-entry__steps/.demo-entry__prep/.demo-entry__more 样式；page-demo 布局在 ≤900px 单栏堆叠（原 600px 过晚，768 双栏过挤）。
 - assets/css/subpages.css：修复既有缺陷——.internal-site .sec-head 的 align-items:flex-end 覆盖 style.css ≤1024 的 flex-start，导致全部内页区块标题在小屏右对齐；新增 ≤1024 左对齐规则。
 - 核对：1440/768/390 截图验证；HTML 标签平衡；无旧表单 id 残留；git diff --check 通过。仅本地提交未推送。
+
+## 2026-11-20 15:20 · 开通模块二次整合（去左右重复，单卡片）
+
+- 反馈：上一版左右两栏内容重复（三步流程、独立性说明在左右各出现一次），需整合核心元素，底部只保留一个"马上填表开通账户"按钮。
+- 新结构（单卡片 demo-open，不再左右分栏）：顶部浅绿区 = 虚拟资金 $10,000 + 一行说明 + 五列参数条（开通费用/入金要求/使用期限/交易平台/适用对象）；中部 = 三步流程（进入开户页→填写并验证手机号→设置登录密码）+ 一条脚注（同一账号体系、本页不收集手机号密码、同一手机号限一个模拟账户）；底部浅蓝区 = 唯一主按钮"马上填表开通账户"（新标签页跳转 account.adxpm99.com/account/open）+ 次要链接"查看开户图文步骤"。
+- 移除旧类：reg-shell/reg-form/reg-aside/ra-*/demo-entry__*/trade-interface-status 在 demo 页全部不再使用；trading-pages.css 删除 demo-entry 相关规则（18 行），新增 demo-open 样式与 900/760/600 三档响应式。
+- 环境实测：本机 Chrome 无头视口最小 innerWidth=526（--window-size 500 得到 526），原 520 断点永不生效，故改为 600。
+- 验证：1440 五列参数条、768 三列+步骤单列、526 两列、iframe 390 两列+步骤单列+按钮满宽，均无裁切；HTML 标签平衡；git diff --check 通过。仅本地提交未推送。
