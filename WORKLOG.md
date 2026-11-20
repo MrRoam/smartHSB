@@ -1002,3 +1002,11 @@
 - 实施：market-content.css——日期条 flex:0 1 520px + margin-left:auto（不再拉伸占满，靠右与左侧组留出间距）；日期按钮 min-height 66→56、字体 11→10px、日期数字 14→12.5px；日历图标 20→26px、图标框 56→62px；「只看重要」改回紧随分类按钮；650px 断点日期条 margin-left:0 保持左对齐。版本哈希 css → c02712d2c6，4 页同步。
 - 验证：Playwright 实测 1440px（左侧组与右侧日期条间距明显、图标变大）与 390px（换行正常无溢出）；临时截图已清理。
 - 状态：仅本地存档未推送。
+
+## 2026-11-20 · 导航菜单「交易工具」改为「交易策略」
+
+- 需求：「平台」下拉菜单项「交易工具」改名为「交易策略」，链接由 trading-tools.html 改为 trading-signals.html。
+- 实施：全站 35 页（34 页 + 根镜像）桌面与移动导航同步替换；trading-signals / trading-signal-detail 的 aria-current="page" 高亮保留并随链接迁移；trading-tools.html 取消菜单高亮（该页不再对应菜单项，页面本身保留，页脚「交易工具」链接与各正文入口链接均未动）。
+- sitemap：全部 lastmod 统一更新为 2026-11-20（全站导航文案变更）。
+- 检查：38 个 HTML 解析通过；导航残留「trading-tools.html + 交易工具」0 处。
+- 状态：仅本地存档未推送（commit b8d3ef3）。
