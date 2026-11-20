@@ -1176,3 +1176,8 @@
 - 用户决定：站点域名先调整为 smarthsb.co.id。40 个文件（37 内页 + 根目录镜像 index.html + sitemap.xml + robots.txt）共 155 处 www.hsbkita.cn → www.smarthsb.co.id，覆盖 JSON-LD 结构化数据（url/logo/og-cover）、og:image、og:url、sitemap 全部 36 条 URL、robots Sitemap 声明。grep 复查 hsbkita.cn 零残留。
 - 抽验：首页 JSON-LD url、og:image（assets/img/og-cover.png）、sitemap 首条 loc、robots Sitemap 行均为新域名；根目录镜像与 website/ 同步。
 - 注意：smarthsb.co.id 当前 DNS/HTTP 均未生效（HTTP 000），与原 hsbkita.cn 状态相同；上线绑定该域名时需配置 DNS + 仓库 CNAME + Pages 自定义域，另行操作。仅本地提交未推送。
+
+## 2026-11-20 15:50 · 存档并推送发布（b43db5e）
+
+- 用户指示存档并推送。补提交 WORKLOG 后推送 origin main（09f4678..b43db5e，共 30 个本地提交：products 方案B重构、清除"HSB官网"对照表述、按钮文案三轮统一至「开通账户体验」、demo 开通模块两轮重构、Cookie 同意条全站上线、全站巡检、域名调整为 smarthsb.co.id）。
+- 部署验证：assets/js/cookie-consent.js 线上 HTTP 200（本次新增文件，作为版本标记）；首页含 smarthsb.co.id×5、开通账户体验×5、cookie-consent×1；demo 页含「立即注册开通模拟账户」与官方开户链接。线上内容与本次提交一致，发布完成。
