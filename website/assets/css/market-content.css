@@ -56,3 +56,37 @@
 .article-body blockquote{margin:0 0 14px;padding:10px 16px;border-left:3px solid #087d71;background:#f4f9f9;color:#536276}
 .article-disclaimer{margin-top:20px}
 @media(max-width:650px){.article-panel{padding:22px}}
+
+/* HERO 与会其它内页统一（2026-11-20）：沿用 site-light.css 的蓝绿光场背景、留白与标题层级 */
+.market-page .market-hero{
+  position:relative;isolation:isolate;
+  padding:168px 0 76px;
+  background:
+    radial-gradient(75% 110% at -8% 100%,rgba(63,127,255,.20) 0%,rgba(63,127,255,.08) 38%,transparent 72%),
+    radial-gradient(66% 100% at 100% 2%,rgba(182,255,115,.45) 0%,rgba(182,255,115,.18) 46%,transparent 74%),
+    linear-gradient(118deg,#EAF6FF 0%,#F1FBFF 36%,#E8FFF5 67%,#DFFFEA 100%);
+  border-bottom-color:#CCE8E1;
+}
+.market-page .market-hero::before{
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(54% 96% at 70% 84%,rgba(40,210,188,.18) 0%,rgba(40,210,188,.08) 42%,transparent 75%),
+    radial-gradient(44% 74% at 25% 8%,rgba(65,146,255,.14) 0%,transparent 72%);
+}
+.market-page .market-hero>.market-wrap{position:relative;z-index:1;}
+.market-page .market-hero h1{font-size:clamp(36px,4.1vw,58px);line-height:1.25;letter-spacing:-.03em;}
+.market-page .market-hero h1 em{color:var(--site-green);}
+.market-page .market-hero .market-intro{color:var(--site-muted);font-size:17px;}
+@media(max-width:1050px){
+  .market-page .market-hero{padding:60px 0;}
+  .market-page .market-hero h1{font-size:42px;}
+}
+@media(max-width:800px){
+  .market-page .market-hero{padding:48px 0;padding-top:137px;}
+  .market-page .market-hero h1{font-size:36px;}
+  .market-page .market-hero .market-intro{font-size:15px;}
+}
+@media(max-width:540px){
+  .market-page .market-hero{padding-top:126px;}
+  .market-page .market-hero h1{font-size:32px;}
+}

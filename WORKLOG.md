@@ -1068,3 +1068,12 @@
 
 - 推送 9242df1..c74f191（19 个提交）至 origin/main；Pages 部署 run 44673450952 完成成功。
 - 线上验证（mrroam.github.io/smartHSB）：news.html 两个模块、economic-calendar.html 三个模块、trading-signals.html CTA 均已上线；导航「交易策略」链接与 navigation-v2.css?v=88f099b618 生效；根镜像同步正常。
+
+## 2026-11-20 · 语言切换按钮改为悬停展开并去掉箭头
+
+- 需求：语言切换按钮与其它导航菜单一致——悬停自动展开、移开自动收起；去掉向上/向下箭头指示（用户截图圈选）。
+- assets/css/navigation-v2.css：删除 .language-menu > summary::after 箭头伪元素及其 [open] 旋转规则，同步清理 prefers-reduced-motion 选择器列表。新哈希 2078a4f237。
+- assets/js/subpages.js（内页）与 assets/js/column-home.js（首页）：新增语言菜单悬停逻辑——mouseenter 展开（hover:hover 设备）、mouseleave 收起、focusout 收起、Esc/点击外部关闭；悬停设备上点击保持展开（与其它菜单「悬停先于点击」行为一致），触屏设备保留点击切换。新哈希 subpages.js 567af016de、column-home.js 84fc7f9c58。
+- 37 页版本参数同步更新，根镜像 index.html 重生成（规范化一致）；修复后全站版本哈希零差异。
+- Playwright 实测（系统 Chrome）：内页/首页悬停展开、移开收起、悬停下点击不关闭、summary::after 为 none、移动端语言菜单仍点击展开，全部通过。
+- 状态：仅本地存档未推送。
