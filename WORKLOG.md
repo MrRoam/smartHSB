@@ -1035,3 +1035,31 @@
 - 版本哈希：market-content.css → da102e56de、market-content.js → 1507676d49（5 个引用页同步）；sitemap 新增 news-detail.html（36 条与 36 页一一对应）。
 - 验证：Playwright 实测——列表 10 张卡实时数据/缩略图/芯片/加载更多、外汇 tab 过滤 ?category=fx 正常；详情页 id=4576640 标题/来源 fxstreet/5 个品种芯片/正文 6711 字符渲染正常；面包屑 首页/资讯中心/资讯详情；1440 与 390 两档无溢出。node --check、38 页 HTML 解析通过；临时截图已清理。
 - 状态：仅本地存档未推送。
+
+## 2026-11-20 · 资讯中心补回「接着去哪儿」与模拟账户 CTA 模块
+
+- 背景：news.html 切换真实接口时整页改由 market-content.js 动态渲染，旧静态版末尾两个模块（「看完资讯，接着去哪儿」三卡片、「读到好策略，来模拟账户练一练」CTA）被移除，本次按用户提供的旧版参照补回。
+- website/news.html：在 <main> 内 data-news-app 之后恢复两段静态模块（财经日历/实时报价/知识中心 icard 三卡 + demo.html CTA 横幅），沿用原有 sec/icard/g3/cta-banner 版式与动效类，动态列表部分与 market-content.js 均未改动。
+- 验证：HTML 标签配对解析通过。
+- 状态：仅本地存档未推送（eb68739）。
+
+## 2026-11-20 · 财经日历页补回三个静态模块
+
+- 背景：economic-calendar.html 切换真实接口时整页改由 market-content.js 动态渲染，旧静态版末尾三个模块（「如何使用财经日历」四步骤、「财经日历常见问题」FAQ、「重大数据公布日，用模拟账户练手」CTA）被移除，本次按用户提供的旧版参照补回。
+- website/economic-calendar.html：在 <main> 内 data-calendar-app 之后恢复三段静态模块（steps 四步 / faq-grid 四问 / cta-banner 指向 demo.html），沿用原有版式与动效类；FAQ 展开由既有 main.js/site-motion.js/subpages.js 全局绑定，动态日历部分与 market-content.js 均未改动。
+- 验证：HTML 标签配对解析通过。
+- 状态：仅本地存档未推送。
+
+## 2026-11-20 · 交易策略页新增模拟账户 CTA
+
+- website/trading-signals.html：参照旧 trading-tools.html（已下线过渡页）把「用专业工具，交易更从容」CTA 横幅（副文案 + 免费模拟账户按钮 → demo.html）补到 data-signal-list-app 之后，与其余内页 CTA 版式一致；该模块无指向已删除 trading-tools.html 的死链，可直接迁移。动态策略列表与 market-content.js 未改动。
+- 验证：HTML 标签配对解析通过。
+- 状态：仅本地存档未推送。
+
+## 2026-11-20 · 全站链接与版本参数巡检及两项修复
+
+- 全站巡检（37 页 + 根镜像）：无空链接/死链/失效锚点；无引用已删除页面（trading-tools/rewards）；market-content.js 动态链接全部有效；静态资源全部存在；sitemap 与页面一一对应；toast 占位 0 处；website/ 内版本哈希全部一致。
+- 修复 1：根镜像 index.html 按 website/index.html 程序化重生成（assets 与内页链接加 website/ 前缀，规范化后与 website 版逐字符一致），消除 navigation-v2.css 版本参数漂移（01d8b8613a → 88f099b618）。
+- 修复 2：14 页裸 slide-in.js 引用统一补内容哈希版本参数 ?v=7f846fd426（about/contact/customer-complaint/download-app/download-mt5/fraud-warning/help/news-detail/news/platform-tutorial/privacy-policy/trading-signal-detail/trading-signals/user-agreement），消除同文件双缓存键。
+- 复核：修复后全站（含根镜像）版本参数与内容哈希零差异；无版本参数仅剩既有约定 4 项（style.css/page.css/home-refinements-v2.css/world-points.js）；根镜像 HTML 解析通过。
+- 状态：仅本地存档未推送。
