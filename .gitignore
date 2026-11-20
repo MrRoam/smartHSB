@@ -8,3 +8,6 @@ node_modules/
 .workbuddy/
 .agents/
 skills-lock.json
+
+# AI 过程文件（WorkBuddy / Codex 等工具的过程产物，本地留存不上传）
+_process/
