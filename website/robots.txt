@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /404.html
 
-Sitemap: https://www.hsbkita.cn/sitemap.xml
+Sitemap: https://www.smarthsb.co.id/sitemap.xml
