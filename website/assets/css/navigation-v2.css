@@ -78,7 +78,7 @@
 }
 .language-menu[open] > summary::after { transform: translateY(3px) rotate(225deg); }
 .language-menu > summary:hover { color: #11131a; }
-.language-menu__list {
+.language-menu > ul {
   position: absolute;
   top: calc(100% + 6px);
   right: -12px;
@@ -93,7 +93,7 @@
   border-radius: 8px;
   box-shadow: var(--shadow);
 }
-.language-menu__list li {
+.language-menu > ul li {
   display: flex;
   align-items: center;
   min-height: 42px;
@@ -104,17 +104,22 @@
   font-weight: 400;
   line-height: 1.6;
 }
-.language-menu__list li[aria-current="true"] {
+.language-menu > ul li[aria-current="true"] {
   background: var(--canvas);
   color: var(--green-dark);
   font-weight: 500;
 }
-.language-menu__list li[aria-current="true"]::before {
-  content: "✓";
+.language-menu > ul li::before,
+.mobile-language-menu li::before {
+  content: "";
+  flex: 0 0 18px;
   width: 18px;
+  height: 18px;
   margin-right: 10px;
-  color: var(--green-dark);
-  font-size: 13px;
+  background: #257a7c;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18'/%3E%3C/svg%3E") center/contain no-repeat;
+  opacity: .9;
 }
 .site-header:not(.sticky) .language-menu { color: #e2e8f0; }
 .internal-site[data-page] .site-header .language-menu { color: #525967; }
@@ -344,7 +349,6 @@
     line-height: 1.6;
   }
   .mobile-language-menu li[aria-current="true"] { color: var(--green-dark); font-weight: 500; }
-  .mobile-language-menu li[aria-current="true"]::before { content: "✓"; margin-right: 10px; }
 }
 
 @media (max-width: 600px) {
