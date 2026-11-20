@@ -1150,3 +1150,29 @@
 - 移除旧类：reg-shell/reg-form/reg-aside/ra-*/demo-entry__*/trade-interface-status 在 demo 页全部不再使用；trading-pages.css 删除 demo-entry 相关规则（18 行），新增 demo-open 样式与 900/760/600 三档响应式。
 - 环境实测：本机 Chrome 无头视口最小 innerWidth=526（--window-size 500 得到 526），原 520 断点永不生效，故改为 600。
 - 验证：1440 五列参数条、768 三列+步骤单列、526 两列、iframe 390 两列+步骤单列+按钮满宽，均无裁切；HTML 标签平衡；git diff --check 通过。仅本地提交未推送。
+
+## 2026-11-20 15:30 · 新增首次访问 Cookie 同意提示
+
+- 需求：首次打开网站时缺少同意使用 Cookie 的弹窗，需新增。
+- 实现：新增 website/assets/js/cookie-consent.js（自注入 DOM + 自注入样式，不依赖页面 CSS），全站 37 个页面 + 根目录镜像 index.html 在 </body> 前各加一行 script 引用（根目录镜像路径带 website/ 前缀，脚本内按自身 src 推导 BASE，保证隐私政策链接正确）。
+- 交互：首次访问（localStorage 无 hsb_cookie_consent）底部弹出固定提示条；按钮「接受」= accepted、「仅必要」= necessary，写入 localStorage 后加 is-shown 移除动画再删除节点，不重复弹出。文案指向 privacy-policy.html#s9（Cookie 与跟踪技术）。role=dialog + aria-label + tabindex=-1 聚焦容器，避免按钮焦点环；≤600px 纵向堆叠、按钮等宽；prefers-reduced-motion 关闭过渡。
+- 核对：1440 深色首页（可读、绿色主按钮）、1440 about/help（浅色页正常）、500px 窄屏（紧凑无异常空白）；根目录镜像链接为 website/privacy-policy.html#s9，内页为 privacy-policy.html#s9，锚点 id="s9" 存在；node --check 通过；38 个文件各新增 1 行。仅本地提交未推送。
+- 修正记录：初版 __text 用 flex:1 1 320px，窄屏切纵向后 basis 变成 320px 高度造成大空白，已在 ≤600 断点改 flex:0 0 auto。
+
+## 2026-11-20 15:35 · CTA 最终口径：全站统一「开通账户体验」
+
+- 用户最终决定：各页按钮文字统一为「开通账户体验」，只要链接指向模拟账户页即可。20 个页面 30 处按钮由「开通模拟账户」改回；首页此前已是该文案。全站「开通账户体验」按钮链接核对：37 处均指向 demo.html（根目录镜像为 website/demo.html），demo.html 页内 2 处特例（#register 开通模块、account-real.html）符合设计；demo 页「立即注册开通模拟账户」指向官方开户页，不属于站内 CTA，保留。
+- 非按钮的正文/标题/meta 中「开通模拟账户」表述保留不动。
+
+## 2026-11-20 15:40 · 全站链接与质量巡检（只查未改）
+
+- 内部链接/锚点/资源：38 页全扫，href/src 全部指向存在文件，页内及跨页锚点全部命中，无占位 #、无重复 id、img 全部有 alt，viewport/favicon 齐备，根目录镜像与 website/index.html 路径归一化后完全一致，无 JS 控制台报错。news-detail / trading-signal-detail 由 market-content.js 动态生成链接（?id/?signalId），缺失参数有兜底空态，非孤儿页。
+- 发现 1（需决策）：sitemap.xml(36 条)、robots.txt、全站 JSON-LD 结构化数据的 URL 均指向 https://www.hsbkita.cn/，实测该域名当前不可达（HTTP 000）；实际部署地址为 mrroam.github.io/smartHSB，仓库无 CNAME。需决定：绑定 hsbkita.cn（DNS+CNAME+工作流）或改指向实际地址。
+- 发现 2（无法本机核实）：download.mql5.com MT5 安装包链接本机代理返回 502（mql5.com 全域被代理拦截），无法确认死活，建议换网络验证。
+- 次要：about/licenses 等页部分 img 缺 width/height（已有 lazy+async，CLS 风险低）；wa.me/628211019087 全站 38 页与页脚一致；hsb.co.id 仅防欺诈页引用，合理。
+
+## 2026-11-20 15:45 · 域名调整 hsbkita.cn → smarthsb.co.id
+
+- 用户决定：站点域名先调整为 smarthsb.co.id。40 个文件（37 内页 + 根目录镜像 index.html + sitemap.xml + robots.txt）共 155 处 www.hsbkita.cn → www.smarthsb.co.id，覆盖 JSON-LD 结构化数据（url/logo/og-cover）、og:image、og:url、sitemap 全部 36 条 URL、robots Sitemap 声明。grep 复查 hsbkita.cn 零残留。
+- 抽验：首页 JSON-LD url、og:image（assets/img/og-cover.png）、sitemap 首条 loc、robots Sitemap 行均为新域名；根目录镜像与 website/ 同步。
+- 注意：smarthsb.co.id 当前 DNS/HTTP 均未生效（HTTP 000），与原 hsbkita.cn 状态相同；上线绑定该域名时需配置 DNS + 仓库 CNAME + Pages 自定义域，另行操作。仅本地提交未推送。
