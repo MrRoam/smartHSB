@@ -967,3 +967,13 @@
 - 版式与可访问性：筛选按钮使用独立 `.calendar-type-tabs` 约束为单行小按钮，避免受通用导航样式拉伸；日历选择器有可见焦点与文字标签，加载、空列表和网络失败均有明确状态和重试入口。移动端保留五日日期条，并允许筛选行在狭窄宽度下横向滚动。
 - 检查：接口第 2 页返回 12 条（当日总数 46）；JavaScript 语法、`git diff --check` 和 6 项市场内容 Node 回归测试通过。资源版本参数已同步至财经日历、资讯中心与两个策略页。
 - 发布：提交 `bdc4bf7` 已推送；GitHub Pages run `44664895900` success。公开财经日历页及其 `market-content.css?v=8bfde573ff`、`market-content.js?v=61b244491c` 均返回 HTTP 200；发布脚本包含经济日历接口、五日日期条和“加载更多日历”。
+
+## 2026-11-20 · 财经日历筛选区布局优化
+
+- 需求：参照 adxpm99 财经日历，调整筛选区结构——第一行「数据/事件/假期/精选」分类 + 最右「只看重要」复选框；第二行五日日期条 + 最右日历图标（原结构为日期行在上、分类行在下）。
+- 实施：
+  - market-content.js：market-controls 内两组行交换顺序（filter-row 在前、toolbar 在后）。
+  - market-content.css：.calendar-filter-row 加 margin-bottom:14px、.calendar-toolbar 去 margin；「只看重要」改为复选框样式（16px 圆角方框 + 选中变绿带 ✓，未选中白底描边），覆盖原整钮变绿样式；650px 断点同步调整间距。
+  - 版本哈希：market-content.css → b544962541、market-content.js → 088e2f3925，4 个引用页同步更新；sitemap economic-calendar lastmod → 2026-11-20。
+- 验证：node --check 通过；4 页 HTML 解析通过；本地 http.server + Playwright 实测 1440/390 两档布局正常、无横向溢出；「只看重要」选中态为绿底勾选框（URL ?important=true 正常工作）；临时截图已清理。
+- 状态：仅本地存档未推送。
