@@ -1085,3 +1085,11 @@
 - assets/css/market-content.css 末尾新增 .market-page .market-hero 统一段：完整复用内页背景与 ::before、padding 168/76、h1/em/lead 字级与颜色（em 用 var(--site-green)），并按内页断点适配（≤1050: 60px、≤800: 137px 顶距、≤540: 126px）。新哈希 3af7aeacf9，5 个引用页同步。
 - 验证：Playwright 计算样式对比——三个 market 页与 learn.html 的 hero 背景渐变、留白、h1 字号完全一致；1440 截图视觉一致；390 移动端头部无遮挡（h1 顶距 196 > 头部底 82）。
 - 状态：仅本地存档未推送。
+
+## 2026-11-20 · 资讯详情页 FAQ 模块布局缺陷修复
+
+- 用户反馈两点：右侧竖排文字（信息说明免责段）应放底部；白底 FAQ 卡与底部深色免责框错位严重。
+- 根因（非有意设计）：源文章正文自带 <style> 块（FXStreet .fxs-faq-module 样式），其 .fxs-faq-module-wrapper 使用 float:left；详情页只剥 <script>，样式随正文注入后浮动未被面板包含——FAQ 白卡溢出面板压到免责框，免责段落被挤进浮块旁窄缝呈竖排。已确认该 FAQ 为源文章正文自带内容（源站同样显示），保留。
+- 修复：market-content.css 新增 .article-body{display:flow-root} 与 ::after clear:both，隔离源内容浮动。哈希 97e9722bfc，5 个引用页同步。
+- 验证（Playwright，文章 4576713 含 FAQ、390/1440 两档）：声明段回到面板正下方，全宽横排（1220px、高 52px，与面板同宽同 x），无重叠、无竖排、页面无横向溢出；修复前声明高 660 且被浮块覆盖。
+- 状态：仅本地存档未推送。
