@@ -40,3 +40,25 @@ test('signal pagination has a visible keyboard-focusable control', () => {
   assert.match(styles, /\.signal-load-more/);
   assert.match(styles, /\.signal-load-more:focus-visible/);
 });
+
+test('economic calendar uses its public API with dates, filters, and pagination', () => {
+  const source = read('website/assets/js/market-content.js');
+
+  assert.match(source, /content\.adxpm99\.com\/api\/v1\/content\/calendars\/economic/);
+  assert.match(source, /data-calendar-date/);
+  assert.match(source, /data-calendar-picker/);
+  assert.match(source, /data-calendar-load-more/);
+  assert.match(source, /加载更多日历/);
+  assert.match(source, /isImportant/);
+  assert.match(source, /财经日历/);
+  assert.doesNotMatch(source, /<h2>经济日历<\/h2>/);
+});
+
+test('calendar controls force a compact horizontal layout and a five-day rail', () => {
+  const styles = read('website/assets/css/market-content.css');
+
+  assert.match(styles, /\.calendar-date-rail/);
+  assert.match(styles, /\.calendar-filter-row/);
+  assert.match(styles, /\.calendar-type-tabs/);
+  assert.match(styles, /\.calendar-type-tabs>\.market-tab/);
+});
