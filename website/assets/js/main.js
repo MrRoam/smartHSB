@@ -162,7 +162,7 @@
     hcOpenHash();
   }
 
-  /* ---------- WIB 时钟（UTC+7） ---------- */
+  /* ---------- WIB 时钟 ---------- */
   window.renderClock = function(id){
     var el = document.getElementById(id);
     if(!el) return;
