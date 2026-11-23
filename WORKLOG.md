@@ -14,3 +14,9 @@
 - 需求：删除不再使用的旧版 HSB KITA 图标。
 - 实施：删除 `website/assets/img/hsb_kita_icon.png`（504,298 bytes）及 `website/assets/img/logo_hsb_kita.png`（51,908 bytes）。
 - 验证：删除前 `website/` 内的 HTML、CSS、JavaScript 中两文件的引用数均为 0；删除后文件路径均不存在。
+
+## 2026-11-23 · 印尼语分享预览图重设计
+
+- 需求：重做 `og-cover.png`，解决原分享图含中文和旧版图标的问题；保持文件名不变。
+- 实施：以蓝、钴蓝、青绿和浅色背景重建 1200 × 630 分享卡片。左侧使用现行 `logo-s-app.png` 和 SmartHSB 品牌，文案统一为印尼语：「Trading global, dalam satu aplikasi.」「Pantau pasar dan kelola transaksi dari satu aplikasi SmartHSB.」「Mulai dengan akun demo」。右侧保留全球地图、行情卡片和上行图形。
+- 验证：新图尺寸为 1200 × 630；无中文、无 HSB KITA 旧图标；所有页面继续引用同一固定路径 `assets/img/og-cover.png`，无需更改页面元数据。
