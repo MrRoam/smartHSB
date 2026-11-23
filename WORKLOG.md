@@ -20,3 +20,9 @@
 - 需求：重做 `og-cover.png`，解决原分享图含中文和旧版图标的问题；保持文件名不变。
 - 实施：以蓝、钴蓝、青绿和浅色背景重建 1200 × 630 分享卡片。左侧使用现行 `logo-s-app.png` 和 SmartHSB 品牌，文案统一为印尼语：「Trading global, dalam satu aplikasi.」「Pantau pasar dan kelola transaksi dari satu aplikasi SmartHSB.」「Mulai dengan akun demo」。右侧保留全球地图、行情卡片和上行图形。
 - 验证：新图尺寸为 1200 × 630；无中文、无 HSB KITA 旧图标；所有页面继续引用同一固定路径 `assets/img/og-cover.png`，无需更改页面元数据。
+
+## 分享预览图 · 手机与笔电构图
+
+- 目标：将右侧行情卡片换为手机在前、笔电在后的构图，保留左侧 SmartHSB 品牌、印尼语文案和蓝绿背景。继续使用 1200 × 630 的 `og-cover.png`。
+- 完成：用内置图像生成工具改为双设备示意图，手机屏幕标明「Data ilustrasi」。导出并逐像素比对左侧 553 × 630 区域，差异为 0。正式目录 37 个页面继续引用原文件名，`git diff --check` 通过。
+- 发布：只发布图片，远端提交 `5f54028` 对应 Pages run `45131569221` 成功。公开 Pages 图片 HTTP 200，SHA-256 与本地一致。现有 `og:image` 指向 `www.smarthsb.co.id`，该域名返回的内容与新版不同，仍需通过该域名的发布流程同步或在确认后更改图片来源。
