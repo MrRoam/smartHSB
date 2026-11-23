@@ -8,3 +8,9 @@
 - 保留既有资格编号与历史评级；未采用截图中未经核实的“原持牌/全部职责移交”表述。
 - 验证：全站正式 HTML 无 Semasta、3 家监管、系统重要性机构备案残留；git diff --check 通过。全量测试 27/28 通过；既有财经日历测试因 HEAD 的 market-content.css 已缺少 .calendar-filter-row 失败，本次未改日历代码。
 - 按用户既有先存档、按要求再发布的偏好，仅本地提交。本次核查前工作区干净。
+
+## 2026-11-23 · 清理旧版 HSB KITA 图标
+
+- 需求：删除不再使用的旧版 HSB KITA 图标。
+- 实施：删除 `website/assets/img/hsb_kita_icon.png`（504,298 bytes）及 `website/assets/img/logo_hsb_kita.png`（51,908 bytes）。
+- 验证：删除前 `website/` 内的 HTML、CSS、JavaScript 中两文件的引用数均为 0；删除后文件路径均不存在。
