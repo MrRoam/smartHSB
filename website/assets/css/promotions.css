@@ -42,17 +42,51 @@
   align-items: start;
   gap: clamp(32px, 5vw, 80px);
 }
-.bonus-intro > p, .bonus-questions p, .bonus-steps p, .bonus-bottom p, .bonus-rule-copy p {
+.bonus-intro p, .bonus-questions p, .bonus-steps p, .bonus-bottom p, .bonus-rule-copy p {
   color: var(--site-muted);
   line-height: 1.8;
   margin-top: 14px;
 }
-.bonus-intro .bonus-case {
-  padding-left: 16px;
-  border-left: 3px solid #8ccab1;
-  margin-block: 26px;
+.bonus-intro {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 16px 32px;
+  margin-bottom: clamp(24px, 3vw, 40px);
 }
-.bonus-case strong, .bonus-withdraw strong { display: block; color: var(--site-ink); }
+.bonus-fallback[open] { grid-column: 1 / -1; max-width: 76ch; }
+.bonus-comparison {
+  display: grid;
+  grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(28px, 4vw, 64px);
+}
+.bonus-comparison h3, .bonus-funding h2 { font-size: clamp(21px, 1.8vw, 27px); line-height: 1.4; }
+.bonus-table-note { margin: 6px 0 18px; font-size: 15px; color: var(--site-muted); }
+.bonus-key-rules {
+  background: var(--site-surface-mint);
+  border-top: 3px solid var(--site-green);
+  border-radius: 0 0 12px 12px;
+  padding: clamp(18px, 2.3vw, 32px);
+}
+.bonus-key-rules dt { margin-top: 16px; padding-top: 14px; border-top: 1px solid #cfe6db; font-weight: 600; }
+.bonus-key-rules dd, .bonus-tier-help p, .bonus-funding p { margin: 5px 0 0; line-height: 1.75; color: #415852; }
+.bonus-key-rules dd { font-size: 15px; }
+.bonus-tier-help { margin-top: 8px; border-bottom: 1px solid var(--site-line); }
+.bonus-tier-help p { padding-bottom: 18px; }
+.bonus-funding {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 16px 40px;
+  align-items: center;
+  padding: clamp(20px, 3vw, 40px);
+  margin-bottom: clamp(48px, 6vw, 84px);
+  background: var(--site-surface-blue);
+  border-radius: 12px;
+}
+.bonus-funding p { max-width: 68ch; }
+.bonus-funding-links { display: grid; }
+.bonus-funding-links a { display: flex; align-items: center; min-height: 44px; }
 .page-promotions [hidden] { display: none !important; }
 .bonus-tiers {
   width: 100%;
@@ -75,14 +109,6 @@
 .bonus-tiers tbody th { font-weight: 600; }
 .bonus-tiers td:nth-child(2) { color: var(--site-green); font-weight: 650; }
 .tier-label { display: none; }
-.bonus-withdraw {
-  margin-top: 18px;
-  background: var(--site-surface-blue);
-  border-radius: 10px;
-  padding: 16px 20px;
-  font-size: 15px;
-  line-height: 1.7;
-}
 .bonus-steps {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -103,8 +129,8 @@
 .bonus-steps p { margin-top: 8px; }
 .bonus-questions details { border-bottom: 1px solid var(--site-line); }
 .bonus-questions details:first-child { border-top: 1px solid var(--site-line); }
-.bonus-questions summary, .bonus-fallback summary { cursor: pointer; font-weight: 600; padding-block: 18px; }
-.bonus-questions summary::marker, .bonus-fallback summary::marker { color: var(--site-green); }
+.page-promotions :is(.bonus-questions, .bonus-fallback, .bonus-tier-help) summary { cursor: pointer; font-weight: 600; padding-block: 18px; }
+.page-promotions :is(.bonus-questions, .bonus-fallback, .bonus-tier-help) summary::marker { color: var(--site-green); }
 .bonus-questions p { margin: 0 0 18px; }
 .bonus-bottom, .bonus-dialog-head { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
 .bonus-bottom .btn { flex-shrink: 0; }
@@ -131,12 +157,14 @@ html:has(.bonus-dialog[open]) { overflow: hidden; }
 .bonus-link { color: var(--site-green); text-decoration: underline; text-underline-offset: .2em; }
 
 @media (max-width: 900px) {
-  .bonus-layout { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .bonus-layout, .bonus-comparison { grid-template-columns: minmax(0, 1fr); gap: 24px; }
 }
 @media (max-width: 760px) {
   .bonus-steps { grid-template-columns: minmax(0, 1fr); }
   .bonus-bottom { align-items: start; flex-direction: column; }
   .bonus-example { width: 100%; }
+  .bonus-intro, .bonus-funding { grid-template-columns: minmax(0, 1fr); }
+  .bonus-intro > button { justify-self: start; }
 }
 @media (max-width: 600px) {
   .bonus-tiers, .bonus-tiers tbody { display: block; border: 0; border-radius: 0; }
