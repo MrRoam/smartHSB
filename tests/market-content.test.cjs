@@ -58,7 +58,7 @@ test('calendar controls force a compact horizontal layout and a five-day rail', 
   const styles = read('website/assets/css/market-content.css');
 
   assert.match(styles, /\.calendar-date-rail/);
-  assert.match(styles, /\.calendar-filter-row/);
+  assert.match(styles, /\.calendar-controls-row/);
   assert.match(styles, /\.calendar-type-tabs/);
   assert.match(styles, /\.calendar-type-tabs>\.market-tab/);
 });
