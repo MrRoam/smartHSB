@@ -182,6 +182,19 @@ html:has(.bonus-dialog[open]) { overflow: hidden; }
 .bonus-link { color: var(--site-green); text-decoration: underline; text-underline-offset: .2em; }
 
 html[data-view="app"] .page-promotions :is(.site-header, .site-footer, .crumb) { display: none; }
+
+/* App 内嵌视图专用风险提示：Web 端隐藏（页脚已有完整风险文案），App 视图页脚不可见，由本块承担披露 */
+.bonus-app-note { display: none; }
+html[data-view="app"] .page-promotions .bonus-app-note {
+  display: block;
+  max-width: min(1220px, calc(100% - 64px));
+  margin: 0 auto;
+  padding: 0 0 clamp(24px, 4vw, 48px);
+  color: var(--site-muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+html[data-view="app"] .page-promotions .bonus-app-note h2 { margin: 0 0 6px; color: var(--site-ink); font-size: 16px; }
 html[data-view="app"] .page-promotions[data-page] .page-hero { padding-block: clamp(28px, 4vw, 64px); }
 html[data-view="app"] .page-promotions .sec { padding-block: clamp(28px, 5vw, 64px); }
 
