@@ -41,24 +41,73 @@
   margin-bottom: clamp(24px, 3vw, 40px);
 }
 .bonus-fallback[open] { grid-column: 1 / -1; max-width: 76ch; }
-.bonus-comparison {
+.reward-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr);
-  column-gap: clamp(24px, 3vw, 42px);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(14px, 1.7vw, 24px);
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
-.bonus-comparison h3, .bonus-funding h2 { font-size: clamp(21px, 1.8vw, 27px); line-height: 1.4; }
-.bonus-table-note { margin: 6px 0 18px; font-size: 15px; color: var(--site-muted); }
+.reward-card {
+  min-width: 0;
+  border: 1px solid var(--site-line);
+  border-radius: 18px;
+  overflow: hidden;
+  background: white;
+  font-variant-numeric: tabular-nums;
+}
+.reward-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, .85fr);
+  align-items: center;
+  padding: 14px clamp(16px, 1.8vw, 26px);
+  gap: 8px;
+  background: linear-gradient(115deg, #f0f8f4 15%, #f9f7eb 100%);
+}
+.reward-heading h3 { margin: 0; }
+.reward-heading h3 span {
+  display: block;
+  color: #365b4e;
+  font-size: 14px;
+  font-weight: 550;
+}
+.reward-heading strong {
+  display: block;
+  margin-top: 6px;
+  color: #07573e;
+  font-size: clamp(38px, 4vw, 62px);
+  font-weight: 650;
+  letter-spacing: -.055em;
+  line-height: 1.1;
+}
+.reward-heading img { width: 100%; max-width: 148px; height: auto; justify-self: end; }
+.reward-card:first-child { border-color: #749b89; }
+.reward-card:first-child .reward-heading { background: linear-gradient(115deg, #0a4638 15%, #216650); }
+.reward-card:first-child .reward-heading span { color: #e5f6eb; }
+.reward-card:first-child .reward-heading strong { color: #ffe4a7; }
+.reward-terms {
+  margin: 0;
+  padding: 12px clamp(16px, 1.8vw, 26px);
+  color: #36524a;
+  font-size: 15px;
+}
+.reward-terms div { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; padding-block: 5px; }
+.reward-terms dd { margin: 0; color: var(--site-ink); font-weight: 600; }
+.bonus-key-rules { margin-top: clamp(32px, 4.5vw, 64px); }
+.bonus-key-rules h3, .bonus-funding h2 { font-size: clamp(21px, 1.8vw, 27px); line-height: 1.4; }
+.bonus-key-rules h3 { margin-bottom: 16px; }
 .bonus-key-rules dl {
   display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 clamp(20px, 4vw, 56px);
   margin: 0;
   background: var(--site-surface-mint);
-  border: 1px solid var(--site-line);
-  border-radius: 12px;
-  padding: 4px clamp(18px, 2vw, 28px);
+  border-radius: 14px;
+  padding: 6px clamp(18px, 2vw, 30px);
 }
-.bonus-key-rules h3 { margin-bottom: 18px; }
-.bonus-key-rules dl > div { align-content: center; padding-block: 14px; }
-.bonus-key-rules dl > div + div { border-top: 1px solid #cfe6db; }
+.bonus-key-rules dl > div { padding-block: 16px; }
+.bonus-key-rules dl > div:nth-child(n+3) { border-top: 1px solid #cfe6db; }
 .bonus-key-rules dt { font-weight: 600; }
 .bonus-key-rules dd, .bonus-tier-help p, .bonus-funding p { margin: 5px 0 0; line-height: 1.75; color: #415852; }
 .bonus-key-rules dd { font-size: 15px; }
@@ -80,6 +129,7 @@
 .page-promotions [hidden] { display: none !important; }
 .bonus-tiers {
   width: 100%;
+  margin-top: 16px;
   border-collapse: separate;
   border-spacing: 0;
   overflow: hidden;
@@ -98,7 +148,6 @@
 .bonus-tiers tbody tr + tr > * { border-top: 1px solid var(--site-line); }
 .bonus-tiers tbody th { font-weight: 600; }
 .bonus-tiers td:nth-child(2) { color: var(--site-green); font-weight: 650; }
-.tier-label { display: none; }
 .bonus-steps {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -146,13 +195,15 @@ html:has(.bonus-dialog[open]) { overflow: hidden; }
 .bonus-rule-copy p { font-size: 15px; margin-top: 6px; }
 .bonus-link { color: var(--site-green); text-decoration: underline; text-underline-offset: .2em; }
 
-@media (min-width: 901px) {
-  .bonus-schedule, .bonus-key-rules { display: grid; grid-template-rows: subgrid; }
-  .bonus-schedule { grid-column: 1; grid-row: 1 / span 3; }
-  .bonus-key-rules { grid-column: 2; grid-row: 1 / span 2; }
-}
+.bonus-app-risk { display: none; }
+html[data-view="app"] .page-promotions :is(.site-header, .site-footer, .crumb, .bonus-funding, .bonus-download-title, .bonus-bottom .btn) { display: none; }
+html[data-view="app"] .page-promotions .bonus-app-risk { display: block; font-size: 18px; }
+html[data-view="app"] .page-promotions[data-page] .page-hero { padding-block: clamp(28px, 4vw, 64px); }
+html[data-view="app"] .page-promotions .sec { padding-block: clamp(28px, 5vw, 64px); }
+
 @media (max-width: 900px) {
-  .bonus-layout, .bonus-comparison { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .bonus-layout { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .reward-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 760px) {
   .bonus-steps { grid-template-columns: minmax(0, 1fr); }
@@ -162,20 +213,17 @@ html:has(.bonus-dialog[open]) { overflow: hidden; }
   .bonus-intro > button { justify-self: start; }
 }
 @media (max-width: 600px) {
-  .bonus-tiers, .bonus-tiers tbody { display: block; border: 0; border-radius: 0; }
-  .bonus-tiers thead {
-    position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%);
-  }
-  .bonus-tiers tbody { display: grid; gap: 10px; }
-  .bonus-tiers tbody tr {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    border: 1px solid var(--site-line);
-    border-radius: 10px;
-    overflow: hidden;
-  }
-  .bonus-tiers tbody tr > * { padding: 9px 14px; text-align: left; border: 0; }
-  .bonus-tiers tbody tr > :nth-child(-n+2) { background: #f0f9f4; font-size: 20px; }
-  .tier-label { display: block; font-size: 12px; font-weight: 400; color: #50675d; }
-  .bonus-dialog-head, .bonus-dialog-body { padding: 16px; }
+  .reward-grid, .bonus-key-rules dl { grid-template-columns: minmax(0, 1fr); }
+  .reward-heading { padding: 8px 20px; }
+  .reward-heading img { max-width: 104px; }
+  .reward-heading strong { font-size: 46px; }
+  .reward-terms { padding: 8px 20px 12px; }
+  .bonus-key-rules dl > div + div { border-top: 1px solid #cfe6db; }
+  .bonus-dialog-head, .bonus-dialog-body { padding: 14px; }
+  .bonus-tiers { font-size: 14px; }
+  .bonus-tiers :is(th, td) { padding: 9px 5px; }
+  .bonus-tiers thead th { font-size: 12px; }
+  .bonus-tiers thead span { display: block; }
+  .bonus-tiers tbody :is(th, td) { white-space: nowrap; }
+  html[data-view="app"] .page-promotions .bonus-hero-art { max-width: 240px; }
 }
