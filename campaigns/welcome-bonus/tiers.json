@@ -1,0 +1,10 @@
+[
+  {"deposit": 25,   "reward": 3,   "lots": 0.05, "days": 2,  "art": "coin"},
+  {"deposit": 50,   "reward": 7,   "lots": 0.1,  "days": 3,  "art": "three-coins"},
+  {"deposit": 100,  "reward": 15,  "lots": 0.15, "days": 5},
+  {"deposit": 200,  "reward": 30,  "lots": 0.25, "days": 7},
+  {"deposit": 500,  "reward": 75,  "lots": 1,    "days": 10, "art": "stacks"},
+  {"deposit": 1000, "reward": 150, "lots": 2,    "days": 14, "art": "towers"},
+  {"deposit": 2000, "reward": 300, "lots": 4,    "days": 21, "art": "banknotes"},
+  {"deposit": 5000, "reward": 500, "lots": 10,   "days": 30, "art": "treasure"}
+]
